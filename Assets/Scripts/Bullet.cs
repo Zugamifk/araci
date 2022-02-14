@@ -5,9 +5,13 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [NonSerialized]
     public int Damage;
+    [NonSerialized]
     public float Speed;
+    [NonSerialized]
     public Vector3 Direction;
+    [NonSerialized]
     public float LifeTime;
     public OnImpactCallback OnImpact;
 
@@ -35,6 +39,7 @@ public class Bullet : MonoBehaviour
     {
         var e = collision.gameObject.GetComponent<Enemy>();
         e.Health -= Damage;
+        Debug.Log($"doing {Damage} damage");
         OnImpact?.Invoke(this);
         Destroy(gameObject);
     }

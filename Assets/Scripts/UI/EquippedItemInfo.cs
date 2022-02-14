@@ -18,6 +18,6 @@ public class EquippedItemInfo : MonoBehaviour
 
     public void SetLevel(int level)
     {
-        m_Level.text = $"{level}";
+        m_Level.text = $"{level+1}";
     }
 }

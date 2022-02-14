@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +13,9 @@ public class PlayerController
     int m_Level;
     PlayerData.LevelData m_LevelData;
 
-    Dictionary<Item, ItemState> m_Items = new Dictionary<Item, ItemState>();
-    IEnumerable<AttackItem> m_Attacks => m_Items.Keys.Select(i => i as AttackItem).Where(a => a != null);
+    Dictionary<Item, ItemState> m_ItemToItemState = new Dictionary<Item, ItemState>();
+    Dictionary<Type, Item> m_ItemTypeToItem = new Dictionary<Type, Item>();
+    IEnumerable<AttackItem> m_Attacks => m_ItemToItemState.Keys.Select(i => i as AttackItem).Where(a => a != null);
 
     public PlayerData.LevelData LevelData => m_LevelData;
 
@@ -31,7 +33,7 @@ public class PlayerController
     {
         foreach(var a in m_Attacks)
         {
-            var state = m_Items[a];
+            var state = m_ItemToItemState[a];
             var t = state.RemainingInterval;
             t -= time;
             if(t < 0)
@@ -45,14 +47,14 @@ public class PlayerController
 
     public bool CanPickup(Item item)
     {
-        return !m_Items.ContainsKey(item) || m_Items[item].Level < item.MaxLevel;
+        return !m_ItemToItemState.ContainsKey(item) || m_ItemToItemState[item].Level < item.MaxLevel;
     }
     
     public int GetItemLevel(Item item)
     {
-        if (m_Items.ContainsKey(item))
+        if (m_ItemToItemState.ContainsKey(item))
         {
-            return m_Items[item].Level;
+            return m_ItemToItemState[item].Level;
         } else
         {
             return 0;
@@ -61,18 +63,19 @@ public class PlayerController
 
     public void PickUp(Item item)
     {
-        if (m_Items.ContainsKey(item))
+        if (m_ItemToItemState.ContainsKey(item))
         {
-            if(m_Items[item].Level >= item.MaxLevel)
+            if(m_ItemToItemState[item].Level >= item.MaxLevel)
             {
-                throw new System.InvalidOperationException($"Item already at max level! Can't pickup {item.Name}, level is {m_Items[item]}");
+                throw new System.InvalidOperationException($"Item already at max level! Can't pickup {item.Name}, level is {m_ItemToItemState[item]}");
             }
 
-            m_Items[item].Level++;
+            m_ItemToItemState[item].Level++;
         }
         else
         {
-            m_Items.Add(item, item.GetNewState());
+            m_ItemToItemState.Add(item, item.GetNewState());
+            m_ItemTypeToItem.Add(item.GetType(), item);
         }
     }
 
@@ -97,8 +100,41 @@ public class PlayerController
         Services.Find<UI>().SetCurrentHealth(m_CurrentHealth);
     }
 
+    T GetItem<T>() where T : Item
+    {
+        if (m_ItemTypeToItem.ContainsKey(typeof(T)))
+        {
+            return (T)m_ItemTypeToItem[typeof(T)];
+        } else
+        {
+            return null;
+        }
+    }
+
     float GetNextInterval(float interval)
     {
         return interval;
+    }
+
+    public int CalculateDamage(int baseDamage)
+    {
+        float multiplier = 1;
+        var tiger = GetItem<Tiger>();
+        if (tiger != null)
+        {
+            multiplier += tiger.Multipliers[m_ItemToItemState[tiger].Level];
+        }
+        return Mathf.RoundToInt(baseDamage * multiplier);
+    }
+
+    public float CalculateRadius(float radius)
+    {
+        float multiplier = 1;
+        var dragon = GetItem<Dragon>();
+        if (dragon != null)
+        {
+            multiplier += dragon.Multipliers[m_ItemToItemState[dragon].Level];
+        }
+        return radius * multiplier;
     }
 }

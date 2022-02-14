@@ -16,11 +16,14 @@ public class AttackController
         return radius.GetNearestTarget();
     }
 
-    public void ShootBullet(Bullet bullet, Vector3 direction, Bullet.OnImpactCallback onImpact)
+    public void ShootBullet(Bullet bullet, Vector3 direction, int baseDamage, Bullet.OnImpactCallback onImpact)
     {
         var b = Object.Instantiate(bullet);
         b.gameObject.SetActive(true);
         b.transform.position = Services.Find<Character>().transform.position;
+        b.Damage = Services.Find<PlayerController>().CalculateDamage(baseDamage);
+        b.Speed = 5;
+        b.LifeTime = 1;
         b.Direction = direction;
         b.OnImpact += onImpact;
     }

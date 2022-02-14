@@ -20,7 +20,7 @@ public class Item : ScriptableObject
     {
         return new ItemState()
         {
-            Level = 1
+            Level = 0
         };
     }
 }

@@ -7,7 +7,11 @@ public class Fireball : AttackItem
     [SerializeField]
     Bullet m_Bullet;
     [SerializeField]
+    int m_BaseBulletDamage;
+    [SerializeField]
     GameObject m_Explosion;
+    [SerializeField]
+    int m_BaseExplosionDamage;
 
     public override void Attack(ItemState state)
     {
@@ -17,12 +21,12 @@ public class Fireball : AttackItem
         {
             var dir = (target.position - Services.Find<Character>().transform.position).normalized;
             Bullet.OnImpactCallback onExplode = state.Level < 3 ? null : OnExplode;
-            ac.ShootBullet(m_Bullet, dir, onExplode);
+            ac.ShootBullet(m_Bullet, dir, m_BaseBulletDamage, onExplode);
         }
     }
 
     void OnExplode(Bullet bullet)
     {
-        
+        Services.Find<AttackController>().DoExplosion(m_Explosion, bullet.transform.position);
     }
 }
