@@ -9,21 +9,20 @@ public class Fireball : AttackItem
     [SerializeField]
     GameObject m_Explosion;
 
-    public override void Attack()
+    public override void Attack(ItemState state)
     {
         var ac = Services.Find<AttackController>();
         var target = ac.GetClosestTarget(this);
         if(target!=null)
         {
             var dir = (target.position - Services.Find<Character>().transform.position).normalized;
-            ac.ShootBullet(m_Bullet, dir, OnExplode);
+            Bullet.OnImpactCallback onExplode = state.Level < 3 ? null : OnExplode;
+            ac.ShootBullet(m_Bullet, dir, onExplode);
         }
     }
 
     void OnExplode(Bullet bullet)
     {
-        var e = Instantiate(m_Explosion);
-        e.gameObject.SetActive(true);
-        e.transform.position = bullet.transform.position;
+        
     }
 }

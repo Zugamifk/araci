@@ -22,17 +22,17 @@ public class GameController : MonoBehaviour
     [SerializeField]
     Item m_Item;
     [SerializeField]
-    ProgressionData m_ProgressionData;
+    PlayerData m_PlayerData;
 
     [SerializeField]
     DropTable m_DropTable;
 
+    public PlayerData PlayerData => m_PlayerData;
+
     float m_Timer;
-    PlayerController m_Player;
 
     private void Awake()
     {
-        m_Player = new PlayerController(m_ProgressionData, m_MaxHealth);
         m_Character.SetMoveSpeed(m_MoveSpeed);
         GetItem(m_Item);
     }
@@ -47,7 +47,7 @@ public class GameController : MonoBehaviour
         ui.SetMaxHealth(m_MaxHealth);
 
         ui.SetCurrentExperience(0);
-        ui.SetLevelData(m_Player.LevelData);
+        ui.SetLevelData(Services.Find<PlayerController>().LevelData);
 
         StartCoroutine(SpawnEnemies());
 
@@ -56,7 +56,8 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        m_Player.Update(Time.deltaTime);
+        var player = Services.Find<PlayerController>();
+        player.Update(Time.deltaTime);
         m_Timer += Time.deltaTime;
         if (m_Timer > m_HurtTime)
         {
@@ -64,7 +65,7 @@ public class GameController : MonoBehaviour
 
             foreach (var e in m_Character.TouchingEnemies)
             {
-                m_Player.Damage(e.Damage);
+                player.Damage(e.Damage);
             }
         }
     }
@@ -79,16 +80,18 @@ public class GameController : MonoBehaviour
 
     void GetItem(Item item)
     {
-        m_Player.PickUp(item);
-        Services.Find<UI>().AddItem(item, m_Player.GetItemLevel(item));
+        var player = Services.Find<PlayerController>();
+        player.PickUp(item);
+        Services.Find<UI>().AddItem(item, player.GetItemLevel(item));
     }
 
     public void GainExperience(int amount)
     {
-        if(m_Player.GainExperience(amount))
+        var player = Services.Find<PlayerController>();
+        if (player.GainExperience(amount))
         {
-            Services.Find<UI>().ShowLevelupPanel(m_Player, m_DropTable.GetLevelupOptions(3, m_Player));
-            Services.Find<UI>().SetLevelData(m_Player.LevelData);
+            Services.Find<UI>().ShowLevelupPanel(player, m_DropTable.GetLevelupOptions(3, player));
+            Services.Find<UI>().SetLevelData(player.LevelData);
             Time.timeScale = 0;
         }
     }

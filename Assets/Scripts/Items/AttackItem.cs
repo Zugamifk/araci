@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class AttackItem : Item
 {
     public float BaseInterval;
-    public abstract void Attack();
+    public abstract void Attack(ItemState state);
 
     public override ItemState GetNewState()
     {

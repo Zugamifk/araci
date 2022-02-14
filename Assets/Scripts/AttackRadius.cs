@@ -14,7 +14,7 @@ public class AttackRadius : MonoBehaviour
         var closestDistance = float.MaxValue;
         foreach(var h in hits)
         {
-            var distance = (h.transform.position - pos).magnitude;
+            var distance = ((Vector2)h.transform.position - (Vector2)pos).magnitude;
             if(distance < closestDistance)
             {
                 closest = h;
@@ -29,5 +29,11 @@ public class AttackRadius : MonoBehaviour
         {
             return null;
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, Radius);
     }
 }

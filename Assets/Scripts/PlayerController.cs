@@ -6,27 +6,25 @@ using UnityEngine;
 public class PlayerController
 {
     int m_CurrentHealth;
-    int m_MaxHealth;
 
-    ProgressionData m_ProgressionData;
+    PlayerData m_PlayerData;
     int m_Experience;
     int m_Level;
-    ProgressionData.LevelData m_LevelData;
+    PlayerData.LevelData m_LevelData;
 
     Dictionary<Item, ItemState> m_Items = new Dictionary<Item, ItemState>();
     IEnumerable<AttackItem> m_Attacks => m_Items.Keys.Select(i => i as AttackItem).Where(a => a != null);
 
-    public ProgressionData.LevelData LevelData => m_LevelData;
+    public PlayerData.LevelData LevelData => m_LevelData;
 
-    public PlayerController(ProgressionData progressionData, int maxHealth)
+    public PlayerController()
     {
-        m_CurrentHealth = maxHealth;
-        m_MaxHealth = maxHealth;
+        m_PlayerData = Services.Find<GameController>().PlayerData;
+        m_CurrentHealth = m_PlayerData.MaxHealth;
 
-        m_ProgressionData = progressionData;
         m_Level = 0;
         m_Experience = 0;
-        m_LevelData = progressionData.Levels[0];
+        m_LevelData = m_PlayerData.Levels[0];
     }
 
     public void Update(float time)
@@ -38,7 +36,7 @@ public class PlayerController
             t -= time;
             if(t < 0)
             {
-                a.Attack();
+                a.Attack(state);
                 t = GetNextInterval(a.BaseInterval);
             }
             state.RemainingInterval = t;
@@ -87,7 +85,7 @@ public class PlayerController
         if (levelledUp)
         {
             m_Level++;
-            m_LevelData = m_ProgressionData.Levels[m_Level];
+            m_LevelData = m_PlayerData.Levels[m_Level];
         }
         return levelledUp;
     }

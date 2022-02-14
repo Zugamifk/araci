@@ -24,4 +24,11 @@ public class AttackController
         b.Direction = direction;
         b.OnImpact += onImpact;
     }
+
+    public void DoExplosion(GameObject fx, Vector3 position)
+    {
+        var e = Object.Instantiate(fx);
+        e.gameObject.SetActive(true);
+        e.transform.position = position;
+    }
 }

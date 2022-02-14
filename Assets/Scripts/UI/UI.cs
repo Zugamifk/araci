@@ -68,7 +68,7 @@ public class UI : MonoBehaviour
         UpdateExperience();
     }
 
-    public void SetLevelData(ProgressionData.LevelData levelData)
+    public void SetLevelData(PlayerData.LevelData levelData)
     {
         m_MaxExperience = levelData.NextLevelExperience;
         UpdateExperience();
