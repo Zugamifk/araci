@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class ExperienceGem : Pickup
 {
+    [SerializeField]
+    float m_Acceleration;
+    
     public int Value;
+
 
     Transform m_PlayerTarget;
     float m_VaccuumSpeed;
@@ -23,6 +27,8 @@ public class ExperienceGem : Pickup
             var dir = m_PlayerTarget.position - transform.position;
             dir.Normalize();
 
+            m_VaccuumSpeed += Time.fixedDeltaTime * m_Acceleration;
+
             m_Rigidbody.MovePosition(transform.position + dir * m_VaccuumSpeed * Time.fixedDeltaTime);
         }
     }
@@ -35,7 +41,10 @@ public class ExperienceGem : Pickup
 
     public void StartVaccuuming(Transform playerTransform, float speed)
     {
-        m_VaccuumSpeed = speed;
-        m_PlayerTarget = playerTransform;
+        if (m_PlayerTarget == null)
+        {
+            m_VaccuumSpeed = speed;
+            m_PlayerTarget = playerTransform;
+        }
     }
 }
