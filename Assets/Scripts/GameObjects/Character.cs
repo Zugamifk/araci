@@ -61,12 +61,6 @@ public class Character : MonoBehaviour
         {
             m_Touching.Add(enemy);
         }
-
-        var pickup = collision.gameObject.GetComponent<Pickup>();
-        if (pickup != null)
-        {
-            pickup.PickupItem();
-        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
