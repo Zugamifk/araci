@@ -19,13 +19,17 @@ public class AttackController
     public void ShootBullet(Bullet bullet, Vector3 direction, AttackInfo attack, Bullet.OnImpactCallback onImpact)
     {
         var b = Object.Instantiate(bullet);
-        b.gameObject.SetActive(true);
-        b.transform.position = Services.Find<Character>().transform.position;
         b.Attack = attack;
         b.Speed = 5;
         b.LifeTime = 1;
-        b.Direction = direction;
         b.OnImpact += onImpact;
+        b.Spawn(Services.Find<Character>().transform.position, direction, attack);
+    }
+
+    public void MeleeAttack(Attack attackPrefab, Vector3 direction, AttackInfo attack)
+    {
+        var a = Object.Instantiate(attackPrefab);
+        a.Spawn(Services.Find<Character>().transform.position, direction, attack);
     }
 
     public void DoExplosion(GameObject fx, Vector3 position)

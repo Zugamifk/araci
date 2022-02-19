@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spear : AttackItem
 {
     [SerializeField]
-
+    SpearAttack m_Attack;
 
     public override void Attack(ItemState state)
     {
@@ -13,9 +13,8 @@ public class Spear : AttackItem
         var target = ac.GetClosestTarget(this);
         if (target != null)
         {
-            //var dir = (target.position - Services.Find<Character>().transform.position).normalized;
-            //Bullet.OnImpactCallback onExplode = state.Level < 3 ? null : OnExplode;
-            //ac.ShootBullet(m_Bullet, dir, m_BaseBulletDamage, onExplode);
+            var dir = (target.position - Services.Find<Character>().transform.position).normalized;
+            ac.MeleeAttack(m_Attack, dir, new AttackInfo() { BaseDamage = 20 });
         }
     }
 }
