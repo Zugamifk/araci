@@ -31,6 +31,9 @@ public class UI : MonoBehaviour
     [SerializeField]
     RectTransform m_TextParticlesRoot;
 
+    [SerializeField]
+    Text m_GameTimeText;
+
     int m_MaxHealth=1;
     int m_CurrentHealth;
 
@@ -133,5 +136,12 @@ public class UI : MonoBehaviour
         var text = Instantiate(m_TextParticleTemplate, m_TextParticlesRoot);
         text.gameObject.SetActive(true);
         text.Play(amount.ToString(), position);
+    }
+
+    public void SetTime(int seconds)
+    {
+        var m = seconds / 60;
+        var s = seconds % 60;
+        m_GameTimeText.text = $"{m:00}:{s:00}";
     }
 }

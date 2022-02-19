@@ -56,9 +56,15 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
+        var dt = Time.deltaTime;
         var player = Services.Find<PlayerController>();
-        player.Update(Time.deltaTime);
-        m_Timer += Time.deltaTime;
+        player.Update(dt);
+
+        var tc = Services.Find<TimeController>();
+        tc.Update(dt);
+        Services.Find<UI>().SetTime(tc.Seconds);
+
+        m_Timer += dt;
         if (m_Timer > m_HurtTime)
         {
             m_Timer -= m_HurtTime;
