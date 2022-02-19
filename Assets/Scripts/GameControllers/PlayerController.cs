@@ -115,7 +115,7 @@ public class PlayerController : IDamageable
 
     float GetNextInterval(float interval)
     {
-        return interval;
+        return CalculateAttackInterval(interval);
     }
 
     public int CalculateDamage(int baseDamage)
@@ -138,5 +138,16 @@ public class PlayerController : IDamageable
             multiplier += dragon.Multipliers[m_ItemToItemState[dragon].Level];
         }
         return radius * multiplier;
+    }
+
+    public float CalculateAttackInterval(float baseInterval)
+    {
+        float multiplier = 1;
+        var spider = GetItem<Spider>();
+        if (spider != null)
+        {
+            multiplier *= spider.Multipliers[m_ItemToItemState[spider].Level];
+        }
+        return baseInterval * multiplier;
     }
 }

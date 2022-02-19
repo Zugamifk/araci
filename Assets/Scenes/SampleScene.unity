@@ -1361,7 +1361,7 @@ MonoBehaviour:
   m_MoveSpeed: 5
   m_HurtTime: 1
   m_MaxHealth: 100
-  m_Item: {fileID: 11400000, guid: 5cb59996914601d42a3cd06ecd6e782c, type: 2}
+  m_Item: {fileID: 11400000, guid: 0ddd566036a4ea84699113ff7b29322f, type: 2}
   m_PlayerData: {fileID: 11400000, guid: d57257a897b69b24da41c6943b48efb2, type: 2}
   m_DropTable: {fileID: 11400000, guid: d9b01e8292441be4fa5e8ab78379fe47, type: 2}
 --- !u!4 &647086836

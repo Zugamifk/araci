@@ -23,7 +23,7 @@ public class Fireball : AttackItem
             Bullet.OnImpactCallback onExplode = state.Level < 3 ? null : OnExplode;
             var attack = new AttackInfo()
             {
-                BaseDamage = m_BaseBulletDamage
+                BaseDamage = m_BaseBulletDamage,
             };
             ac.ShootBullet(m_Bullet, dir, attack, onExplode);
         }
