@@ -7,8 +7,6 @@ public class GameController : MonoBehaviour
     [SerializeField]
     List<Area> m_EnemySpawns;
     [SerializeField]
-    Enemy m_Enemy;
-    [SerializeField]
     Pickup[] m_ExperienceGems;
 
     [SerializeField]
@@ -27,6 +25,9 @@ public class GameController : MonoBehaviour
     [SerializeField]
     DropTable m_DropTable;
 
+    [SerializeField]
+    WaveData m_WaveData;
+
     public PlayerData PlayerData => m_PlayerData;
 
     float m_Timer;
@@ -35,6 +36,23 @@ public class GameController : MonoBehaviour
     {
         m_Character.SetMoveSpeed(m_MoveSpeed);
         GetItem(m_Item);
+
+        var tc = Services.Find<TimeController>();
+        var wc = Services.Find<WaveController>();
+        foreach(var w in m_WaveData.Waves)
+        {
+            switch (w.WaveType)
+            {
+                case WaveData.EWaveType.Instant:
+                    tc.ScheduleEvent(w.TimeInSeconds, _ => wc.SpawnEnemyGroup(w));
+                    break;
+                case WaveData.EWaveType.SpawnPerMinute:
+                    tc.ScheduleEvent(w.TimeInSeconds, _ => wc.SetSpawnWaveOverTime(w));
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
     void Start()
@@ -49,8 +67,6 @@ public class GameController : MonoBehaviour
         ui.SetCurrentExperience(0);
         ui.SetLevelData(Services.Find<PlayerController>().LevelData);
 
-        StartCoroutine(SpawnEnemies());
-
         GainExperience(10);
     }
 
@@ -63,6 +79,8 @@ public class GameController : MonoBehaviour
         var tc = Services.Find<TimeController>();
         tc.Update(dt);
         Services.Find<UI>().SetTime(tc.Seconds);
+
+        Services.Find<WaveController>().UpdateTime(dt);
 
         m_Timer += dt;
         if (m_Timer > m_HurtTime)
@@ -102,22 +120,18 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void SpawnEnemy(Enemy enemy)
+    {
+        var i = Random.Range(0, m_EnemySpawns.Count);
+        var s = m_EnemySpawns[i].GetRandomPosition();
+        var e = Instantiate(enemy);
+        e.transform.position = s;
+        e.gameObject.SetActive(true);
+    }
+
     void OnLevelUp(Item item)
     {
         GetItem(item);
         Time.timeScale = 1;
-    }
-
-    IEnumerator SpawnEnemies()
-    {
-        while (true)
-        {
-            var i = Random.Range(0, m_EnemySpawns.Count);
-            var s = m_EnemySpawns[i].GetRandomPosition();
-            var e = Instantiate(m_Enemy);
-            e.transform.position = s;
-            e.gameObject.SetActive(true);
-            yield return new WaitForSeconds(1);
-        }
     }
 }

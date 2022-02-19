@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 5932812168175458353}
   - component: {fileID: 5932812168175458352}
   m_Layer: 7
-  m_Name: Enemy
+  m_Name: Imp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,7 +150,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.26
+  m_Radius: 0.11
 --- !u!50 &5932812168175458352
 Rigidbody2D:
   serializedVersion: 4
