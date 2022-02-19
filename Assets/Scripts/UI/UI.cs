@@ -26,6 +26,11 @@ public class UI : MonoBehaviour
     [SerializeField]
     LevelUpOptionButton[] m_LevelupOptionButtons;
 
+    [SerializeField]
+    TextParticle m_TextParticleTemplate;
+    [SerializeField]
+    RectTransform m_TextParticlesRoot;
+
     int m_MaxHealth=1;
     int m_CurrentHealth;
 
@@ -121,5 +126,12 @@ public class UI : MonoBehaviour
 
         ui.SetItem(item);
         ui.SetLevel(level);
+    }
+
+    public void SpawnDamageCounter(int amount, Vector3 position)
+    {
+        var text = Instantiate(m_TextParticleTemplate, m_TextParticlesRoot);
+        text.gameObject.SetActive(true);
+        text.Play(amount.ToString(), position);
     }
 }

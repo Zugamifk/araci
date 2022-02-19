@@ -39,6 +39,7 @@ public class Bullet : MonoBehaviour
     {
         var e = collision.gameObject.GetComponent<Enemy>();
         e.Health -= Damage;
+        Services.Find<UI>().SpawnDamageCounter(Damage, e.transform.position);
         Debug.Log($"doing {Damage} damage");
         OnImpact?.Invoke(this);
         Destroy(gameObject);
