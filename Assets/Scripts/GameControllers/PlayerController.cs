@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class PlayerController
+public class PlayerController : IDamageable
 {
     int m_CurrentHealth;
 
@@ -18,6 +18,8 @@ public class PlayerController
     IEnumerable<AttackItem> m_Attacks => m_ItemToItemState.Keys.Select(i => i as AttackItem).Where(a => a != null);
 
     public PlayerData.LevelData LevelData => m_LevelData;
+
+    public int Health => m_CurrentHealth;
 
     public PlayerController()
     {
@@ -94,7 +96,7 @@ public class PlayerController
     }
 
 
-    public void Damage(int damage)
+    public void DoDamage(int damage)
     {
         m_CurrentHealth -= damage;
         Services.Find<UI>().SetCurrentHealth(m_CurrentHealth);

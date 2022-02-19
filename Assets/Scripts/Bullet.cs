@@ -6,14 +6,14 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [NonSerialized]
-    public int Damage;
-    [NonSerialized]
     public float Speed;
     [NonSerialized]
     public Vector3 Direction;
     [NonSerialized]
     public float LifeTime;
     public OnImpactCallback OnImpact;
+
+    public AttackInfo Attack;
 
     public delegate void OnImpactCallback(Bullet bullet);
 
@@ -38,9 +38,7 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         var e = collision.gameObject.GetComponent<Enemy>();
-        e.Health -= Damage;
-        Services.Find<UI>().SpawnDamageCounter(Damage, e.transform.position);
-        Debug.Log($"doing {Damage} damage");
+        Services.Find<AttackController>().DoAttack(e, Attack);
         OnImpact?.Invoke(this);
         Destroy(gameObject);
     }

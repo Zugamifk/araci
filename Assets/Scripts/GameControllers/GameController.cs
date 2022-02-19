@@ -71,7 +71,7 @@ public class GameController : MonoBehaviour
 
             foreach (var e in m_Character.TouchingEnemies)
             {
-                player.Damage(e.Damage);
+                player.DoDamage(e.Damage);
             }
         }
     }

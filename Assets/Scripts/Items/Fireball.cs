@@ -21,7 +21,11 @@ public class Fireball : AttackItem
         {
             var dir = (target.position - Services.Find<Character>().transform.position).normalized;
             Bullet.OnImpactCallback onExplode = state.Level < 3 ? null : OnExplode;
-            ac.ShootBullet(m_Bullet, dir, m_BaseBulletDamage, onExplode);
+            var attack = new AttackInfo()
+            {
+                BaseDamage = m_BaseBulletDamage
+            };
+            ac.ShootBullet(m_Bullet, dir, attack, onExplode);
         }
     }
 

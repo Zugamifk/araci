@@ -2,14 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamageable
 {
-    public int Health = 5;
-    public int Damage;
-    public float MoveSpeed;
+    [SerializeField]
+    int m_Health = 5;
+    
+    [SerializeField]
+    int m_Damage;
+
+    [SerializeField]
+    float m_MoveSpeed;
 
     Character m_Player;
     Rigidbody2D m_RigidBody;
+
+    public int Health => m_Health;
+    public int Damage => m_Damage;
 
     private void Start()
     {
@@ -21,11 +29,12 @@ public class Enemy : MonoBehaviour
     {
         var dir =  m_Player.transform.position - transform.position;
         dir.Normalize();
-        m_RigidBody.MovePosition(transform.position + dir * MoveSpeed * Time.fixedDeltaTime);
+        m_RigidBody.MovePosition(transform.position + dir * m_MoveSpeed * Time.fixedDeltaTime);
     }
 
-    private void Update()
+    public void DoDamage(int damage)
     {
+        m_Health -= damage;
         if (Health < 0)
         {
             Destroy(gameObject);
