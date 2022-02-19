@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Spider
   m_EditorClassIdentifier: 
   Name: Spider
-  Icon: {fileID: 21300000, guid: 69ecc453749755440acc45e75c54f831, type: 3}
+  Icon: {fileID: 21300000, guid: 2776ad3701d41904c83cae77c25289ba, type: 3}
   Levels:
   - Description: Increase attack radius by 20%
   Multipliers:

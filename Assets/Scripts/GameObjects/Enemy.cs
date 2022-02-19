@@ -5,6 +5,9 @@ using UnityEngine;
 public class Enemy : MonoBehaviour, IDamageable
 {
     [SerializeField]
+    Transform m_ViewRoot;
+
+    [SerializeField]
     int m_Health = 5;
     
     [SerializeField]
@@ -29,6 +32,11 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         var dir =  m_Player.transform.position - transform.position;
         dir.Normalize();
+        if (dir.x != 0)
+        {
+            var a = Mathf.Sign(dir.x) < 0 ? 0 : 180;
+            m_ViewRoot.transform.localRotation = Quaternion.Euler(0, a, 0);
+        }
         m_RigidBody.MovePosition(transform.position + dir * m_MoveSpeed * Time.fixedDeltaTime);
     }
 

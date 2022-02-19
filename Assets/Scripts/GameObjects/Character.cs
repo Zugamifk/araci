@@ -5,6 +5,8 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     [SerializeField]
+    Transform m_ViewRoot;
+    [SerializeField]
     AttackRadius m_AttackRadiusTemplate;
 
     float m_MoveSpeed;
@@ -25,6 +27,11 @@ public class Character : MonoBehaviour
     void FixedUpdate()
     {
         var dir = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"),0);
+        if(dir.x!=0)
+        {
+            var a = Mathf.Sign(dir.x) > 0 ? 0 : 180;
+            m_ViewRoot.transform.localRotation = Quaternion.Euler(0, a, 0);
+        }
         m_Rigidbody.MovePosition(transform.position + dir * m_MoveSpeed * Time.fixedDeltaTime);
     }
 
