@@ -17,6 +17,7 @@ MonoBehaviour:
     Time: {x: 0, y: 0}
     Spawns:
     - {fileID: 5932812168175458380, guid: 4447de952bbe00b49a952a6291b054fd, type: 3}
+    - {fileID: 5932812168175458380, guid: 5174f8d0f3de48e4792544c7dc1fa916, type: 3}
     Amount: 600
   - WaveType: 0
     Time: {x: 0, y: 20}
