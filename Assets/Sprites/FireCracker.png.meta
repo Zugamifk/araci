@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b60963e57026b134197718cc5c592911
+guid: bddf3cbde7f9f804ba1e5bfbc464caf1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,11 +43,11 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 0
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,7 +69,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -116,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Grass_0
+      name: FireCracker_0
       rect:
         serializedVersion: 2
         x: 0
@@ -130,14 +130,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59ac4364196caec4aaa60fb929b4a4a7
-      internalID: 1786094512
+      spriteID: 06c6018fc326c1247996e3692cffaf1e
+      internalID: -190128067
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_1
+      name: FireCracker_1
       rect:
         serializedVersion: 2
         x: 50
@@ -151,14 +151,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 587501ba7c9c242448a6cd39e683ad23
-      internalID: -487441492
+      spriteID: 5b890b042ac84fa4e8b52987fb48cd8e
+      internalID: 1087072410
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_2
+      name: FireCracker_2
       rect:
         serializedVersion: 2
         x: 0
@@ -172,14 +172,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72f3054d11633694ba3f349d0811ae3c
-      internalID: 1233213493
+      spriteID: 4f84d8c1aea65774a80b06f740352a86
+      internalID: -662006648
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_3
+      name: FireCracker_3
       rect:
         serializedVersion: 2
         x: 50
@@ -193,8 +193,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82e0a95abc1e3d84db59eeb9b026c979
-      internalID: 627906073
+      spriteID: 48bc7cfb699e94e48a2ace38dee2c27f
+      internalID: -891426553
       vertices: []
       indices: 
       edges: []
@@ -210,10 +210,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Grass_0: 1786094512
-      Grass_2: 1233213493
-      Grass_1: -487441492
-      Grass_3: 627906073
+      FireCracker_0: -190128067
+      FireCracker_1: 1087072410
+      FireCracker_3: -891426553
+      FireCracker_2: -662006648
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

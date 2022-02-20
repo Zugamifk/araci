@@ -43,7 +43,7 @@ public class Enemy : MonoBehaviour, IDamageable
     public void DoDamage(int damage)
     {
         m_Health -= damage;
-        if (Health < 0)
+        if (Health <= 0)
         {
             Services.Find<DropController>().DropReward(this);
             Destroy(gameObject);

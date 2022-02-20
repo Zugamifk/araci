@@ -5,10 +5,16 @@ using UnityEngine;
 
 public class Bullet : Attack
 {
+    [SerializeField]
+    Animator m_Animator;
+    [SerializeField]
+    string m_ImpactAnimationTrigger;
+
     [NonSerialized]
     public float Speed;
     [NonSerialized]
     public float LifeTime;
+
     public OnImpactCallback OnImpact;
 
     public AttackInfo Attack;
@@ -32,6 +38,13 @@ public class Bullet : Attack
         var e = collision.gameObject.GetComponent<Enemy>();
         Services.Find<AttackController>().DoAttack(e, Attack);
         OnImpact?.Invoke(this);
-        Destroy(gameObject);
+
+        if (m_Animator != null)
+        {
+            m_Animator.SetTrigger(m_ImpactAnimationTrigger);
+            Speed = 0;
+        } else { 
+            Destroy(gameObject);
+        }
     }
 }

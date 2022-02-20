@@ -2,14 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fireball : AttackItem
+public class FireCracker : AttackItem
 {
     [SerializeField]
     Bullet m_Bullet;
     [SerializeField]
     int m_BaseBulletDamage;
-    [SerializeField]
-    GameObject m_Explosion;
     [SerializeField]
     int m_BaseExplosionDamage;
 

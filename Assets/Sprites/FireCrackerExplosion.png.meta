@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b60963e57026b134197718cc5c592911
+guid: cf3a3d24b4a6fc54ea0ba7bf0af85a1d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -116,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Grass_0
+      name: FireCrackerExplosion_0
       rect:
         serializedVersion: 2
         x: 0
@@ -130,14 +130,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59ac4364196caec4aaa60fb929b4a4a7
-      internalID: 1786094512
+      spriteID: c59d3271973ba184e9f3ed98867e81c8
+      internalID: 351729003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_1
+      name: FireCrackerExplosion_1
       rect:
         serializedVersion: 2
         x: 50
@@ -151,14 +151,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 587501ba7c9c242448a6cd39e683ad23
-      internalID: -487441492
+      spriteID: 34a18fab9ab854d47b4d822c3685de00
+      internalID: 1806310062
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_2
+      name: FireCrackerExplosion_2
       rect:
         serializedVersion: 2
         x: 0
@@ -172,14 +172,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72f3054d11633694ba3f349d0811ae3c
-      internalID: 1233213493
+      spriteID: 56119de07252de048aeb3291790ff3f0
+      internalID: 1833463737
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_3
+      name: FireCrackerExplosion_3
       rect:
         serializedVersion: 2
         x: 50
@@ -193,8 +193,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82e0a95abc1e3d84db59eeb9b026c979
-      internalID: 627906073
+      spriteID: 85b3cf60288a46f4992307f72a923545
+      internalID: 1785081613
       vertices: []
       indices: 
       edges: []
@@ -210,10 +210,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Grass_0: 1786094512
-      Grass_2: 1233213493
-      Grass_1: -487441492
-      Grass_3: 627906073
+      FireCrackerExplosion_2: 1833463737
+      FireCrackerExplosion_3: 1785081613
+      FireCrackerExplosion_1: 1806310062
+      FireCrackerExplosion_0: 351729003
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
