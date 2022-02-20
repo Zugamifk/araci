@@ -45,8 +45,8 @@ public class Enemy : MonoBehaviour, IDamageable
         m_Health -= damage;
         if (Health < 0)
         {
+            Services.Find<DropController>().DropReward(this);
             Destroy(gameObject);
-            Services.Find<GameController>().SpawnExperienceGem(transform.position);
         }
     }
 }

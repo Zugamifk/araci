@@ -6,6 +6,26 @@ public class WaveController
 {
     float m_SpawnCounter = 0;
     WaveData.Wave m_SpawnsPerMinute;
+    
+    public void SetWaveData(WaveData data)
+    {
+        var tc = Services.Find<TimeController>();
+        foreach (var w in data.Waves)
+        {
+            switch (w.WaveType)
+            {
+                case WaveData.EWaveType.Instant:
+                    tc.ScheduleEvent(w.TimeInSeconds, _ => SpawnEnemyGroup(w));
+                    break;
+                case WaveData.EWaveType.SpawnPerMinute:
+                    tc.ScheduleEvent(w.TimeInSeconds, _ => SetSpawnWaveOverTime(w));
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    
     public void SetSpawnWaveOverTime(WaveData.Wave wave)
     {
         m_SpawnsPerMinute = wave;

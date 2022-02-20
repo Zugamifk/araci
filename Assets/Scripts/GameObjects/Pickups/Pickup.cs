@@ -9,8 +9,10 @@ public abstract class Pickup : MonoBehaviour
         if(collision.GetComponent<Character>()!=null)
         {
             PickupItem();
+            Destroy(gameObject);
         }
     }
 
     public abstract void PickupItem();
+
 }

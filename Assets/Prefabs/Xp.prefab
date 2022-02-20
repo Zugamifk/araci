@@ -137,4 +137,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Acceleration: 10
-  Value: 2
+  m_Value: 1

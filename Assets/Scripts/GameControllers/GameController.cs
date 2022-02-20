@@ -6,8 +6,6 @@ public class GameController : MonoBehaviour
 {
     [SerializeField]
     List<Area> m_EnemySpawns;
-    [SerializeField]
-    Pickup[] m_ExperienceGems;
 
     [SerializeField]
     Character m_Character;
@@ -37,22 +35,8 @@ public class GameController : MonoBehaviour
         m_Character.SetMoveSpeed(m_MoveSpeed);
         GetItem(m_Item);
 
-        var tc = Services.Find<TimeController>();
-        var wc = Services.Find<WaveController>();
-        foreach(var w in m_WaveData.Waves)
-        {
-            switch (w.WaveType)
-            {
-                case WaveData.EWaveType.Instant:
-                    tc.ScheduleEvent(w.TimeInSeconds, _ => wc.SpawnEnemyGroup(w));
-                    break;
-                case WaveData.EWaveType.SpawnPerMinute:
-                    tc.ScheduleEvent(w.TimeInSeconds, _ => wc.SetSpawnWaveOverTime(w));
-                    break;
-                default:
-                    break;
-            }
-        }
+        Services.Find<WaveController>().SetWaveData(m_WaveData);
+        Services.Find<DropController>().SetDrops(m_DropTable);
     }
 
     void Start()
@@ -66,8 +50,6 @@ public class GameController : MonoBehaviour
 
         ui.SetCurrentExperience(0);
         ui.SetLevelData(Services.Find<PlayerController>().LevelData);
-
-        GainExperience(10);
     }
 
     private void Update()
@@ -94,14 +76,6 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void SpawnExperienceGem(Vector3 position)
-    {
-        var i = Random.Range(0, m_ExperienceGems.Length);
-        var gem = Instantiate(m_ExperienceGems[i]);
-        gem.transform.position = position;
-        gem.gameObject.SetActive(true);
-    }
-
     void GetItem(Item item)
     {
         var player = Services.Find<PlayerController>();
@@ -109,15 +83,18 @@ public class GameController : MonoBehaviour
         Services.Find<UI>().AddItem(item, player.GetItemLevel(item));
     }
 
-    public void GainExperience(int amount)
+    public void LevelUp()
     {
         var player = Services.Find<PlayerController>();
-        if (player.GainExperience(amount))
-        {
-            Services.Find<UI>().ShowLevelupPanel(player, m_DropTable.GetLevelupOptions(3, player));
-            Services.Find<UI>().SetLevelData(player.LevelData);
-            Time.timeScale = 0;
-        }
+        var options = Services.Find<DropController>().GetLevelupOptions(3, player);
+        Services.Find<UI>().ShowLevelupPanel(player, options);
+        Services.Find<UI>().SetLevelData(player.LevelData);
+        Time.timeScale = 0;
+    }
+
+    public void GameOver()
+    {
+        Debug.LogError("GAME OVER!!");
     }
 
     public void SpawnEnemy(Enemy enemy)

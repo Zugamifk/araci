@@ -12,9 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4cdb6f424191e94bb0e86b8e0f4849e, type: 3}
   m_Name: DropTable
   m_EditorClassIdentifier: 
-  m_Items:
-  - {fileID: 11400000, guid: 7346fb54c4e792c4e89dd1b60a42d937, type: 2}
-  - {fileID: 11400000, guid: 5cb59996914601d42a3cd06ecd6e782c, type: 2}
+  Items:
   - {fileID: 11400000, guid: d755887c46d0d4b4090d13ad3de1ebda, type: 2}
   - {fileID: 11400000, guid: c616398452d6bc8439f5e6ea25c4b1f2, type: 2}
   - {fileID: 11400000, guid: 0ddd566036a4ea84699113ff7b29322f, type: 2}
+  - {fileID: 11400000, guid: 7346fb54c4e792c4e89dd1b60a42d937, type: 2}
+  - {fileID: 11400000, guid: 5cb59996914601d42a3cd06ecd6e782c, type: 2}
+  PickupChance: 0.1
+  Drops:
+  - Item: {fileID: 5333235636178739990, guid: 8ddf9b4ffbfc4b84a98944ddab9b837e, type: 3}
+    DropWeight: 1
+  ExperienceGems:
+  - {fileID: 279604347384319240, guid: f07f32ae7b948a6429cccf3b40848b0f, type: 3}

@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class PlayerController : IDamageable
 {
+    int m_MaxHealth;
     int m_CurrentHealth;
 
     PlayerData m_PlayerData;
@@ -91,6 +92,8 @@ public class PlayerController : IDamageable
         {
             m_Level++;
             m_LevelData = m_PlayerData.Levels[m_Level];
+
+            Services.Find<GameController>().LevelUp();
         }
         return levelledUp;
     }
@@ -99,6 +102,18 @@ public class PlayerController : IDamageable
     public void DoDamage(int damage)
     {
         m_CurrentHealth -= damage;
+        Services.Find<UI>().SetCurrentHealth(m_CurrentHealth);
+        
+        if (m_CurrentHealth <= 0)
+        {
+            Services.Find<GameController>().GameOver();
+        }
+    }
+
+    public void Heal(int amount)
+    {
+        m_CurrentHealth += amount;
+        m_CurrentHealth = Mathf.Max(m_CurrentHealth, m_PlayerData.MaxHealth);
         Services.Find<UI>().SetCurrentHealth(m_CurrentHealth);
     }
 

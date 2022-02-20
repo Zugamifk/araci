@@ -44,7 +44,6 @@ public class Ground : MonoBehaviour
 
     void AddChunk(int x, int y)
     {
-        Debug.Log($"adding chunk at {x}, {y}");
         var b = new BoundsInt(x, y, 0, m_Dimensions.x, m_Dimensions.y, 1);
         var n = m_Dimensions.x * m_Dimensions.y;
         var t = new TileBase[n];
