@@ -128,8 +128,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3508151164229339572}
+  - component: {fileID: 4301661693923578194}
+  - component: {fileID: 6361542869656653760}
   - component: {fileID: 3508151164229339568}
-  - component: {fileID: 5882368056426897887}
   - component: {fileID: 3508151164229339570}
   - component: {fileID: 3508151164229339571}
   m_Layer: 8
@@ -156,6 +157,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4301661693923578194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3508151164229339569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fda1441528ef574f89d46a50ce691dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpactAttack: {fileID: 6361542869656653760}
+  m_ExplosionAttack: {fileID: 3631016578484475075}
+--- !u!114 &6361542869656653760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3508151164229339569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a95076d8cfd86e0489131a8f7eb884f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Area: {fileID: 0}
+  m_Bullet: {fileID: 3508151164229339568}
 --- !u!114 &3508151164229339568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,19 +199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 1100233451232641140}
   m_ImpactAnimationTrigger: Explode
---- !u!114 &5882368056426897887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3508151164229339569}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f83c94fcc81db2942b567e10180be689, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Area: {fileID: 2287546382909303866}
+  m_MaxLifeTime: 3
 --- !u!58 &3508151164229339570
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -231,6 +248,7 @@ GameObject:
   - component: {fileID: 5313661224535523353}
   - component: {fileID: 2726788532204084129}
   - component: {fileID: 2287546382909303866}
+  - component: {fileID: 3631016578484475075}
   m_Layer: 8
   m_Name: Explosion
   m_TagString: Untagged
@@ -281,3 +299,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e547e1d7eb12d146a3cd7a830f154bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3631016578484475075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6126195235221632141}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a95076d8cfd86e0489131a8f7eb884f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Area: {fileID: 2287546382909303866}
+  m_Bullet: {fileID: 0}

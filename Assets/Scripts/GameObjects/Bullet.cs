@@ -3,49 +3,59 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : Attack
+public class Bullet : MonoBehaviour
 {
     [SerializeField]
     Animator m_Animator;
     [SerializeField]
     string m_ImpactAnimationTrigger;
+    [SerializeField]
+    float m_MaxLifeTime;
 
-    [NonSerialized]
-    public float Speed;
-    [NonSerialized]
-    public float LifeTime;
+    float m_Speed;
+    float m_LifeTime;
 
-    public OnImpactCallback OnImpact;
+    public event OnImpactCallback OnImpact;
 
-    public AttackInfo Attack;
+    public delegate void OnImpactCallback(Bullet bullet, Enemy enemy);
 
-    public delegate void OnImpactCallback(Bullet bullet);
+    public void Enable(float speed)
+    {
+        m_Speed = speed;
+        m_LifeTime = m_MaxLifeTime;
+    }
 
     private void Update()
     {
-        LifeTime -= Time.deltaTime;
-        if(LifeTime < 0)
+        m_LifeTime -= Time.deltaTime;
+        if(m_LifeTime < 0)
         {
-            Destroy(gameObject);
-            OnImpact?.Invoke(this);
+            OnImpact?.Invoke(this, null);
+            Destroy();
         }
 
-        transform.position += transform.up * Speed * Time.deltaTime;
+        transform.position += transform.up * m_Speed * Time.deltaTime;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         collision.otherCollider.enabled = false;
         var e = collision.gameObject.GetComponent<Enemy>();
-        Services.Find<AttackController>().DoAttack(e, Attack);
-        OnImpact?.Invoke(this);
+        OnImpact?.Invoke(this, e);
 
+        Destroy();
+    }
+
+    private void Destroy()
+    {
         if (m_Animator != null)
         {
             m_Animator.SetTrigger(m_ImpactAnimationTrigger);
-            Speed = 0;
+            m_Speed = 0;
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        } else { 
+        }
+        else
+        {
             Destroy(gameObject);
         }
     }

@@ -165,4 +165,15 @@ public class PlayerController : IDamageable
         }
         return baseInterval * multiplier;
     }
+
+    public float CalculateProjectileSpeed(float baseSpeed)
+    {
+        float multiplier = 1;
+        var spider = GetItem<Spider>();
+        if (spider != null)
+        {
+            multiplier *= spider.Multipliers[m_ItemToItemState[spider].Level];
+        }
+        return baseSpeed * multiplier;
+    }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class FireCracker : AttackItem
 {
     [SerializeField]
-    Bullet m_Bullet;
+    FireCrackerAttack m_ProjectilePrefab;
     [SerializeField]
     int m_BaseBulletDamage;
     [SerializeField]
@@ -19,25 +19,12 @@ public class FireCracker : AttackItem
         var target = ac.GetClosestTarget(this);
         if(target!=null)
         {
-            var dir = (target.position - Services.Find<Character>().transform.position).normalized;
-            Bullet.OnImpactCallback onExplode = OnExplode;
-            var attack = new AttackInfo()
-            {
-                BaseDamage = m_BaseBulletDamage,
-            };
-            ac.ShootBullet(m_Bullet, dir, attack, onExplode);
+            var pos = Services.Find<Character>().transform.position;
+            var dir = (target.position - pos).normalized;
+            var p = Instantiate(m_ProjectilePrefab);
+            p.Enable(pos, dir, 
+                new AttackInfo() { BaseDamage = m_BaseBulletDamage, BaseSpeed = 5 }, 
+                new AttackInfo() { BaseArea = m_BaseExplosionRadius, BaseDamage = m_BaseExplosionDamage });
         }
-    }
-
-    void OnExplode(Bullet bullet)
-    {
-        var attack = new AttackInfo()
-        {
-            BaseDamage = m_BaseExplosionDamage,
-            BaseArea = m_BaseExplosionRadius
-        };
-        var explosion = bullet.GetComponentInChildren<AreaAttack>();
-        explosion.Spawn(bullet.transform.position, Vector3.zero, attack);
-        explosion.enabled = true;
     }
 }

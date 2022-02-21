@@ -20,7 +20,7 @@ MonoBehaviour:
   - Description: Fireball explodes on impact
   - Description: Double fireball radius and damage
   BaseInterval: 1
-  m_Bullet: {fileID: 3508151164229339568, guid: 2514cba297475654f9ce29ccd8958435, type: 3}
+  m_ProjectilePrefab: {fileID: 4301661693923578194, guid: 2514cba297475654f9ce29ccd8958435, type: 3}
   m_BaseBulletDamage: 5
   m_BaseExplosionDamage: 5
   m_BaseExplosionRadius: 2

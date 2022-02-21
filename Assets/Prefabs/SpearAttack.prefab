@@ -80,8 +80,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4542062553143267208}
-  - component: {fileID: 4542062553143267209}
   - component: {fileID: 4542062553143267210}
+  - component: {fileID: 8445940288892869746}
   m_Layer: 8
   m_Name: SpearAttack
   m_TagString: Untagged
@@ -106,19 +106,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4542062553143267209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4542062553143266935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f83c94fcc81db2942b567e10180be689, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Area: {fileID: 5650755486122481780}
 --- !u!111 &4542062553143267210
 Animation:
   m_ObjectHideFlags: 0
@@ -135,6 +122,19 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &8445940288892869746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4542062553143266935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a95076d8cfd86e0489131a8f7eb884f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Area: {fileID: 5650755486122481780}
 --- !u!1 &4542062553766969445
 GameObject:
   m_ObjectHideFlags: 0

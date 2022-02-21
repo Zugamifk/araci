@@ -8,6 +8,11 @@ public class AreaAttackTrigger : MonoBehaviour
     public event Action<IDamageable> OnEnemyEnter;
     public event Action<IDamageable> OnEnemyStay;
 
+    public void Enable()
+    {
+        GetComponent<Collider2D>().enabled = true;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         var e = collision.GetComponent<Enemy>();

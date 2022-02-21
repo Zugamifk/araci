@@ -16,16 +16,6 @@ public class AttackController
         return radius.GetNearestTarget();
     }
 
-    public void ShootBullet(Bullet bullet, Vector3 direction, AttackInfo attack, Bullet.OnImpactCallback onImpact)
-    {
-        var b = Object.Instantiate(bullet);
-        b.Attack = attack;
-        b.Speed = 5;
-        b.LifeTime = 1;
-        b.OnImpact += onImpact;
-        b.Spawn(Services.Find<Character>().transform.position, direction, attack);
-    }
-
     public void MeleeAttack(Attack attackPrefab, Vector3 direction, AttackInfo attack)
     {
         var a = Object.Instantiate(attackPrefab);

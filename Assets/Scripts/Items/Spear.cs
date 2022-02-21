@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spear : AttackItem
 {
     [SerializeField]
-    AreaAttack m_Attack;
+    Attack m_Attack;
 
     public override void Attack(ItemState state)
     {
