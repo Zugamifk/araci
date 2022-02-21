@@ -10,6 +10,8 @@ public class FireCracker : AttackItem
     int m_BaseBulletDamage;
     [SerializeField]
     int m_BaseExplosionDamage;
+    [SerializeField]
+    float m_BaseExplosionRadius;
 
     public override void Attack(ItemState state)
     {
@@ -18,7 +20,7 @@ public class FireCracker : AttackItem
         if(target!=null)
         {
             var dir = (target.position - Services.Find<Character>().transform.position).normalized;
-            Bullet.OnImpactCallback onExplode = state.Level < 3 ? null : OnExplode;
+            Bullet.OnImpactCallback onExplode = OnExplode;
             var attack = new AttackInfo()
             {
                 BaseDamage = m_BaseBulletDamage,
@@ -29,6 +31,13 @@ public class FireCracker : AttackItem
 
     void OnExplode(Bullet bullet)
     {
-        Services.Find<AttackController>().DoExplosion(m_Explosion, bullet.transform.position);
+        var attack = new AttackInfo()
+        {
+            BaseDamage = m_BaseExplosionDamage,
+            BaseArea = m_BaseExplosionRadius
+        };
+        var explosion = bullet.GetComponentInChildren<AreaAttack>();
+        explosion.Spawn(bullet.transform.position, Vector3.zero, attack);
+        explosion.enabled = true;
     }
 }

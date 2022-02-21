@@ -32,11 +32,10 @@ public class AttackController
         a.Spawn(Services.Find<Character>().transform.position, direction, attack);
     }
 
-    public void DoExplosion(GameObject fx, Vector3 position)
+    public void DoExplosion(Attack area, Vector3 position, AttackInfo attack)
     {
-        var e = Object.Instantiate(fx);
-        e.gameObject.SetActive(true);
-        e.transform.position = position;
+        var a = Object.Instantiate(area);
+        a.Spawn(position, Vector3.up, attack);
     }
 
     public void DoAttack(IDamageable damageable, AttackInfo attack)

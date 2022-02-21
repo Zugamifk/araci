@@ -35,6 +35,7 @@ public class Bullet : Attack
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        collision.otherCollider.enabled = false;
         var e = collision.gameObject.GetComponent<Enemy>();
         Services.Find<AttackController>().DoAttack(e, Attack);
         OnImpact?.Invoke(this);
@@ -43,6 +44,7 @@ public class Bullet : Attack
         {
             m_Animator.SetTrigger(m_ImpactAnimationTrigger);
             Speed = 0;
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         } else { 
             Destroy(gameObject);
         }

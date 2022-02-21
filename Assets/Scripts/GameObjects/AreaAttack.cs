@@ -1,29 +1,26 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider2D))]
-public class AreaAttack : MonoBehaviour
+public class AreaAttack : Attack
 {
-    public event Action<IDamageable> OnEnemyEnter;
-    public event Action<IDamageable> OnEnemyStay;
+    [SerializeField]
+    AreaAttackTrigger m_Area;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnEnable()
     {
-        var e = collision.GetComponent<Enemy>();
-        if (e != null)
-        {
-            OnEnemyEnter?.Invoke(e);
-        }
+        m_Area.OnEnemyEnter += Damage;
+        m_Area.GetComponent<Collider2D>().enabled = true;
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    void Damage(IDamageable enemy)
     {
-        var e = collision.GetComponent<Enemy>();
-        if (e != null)
-        {
-            OnEnemyStay?.Invoke(e);
-        }
+        Services.Find<AttackController>().DoAttack(enemy, m_Attack);
     }
+
+    public void End()
+    {
+        Destroy(gameObject);
+    }
+
 }

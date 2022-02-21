@@ -22,5 +22,5 @@ MonoBehaviour:
   BaseInterval: 1
   m_Bullet: {fileID: 3508151164229339568, guid: 2514cba297475654f9ce29ccd8958435, type: 3}
   m_BaseBulletDamage: 5
-  m_Explosion: {fileID: 7240639476066428997, guid: 3c9252d50b930ee41831ece795704c72, type: 3}
   m_BaseExplosionDamage: 5
+  m_BaseExplosionRadius: 2
