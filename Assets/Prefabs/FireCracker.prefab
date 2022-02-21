@@ -171,6 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ImpactAttack: {fileID: 6361542869656653760}
   m_ExplosionAttack: {fileID: 3631016578484475075}
+  m_BurningAreaAttack: {fileID: 5155796764804513589, guid: 9c8a050e777a94c4fbb3558431e0c894, type: 3}
 --- !u!114 &6361542869656653760
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -23,10 +23,17 @@ public class Attack : MonoBehaviour
     public void SetAttack(AttackInfo attack)
     {
         m_Attack = attack;
-        transform.localScale = Services.Find<PlayerController>().CalculateRadius(attack.BaseArea) * Vector3.one;
+        var area = Services.Find<PlayerController>().CalculateRadius(attack.BaseArea);
+        transform.localScale = area * Vector3.one;
+
+        var ps = GetComponent<AreaEffectParticles>();
+        if(ps!=null)
+        {
+            ps.UpdateArea(area);
+        }
     }
 
-    public void Spawn(Vector3 position, Vector3 direction, AttackInfo attack)
+    public void Enable(Vector3 position, Vector3 direction, AttackInfo attack)
     {
         SetAttack(attack);
 

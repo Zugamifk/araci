@@ -20,4 +20,4 @@ MonoBehaviour:
   - Description: Fireball explodes on impact
   - Description: Double fireball radius and damage
   BaseInterval: 1
-  m_Attack: {fileID: 4542062553143267209, guid: 85a995a78e6284945aefe763920c118e, type: 3}
+  m_Attack: {fileID: 8445940288892869746, guid: 85a995a78e6284945aefe763920c118e, type: 3}

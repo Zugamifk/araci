@@ -12,6 +12,12 @@ public class FireCracker : AttackItem
     int m_BaseExplosionDamage;
     [SerializeField]
     float m_BaseExplosionRadius;
+    [SerializeField]
+    int m_BaseBurningAreaDamage;
+    [SerializeField]
+    float m_BaseBurningAreaRadius;
+    [SerializeField]
+    float m_BaseBurningAreaInterval;
 
     public override void Attack(ItemState state)
     {
@@ -24,7 +30,8 @@ public class FireCracker : AttackItem
             var p = Instantiate(m_ProjectilePrefab);
             p.Enable(pos, dir, 
                 new AttackInfo() { BaseDamage = m_BaseBulletDamage, BaseSpeed = 5 }, 
-                new AttackInfo() { BaseArea = m_BaseExplosionRadius, BaseDamage = m_BaseExplosionDamage });
+                new AttackInfo() { BaseArea = m_BaseExplosionRadius, BaseDamage = m_BaseExplosionDamage },
+                new AttackInfo() { BaseArea = m_BaseBurningAreaRadius, BaseDamage = m_BaseBurningAreaDamage, BaseInterval = m_BaseBurningAreaInterval });
         }
     }
 }

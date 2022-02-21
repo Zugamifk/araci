@@ -7,4 +7,5 @@ public class AttackInfo
     public int BaseDamage;
     public float BaseArea = 1;
     public float BaseSpeed = 1;
+    public float BaseInterval = 1;
 }

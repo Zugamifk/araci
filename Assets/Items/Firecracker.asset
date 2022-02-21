@@ -24,3 +24,5 @@ MonoBehaviour:
   m_BaseBulletDamage: 5
   m_BaseExplosionDamage: 5
   m_BaseExplosionRadius: 2
+  m_BaseBurningAreaDamage: 1
+  m_BaseBurningAreaRadius: 1

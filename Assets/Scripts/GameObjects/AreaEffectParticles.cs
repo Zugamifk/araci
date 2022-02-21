@@ -8,22 +8,24 @@ public class AreaEffectParticles : MonoBehaviour
     ParticleSystem m_Particles;
     [SerializeField]
     float m_BaseArea;
+    [SerializeField]
+    int m_BaseEmission;
     
     public void UpdateArea(float area)
     {
-        area *= m_BaseArea;
+        var radius = area*m_BaseArea;
 
         var s = m_Particles.shape;
         switch (s.shapeType)
         {
             case ParticleSystemShapeType.Circle:
-                s.radius = area;
+                s.radius = radius;
                 break;
             default:
                 break;
         }
 
         var e = m_Particles.emission;
-        e.rateOverTimeMultiplier = area;
+        e.rateOverTime = area* area* m_BaseEmission;
     }
 }

@@ -19,13 +19,13 @@ public class AttackController
     public void MeleeAttack(Attack attackPrefab, Vector3 direction, AttackInfo attack)
     {
         var a = Object.Instantiate(attackPrefab);
-        a.Spawn(Services.Find<Character>().transform.position, direction, attack);
+        a.Enable(Services.Find<Character>().transform.position, direction, attack);
     }
 
     public void DoExplosion(Attack area, Vector3 position, AttackInfo attack)
     {
         var a = Object.Instantiate(area);
-        a.Spawn(position, Vector3.up, attack);
+        a.Enable(position, Vector3.up, attack);
     }
 
     public void DoAttack(IDamageable damageable, AttackInfo attack)
