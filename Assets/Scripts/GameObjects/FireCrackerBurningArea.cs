@@ -8,6 +8,8 @@ public class FireCrackerBurningArea : MonoBehaviour
     AreaEffectParticles m_Particles;
     [SerializeField]
     AreaAttackTrigger m_Area;
+    [SerializeField]
+    CircleCollider2D m_Collider;
 
     Dictionary<Enemy, float> m_EnemyToDamageinterval = new Dictionary<Enemy, float>();
     AttackInfo m_AttackInfo;
@@ -18,6 +20,7 @@ public class FireCrackerBurningArea : MonoBehaviour
 
         var area = Services.Find<PlayerController>().CalculateRadius(attack.BaseArea);
         m_Particles.UpdateArea(area);
+        m_Collider.radius = area;
 
         m_Area.OnEnemyStay += OnEnemyStay;
 

@@ -26,3 +26,4 @@ MonoBehaviour:
   m_BaseExplosionRadius: 2
   m_BaseBurningAreaDamage: 1
   m_BaseBurningAreaRadius: 1
+  m_BaseBurningAreaInterval: 0.5

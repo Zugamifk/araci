@@ -11,12 +11,18 @@ public class WaveData : ScriptableObject
     }
 
     [System.Serializable]
+    public class EnemySpawn
+    {
+        public Enemy Enemy;
+        public float Amount;
+    }
+
+    [System.Serializable]
     public class Wave
     {
         public EWaveType WaveType;
         public Vector2Int Time;
-        public List<Enemy> Spawns = new List<Enemy>();
-        public float Amount;
+        public List<EnemySpawn> Spawns = new List<EnemySpawn>();
 
         public int TimeInSeconds => Time.x * 60 + Time.y;
     }

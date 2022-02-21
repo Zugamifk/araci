@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class WaveController
 {
-    float m_SpawnCounter = 0;
     WaveData.Wave m_SpawnsPerMinute;
+    List<float> m_SpawnTimers = new List<float>();
     
     public void SetWaveData(WaveData data)
     {
@@ -29,6 +29,7 @@ public class WaveController
     public void SetSpawnWaveOverTime(WaveData.Wave wave)
     {
         m_SpawnsPerMinute = wave;
+        m_SpawnTimers.Clear();
     }
 
     public void UpdateTime(float dt)
@@ -36,12 +37,22 @@ public class WaveController
         if (m_SpawnsPerMinute != null)
         {
             var gc = Services.Find<GameController>();
-            m_SpawnCounter += dt * m_SpawnsPerMinute.Amount / 60;
-            while (m_SpawnCounter >= 1)
+            for(int i=0;i<m_SpawnsPerMinute.Spawns.Count;i++)
             {
-                var e = m_SpawnsPerMinute.Spawns[Random.Range(0, m_SpawnsPerMinute.Spawns.Count)];
-                gc.SpawnEnemy(e);
-                m_SpawnCounter--;
+                if(i >= m_SpawnTimers.Count)
+                {
+                    m_SpawnTimers.Add(0);
+                }
+
+                var s = m_SpawnsPerMinute.Spawns[i];
+                var t = m_SpawnTimers[i];
+                t += dt * s.Amount / 60; ;
+                while(t > 0)
+                {
+                    gc.SpawnEnemy(s.Enemy);
+                    t--;
+                }
+                m_SpawnTimers[i] = t;
             }
         }
     }
@@ -49,10 +60,13 @@ public class WaveController
     public void SpawnEnemyGroup(WaveData.Wave wave)
     {
         var gc = Services.Find<GameController>();
-        for(int n=0;n<wave.Amount;n++)
+        for (int i = 0; i < wave.Spawns.Count; i++)
         {
-            var e = wave.Spawns[Random.Range(0, wave.Spawns.Count)];
-            gc.SpawnEnemy(e);
+            var s = wave.Spawns[i];
+            for (int n = 0; n < s.Amount; n++)
+            {
+                gc.SpawnEnemy(s.Enemy);
+            }
         }
     }
 }
