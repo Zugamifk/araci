@@ -4908,3 +4908,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Particles: {fileID: 3273794672990848010}
   m_Area: {fileID: 7354250203375424530}
+  m_Collider: {fileID: 3487162083998290818}
