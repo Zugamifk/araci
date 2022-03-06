@@ -49,18 +49,36 @@ namespace Editors.Spriteanimation
             GameObject.DestroyImmediate(inst);
         }
 
-        public void ApplySpriteAnimationChanges(GameObject root, string name, Texture2D texture, int frameCount, int rowCount, float time)
+        public void ApplySpriteAnimationChanges(GameObject prefab, string name, Texture2D texture, int frameCount, int rowCount, float time, bool loop)
         {
             ImportSprite(texture, frameCount, rowCount);
 
-            var anim = root.GetComponent<Animator>();
+            var anim = prefab.GetComponent<Animator>();
             var cont = anim.runtimeAnimatorController;
             var clip = cont.animationClips[0];
 
             var sprites = AssetDatabase.LoadAllAssetsAtPath(AssetDatabase.GetAssetPath(texture)).OfType<Sprite>().ToArray();
             CreateAnimation(clip, sprites, time);
+            if(!loop)
+            {
+                if (!prefab.GetComponent<AnimationEvents>())
+                {
+                    var inst = (GameObject)PrefabUtility.InstantiatePrefab(prefab);
+                    var ae = inst.AddComponent<AnimationEvents>();
+                    ae.Root = inst;
+                    PrefabUtility.ApplyPrefabInstance(inst, InteractionMode.UserAction);
+                    GameObject.DestroyImmediate(inst);
+                }
 
-            RenameAssets(root, name);
+                var evt = new AnimationEvent()
+                {
+                    time = clip.length,
+                    functionName = "Destroy"
+                };
+                AnimationUtility.SetAnimationEvents(clip, new[] { evt });
+            }
+
+            RenameAssets(prefab, name);
         }
 
         public void DeleteAssets(GameObject prefab)

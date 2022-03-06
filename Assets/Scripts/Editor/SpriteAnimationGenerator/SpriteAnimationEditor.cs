@@ -80,6 +80,7 @@ namespace Editors.Spriteanimation
             var frameCount = t.Q<IntegerField>("frameCount");
             var rowCount = t.Q<IntegerField>("rowCount");
             var time = t.Q<FloatField>("time");
+            var loop = t.Q<Toggle>("loop");
             var apply = t.Q<Button>("apply");
             apply.clicked += () => m_PrefabController.ApplySpriteAnimationChanges(
                     (GameObject)m_RootObjectField.value,
@@ -87,7 +88,8 @@ namespace Editors.Spriteanimation
                     (Texture2D)texture.value,
                     frameCount.value,
                     rowCount.value,
-                    time.value
+                    time.value,
+                    loop.value
                 );
             var delete = t.Q<Button>("delete");
             delete.clicked += () =>

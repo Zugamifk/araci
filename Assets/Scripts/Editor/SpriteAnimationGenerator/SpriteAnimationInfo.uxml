@@ -10,6 +10,7 @@
     <e:IntegerField name="frameCount" label="Frame Count" />
     <e:IntegerField name="rowCount" label="Frames per Row" />
     <e:FloatField name="time" label="Time" />
+    <Toggle name="loop" label="Loop"/>
     <Button text="Apply" name="apply" />
     <Button text="Delete" name="delete" />
 </UXML>

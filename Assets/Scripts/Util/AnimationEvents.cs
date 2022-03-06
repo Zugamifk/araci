@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class AnimationEvents : MonoBehaviour
 {
-    [SerializeField]
-    GameObject m_Root;
+    public GameObject Root;
 
     public void Destroy()
     {
-        Destroy(m_Root);
+        Destroy(Root);
     }
 }
