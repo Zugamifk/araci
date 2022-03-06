@@ -8,8 +8,6 @@ public class Bullet : MonoBehaviour
     [SerializeField]
     Animator m_Animator;
     [SerializeField]
-    string m_ImpactAnimationTrigger;
-    [SerializeField]
     float m_MaxLifeTime;
 
     float m_Speed;
@@ -31,7 +29,7 @@ public class Bullet : MonoBehaviour
         if(m_LifeTime < 0)
         {
             OnImpact?.Invoke(this, null);
-            Destroy();
+            Destroy(gameObject);
         }
 
         transform.position += transform.up * m_Speed * Time.deltaTime;
@@ -48,15 +46,6 @@ public class Bullet : MonoBehaviour
 
     private void Destroy()
     {
-        if (m_Animator != null)
-        {
-            m_Animator.SetTrigger(m_ImpactAnimationTrigger);
-            m_Speed = 0;
-            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 }

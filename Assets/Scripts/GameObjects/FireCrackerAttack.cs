@@ -25,6 +25,7 @@ public class FireCrackerAttack : MonoBehaviour
 
     void OnImpact(Bullet bullet, Enemy enemy)
     {
+        Debug.LogError("Impact");
         m_ExplosionAttack.enabled = true;
 
         var pos = bullet.transform.position;

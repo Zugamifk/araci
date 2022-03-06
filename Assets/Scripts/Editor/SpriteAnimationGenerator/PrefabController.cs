@@ -76,7 +76,7 @@ namespace Editors.Spriteanimation
 
                 var evt = new AnimationEvent()
                 {
-                    time = clip.length,
+                    time = clip.length- time / frameCount,
                     functionName = "Destroy"
                 };
                 AnimationUtility.SetAnimationEvents(clip, new[] { evt });
