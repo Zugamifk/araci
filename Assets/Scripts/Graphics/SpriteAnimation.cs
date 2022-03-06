@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class SpriteAnimation : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //[HideInInspector]
+    public Texture2D Texture;
+    //[HideInInspector]
+    public int FrameCount;
+    //[HideInInspector]
+    public int RowCount;
+    //[HideInInspector]
+    public AnimationClip AnimationClip;
 }

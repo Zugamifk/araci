@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEditor.UIElements;
 using System.IO;
+using System.Linq;
 
 namespace Editors.Spriteanimation
 {
@@ -73,14 +74,31 @@ namespace Editors.Spriteanimation
         {
             var info = rootVisualElement.Q("infoRoot");
             info.Clear();
+            
+            var prefab = (GameObject)m_RootObjectField.value;
+            
             var t = m_SpriteAnimationTree.Instantiate();
+            
             var name = t.Q<TextField>("name");
+            name.value = prefab.name;
+
+            var sa = prefab.GetComponent<SpriteAnimation>();
             var texture = t.Q<ObjectField>("sprite");
             texture.objectType = typeof(Texture2D);
+            texture.value = sa.Texture;
+
             var frameCount = t.Q<IntegerField>("frameCount");
             var rowCount = t.Q<IntegerField>("rowCount");
             var time = t.Q<FloatField>("time");
             var loop = t.Q<Toggle>("loop");
+            if (sa.AnimationClip != null)
+            {
+                frameCount.value = sa.FrameCount;
+                rowCount.value = sa.RowCount;
+                time.value = sa.AnimationClip.length;
+                loop.value = sa.AnimationClip.events.All(e => e.functionName != "Destroy");
+            }
+
             var apply = t.Q<Button>("apply");
             apply.clicked += () => m_PrefabController.ApplySpriteAnimationChanges(
                     (GameObject)m_RootObjectField.value,
