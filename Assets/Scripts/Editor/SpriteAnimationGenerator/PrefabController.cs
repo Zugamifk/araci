@@ -127,7 +127,8 @@ namespace Editors.Spriteanimation
             }
 
             importer.spritesheet = mt;
-            AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceUpdate);
+            EditorUtility.SetDirty(importer);
+            importer.SaveAndReimport();
         }
 
         void CreateAnimation(AnimationClip clip, Sprite[] sprites, float time)
