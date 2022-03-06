@@ -34,11 +34,15 @@ namespace Editors.Spriteanimation
 
             var anim = inst.AddComponent<Animator>();
             var clip = new AnimationClip();
+
             var path = Path.Combine(k_AnimationAssetsPath, inst.name + ".controller");
             var cont = AnimatorController.CreateAnimatorControllerAtPathWithClip(path, clip);
+            AssetDatabase.AddObjectToAsset(clip, cont);
             anim.runtimeAnimatorController = cont;
+
             var view = new GameObject("View");
             view.transform.SetParent(inst.transform);
+
             var sprite = view.AddComponent<SpriteRenderer>();
 
             PrefabUtility.ApplyPrefabInstance(inst, InteractionMode.UserAction);
@@ -57,6 +61,12 @@ namespace Editors.Spriteanimation
             CreateAnimation(clip, sprites, time);
 
             RenameAssets(root, name);
+        }
+
+        public void DeleteAssets(GameObject prefab)
+        {
+            AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(prefab.GetComponent<Animator>().runtimeAnimatorController));
+            AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(prefab));
         }
 
         void ImportSprite(Texture2D texture, int frameCount, int rowCount)
@@ -127,5 +137,6 @@ namespace Editors.Spriteanimation
             AssetDatabase.RenameAsset(AssetDatabase.GetAssetPath(anim), name);
             AssetDatabase.Refresh();
         }
+
     }
 }

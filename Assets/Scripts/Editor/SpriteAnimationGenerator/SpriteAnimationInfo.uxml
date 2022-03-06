@@ -11,4 +11,5 @@
     <e:IntegerField name="rowCount" label="Frames per Row" />
     <e:FloatField name="time" label="Time" />
     <Button text="Apply" name="apply" />
+    <Button text="Delete" name="delete" />
 </UXML>

@@ -89,6 +89,12 @@ namespace Editors.Spriteanimation
                     rowCount.value,
                     time.value
                 );
+            var delete = t.Q<Button>("delete");
+            delete.clicked += () =>
+            {
+                m_PrefabController.DeleteAssets((GameObject)m_RootObjectField.value);
+                m_RootObjectField.value = null;
+            };
             info.Add(t);
         }
 
