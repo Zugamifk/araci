@@ -2,36 +2,52 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEditor.UIElements;
-
+using System.Collections.Generic;
 
 public class LevelEditorWindow : EditorWindow
 {
-    [MenuItem("Window/UI Toolkit/LevelEditorWindow")]
+    [MenuItem("Window/Level Editor")]
     public static void ShowExample()
     {
         LevelEditorWindow wnd = GetWindow<LevelEditorWindow>();
-        wnd.titleContent = new GUIContent("LevelEditorWindow");
+        wnd.titleContent = new GUIContent("Level Editor");
     }
+
+    List<Button> m_Buttons = new List<Button>();
 
     public void CreateGUI()
     {
         // Each editor window contains a root VisualElement object
         VisualElement root = rootVisualElement;
 
-        // VisualElements objects can contain other VisualElement following a tree hierarchy.
-        VisualElement label = new Label("Hello World! From C#");
-        root.Add(label);
-
         // Import UXML
         var visualTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Scripts/Editor/LevelGenerator/LevelEditorWindow.uxml");
         VisualElement labelFromUXML = visualTree.Instantiate();
         root.Add(labelFromUXML);
 
-        // A stylesheet can be added to a VisualElement.
-        // The style will be applied to the VisualElement and all of its children.
-        var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Scripts/Editor/LevelGenerator/LevelEditorWindow.uss");
-        VisualElement labelWithStyle = new Label("Hello World! With Style");
-        labelWithStyle.styleSheets.Add(styleSheet);
-        root.Add(labelWithStyle);
+        m_Buttons.Clear();
+
+        var tilesbutton = root.Q<ToolbarButton>("tiles");
+        tilesbutton.clicked += () => ClickedToolbarButton(0);
+        m_Buttons.Add(tilesbutton);
+
+        var levelbutton = root.Q<ToolbarButton>("level");
+        levelbutton.clicked += () => ClickedToolbarButton(1);
+        m_Buttons.Add(levelbutton);
+
+        ClickedToolbarButton(0);
+    }
+
+    void ClickedToolbarButton(int index)
+    {
+        for(int i=0;i<m_Buttons.Count;i++)
+        {
+            m_Buttons[i].SetEnabled(index != i);
+        }
+    }
+
+    void ShowTilesTab()
+    {
+
     }
 }

@@ -5,8 +5,5 @@
     xmlns:e="UnityEditor.UIElements"
     xsi:noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd"
 >
-    <e:Toolbar>
-        <e:ToolbarButton text="Tiles" name="tiles" />
-        <e:ToolbarButton text="Level" name="level" />
-    </e:Toolbar>
+    <ListView name="groundSprites" />
 </UXML>
