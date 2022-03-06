@@ -64,7 +64,6 @@ namespace Editors.Spriteanimation
             var b = new Button(() => {
                 var go = (GameObject)m_RootObjectField.value;
                 m_PrefabController.ConfigureNewSpriteAnimation(go);
-                m_RootObjectField.value = go;
             });
             b.text = "Configure New Sprite Animation";
             info.Add(b);
@@ -75,10 +74,19 @@ namespace Editors.Spriteanimation
             var info = rootVisualElement.Q("infoRoot");
             info.Clear();
             var t = m_SpriteAnimationTree.Instantiate();
-            var sprite = t.Q<ObjectField>("sprite");
-            sprite.objectType = typeof(Sprite);
+            var texture = t.Q<ObjectField>("sprite");
+            texture.objectType = typeof(Texture2D);
+            var frameCount = t.Q<IntegerField>("frameCount");
+            var rowCount = t.Q<IntegerField>("rowCount");
+            var time = t.Q<FloatField>("time");
             var apply = t.Q<Button>("apply");
-            apply.clicked += m_PrefabController.ApplySpriteAnimationChanges;
+            apply.clicked += () => m_PrefabController.ApplySpriteAnimationChanges(
+                    (GameObject)m_RootObjectField.value,
+                    (Texture2D)texture.value,
+                    frameCount.value,
+                    rowCount.value,
+                    time.value
+                );
             info.Add(t);
         }
 

@@ -6,6 +6,8 @@
     xsi:noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd"
 >
     <e:ObjectField name="sprite" />
-    <e:IntegerField name="count" label="Count" />
+    <e:IntegerField name="frameCount" label="Frame Count" />
+    <e:IntegerField name="rowCount" label="Frames per Row" />
+    <e:FloatField name="time" label="Time" />
     <Button text="Apply" name="apply" />
 </UXML>
