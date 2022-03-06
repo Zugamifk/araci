@@ -5,6 +5,7 @@
     xmlns:e="UnityEditor.UIElements"
     xsi:noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd"
 >
+    <TextField name="name" label="Name"/>
     <e:ObjectField name="sprite" />
     <e:IntegerField name="frameCount" label="Frame Count" />
     <e:IntegerField name="rowCount" label="Frames per Row" />

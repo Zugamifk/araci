@@ -19,30 +19,33 @@ namespace Editors.Spriteanimation
             var go = new GameObject(name);
             var assetPath = Path.Combine(k_SpriteAnimationAssetsPath, name + ".prefab");
             assetPath = AssetDatabase.GenerateUniqueAssetPath(assetPath);
-            PrefabUtility.SaveAsPrefabAssetAndConnect(go, assetPath, InteractionMode.UserAction);
+            var prefab = PrefabUtility.SaveAsPrefabAssetAndConnect(go, assetPath, InteractionMode.UserAction);
+            GameObject.DestroyImmediate(go);
 
-            ConfigureNewSpriteAnimation(go);
+            ConfigureNewSpriteAnimation(prefab);
 
-            return go;
+            return prefab;
         }
 
-        public void ConfigureNewSpriteAnimation(GameObject root)
+        public void ConfigureNewSpriteAnimation(GameObject prefab)
         {
-            root.AddComponent<SpriteAnimation>();
+            var inst = (GameObject)PrefabUtility.InstantiatePrefab(prefab);
+            inst.AddComponent<SpriteAnimation>();
 
-            var anim = root.AddComponent<Animator>();
+            var anim = inst.AddComponent<Animator>();
             var clip = new AnimationClip();
-            var path = Path.Combine(k_AnimationAssetsPath, root.name + ".controller");
+            var path = Path.Combine(k_AnimationAssetsPath, inst.name + ".controller");
             var cont = AnimatorController.CreateAnimatorControllerAtPathWithClip(path, clip);
             anim.runtimeAnimatorController = cont;
             var view = new GameObject("View");
-            view.transform.SetParent(root.transform);
+            view.transform.SetParent(inst.transform);
             var sprite = view.AddComponent<SpriteRenderer>();
 
-            PrefabUtility.ApplyPrefabInstance(root, InteractionMode.UserAction);
+            PrefabUtility.ApplyPrefabInstance(inst, InteractionMode.UserAction);
+            GameObject.DestroyImmediate(inst);
         }
 
-        public void ApplySpriteAnimationChanges(GameObject root, Texture2D texture, int frameCount, int rowCount, float time)
+        public void ApplySpriteAnimationChanges(GameObject root, string name, Texture2D texture, int frameCount, int rowCount, float time)
         {
             ImportSprite(texture, frameCount, rowCount);
 
@@ -52,6 +55,8 @@ namespace Editors.Spriteanimation
 
             var sprites = AssetDatabase.LoadAllAssetsAtPath(AssetDatabase.GetAssetPath(texture)).OfType<Sprite>().ToArray();
             CreateAnimation(clip, sprites, time);
+
+            RenameAssets(root, name);
         }
 
         void ImportSprite(Texture2D texture, int frameCount, int rowCount)
@@ -73,7 +78,7 @@ namespace Editors.Spriteanimation
 
             var tex = AssetDatabase.LoadAssetAtPath<Texture2D>(path);
             var w = tex.width / rowCount;
-            var h = tex.height / Mathf.CeilToInt(frameCount / rowCount);
+            var h = tex.height / Mathf.CeilToInt(frameCount / (float)rowCount);
             var mt = new SpriteMetaData[frameCount];
             for (int i = 0; i < frameCount; i++)
             {
@@ -113,6 +118,14 @@ namespace Editors.Spriteanimation
             }
 
             AnimationUtility.SetObjectReferenceCurve(clip, ecb, frames);
+        }
+
+        void RenameAssets(GameObject root, string name)
+        {
+            AssetDatabase.RenameAsset(AssetDatabase.GetAssetPath(root), name);
+            var anim = root.GetComponent<Animator>().runtimeAnimatorController;
+            AssetDatabase.RenameAsset(AssetDatabase.GetAssetPath(anim), name);
+            AssetDatabase.Refresh();
         }
     }
 }

@@ -74,6 +74,7 @@ namespace Editors.Spriteanimation
             var info = rootVisualElement.Q("infoRoot");
             info.Clear();
             var t = m_SpriteAnimationTree.Instantiate();
+            var name = t.Q<TextField>("name");
             var texture = t.Q<ObjectField>("sprite");
             texture.objectType = typeof(Texture2D);
             var frameCount = t.Q<IntegerField>("frameCount");
@@ -82,6 +83,7 @@ namespace Editors.Spriteanimation
             var apply = t.Q<Button>("apply");
             apply.clicked += () => m_PrefabController.ApplySpriteAnimationChanges(
                     (GameObject)m_RootObjectField.value,
+                    name.value,
                     (Texture2D)texture.value,
                     frameCount.value,
                     rowCount.value,
