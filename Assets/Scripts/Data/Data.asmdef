@@ -1,0 +1,19 @@
+{
+    "name": "Data",
+    "rootNamespace": "",
+    "references": [
+        "GUID:f1eacd49830892c4e9c9d11bbf989cc6",
+        "GUID:69560c3be3d56564da3ecb875d90f45b",
+        "GUID:5bdfb4d1481bb094a868ff553b21d884",
+        "GUID:52167038694a37341923db5378a4126a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

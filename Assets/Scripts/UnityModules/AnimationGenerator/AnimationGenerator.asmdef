@@ -1,0 +1,16 @@
+{
+    "name": "AnimationGenerator",
+    "rootNamespace": "AnimationGenerator",
+    "references": [
+        "GUID:52167038694a37341923db5378a4126a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 904bf77cfdd4f474e9bbf4c9cea50734, type: 3}
+  m_Name: DemoMessages
+  m_EditorClassIdentifier: 
+  Messages:
+  - Welcome to the demo!
+  - In the Update loop, the View updates according to the model
+  - The model contains all the important state of the game
+  - The ViewModel is a readonly version of the model that the View has access to
+  - Commands are used to modify the model
+  - The messages are stored in a scriptable object
+  - Pressing the button sends a command to increment the current message index and
+    load the next message from data into the model

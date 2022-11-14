@@ -1,0 +1,22 @@
+{
+    "name": "Demo",
+    "rootNamespace": "Demo",
+    "references": [
+        "GUID:5de6134c1c064b04dabbf980177af609",
+        "GUID:de33c2b004740cc418ff566cc77be079",
+        "GUID:52167038694a37341923db5378a4126a",
+        "GUID:eb0fbfe5148c2b84d8e9d35051e16c98",
+        "GUID:69560c3be3d56564da3ecb875d90f45b",
+        "GUID:f1eacd49830892c4e9c9d11bbf989cc6",
+        "GUID:d2dbe21ee0e45dd4d9458d4fe5bec48f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
