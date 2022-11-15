@@ -8,9 +8,9 @@ public class SpriteImporter : AssetPostprocessor
     {
         var importer = assetImporter as TextureImporter;
 
-        //importer.spritePixelsPerUnit = 32;
+        importer.spritePixelsPerUnit = 32;
         importer.textureCompression = TextureImporterCompression.Uncompressed;
-        //importer.spriteImportMode = SpriteImportMode.Multiple;
-        //importer.filterMode = FilterMode.Point;
+        importer.spriteImportMode = SpriteImportMode.Multiple;
+        importer.filterMode = FilterMode.Point;
     }
 }
