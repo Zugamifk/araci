@@ -13,11 +13,17 @@ public class Character : MonoBehaviour, IModelView<ICharacterModel>
     {
         _identifiable = GetComponent<Identifiable>();
         _identifiable.Id = model.Id;
+        UpdatePosition();
     }
 
     void Update()
     {
+        UpdatePosition();
+    }
+
+    void UpdatePosition()
+    {
         var movement = Game.Model.Movement.GetItem(_identifiable.Id);
-        transform.position = movement.Position;
+        Map.Instance.PositionObject(movement, transform);
     }
 }
