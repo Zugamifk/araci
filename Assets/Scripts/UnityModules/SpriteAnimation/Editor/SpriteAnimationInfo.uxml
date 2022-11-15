@@ -1,17 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<UXML
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns="UnityEngine.UIElements"
-    xmlns:e="UnityEditor.UIElements"
-    xsi:noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd"
->
-    <TextField name="name" label="Name"/>
-    <e:ObjectField name="sprite" />
-    <e:Vector2IntField label="Dimensions" name="dimensions" />
-    <e:IntegerField label="Start Index" name="startIndex" />
-    <e:IntegerField label="Frame Count" name="frameCount" />
-    <e:FloatField name="time" label="Time" />
-    <Toggle name="loop" label="Loop"/>
-    <Button text="Apply" name="apply" />
-    <Button text="Delete" name="delete" />
-</UXML>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="UnityEngine.UIElements" e="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Scripts/UnityModules/SpriteAnimation/Editor/SpriteAnimationEditor.uss?fileID=7433441132597879392&amp;guid=1c18ff0d1e61b8a4fbfeabfc78a34306&amp;type=3#SpriteAnimationEditor" />
+    <ui:TextField name="name" label="Name" />
+    <uie:ObjectField name="sprite" />
+    <uie:Vector2IntField label="Dimensions" name="dimensions" />
+    <uie:IntegerField label="Start Index" name="startIndex" />
+    <uie:IntegerField label="Frame Count" name="frameCount" />
+    <uie:FloatField name="time" label="Time" />
+    <ui:Toggle name="loop" label="Loop" />
+    <ui:Button text="Apply" name="apply" />
+    <ui:Button text="Delete" name="delete" />
+</ui:UXML>

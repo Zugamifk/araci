@@ -7,7 +7,9 @@ using System.Linq;
 
 public class SpriteAnimationEditor : EditorWindow
 {
-
+    const string EDITOR_UXML = "Assets/Scripts/UnityModules/SpriteAnimation/Editor/SpriteAnimationEditor.uxml";
+    const string INFO_UXML = "Assets/Scripts/UnityModules/SpriteAnimation/Editor/SpriteAnimationInfo.uxml";
+    
     [MenuItem("Window/Sprite Animation Editor")]
     public static void ShowExample()
     {
@@ -31,11 +33,11 @@ public class SpriteAnimationEditor : EditorWindow
         VisualElement root = rootVisualElement;
 
         // Import UXML
-        var visualTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Scripts/Animation/Editor/SpriteAnimationEditor.uxml");
+        var visualTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(EDITOR_UXML);
         VisualElement labelFromUXML = visualTree.Instantiate();
         root.Add(labelFromUXML);
 
-        m_SpriteAnimationTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Scripts/Animation/Editor/SpriteAnimationInfo.uxml");
+        m_SpriteAnimationTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(INFO_UXML);
 
         // setup elements
         m_RootObjectField = root.Query<ObjectField>("rootObject");

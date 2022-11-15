@@ -1,11 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<UXML
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns="UnityEngine.UIElements"
-    xmlns:e="UnityEditor.UIElements"
-    xsi:noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd"
->
-    <Label text="Animation Generator" />
-    <e:ObjectField name="rootObject" />
-    <VisualElement name="infoRoot" />
-</UXML>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="UnityEngine.UIElements" e="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Label text="Animation Generator" />
+    <uie:ObjectField name="rootObject" />
+    <ui:VisualElement name="infoRoot" />
+</ui:UXML>
