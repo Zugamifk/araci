@@ -7,5 +7,5 @@ public class CharacterModel : ICharacterModel
 {
     public Guid Id { get; set; }
     public string Key { get; set; }
-    public float MoveSpeed { get; set; }
+    public float MoveSpeed { get; set; } = 10;
 }
