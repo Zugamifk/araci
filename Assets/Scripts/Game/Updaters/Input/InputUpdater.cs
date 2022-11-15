@@ -13,7 +13,7 @@ public class InputUpdater : IUpdater
     {
         _inputStateContext = new();
         // put start state here
-        _inputStateMachine = new StateMachine(new InactiveState() { Context = _inputStateContext });
+        _inputStateMachine = new StateMachine(new PlayerControlState() { Context = _inputStateContext });
     }
 
     public void Update(GameModel model)

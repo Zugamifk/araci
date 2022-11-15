@@ -6,6 +6,9 @@ using System;
 
 public class GameModel : IGameModel
 {
+    public IdentifiableCollection<MovementModel> Movement { get; } = new();
+    public IdentifiableCollection<CharacterModel> Characters { get; } = new();
+    public PlayerModel Player { get; } = new();
     public InputModel Input { get; } = new();
     public TimeModel TimeModel = new TimeModel();
     public Dictionary<Type, object> TypeToModel = new();
@@ -47,6 +50,12 @@ public class GameModel : IGameModel
     #region IGameModel
     ITimeModel IGameModel.Time => TimeModel;
     IInputModel IGameModel.Input => Input;
+
+    IIdentifiableLookup<IMovementModel> IGameModel.Movement => Movement;
+
+    IIdentifiableLookup<ICharacterModel> IGameModel.Characters => Characters;
+
+    IPlayerModel IGameModel.Player => Player;
     #endregion
 
 }

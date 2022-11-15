@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bde4d0a3ab42922419d86f9872f044b1, type: 3}
-  m_Name: DataReferences
+  m_Script: {fileID: 11500000, guid: 4e58fa61701273b4a915b424fca80a3c, type: 3}
+  m_Name: Player
   m_EditorClassIdentifier: 
-  _references:
-  - {fileID: 11400000, guid: 2803dd4d6edb7ed44a39c817701ff3af, type: 2}
+  _prefab: {fileID: 2684019793343543044, guid: 016ea236312ee5a43864013010b22061, type: 3}
