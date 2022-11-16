@@ -24,10 +24,9 @@ public class PlayerControlState : InputState
         {
             movement += Vector2.right;
         }
-        if(movement!=Vector2.zero)
-        {
-            Game.Do(new MoveCharacter(Game.Model.Player.Id, movement));
-        }
+
+        Game.Do(new MoveCharacter(Game.Model.Player.Id, movement, Space.World));
+        
         return this;
     }
 }
