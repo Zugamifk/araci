@@ -16,6 +16,11 @@ public class Map : MonoBehaviour
         Instance = this;
     }
 
+    public Vector2 GetGridPosition(Vector2 worldPosition)
+    {
+        return _tilemap.LocalToCellInterpolated(worldPosition);
+    }
+
     public void PositionObject(IMovementModel model, Transform root)
     {
         root.localPosition = _tilemap.CellToLocalInterpolated(model.Position);
