@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf87ec571bfd7214aba8c68af55197ab, type: 3}
-  m_Name: CharacterCollection
+  m_Script: {fileID: 11500000, guid: 4e58fa61701273b4a915b424fca80a3c, type: 3}
+  m_Name: Enemy
   m_EditorClassIdentifier: 
-  _characters:
-  - {fileID: 11400000, guid: cf7324939fbd7974ab4c1b1f690ed688, type: 2}
-  - {fileID: 11400000, guid: b00244065c582b749a3fa938e6a49aaf, type: 2}
+  _prefab: {fileID: 2684019793343543044, guid: 2a434083348faba4f90efcf141687157, type: 3}
