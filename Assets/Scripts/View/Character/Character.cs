@@ -8,6 +8,8 @@ public class Character : MonoBehaviour, IModelView<ICharacterModel>
 {
     [SerializeField]
     Transform _viewRoot;
+    [SerializeField]
+    Animator _animator;
 
     public Guid Id => _identifiable.Id;
     Identifiable _identifiable;
@@ -38,9 +40,24 @@ public class Character : MonoBehaviour, IModelView<ICharacterModel>
         var lastPosition = transform.position;
         Map.Instance.MoveObject(movement, transform);
         var newPosition = transform.position;
-        var side = (newPosition - lastPosition).x;
-        var angle = side < 0 ? 180 : 0;
-        _viewRoot.transform.localRotation = Quaternion.Euler(0, angle, 0);
+
+        var step = newPosition - lastPosition;
+        if(Mathf.Approximately(step.magnitude, 0))
+        {
+            _animator.SetBool("Walking", false);
+            return;
+        } else
+        {
+            _animator.SetBool("Walking", true);
+        }
+
+        var side = step.x;
+        if (!Mathf.Approximately(side, 0))
+        {
+            var angle = side < 0 ? 180 : 0;
+            _viewRoot.transform.localRotation = Quaternion.Euler(0, angle, 0);
+        }
+
 
         Game.Do(new UpdatePosition(_identifiable.Id, transform.position));
     }

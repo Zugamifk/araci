@@ -87,6 +87,8 @@ public class PrefabController
             AnimationUtility.SetAnimationEvents(clip, new[] { evt });
         }
 
+        clip.wrapMode = loop ? WrapMode.Loop : WrapMode.Once;
+
         PrefabUtility.ApplyPrefabInstance(inst, InteractionMode.UserAction);
         GameObject.DestroyImmediate(inst);
 
