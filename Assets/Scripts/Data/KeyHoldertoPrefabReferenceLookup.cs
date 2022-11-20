@@ -9,6 +9,7 @@ public abstract class KeyHoldertoPrefabReferenceLookup<TKeyHolder, TReference> :
     Dictionary<string, TReference> _nameToPrefab = new Dictionary<string, TReference>();
 
     public GameObject GetPrefab(string name) => _nameToPrefab[name].Prefab;
+    public TReference Get(string name) => _nameToPrefab[name];
     public TReference this[string name] => _nameToPrefab[name];
 
     protected virtual void OnEnable()

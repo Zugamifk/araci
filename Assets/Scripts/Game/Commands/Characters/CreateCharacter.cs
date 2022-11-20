@@ -26,10 +26,12 @@ public class CreateCharacter : ICommand
         };
         model.Movement.AddItem(movement);
 
+        var data = DataService.GetData<CharacterDataCollection>().Get(_key);
         var character = new CharacterModel()
         {
             Id = _id,
             Key = _key,
+            MoveSpeed = data.MoveSpeed
         };
         model.Characters.AddItem(character);
     }

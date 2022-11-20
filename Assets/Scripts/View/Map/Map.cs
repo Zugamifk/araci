@@ -26,7 +26,7 @@ public class Map : MonoBehaviour
         root.localPosition = _tilemap.CellToLocalInterpolated(model.Position);
     }
 
-    public void MoveObject(IMovementModel model, Transform root)
+    public void MoveObject(IMovementModel model, Rigidbody2D rigidBody)
     {
         var step = model.DesiredMove;
         switch (model.MovementSpace)
@@ -41,7 +41,7 @@ public class Map : MonoBehaviour
             default:
                 break;
         }
-        root.localPosition += (Vector3)step;
+        rigidBody.MovePosition((Vector2)rigidBody.transform.position + step);
     }
 
 }

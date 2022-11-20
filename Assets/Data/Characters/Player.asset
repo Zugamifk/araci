@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   _prefab: {fileID: 2684019793343543044, guid: 016ea236312ee5a43864013010b22061, type: 3}
+  _name: Player
+  _moveSpeed: 25

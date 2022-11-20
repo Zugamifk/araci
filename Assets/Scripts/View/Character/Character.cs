@@ -13,6 +13,7 @@ public class Character : MonoBehaviour, IModelView<ICharacterModel>
 
     public Guid Id => _identifiable.Id;
     Identifiable _identifiable;
+    Rigidbody2D _rigidBody;
 
     public ICharacterModel GetModel() => Game.Model.Characters.GetItem(_identifiable.Id);
 
@@ -20,6 +21,7 @@ public class Character : MonoBehaviour, IModelView<ICharacterModel>
     {
         _identifiable = GetComponent<Identifiable>();
         _identifiable.Id = model.Id;
+        _rigidBody = GetComponent<Rigidbody2D>();
         UpdatePosition();
     }
 
@@ -38,7 +40,7 @@ public class Character : MonoBehaviour, IModelView<ICharacterModel>
     {
         var movement = Game.Model.Movement.GetItem(_identifiable.Id);
         var lastPosition = transform.position;
-        Map.Instance.MoveObject(movement, transform);
+        Map.Instance.MoveObject(movement, _rigidBody);
         var newPosition = transform.position;
 
         var step = newPosition - lastPosition;
