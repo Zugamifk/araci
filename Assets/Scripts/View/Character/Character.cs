@@ -14,6 +14,7 @@ public class Character : MonoBehaviour, IModelView<ICharacterModel>
     public Guid Id => _identifiable.Id;
     Identifiable _identifiable;
     Rigidbody2D _rigidBody;
+    Vector3 _lastPosition;
 
     public ICharacterModel GetModel() => Game.Model.Characters.GetItem(_identifiable.Id);
 
@@ -22,6 +23,7 @@ public class Character : MonoBehaviour, IModelView<ICharacterModel>
         _identifiable = GetComponent<Identifiable>();
         _identifiable.Id = model.Id;
         _rigidBody = GetComponent<Rigidbody2D>();
+        _lastPosition = transform.position;
         UpdatePosition();
     }
 
@@ -39,11 +41,13 @@ public class Character : MonoBehaviour, IModelView<ICharacterModel>
     void DoDesiredMove()
     {
         var movement = Game.Model.Movement.GetItem(_identifiable.Id);
-        var lastPosition = transform.position;
         Map.Instance.MoveObject(movement, _rigidBody);
         var newPosition = transform.position;
 
-        var step = newPosition - lastPosition;
+        var step = newPosition - _lastPosition;
+        _lastPosition = newPosition;
+
+        Debug.Log($"{this} {movement.DesiredMove} {movement.Position} {step.x} {Mathf.Approximately(step.magnitude, 0)}");
         if(Mathf.Approximately(step.magnitude, 0))
         {
             _animator.SetBool("Walking", false);
@@ -60,7 +64,7 @@ public class Character : MonoBehaviour, IModelView<ICharacterModel>
             _viewRoot.transform.localRotation = Quaternion.Euler(0, angle, 0);
         }
 
-
         Game.Do(new UpdatePosition(_identifiable.Id, transform.position));
+
     }
 }

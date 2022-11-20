@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using UnityEngine.UIElements;
 
 public class Map : MonoBehaviour
 {
@@ -41,6 +38,8 @@ public class Map : MonoBehaviour
             default:
                 break;
         }
+        //rigidBody.transform.position = rigidBody.transform.position + (Vector3)step;
+        //rigidBody.vel((Vector2)rigidBody.transform.position + step);
         rigidBody.MovePosition((Vector2)rigidBody.transform.position + step);
     }
 
