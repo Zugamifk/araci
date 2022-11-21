@@ -7,8 +7,16 @@ public class PlayerControlState : InputState
 {
     public override IState UpdateState()
     {
+        UpdateMovement();
+        UpdateAttacks();
+
+        return this;
+    }
+
+    void UpdateMovement()
+    {
         Vector2 movement = Vector2.zero;
-        if(Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W))
         {
             movement += Vector2.up;
         }
@@ -26,7 +34,13 @@ public class PlayerControlState : InputState
         }
 
         Game.Do(new MoveCharacter(Game.Model.Player.Id, movement, Space.World));
-        
-        return this;
+    }
+    
+    void UpdateAttacks()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+
+        }
     }
 }
