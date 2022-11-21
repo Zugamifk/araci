@@ -8,6 +8,7 @@ public class GameModel : IGameModel
 {
     public IdentifiableCollection<MovementModel> Movement { get; } = new();
     public IdentifiableCollection<CharacterModel> Characters { get; } = new();
+    public IdentifiableCollection<AttackModel> Attacks { get; } = new();
     public Dictionary<string, SpawnModel> Spawns { get; } = new();
     public PlayerModel Player { get; } = new();
     public InputModel Input { get; } = new();

@@ -40,7 +40,7 @@ public class PlayerControlState : InputState
     {
         if (Input.GetMouseButtonDown(0))
         {
-
+            Game.Do(new DoAttack(Game.Model.Player.Id, "Sword"));
         }
     }
 }
