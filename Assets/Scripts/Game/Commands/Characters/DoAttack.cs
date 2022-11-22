@@ -15,6 +15,7 @@ public struct DoAttack : ICommand
 
     public void Execute(GameModel model)
     {
+        Debug.Log($"{_attackerId} attacking with {_key}");
         var attack = new AttackModel()
         {
             SourceId = _attackerId,

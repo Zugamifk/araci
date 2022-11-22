@@ -21,7 +21,6 @@ public class EnemyUpdater : IUpdater
 
         var player = model.Movement.GetItem(model.Player.Id);
         var dir = player.Position - enemy.Position;
-        Debug.Log(dir);
         Game.Do(new MoveCharacter(_id, dir.normalized, Space.Grid));
     }
 }

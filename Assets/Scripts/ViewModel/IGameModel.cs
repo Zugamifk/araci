@@ -7,6 +7,7 @@ public interface IGameModel
 {
     IIdentifiableLookup<IMovementModel> Movement { get; }
     IIdentifiableLookup<ICharacterModel> Characters { get; }
+    IIdentifiableLookup<IAttackModel> Attacks { get; }
     IPlayerModel Player { get; }
     IInputModel Input { get; }
     ITimeModel Time { get; }

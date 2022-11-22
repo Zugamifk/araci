@@ -56,6 +56,7 @@ public class GameModel : IGameModel
     IIdentifiableLookup<IMovementModel> IGameModel.Movement => Movement;
 
     IIdentifiableLookup<ICharacterModel> IGameModel.Characters => Characters;
+    IIdentifiableLookup<IAttackModel> IGameModel.Attacks => Attacks;
 
     IPlayerModel IGameModel.Player => Player;
     #endregion

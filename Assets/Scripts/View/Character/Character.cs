@@ -47,8 +47,7 @@ public class Character : MonoBehaviour, IModelView<ICharacterModel>
         var step = newPosition - _lastPosition;
         _lastPosition = newPosition;
 
-        Debug.Log($"{this} {movement.DesiredMove} {movement.Position} {step.x} {Mathf.Approximately(step.magnitude, 0)}");
-        if(Mathf.Approximately(step.magnitude, 0))
+        if(Mathf.Approximately(step.magnitude, 0))  
         {
             _animator.SetBool("Walking", false);
             return;
