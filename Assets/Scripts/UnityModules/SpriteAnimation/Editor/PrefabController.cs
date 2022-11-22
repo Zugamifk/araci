@@ -70,7 +70,7 @@ public class PrefabController
         var cont = anim.runtimeAnimatorController;
         var clip = cont.animationClips[0];
         var sprites = AssetDatabase.LoadAllAssetsAtPath(AssetDatabase.GetAssetPath(texture)).OfType<Sprite>().ToArray();
-        var renderer = prefab.GetComponentInChildren<SpriteRenderer>();
+        var renderer = inst.GetComponentInChildren<SpriteRenderer>();
         renderer.sprite = sprites[0];
 
         CreateAnimation(clip, sprites, time);
