@@ -4,24 +4,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Identifiable))]
-public class Character : MonoBehaviour, IModelView<ICharacterModel>
+public class Character : ModelViewBase<ICharacterModel>
 {
     [SerializeField]
     Transform _viewRoot;
     [SerializeField]
     Animator _animator;
 
-    public Guid Id => _identifiable.Id;
-    Identifiable _identifiable;
     Rigidbody2D _rigidBody;
     Vector3 _lastPosition;
 
-    public ICharacterModel GetModel() => Game.Model.Characters.GetItem(_identifiable.Id);
+    public override ICharacterModel GetModel() => Game.Model.Characters.GetItem(Id);
 
-    public void InitializeFromModel(ICharacterModel model)
+    public override void InitializeFromModel(ICharacterModel model)
     {
-        _identifiable = GetComponent<Identifiable>();
-        _identifiable.Id = model.Id;
         _rigidBody = GetComponent<Rigidbody2D>();
         _lastPosition = transform.position;
         UpdatePosition();
@@ -34,13 +30,13 @@ public class Character : MonoBehaviour, IModelView<ICharacterModel>
 
     void UpdatePosition()
     {
-        var movement = Game.Model.Movement.GetItem(_identifiable.Id);
+        var movement = Game.Model.Movement.GetItem(Id);
         Map.Instance.PositionObject(movement, transform);
     }
 
     void DoDesiredMove()
     {
-        var movement = Game.Model.Movement.GetItem(_identifiable.Id);
+        var movement = Game.Model.Movement.GetItem(Id);
         Map.Instance.MoveObject(movement, _rigidBody);
         var newPosition = transform.position;
 
@@ -63,7 +59,7 @@ public class Character : MonoBehaviour, IModelView<ICharacterModel>
             _viewRoot.transform.localRotation = Quaternion.Euler(0, angle, 0);
         }
 
-        Game.Do(new UpdatePosition(_identifiable.Id, transform.position));
+        Game.Do(new UpdatePosition(Id, transform.position));
 
     }
 }

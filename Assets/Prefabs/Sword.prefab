@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 6076001207132099846}
   - component: {fileID: 1077541808311191900}
   - component: {fileID: 5188914364701135836}
+  - component: {fileID: 1646951764532753480}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -195,3 +196,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de57673371829743a63e62641336931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &1646951764532753480
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6852805424172862842}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.36, y: 0.01}
+  serializedVersion: 2
+  m_Radius: 0.56
