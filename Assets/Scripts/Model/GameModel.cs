@@ -6,7 +6,6 @@ using System;
 
 public class GameModel : IGameModel
 {
-    public IdentifiableCollection<MovementModel> Movement { get; } = new();
     public IdentifiableCollection<CharacterModel> Characters { get; } = new();
     public IdentifiableCollection<AttackModel> Attacks { get; } = new();
     public Dictionary<string, SpawnModel> Spawns { get; } = new();
@@ -52,8 +51,6 @@ public class GameModel : IGameModel
     #region IGameModel
     ITimeModel IGameModel.Time => TimeModel;
     IInputModel IGameModel.Input => Input;
-
-    IIdentifiableLookup<IMovementModel> IGameModel.Movement => Movement;
 
     IIdentifiableLookup<ICharacterModel> IGameModel.Characters => Characters;
     IIdentifiableLookup<IAttackModel> IGameModel.Attacks => Attacks;

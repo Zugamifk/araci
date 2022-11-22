@@ -30,14 +30,19 @@ public class Character : ModelViewBase<ICharacterModel>
 
     void UpdatePosition()
     {
-        var movement = Game.Model.Movement.GetItem(Id);
-        Map.Instance.PositionObject(movement, transform);
+        var character = GetModel();
+        Map.Instance.PositionObject(character.Movement, transform);
     }
 
     void DoDesiredMove()
     {
-        var movement = Game.Model.Movement.GetItem(Id);
-        Map.Instance.MoveObject(movement, _rigidBody);
+        var character = GetModel();
+        if(character == null)
+        {
+            return;
+        }
+
+        Map.Instance.MoveObject(character.Movement, _rigidBody);
         var newPosition = transform.position;
 
         var step = newPosition - _lastPosition;

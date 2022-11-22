@@ -16,9 +16,15 @@ public class ApplyAttackEffect : ICommand
 
     public void Execute(GameModel model)
     {
+        var attack = model.Attacks.GetItem(_id);
         foreach(var target in _attackTargets)
         {
-            Debug.Log(target);
+            var enemy = model.Characters.GetItem(target);
+            enemy.Health.HitPoints -= attack.Damage;
+            if(enemy.Health.HitPoints <=0)
+            {
+                model.Characters.RemoveItem(target);
+            }
         }
     }
 }

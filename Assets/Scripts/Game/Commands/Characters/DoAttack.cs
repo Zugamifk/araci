@@ -18,11 +18,13 @@ public struct DoAttack : ICommand
 
     public void Execute(GameModel model)
     {
+        var data = DataService.GetData<AttackDataCollection>().Get(_key);
         var attack = new AttackModel()
         {
             SourceId = _attackerId,
             Key = _key,
-            TargetPosition = _targetPosition
+            TargetPosition = _targetPosition,
+            Damage = data.Damage
         };
         model.Attacks.AddItem(attack);
     }

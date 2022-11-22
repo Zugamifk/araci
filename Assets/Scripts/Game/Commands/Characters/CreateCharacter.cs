@@ -19,13 +19,6 @@ public class CreateCharacter : ICommand
 
     public void Execute(GameModel model)
     {
-        var movement = new MovementModel()
-        {
-            Id = _id,
-            Position = _position
-        };
-        model.Movement.AddItem(movement);
-
         var data = DataService.GetData<CharacterDataCollection>().Get(_key);
         var character = new CharacterModel()
         {
@@ -33,6 +26,8 @@ public class CreateCharacter : ICommand
             Key = _key,
             MoveSpeed = data.MoveSpeed
         };
+        character.Movement.Position = _position;
+        character.Health.HitPoints = data.HitPoints;
         model.Characters.AddItem(character);
     }
 }

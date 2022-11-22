@@ -16,7 +16,7 @@ public struct UpdatePosition : ICommand
 
     public void Execute(GameModel model)
     {
-        var movement = model.Movement.GetItem(_id);
-        movement.Position = _position;
+        var character = model.Characters.GetItem(_id);
+        character.Movement.Position = _position;
     }
 }

@@ -13,14 +13,15 @@ public class EnemyUpdater : IUpdater
 
     public void Update(GameModel model)
     {
-        var enemy = model.Movement.GetItem(_id);
+        var enemy = model.Characters.GetItem(_id);
         if(enemy == null)
         {
             Game.RemoveUpdater(_id);
+            return;
         }
 
-        var player = model.Movement.GetItem(model.Player.Id);
-        var dir = player.Position - enemy.Position;
+        var player = model.Characters.GetItem(model.Player.Id);
+        var dir = player.Movement.Position - enemy.Movement.Position;
         Game.Do(new MoveCharacter(_id, dir.normalized, Space.Grid));
     }
 }
