@@ -7,19 +7,22 @@ public struct DoAttack : ICommand
 {
     string _key;
     Guid _attackerId;
-    public DoAttack(Guid attackerId, string key)
+    Vector2 _targetPosition;
+
+    public DoAttack(Guid attackerId, string key, Vector2 targetPosition)
     {
         _attackerId = attackerId;
         _key = key;
+        _targetPosition = targetPosition;
     }
 
     public void Execute(GameModel model)
     {
-        Debug.Log($"{_attackerId} attacking with {_key}");
         var attack = new AttackModel()
         {
             SourceId = _attackerId,
-            Key = _key
+            Key = _key,
+            TargetPosition = _targetPosition
         };
         model.Attacks.AddItem(attack);
     }

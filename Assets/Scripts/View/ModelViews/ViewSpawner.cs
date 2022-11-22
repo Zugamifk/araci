@@ -14,6 +14,14 @@ public abstract class ViewSpawner<TIdentifiable, TView> : MonoBehaviour
 
     public TView GetView(Guid id) => _spawnedViews[id];
 
+    private void Awake()
+    {
+        if(_viewParent==null)
+        {
+            _viewParent = transform;
+        }
+    }
+
     void Update()
     {
         List<Guid> toRemove = new List<Guid>();

@@ -125,5 +125,11 @@ public static partial class Math
         }
     }
 
+    public static Quaternion PointAt(Vector2 direction)
+    {
+        var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        return Quaternion.AngleAxis(angle, Vector3.forward);
+    }
+
 }
 

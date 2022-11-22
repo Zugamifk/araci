@@ -6,4 +6,5 @@ using UnityEngine;
 public interface IAttackModel : IIdentifiable, IKeyHolder
 {
     Guid SourceId { get; }
+    Vector2 TargetPosition { get; }
 }

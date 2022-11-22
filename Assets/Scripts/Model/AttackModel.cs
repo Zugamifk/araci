@@ -8,4 +8,5 @@ public class AttackModel : IAttackModel
     public Guid Id { get; set; } = Guid.NewGuid();
     public string Key { get; set; }
     public Guid SourceId { get; set; }
+    public Vector2 TargetPosition { get; set; }
 }

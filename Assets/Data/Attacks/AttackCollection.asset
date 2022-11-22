@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bde4d0a3ab42922419d86f9872f044b1, type: 3}
-  m_Name: DataReferences
+  m_Script: {fileID: 11500000, guid: 71400984395be4a47bd8140680ef6604, type: 3}
+  m_Name: AttackCollection
   m_EditorClassIdentifier: 
-  _references:
-  - {fileID: 11400000, guid: 2803dd4d6edb7ed44a39c817701ff3af, type: 2}
-  - {fileID: 11400000, guid: a82d397ea2a36d8408be7e515cb5bb9f, type: 2}
+  _dataReferences:
+  - {fileID: 11400000, guid: b79da175be7ac914daffaf66366f9a76, type: 2}

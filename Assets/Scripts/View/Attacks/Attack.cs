@@ -8,7 +8,8 @@ public class Attack : ModelViewBase<IAttackModel>
 
     public override void InitializeFromModel(IAttackModel model)
     {
-        var source = Game.Model.Movement.GetItem(model.SourceId);
-        Map.Instance.PositionObject(source, transform);
+        var source = ViewLookup.Get(model.SourceId);
+        var player = source.GetComponent<Player>();
+        player.DoAttack(this, model);
     }
 }

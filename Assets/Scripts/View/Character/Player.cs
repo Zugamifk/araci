@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    Transform _attackRoot;
 
-    // Update is called once per frame
-    void Update()
+    public void DoAttack(Attack attack, IAttackModel model)
     {
-        
+        var attackTransform = attack.transform;
+        attackTransform.SetParent(_attackRoot);
+        attackTransform.localPosition = Vector3.zero;
+
+        var dir = model.TargetPosition - (Vector2)_attackRoot.position;
+        attackTransform.rotation = Math.PointAt(dir.normalized);
     }
 }

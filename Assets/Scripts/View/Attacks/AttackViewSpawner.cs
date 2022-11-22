@@ -8,4 +8,14 @@ public class AttackViewSpawner : RegisteredPrefabViewSpawner<IAttackModel, Attac
     protected override IEnumerable<IAttackModel> AllModels() => Game.Model.Attacks.AllItems;
 
     protected override IAttackModel GetModel(Guid id) => Game.Model.Attacks.GetItem(id);
+
+    protected override void SpawnedView(IAttackModel model, Attack view)
+    {
+        ViewLookup.Register(model.Id, view.gameObject);
+    }
+
+    protected override void DestroyedView(Attack view)
+    {
+        ViewLookup.Remove(view.Id);
+    }
 }
