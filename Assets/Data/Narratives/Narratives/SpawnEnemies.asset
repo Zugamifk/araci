@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc10842149723a947b002b0ad7dc54fc, type: 3}
-  m_Name: Enemy
+  m_Script: {fileID: 11500000, guid: da6e6267a9e00eb4bb0a16f53b04f5f4, type: 3}
+  m_Name: SpawnEnemies
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 2684019793343543044, guid: 2a434083348faba4f90efcf141687157, type: 3}
-  _name: Enemy
-  _moveSpeed: 10
-  _hitPoints: 10
-  _experienceReward: 25
+  Name: Spawn Enemies At Test Spawn
+  Next: {fileID: 0}
+  EnemyData: {fileID: 11400000, guid: 39b360abcb695d3468bccf6062246dc1, type: 2}
+  SpawnName: Test
+  Count: 25

@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc10842149723a947b002b0ad7dc54fc, type: 3}
-  m_Name: Enemy
+  m_Script: {fileID: 11500000, guid: d9fd7e50d9683da4ba98fe80f2beb076, type: 3}
+  m_Name: NarrativeDataCollection
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 2684019793343543044, guid: 2a434083348faba4f90efcf141687157, type: 3}
-  _name: Enemy
-  _moveSpeed: 10
-  _hitPoints: 10
-  _experienceReward: 25
+  _data:
+  - {fileID: 11400000, guid: cbc9a0d7f7724a54caed624f64dbdd72, type: 2}
