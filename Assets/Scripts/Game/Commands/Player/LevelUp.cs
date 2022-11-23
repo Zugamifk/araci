@@ -9,6 +9,7 @@ public struct LevelUp : ICommand
         var level = model.Player.Level;
         level.CurrentLevel++;
         var data = DataService.GetData<LevelDataCollection>().GetLevel(level.CurrentLevel);
+        level.LastLevelRequiredExperience = level.RequiredExperience;
         level.RequiredExperience = data.RequiredExperience;
     }
 }

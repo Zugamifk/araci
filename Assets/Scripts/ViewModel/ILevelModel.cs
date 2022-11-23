@@ -6,5 +6,6 @@ public interface ILevelModel
 {
     int CurrentLevel { get; }
     int CurrentExperience { get; }
+    int LastLevelRequiredExperience { get; }
     int RequiredExperience { get; }
 }
