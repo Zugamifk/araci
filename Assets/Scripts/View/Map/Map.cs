@@ -25,7 +25,7 @@ public class Map : MonoBehaviour
 
     public void MoveObject(IMovementModel model, Rigidbody2D rigidBody)
     {
-        var step = model.DesiredMove;
+        var velocity = model.DesiredMove;
         switch (model.MovementSpace)
         {
             case Space.World:
@@ -33,14 +33,16 @@ public class Map : MonoBehaviour
             case Space.Local:
                 break;
             case Space.Grid:
-                step = _tilemap.CellToLocalInterpolated(step);
+                velocity = _tilemap.CellToLocalInterpolated(velocity);
                 break;
             default:
                 break;
         }
-        //rigidBody.transform.position = rigidBody.transform.position + (Vector3)step;
-        //rigidBody.vel((Vector2)rigidBody.transform.position + step);
-        rigidBody.MovePosition((Vector2)rigidBody.transform.position + step);
+        rigidBody.velocity = velocity;
+        if(rigidBody.name=="Player(Clone)")
+        {
+            Debug.Log(velocity);
+        }
     }
 
 }

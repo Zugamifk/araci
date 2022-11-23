@@ -19,7 +19,7 @@ public struct MoveCharacter : ICommand
     public void Execute(GameModel model)
     {
         var character = model.Characters.GetItem(_id);
-        character.Movement.DesiredMove = _direction * character.MoveSpeed * model.TimeModel.LastDeltaTime;
+        character.Movement.DesiredMove = _direction * character.MoveSpeed;
         character.Movement.MovementSpace = _space;
     }
 }

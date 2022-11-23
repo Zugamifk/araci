@@ -12,14 +12,12 @@ public class Character : ModelViewBase<ICharacterModel>
     Animator _animator;
 
     Rigidbody2D _rigidBody;
-    Vector3 _lastPosition;
 
     public override ICharacterModel GetModel() => Game.Model.Characters.GetItem(Id);
 
     public override void InitializeFromModel(ICharacterModel model)
     {
         _rigidBody = GetComponent<Rigidbody2D>();
-        _lastPosition = transform.position;
         UpdatePosition();
     }
 
@@ -37,27 +35,25 @@ public class Character : ModelViewBase<ICharacterModel>
     void DoDesiredMove()
     {
         var character = GetModel();
-        if(character == null)
+        if (character == null)
         {
             return;
         }
 
         Map.Instance.MoveObject(character.Movement, _rigidBody);
-        var newPosition = transform.position;
 
-        var step = newPosition - _lastPosition;
-        _lastPosition = newPosition;
-
-        if(Mathf.Approximately(step.magnitude, 0))  
-        {
-            _animator.SetBool("Walking", false);
-            return;
-        } else
+        var move = _rigidBody.velocity;
+        if (move.magnitude > 0)
         {
             _animator.SetBool("Walking", true);
         }
+        else
+        {
+            _animator.SetBool("Walking", false);
+            return;
+        }
 
-        var side = step.x;
+        var side = move.x;
         if (!Mathf.Approximately(side, 0))
         {
             var angle = side < 0 ? 180 : 0;
