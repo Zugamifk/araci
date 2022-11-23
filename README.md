@@ -7,18 +7,18 @@
 ## Story
 Years ago, a group of powerful sorcerers created a portal to another realm. They entered the portal and each made a pact with a different powerful demon. They were each granted some of the demon's power, and in return they were cursed, that if any one of them were killed the killer would become stronger. if only one remained they would be dragged back to the demon realm, enslaved to the demon whose power they possessed. Terrified and paranoid of each other, they agreed to part ways and never to meet again. The sorcerers lived mostly in peace, studying their craft and the demon's gifts on their own. 
 
-Today, something has changed. Someone has been killing the sorceres, stealing theor power and using it to open more portals to the demon realm, allowing demons to enter. The demons have been possessing animals and objects, or entering in their physical forms. They have left death and destruction in their wake.
+Today, something has changed. Someone has been killing the sorceres, stealing their power and using it to open more portals to the demon realm, allowing demons to enter. The demons have been possessing animals and objects, or entering in their physical forms. They have left death and destruction in their wake.
 
-Araci's village is attacked and destroyed by demons. In the wake of the destruction, Araci finds himself paying at a shrine for a blessing to help him survive and fight the demons back. A wandering soldier walks by, offering Araci a weapon, saying he is too weak-willed and weak-minded to fight the demons himself. He gives Araci his blessing and tell him to go to another village where a portal has appeared, spilling otu the demons that attacked his village. He tells araci that he can destroy the portal by killing the demon who is keeping it open.
+Araci's village is attacked and destroyed by demons. In the wake of the destruction, Araci finds himself praying at a shrine for a blessing to help him survive and fight the demons back. A wandering soldier walks by, offering Araci a weapon, saying he is too weak-willed and weak-minded to fight the demons himself. He gives Araci his blessing and tell him to go to another village where a portal has appeared, spilling otu the demons that attacked his village. He tells araci that he can destroy the portal by killing the demon who is keeping it open.
 
 So the story begins...
 
 ## Summary
-Araci is hunting demons to kill to shut portals. He is also hunting the sorcerers who he discovers are also helping to create the sorcerers. Each time he kills a sorcerer, he is granted a gift from the sorcerer's demon, growing stronger. As he travels the world, Araci discovers clues about the assassin who has also been killing sorcerers. In a final conflict, Araci faces the assassin and kills them. He is then dragged to the demon realm where he must face the demon who intends to enslave him.
+Araci is hunting demons to kill to shut portals. He is also hunting the sorcerers who he discovers are also helping to create the portals. Each time he kills a sorcerer, he is granted a gift from the sorcerer's demon, growing stronger. As he travels the world, Araci discovers clues about the assassin who has also been killing sorcerers. In a final conflict, Araci faces the assassin and kills them. He is then dragged to the demon realm where he must face the demon who intends to enslave him.
 
-Throughout the adventure, Araci meets characts who will give him quests for rewards. Some of these are offerings which can be offered at shrine to grant new abilities, heal wounds, or make powerful pacts. As araci fights, he gains experience with his weapon and learns new techniques. 
+Throughout the adventure, Araci meets characters who will give him quests for rewards. Some of these are offerings which can be offered at shrine to grant new abilities, heal wounds, or make powerful pacts. As Araci fights, he gains experience with his weapon and learns new techniques. 
 
-Araci will meet an anamial who bonds with him as a familiar. The familiar grants different bonuses to Araci depending on the animal.
+Araci will meet an animal who bonds with him as a familiar. The familiar grants different bonuses to Araci depending on the animal.
 
 ## Basic Ideas
 * Every weapon should be distinct and have its own playstyle and feeling
@@ -203,9 +203,9 @@ Healing is important to keep the full health bonus.
 Each enemy should have a unique animation if they get a killing blow on the player.
 
 ## World 
-The world is one large open map. Some areas are closed and need to be unlocked after completely an objective. The world can and will change after certain events. Some maginc can change the terrain and the terrain can be permanently modified.
+The world is one large open map. Some areas are closed and need to be unlocked after completely an objective. The world can and will change after certain events. Some magin can change the terrain and the terrain can be permanently modified.
 
-Some areas have special properties that ad paassive effects to the player.
+Some areas have special properties that add passive effects to the player.
 * Faster magic charge
 * Magic always at least one level
 
@@ -213,7 +213,7 @@ Some areas have special properties that ad paassive effects to the player.
 Different areas have different weather patterns. Different types of weather create different conditions that affect the player, enemies, and other things. Magic can affect or change the weather.
 
 ### Shrines
-Shrines are scatter throughout the world. Player pray at a shrine to perform one of man actions
+Shrines are scattered throughout the world. Player pray at a shrine to perform one of man actions
 * Make an offering for a magic skill
 * Make an offering for a pact
 * Heal (1 heart? full? depends on offering?)
