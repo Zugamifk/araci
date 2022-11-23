@@ -24,7 +24,7 @@ public class PlayerStatusUI : MonoBehaviour
 
         if (player.Level.RequiredExperience > 0)
         {
-            _experienceBar.fillAmount = (float)player.Level.CurrentLevel / (float)player.Level.RequiredExperience;
+            _experienceBar.fillAmount = (float)player.Level.CurrentExperience / (float)player.Level.RequiredExperience;
         }
     }
 }

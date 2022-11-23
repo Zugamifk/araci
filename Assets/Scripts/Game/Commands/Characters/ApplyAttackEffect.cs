@@ -23,7 +23,7 @@ public class ApplyAttackEffect : ICommand
             enemy.Health.CurrentHealth -= attack.Damage;
             if(enemy.Health.CurrentHealth <=0)
             {
-                model.Characters.RemoveItem(target);
+                new KillEnemy(target).Execute(model);
             }
         }
     }
