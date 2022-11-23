@@ -5,6 +5,6 @@ using UnityEngine;
 
 public class HealthModel : IHealthModel
 {
-    public Guid Id { get; }
-    public int HitPoints { get; set; }
+    public int CurrentHealth { get; set; }
+    public int MaxHealth { get; set; }
 }

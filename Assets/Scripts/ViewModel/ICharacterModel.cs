@@ -5,4 +5,5 @@ using UnityEngine;
 public interface ICharacterModel : IIdentifiable, IKeyHolder
 {
     IMovementModel Movement { get; }
+    IHealthModel Health { get; }
 }

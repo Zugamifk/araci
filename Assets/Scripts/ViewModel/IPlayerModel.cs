@@ -5,4 +5,5 @@ using UnityEngine;
 
 public interface IPlayerModel : IIdentifiable
 {
+    ILevelModel Level { get; }
 }

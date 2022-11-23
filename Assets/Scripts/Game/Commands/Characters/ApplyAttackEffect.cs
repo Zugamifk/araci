@@ -20,8 +20,8 @@ public class ApplyAttackEffect : ICommand
         foreach(var target in _attackTargets)
         {
             var enemy = model.Characters.GetItem(target);
-            enemy.Health.HitPoints -= attack.Damage;
-            if(enemy.Health.HitPoints <=0)
+            enemy.Health.CurrentHealth -= attack.Damage;
+            if(enemy.Health.CurrentHealth <=0)
             {
                 model.Characters.RemoveItem(target);
             }

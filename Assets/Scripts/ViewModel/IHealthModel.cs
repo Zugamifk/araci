@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IHealthModel : IIdentifiable
+public interface IHealthModel
 {
-    public int HitPoints { get; }
+    int CurrentHealth { get; }
+    int MaxHealth { get; }
+
 }

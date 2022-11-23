@@ -12,4 +12,5 @@ public class CharacterModel : ICharacterModel
     public HealthModel Health { get; set; } = new();
 
     IMovementModel ICharacterModel.Movement => Movement;
+    IHealthModel ICharacterModel.Health => Health;
 }

@@ -27,7 +27,8 @@ public class CreateCharacter : ICommand
             MoveSpeed = data.MoveSpeed
         };
         character.Movement.Position = _position;
-        character.Health.HitPoints = data.HitPoints;
+        character.Health.CurrentHealth = data.HitPoints;
+        character.Health.MaxHealth = data.HitPoints;
         model.Characters.AddItem(character);
     }
 }
