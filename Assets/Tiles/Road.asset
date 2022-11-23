@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73343ec3843ac094fb11169305832801, type: 3}
   m_Name: Road
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1865825891, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
@@ -38,3 +38,15 @@ MonoBehaviour:
   - {fileID: -1865825891, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
   - {fileID: 1200614955, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
   - {fileID: 686752616, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
+  - {fileID: 927273552, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
+  - {fileID: 1564549032, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
+  - {fileID: 1052030430, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
+  - {fileID: 1365843428, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
+  - {fileID: 968865522, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
+  - {fileID: -230534460, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
+  - {fileID: 909096683, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
+  - {fileID: 2077930021, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
+  - {fileID: 2030169845, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
+  - {fileID: 327495212, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
+  - {fileID: 194459914, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
+  - {fileID: 864320387, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}

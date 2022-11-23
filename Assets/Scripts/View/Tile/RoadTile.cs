@@ -11,10 +11,10 @@ public class RoadTile : Tile
     [Flags]
     enum SideMask
     {
-        Top = 1,
-        Right = 2,
-        Bottom = 4,
-        Left = 8
+        Top = 8,
+        Right = 1,
+        Bottom = 2,
+        Left = 4
     }
 
     [SerializeField]
@@ -81,7 +81,7 @@ public class RoadTile : Tile
             tileData.sprite = _sprites[index-1];
         } else
         {
-            //tileData.sprite = _sprites[0];
+            tileData.sprite = _sprites[0];
         }
     }
 }
