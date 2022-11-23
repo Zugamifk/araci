@@ -18,6 +18,7 @@ public struct KillEnemy : ICommand
         var character = model.Characters.GetItem(_id);
         var data = DataService.GetData<CharacterDataCollection>().Get(character.Key);
         new GainExperience(data.ExperienceReward).Execute(model);
-        model.Characters.RemoveItem(_id);
+
+        // don't remove model -- need to play death effect which will remove model after playing
     }
 }

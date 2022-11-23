@@ -39,10 +39,6 @@ public class Map : MonoBehaviour
                 break;
         }
         rigidBody.velocity = velocity;
-        if(rigidBody.name=="Player(Clone)")
-        {
-            Debug.Log(velocity);
-        }
     }
 
 }

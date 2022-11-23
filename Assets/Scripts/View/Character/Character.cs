@@ -10,6 +10,8 @@ public class Character : ModelViewBase<ICharacterModel>
     Transform _viewRoot;
     [SerializeField]
     Animator _animator;
+    [SerializeField]
+    DelayedAnimationEffect _deathEffect;
 
     Rigidbody2D _rigidBody;
 
@@ -23,7 +25,17 @@ public class Character : ModelViewBase<ICharacterModel>
 
     void Update()
     {
-        DoDesiredMove();
+        var character = GetModel();
+        if(character == null)
+        {
+            return;
+        } else if (character.Health.IsAlive)
+        {
+            DoDesiredMove(character);
+        } else
+        {
+            Die();
+        }
     }
 
     void UpdatePosition()
@@ -32,9 +44,8 @@ public class Character : ModelViewBase<ICharacterModel>
         Map.Instance.PositionObject(character.Movement, transform);
     }
 
-    void DoDesiredMove()
+    void DoDesiredMove(ICharacterModel character)
     {
-        var character = GetModel();
         if (character == null)
         {
             return;
@@ -62,5 +73,11 @@ public class Character : ModelViewBase<ICharacterModel>
 
         Game.Do(new UpdatePosition(Id, transform.position));
 
+    }
+
+    void Die()
+    {
+        _deathEffect.Play();
+        Game.Do(new RemoveCharacter(Id));
     }
 }

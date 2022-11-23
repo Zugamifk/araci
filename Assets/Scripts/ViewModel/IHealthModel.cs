@@ -6,5 +6,5 @@ public interface IHealthModel
 {
     int CurrentHealth { get; }
     int MaxHealth { get; }
-
+    bool IsAlive { get; }
 }
