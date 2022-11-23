@@ -8,5 +8,6 @@ public struct StartGame : ICommand
     {
         new InitializePlayer().Execute(model);
         new SpawnEnemy("Enemy", "Test").Execute(model);
+        new StartNarrative("Test").Execute(model);
     }
 }

@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NarrativeModel
+public class NarrativeModel : IIdentifiable
 {
     public Guid Id { get; set; }
-    public string Key { get; set; }
+    public string NarrativeKey { get; set; }
+    public string CurrentStateKey { get; set; }
 }
