@@ -57,7 +57,7 @@ public class PrefabController
 
     public void ApplySpriteAnimationChanges(GameObject prefab, string name, Texture2D texture, Vector2Int dimensions, int frameCount, int startIndex, float time, bool loop)
     {
-        ImportSprite(texture, dimensions, frameCount, startIndex);
+        //ImportSprite(texture, dimensions, frameCount, startIndex);
 
         var inst = (GameObject)PrefabUtility.InstantiatePrefab(prefab);
         var sa = inst.GetComponent<SpriteAnimation>();
@@ -69,9 +69,13 @@ public class PrefabController
         var anim = prefab.GetComponent<Animator>();
         var cont = anim.runtimeAnimatorController;
         var clip = cont.animationClips[0];
-        var sprites = AssetDatabase.LoadAllAssetsAtPath(AssetDatabase.GetAssetPath(texture)).OfType<Sprite>().ToArray();
+        var sprites = AssetDatabase.LoadAllAssetsAtPath(AssetDatabase.GetAssetPath(texture))
+            .OfType<Sprite>()
+            .Skip(startIndex)
+            .Take(frameCount)
+            .ToArray();
         var renderer = inst.GetComponentInChildren<SpriteRenderer>();
-        renderer.sprite = sprites[0];
+        renderer.sprite = sprites[startIndex];
 
         CreateAnimation(clip, sprites, time);
         if (!loop)
