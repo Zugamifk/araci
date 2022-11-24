@@ -1,4 +1,6 @@
+using PlasticPipe.PlasticProtocol.Messages;
 using StateMachines;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +11,7 @@ public class PlayerControlState : InputState
     {
         UpdateMovement();
         UpdateAttacks();
+        UpdateActions();
 
         return this;
     }
@@ -41,6 +44,18 @@ public class PlayerControlState : InputState
         if (Input.GetMouseButtonDown(0))
         {
             Game.Do(new DoAttack(Game.Model.Player.Id, "Sword", Camera.main.ScreenToWorldPoint(Input.mousePosition)));
+        }
+    }
+
+    void UpdateActions()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            var interactable = Game.Model.Input.CurrentInteractableId;
+            if (interactable != Guid.Empty)
+            {
+                Game.Do(new UseInteractable(interactable));
+            }
         }
     }
 }
