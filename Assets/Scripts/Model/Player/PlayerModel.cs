@@ -9,6 +9,9 @@ public class PlayerModel : IPlayerModel
     public LevelModel Level { get; } = new();
     public Dictionary<string, SkillModel> OwnedSkills = new();
     public WeaponModel Weapon { get; set; } = new();
+    public DashModel Dash { get; set; } = new();
+
     ILevelModel IPlayerModel.Level => Level;
     IWeaponModel IPlayerModel.Weapon => Weapon;
+    IDashModel IPlayerModel.Dash => Dash;
 }

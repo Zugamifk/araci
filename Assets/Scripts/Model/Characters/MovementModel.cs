@@ -6,7 +6,7 @@ using UnityEngine;
 public class MovementModel : IMovementModel
 {
     public Vector2 Position { get; set; }
-    public Vector2 Direction { get; set; }
+    public Vector2 Direction { get; set; } = new Vector2(1, 0);
     public Vector2 DesiredMove { get; set; }
     public Space MovementSpace { get; set; }
 }

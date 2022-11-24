@@ -11,9 +11,7 @@ public class PlayerControlState : InputState
     {
         UpdateMovement();
         UpdateAttacks();
-        UpdateActions();
-
-        return this;
+        return UpdateActions();
     }
 
     void UpdateMovement()
@@ -50,7 +48,7 @@ public class PlayerControlState : InputState
         }
     }
 
-    void UpdateActions()
+    IState UpdateActions()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -60,5 +58,13 @@ public class PlayerControlState : InputState
                 Game.Do(new UseInteractable(interactable));
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            Game.Do(new DoDash());
+            return new PlayerDoingActionState(Game.Model.Player.Dash.Duration);
+        }
+
+        return this;
     }
 }

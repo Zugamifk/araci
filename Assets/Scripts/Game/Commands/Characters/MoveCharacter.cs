@@ -20,6 +20,10 @@ public struct MoveCharacter : ICommand
     {
         var character = model.Characters.GetItem(_id);
         character.Movement.DesiredMove = _direction * character.MoveSpeed;
+        if(_direction.sqrMagnitude > 0)
+        {
+            character.Movement.Direction = _direction;
+        }
         character.Movement.MovementSpace = _space;
     }
 }

@@ -21,5 +21,12 @@ public struct InitializePlayer : ICommand
         weapon.Level.RequiredExperience = weaponLevelData.RequiredExperience;
         weapon.AttackCooldown.ReadyTime = 0;
         weapon.AttackCooldown.Cooldown = weaponData.BaseAttackTime;
+
+        var playerData = DataService.GetData<PlayerData>();
+        var dash = player.Dash;
+        dash.Duration = playerData.DashDuration;
+        dash.Speed = playerData.DashSpeed;
+        dash.Cooldown.Cooldown = playerData.DashCooldown;
     }
+
 }
