@@ -43,12 +43,12 @@ Araci will meet an animal who bonds with him as a familiar. The familiar grants 
 * Flammable: If near fire and not wet, will gain a small Fire.
 * Dry: Not wet
 * Wet: Turn Large Fire into Small or put out Small Fire. Wet Objects transfer Electricity.
-* Electricity: Travels between Wet/Conductive tiles and objects and becomes weaker over time.
+* Electricity: Travels between Wet/Conductive tiles and objects and becomes weaker over time. Stuns weaker enemies
 * Conductive: Transfers Electricity.
 * Wind: 
 	* Carries smells and affects detection areas
 	* Small: Turn small fire into large fire
-* Poison: Add Weakness. After enough stacks, kills.
+* Poison: Add Weakness. After enough stacks, parayzes or kills.
 * Weakness: Less damage, slower movement. Less resistance to effects.
 * Acid: Damage over time for a fixed time, weakening over time until 0 or if becomes Wet.
 * Water: Makes things Wet. Is Wet. Conductive. Turned to Ice if Cold. Disappears if Hot.
@@ -60,7 +60,12 @@ Araci will meet an animal who bonds with him as a familiar. The familiar grants 
 * Scout: Reveals Hidden objects nearby
 * Blind: On enemies, can not detect Player. On player, greatly redius sight area.
 * Taunt: Enemies will target the taunt user instead of the player
-
+* Stun: Interrupt enemy action
+* Paralyze: Enemy can not move or attack
+* Frozen: Enemies covered in ice become paralyzed as long as they are covered
+* Stone: Hard surface that can get wet
+* Dirt/Sand/Soil: Turns to mud when wet
+* Mud: Slows movement. Turns to soil when dry.
 
 ## Characters
 Characters each have their own starting passive bonuses.  
@@ -138,6 +143,11 @@ There are 4 stages:
 3) Strong Magic. Skills can hurt enemies or alter the terrain and environment in ways that change how the map works. Skills require certain playstyle to optimize.
 4) Ultimate Magic. Powerful skills that have additional requirements to trigger. Can affect huge areas and instantly kill enemies. Terrain can be drastically altered or even replaced with new areas.
 Each level is more difficult to achieve than the last. Some passive bonuses can increase meter gain.
+Some special actions during combat grant bonus meter:
+* Parrying an attack
+* Killing an enemy
+* Stunning an enemy
+* Applying a status effect
 
 Magic skills can be gained by making offerings to shrines. Different offerings give access to different skill trees.
 
@@ -149,6 +159,11 @@ Magic skills can be gained by making offerings to shrines. Different offerings g
 * Puts out fires
 * Makes things wet
 * Creates roaming clouds that affect an area
+Levels Examples:
+1) Rainfall: Makes things wet
+2) Heavy Rain: Water accumulates on the ground. Dirt/sand turns to mud, slowing movement.
+3) Torrent: Can cause landslides that modify terrain, water levels rise and flood areas
+4) Catastrophic flooding: All areas become flooded, eroding terrain and creating currents that carry enemies and objects
 
 #### Wind
 * Increases large fire strength
@@ -167,6 +182,26 @@ Magic skills can be gained by making offerings to shrines. Different offerings g
 * Tornado version: a tornado appears that randomly travels with the cloud, dealing damage over time to enemies and throwing off projectiles in range
 * Hurricane version: A strong consistent wind in a single direction circling the entire rain cloud. rain cloud is much bigger (covers more than entire screen). Rain is very heavy except in the eye which is clear.
 
+#### Electricity
+* Stuns enemies
+* Combine with rain to create lightning bolts
+* Stronger versions chain to other enemies
+* Deal extra damage to wet enemies
+
+#### Fae
+* Distract enemies
+* Combine with electricity to create charm effect ?
+* Create illusions that can interact with ai
+
+#### Fire
+* Burns flammable things
+* Dries wet things
+* Can turn small fires into big fires
+* Combine with wind to create bursts of large flames and explosions
+
+#### Earth
+* Moves terrain
+* 
 
 
 ## Pacts
@@ -284,4 +319,5 @@ Every type of offering gives a choice of one of 3 skill trees to choose from.
 
 ## Future Tech
 * Portals for fast travel : a visible passage with a different section of the map on the other side. Would be hard to get right.
-* 
+* Flooding, water levels, water movement, currents ?
+* Wind physics . ?
