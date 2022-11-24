@@ -43,7 +43,10 @@ public class PlayerControlState : InputState
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Game.Do(new DoAttack(Game.Model.Player.Id, "Sword", Camera.main.ScreenToWorldPoint(Input.mousePosition)));
+            if (Game.Model.Player.Weapon.AttackCooldown.IsReady())
+            {
+                Game.Do(new DoAttack(Game.Model.Player.Id, "Sword", Camera.main.ScreenToWorldPoint(Input.mousePosition)));
+            }
         }
     }
 

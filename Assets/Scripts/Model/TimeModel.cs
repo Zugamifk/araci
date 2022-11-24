@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TimeModel : ITimeModel
 {
-    public const float TIME_MULTIPLIER = 100;
+    public const float TIME_MULTIPLIER = 1;
     const int SECOND_PER_MINUTE = 60;
     const int MINUTES_PER_HOUR = 60;
 

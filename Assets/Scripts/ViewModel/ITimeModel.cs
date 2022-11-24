@@ -4,6 +4,7 @@ using UnityEngine;
 
 public interface ITimeModel
 {
+    float Time { get; }
     int Hour { get; }
     int Minute { get; }
 }

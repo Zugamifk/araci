@@ -27,5 +27,8 @@ public struct DoAttack : ICommand
             Damage = data.Damage
         };
         model.Attacks.AddItem(attack);
+
+        var weapon = model.Player.Weapon;
+        weapon.AttackCooldown.ReadyTime = model.TimeModel.Time + weapon.AttackCooldown.Cooldown;
     }
 }
