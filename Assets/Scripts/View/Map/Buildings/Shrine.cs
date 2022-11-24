@@ -6,10 +6,31 @@ using UnityEngine;
 public class Shrine : MonoBehaviour
 {
     [SerializeField]
-    GameObject[] _candles;
+    LightSource[] _candles;
+
+    Identifiable _id;
+
+    private void Awake()
+    {
+        _id = GetComponent<Identifiable>();
+    }
+
+    private void Start()
+    {
+        Game.Do(new RegisterShrine(_id.Id));
+    }
 
     private void Update()
     {
-        var x = 0;        
+        var model = Game.Model.Shrines.GetItem(_id.Id);
+        if(model == null)
+        {
+            return;
+        }
+
+        for(int i=0;i<_candles.Length;i++)
+        {
+            _candles[i].enabled = model.HasBlessingAvailable;
+        }
     }
 }

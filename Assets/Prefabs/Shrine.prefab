@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5998371772621767683}
   - component: {fileID: 1046927826913184879}
   - component: {fileID: 5116748834983352839}
-  - component: {fileID: 7864732885368497997}
+  - component: {fileID: 3032121022970914364}
   m_Layer: 0
   m_Name: Shrine
   m_TagString: Untagged
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb20255c5237fd4bb2336d093a4ae22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _serializedId: bf32e229-bf6b-41c3-b794-a16d36e2c0d4
+  _serializedId: 04fc201f-debb-40d7-a675-4031baa9049d
 --- !u!114 &5116748834983352839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,9 +60,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 348f6b89888007846ba1eedabfb1a152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _candles: []
---- !u!58 &7864732885368497997
-CircleCollider2D:
+  _candles:
+  - {fileID: 3069053352928571123}
+  - {fileID: 3069053353947961584}
+--- !u!61 &3032121022970914364
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -74,9 +76,19 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.01}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.38
+  m_Size: {x: 0.79, y: 0.2}
+  m_EdgeRadius: 0
 --- !u!1 &5998371773353875945
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,6 +232,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efe437f0a6f6b964daf6dcbe9d56b6d1, type: 3}
+--- !u!114 &3069053353947961584 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8766547613380248141, guid: efe437f0a6f6b964daf6dcbe9d56b6d1, type: 3}
+  m_PrefabInstance: {fileID: 5998371772806601405}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d29515c1adfe9234fa66c2455bc612c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4410850090724422478 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7928591065626372595, guid: efe437f0a6f6b964daf6dcbe9d56b6d1, type: 3}
@@ -282,6 +305,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efe437f0a6f6b964daf6dcbe9d56b6d1, type: 3}
+--- !u!114 &3069053352928571123 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8766547613380248141, guid: efe437f0a6f6b964daf6dcbe9d56b6d1, type: 3}
+  m_PrefabInstance: {fileID: 5998371773397298366}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d29515c1adfe9234fa66c2455bc612c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4410850091878679885 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7928591065626372595, guid: efe437f0a6f6b964daf6dcbe9d56b6d1, type: 3}

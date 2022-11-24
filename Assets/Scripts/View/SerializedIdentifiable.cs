@@ -19,7 +19,6 @@ public class SerializedIdentifiable : Identifiable
             id = GenerateId();
         }
         Id = id;
-        Debug.Log(id);
     }
 
     Guid GenerateId()
