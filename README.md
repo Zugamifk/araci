@@ -1,10 +1,11 @@
 ## Inspiration
-* Special Forces BW map
+* Special Forces BW map -- general game structure
 * Warm Snow -- combat
-* Nioh
-* Sekiro
-* Hades
-* Vampire Survivors
+* Nioh -- weapons, combat system
+* Sekiro -- Katana combat, general tone
+* Hades -- combat, skill system
+* Vampire Survivors -- art style, arcane-ness
+* Elden ring -- open world design
 
 ## Story
 Years ago, a group of powerful sorcerers created a portal to another realm. They entered the portal and each made a pact with a different powerful demon. They were each granted some of the demon's power, and in return they were cursed, that if any one of them were killed the killer would become stronger. if only one remained they would be dragged back to the demon realm, enslaved to the demon whose power they possessed. Terrified and paranoid of each other, they agreed to part ways and never to meet again. The sorcerers lived mostly in peace, studying their craft and the demon's gifts on their own. 
@@ -183,7 +184,6 @@ Levels Examples:
 
 #### Storm
 **Synergy of Rain and Wind**
-* Slow, very high damage lightning bolts randomly hit enemies in the effected rain area
 * Tornado version: a tornado appears that randomly travels with the cloud, dealing damage over time to enemies and throwing off projectiles in range
 * Hurricane version: A strong consistent wind in a single direction circling the entire rain cloud. rain cloud is much bigger (covers more than entire screen). Rain is very heavy except in the eye which is clear.
 
@@ -192,6 +192,11 @@ Levels Examples:
 * Combine with rain to create lightning bolts
 * Stronger versions chain to other enemies
 * Deal extra damage to wet enemies
+
+#### Thunder
+**Synergy of Storm and Electricity**
+* Slow, very high damage lightning bolts randomly hit enemies in the effected rain area
+* Attacks under clouds hit enemies with thunder bolts
 
 #### Fae
 * Distract enemies
@@ -253,9 +258,10 @@ Levels Examples:
 * Can blind enemies
 
 #### Curse
-** Synergy of Decay and Disease**
+**Synergy of Decay and Disease**
 * Causes enemies to hurt themselves
 * Damage you take makes you stronger, retaliates on nearby enemies
+* High level skills allow instantly killing enemies if certain conditions met
 
 ## Pacts
 Pacts are permanent changes to the game that should be neither beneficial or negative. Pacts can be made at shrines with special offerings. Pacts are always enabled and can not be undone. Unlike magic, pacts only affect how the world works. They have no physical manifestation or direct effects on the player or enemies.
@@ -348,8 +354,30 @@ Shrines can be used to fast travel to other shrines.
 #### Araci's Village
 The starting point. Destroyed and burning, Araci begins at a shrine. A soldier grants him his first weapon and gives him his first quest.
 
+#### Ruined village
+The village the soldier comes from. Contains a portal and a powerful demon, the first boss. Killing the demon grant the first offering reward and closes the portal. A nearby note describes the locations of other portals and hints at the story of the sorcerers opening the original portal, and how the demons began arriving.
+
 #### Demon Temple
 At the centre of the map, the this is the location where the Sorcerer's summoned the original portal. It is where Araci will face the assassin and later open the portal tto fight the final Demon.
+
+### Regions / Biomes
+#### Cursed Valley
+A Deep winding valley covered in fog, with many hidden caves and paths. Lots of hidden enemies here. Many illusions. All magic is weaker here.
+
+#### Fae Marsh
+A large swamp. Area is frequently dark. Lots of enemies hide in the water to ambush. Winding paths cause player to get lost. All magic is stronger here.
+
+#### Windy Cove
+A large beach with lots of sand on the coast of the water. Many washed up shipwrecks. Enemies come form the ocean or beneath the sand. Enhances wind and rain effects.
+
+#### Canyon Mud Flats
+A dry area with many valleys and steppes. Lots of dust and wind. Hot area. Many areas washed ot by floods
+
+#### Rocky Meadows
+A grassy plain with rocky outcroppings and hills.
+
+#### Ruined Temple
+A large stone temple and surrounding buildings. Many hidden areas and destructible objects
 
 ## Enemies
 ### Kappa
@@ -374,3 +402,5 @@ Every type of offering gives a choice of one of 3 skill trees to choose from.
 * Portals for fast travel : a visible passage with a different section of the map on the other side. Would be hard to get right.
 * Flooding, water levels, water movement, currents ?
 * Wind physics . ?
+* Mounts -- Horse for basic faster movement, 
+* 
