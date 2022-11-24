@@ -20,6 +20,7 @@ public class ApplyAttackEffect : ICommand
         foreach(var target in _attackTargets)
         {
             var enemy = model.Characters.GetItem(target);
+            if (enemy == null) continue;
             enemy.Health.CurrentHealth -= attack.Damage;
             if(enemy.Health.CurrentHealth <=0)
             {

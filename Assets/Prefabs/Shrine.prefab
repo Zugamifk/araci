@@ -65,6 +65,7 @@ MonoBehaviour:
   _candles:
   - {fileID: 3069053352928571123}
   - {fileID: 3069053353947961584}
+  _interactable: {fileID: 5657213814595255423}
 --- !u!61 &3032121022970914364
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -104,6 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _indicatorPosition: {fileID: 5670791530126916980}
+  IsInteractable: 0
 --- !u!1 &5998371773353875945
 GameObject:
   m_ObjectHideFlags: 0

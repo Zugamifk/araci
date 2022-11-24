@@ -8,4 +8,5 @@ public class InteractableTarget : MonoBehaviour
     Transform _indicatorPosition;
 
     public Vector3 IndicatorPosition => _indicatorPosition.position;
+    public bool IsInteractable;
 }

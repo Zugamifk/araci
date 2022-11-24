@@ -7,6 +7,8 @@ public class Shrine : MonoBehaviour
 {
     [SerializeField]
     LightSource[] _candles;
+    [SerializeField]
+    InteractableTarget _interactable;
 
     Identifiable _id;
 
@@ -29,7 +31,8 @@ public class Shrine : MonoBehaviour
             return;
         }
 
-        for(int i=0;i<_candles.Length;i++)
+        _interactable.IsInteractable = model.HasBlessingAvailable;
+        for (int i=0;i<_candles.Length;i++)
         {
             _candles[i].enabled = model.HasBlessingAvailable;
         }
