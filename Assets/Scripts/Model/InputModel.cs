@@ -7,5 +7,8 @@ public class InputModel : IInputModel
 {
     public Guid CurrentMouseOverObject { get; set; }
     public Vector3 ClickPosition { get; set; }
-    public Guid WorldMapInputHandlerId { get; } = Guid.NewGuid(); 
+    public Dictionary<Guid,InteractableModel> InteractableTargets { get; set; } = new();
+    public InteractableModel CurrentInteractable { get; set; }
+
+    Guid IInputModel.CurrentInteractableId => CurrentInteractable?.Id ?? Guid.Empty;
 }

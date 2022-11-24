@@ -13,6 +13,7 @@ public class Shrine : MonoBehaviour
     private void Awake()
     {
         _id = GetComponent<Identifiable>();
+        ViewLookup.Register(_id.Id, gameObject);
     }
 
     private void Start()

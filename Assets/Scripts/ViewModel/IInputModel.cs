@@ -8,5 +8,5 @@ public interface IInputModel
 {
     Guid CurrentMouseOverObject { get; }
     Vector3 ClickPosition { get; }
-    Guid WorldMapInputHandlerId { get; }
+    Guid CurrentInteractableId { get; }
 }
