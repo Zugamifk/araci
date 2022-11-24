@@ -7,9 +7,9 @@ public abstract class SimplePrefabReference : ScriptableObject, IPrefabReference
     [SerializeField]
     GameObject _prefab;
     [SerializeField]
-    string _name;
+    string _key;
 
-    public string Name => _name;
+    public string Key => _key;
 
     public GameObject Prefab => _prefab;
 }

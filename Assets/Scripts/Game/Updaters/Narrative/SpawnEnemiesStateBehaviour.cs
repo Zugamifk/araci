@@ -9,7 +9,7 @@ public class SpawnEnemiesStateBehaviour : NarrativeStateBehaviour<SpawnEnemiesSt
     {
         for(int i = 0; i < _data.Count; i++)
         {
-            Game.Do(new SpawnEnemy(_data.EnemyData.Name, _data.SpawnName));
+            Game.Do(new SpawnEnemy(_data.EnemyData.Key, _data.SpawnName));
         }
         IsDone = true;
     }

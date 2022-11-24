@@ -1,14 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static SimplePrefabLookup;
 
-public abstract class SimpleDataCollection<TKeyHolder, TReference> : KeyHoldertoPrefabReferenceLookup<TKeyHolder, TReference>
-    where TKeyHolder : IKeyHolder
-    where TReference : IPrefabReference
+public abstract class SimpleDataCollection<TData> : ScriptableObject
+    where TData : IKeyHolder
 {
     [SerializeField]
-    TReference[] _dataReferences;
+    TData[] _data;
 
-    protected override IEnumerable<TReference> PrefabReferences => _dataReferences;
+    Dictionary<string, TData> _keyToData = new Dictionary<string, TData>();
+
+    public TData Get(string key) => _keyToData[key];
+    public TData this[string key] => _keyToData[key];
+
+    protected virtual void OnEnable()
+    {
+        foreach (var p in _data)
+        {
+            if (p != null)
+            {
+                _keyToData.Add(p.Key, p);
+            }
+            else
+            {
+                throw new System.InvalidOperationException("Null in BuildingCollection!");
+            }
+        }
+    }
 }

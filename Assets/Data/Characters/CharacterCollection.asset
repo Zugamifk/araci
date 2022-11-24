@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf87ec571bfd7214aba8c68af55197ab, type: 3}
   m_Name: CharacterCollection
   m_EditorClassIdentifier: 
-  _characters:
-  - {fileID: 11400000, guid: cf7324939fbd7974ab4c1b1f690ed688, type: 2}
+  _data:
   - {fileID: 11400000, guid: 39b360abcb695d3468bccf6062246dc1, type: 2}
+  - {fileID: 11400000, guid: cf7324939fbd7974ab4c1b1f690ed688, type: 2}

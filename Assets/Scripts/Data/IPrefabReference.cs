@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IPrefabReference
+public interface IPrefabReference : IKeyHolder
 {
-    string Name { get; }
     GameObject Prefab { get; }
 }

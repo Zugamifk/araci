@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71400984395be4a47bd8140680ef6604, type: 3}
   m_Name: AttackCollection
   m_EditorClassIdentifier: 
-  _dataReferences:
+  _data:
   - {fileID: 11400000, guid: b79da175be7ac914daffaf66366f9a76, type: 2}

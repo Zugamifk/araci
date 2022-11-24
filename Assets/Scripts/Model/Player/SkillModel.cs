@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class Skills
+public class SkillModel
 {
-    public const string RAIN = "Rain";
+    public string Key { get; set; }
 }

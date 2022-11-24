@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class Skills
+public class SkillService
 {
-    public const string RAIN = "Rain";
+    public void GainSkill(string key)
+    {
+
+    }
 }

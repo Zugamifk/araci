@@ -2,31 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class KeyHoldertoPrefabReferenceLookup<TKeyHolder, TReference> : ScriptableObject, IPrefabLookup, IRegisteredData
+public abstract class KeyHoldertoPrefabReferenceLookup<TKeyHolder, TReference> : SimpleDataCollection<TReference>, IPrefabLookup, IRegisteredData
     where TKeyHolder : IKeyHolder
     where TReference : IPrefabReference
 {
-    Dictionary<string, TReference> _nameToPrefab = new Dictionary<string, TReference>();
+    public GameObject GetPrefab(string key) => Get(key).Prefab;
 
-    public GameObject GetPrefab(string name) => _nameToPrefab[name].Prefab;
-    public TReference Get(string name) => _nameToPrefab[name];
-    public TReference this[string name] => _nameToPrefab[name];
-
-    protected virtual void OnEnable()
+    protected override void OnEnable()
     {
-        foreach (var p in PrefabReferences)
-        {
-            if (p != null)
-            {
-                _nameToPrefab.Add(p.Name, p);
-            }
-            else
-            {
-                throw new System.InvalidOperationException("Null in BuildingCollection!");
-            }
-        }
         Prefabs.Register<TKeyHolder>(this);
+        base.OnEnable();
     }
-
-    protected abstract IEnumerable<TReference> PrefabReferences { get; }
 }

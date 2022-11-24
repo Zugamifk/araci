@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: SwordAttack
   m_EditorClassIdentifier: 
   _prefab: {fileID: 6852805424172862842, guid: 3a7b9fe3cfcaaf54e84a07a72c035f7c, type: 3}
-  _name: Sword
+  _key: Sword
+  _damage: 10

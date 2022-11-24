@@ -266,6 +266,8 @@ At the centre of the map, the this is the location where the Sorcerer's summoned
 ## Enemies
 ### Kappa
 Small but strong. Lives in water, hops on land. Usually stays in water but will attack if player is close to land. Smells bad, has a poison gas attack. Looks like a reptilian creature with a turtle shell. Moves very quickly in water, often hidden and submerged.
+Drops:
+* Sara (dish) that is often held on its head. Offering: Water, Poison, gas ??
 
 ### Ogre
 Large and tall man with a large head and lots of hair. Eats human flesh. About 1.5 times the height of a human. 
