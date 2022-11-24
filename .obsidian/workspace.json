@@ -86,8 +86,8 @@
               "type": "backlink",
               "state": {
                 "file": "README.md",
-                "collapseAll": false,
-                "extraContext": false,
+                "collapseAll": true,
+                "extraContext": true,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
@@ -129,13 +129,13 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
-  "active": "85301c735283055f",
+  "active": "617b7f1733033678",
   "lastOpenFiles": []
 }

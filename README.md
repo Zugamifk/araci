@@ -30,6 +30,12 @@ Araci will meet an animal who bonds with him as a familiar. The familiar grants 
 * Shrines can be prayed to in order to make a PACT
 * A pact is meant to significantly change your playstyle by giving a large boost but disabling or penalizing somethign else heavily: glass cannon, pacifist, no magic, etc.
 
+### Possible Ideas
+* Offerings can be processed into finer offerings that offer better, more powerful skill trees or pacts?
+* Tools can be bought/found that allow processing offerings
+* Some skill trees can only be levelled with rare offerings
+* 
+
 ## Key Words
 * Fire: Spreads over Flammable tiles and characters, deals damage over time. Converts to Ash
 	* Small: Eventually becomes Large unless it burns the object to ash. Spreads to other Dry objects. Dies if wet.
@@ -50,7 +56,10 @@ Araci will meet an animal who bonds with him as a familiar. The familiar grants 
 * Hot: Make water disappear. Make things Dry.
 * Cold: Turn water into Ice. 
 * Snow: Slow movement. Turn to water if not Cold.
-* 
+* Hidden: some object can not be scene unless touched or Scouted
+* Scout: Reveals Hidden objects nearby
+* Blind: On enemies, can not detect Player. On player, greatly redius sight area.
+* Taunt: Enemies will target the taunt user instead of the player
 
 
 ## Characters
@@ -167,10 +176,27 @@ Pacts are permanent changes to the game that should be neither beneficial or neg
 * Rain is converted to Snow. Freezes things instead of making them Wet.
 * Everything is Cold
 
-### Heat
+### Summer
 * Fire is always Large
 * Nothing can get Wet.
 
+### Blood
+* A thirst for blood
+* Magic level also increases attack speed and move speed
+* All magic levels require the same charge at each level
+* At low magic levels, attack speed is much slower than normal
+* Low magic levels require higher charge than normal
+
+### Moon
+* It is always night
+* It is always dark
+* Enemy sight range is greatly reduced
+* Hidden enemies can not be scouted
+
+### Sun 
+* It is always day.
+* It is never dark
+* Fire blinds nearby enemies and self
 
 ## Familiars
 Familiars are animal companions. You get to choose one. Different familiars give different bonuses.
@@ -178,18 +204,28 @@ Familiars passively grow stronger as the player gains weapon and magic skills. M
 
 Familiars have attacks and will act on their own but usually follow the player and try to protect them. Some familiars also help collect items or detect hidden objects.
 
+Familiars usually have abilities meant to complement or focus on certain playstyles or builds. *Inspiration: PoE Ascendency classes*
+
 ### Cat
-Attacks weak enemies. Bonus against weak enemies.
+Attacks target weak enemies. Bonus against weak enemies.
 
 ### Dog
-Follows player closely. Attacks target the player attacks. Synergises with the playter's skills.
+Follows player closely. Attacks target the player attacks. Synergises with the player's skills.
 
 ### Bird
-Scout. Detects hidden enemies. Attacks distract enemies.
+Scout nearby objects and enemies. Attacks distract enemies. Targets hidden enemies.
 
 ### Snake
 Stealthy. Attacks are poisonous.
 
+### Fox
+Grants a passive magic meter charge while in combat. Grants magic meter with attacks.
+
+### Fairy
+Magic level is always at least 1. Can not attack.
+
+### Monkey
+Taunts enemies. Can throw objects on the ground as attacks.
 
 ## Health
 Health is fixed and rarely goes up. Different characters have different health amounts.
