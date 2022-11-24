@@ -3,6 +3,8 @@
 * Warm Snow -- combat
 * Nioh
 * Sekiro
+* Hades
+* Vampire Survivors
 
 ## Story
 Years ago, a group of powerful sorcerers created a portal to another realm. They entered the portal and each made a pact with a different powerful demon. They were each granted some of the demon's power, and in return they were cursed, that if any one of them were killed the killer would become stronger. if only one remained they would be dragged back to the demon realm, enslaved to the demon whose power they possessed. Terrified and paranoid of each other, they agreed to part ways and never to meet again. The sorcerers lived mostly in peace, studying their craft and the demon's gifts on their own. 
@@ -34,7 +36,7 @@ Araci will meet an animal who bonds with him as a familiar. The familiar grants 
 * Offerings can be processed into finer offerings that offer better, more powerful skill trees or pacts?
 * Tools can be bought/found that allow processing offerings
 * Some skill trees can only be levelled with rare offerings
-* 
+* Avoid armour, resistances, etc. all enemies should take the same damage, or make concept more intuitive
 
 ## Key Words
 * Fire: Spreads over Flammable tiles and characters, deals damage over time. Converts to Ash
@@ -66,6 +68,7 @@ Araci will meet an animal who bonds with him as a familiar. The familiar grants 
 * Stone: Hard surface that can get wet
 * Dirt/Sand/Soil: Turns to mud when wet
 * Mud: Slows movement. Turns to soil when dry.
+* Entangle: Stops movement
 
 ## Characters
 Characters each have their own starting passive bonuses.  
@@ -136,6 +139,8 @@ Special attacks:
 * Followup secondary after many primary attacks: powerful overhead smash with an area. The more primary attacks, the more powerful the smash.
 
 ## Magic
+Magic is granted by gods/spirits as rewards for offerings. Intuitively it is an external presense that becomes stronger based on the player's actions. Magic can affect the player, enemies, or the world.
+
 Magic is a mechanic with a meter that builds up as the player attacks enemies with their weapons. It slowly goes down over time. As the meter fills, it will hit different stages. Each magic ability becomes enabled a certain stage.
 There are 4 stages:
 1) Ambient magic. Mostly passive environmental effects. Small combat bonuses.
@@ -193,7 +198,7 @@ Levels Examples:
 * Combine with electricity to create charm effect ?
 * Create illusions that can interact with ai
 
-#### Fire
+#### Flame
 * Burns flammable things
 * Dries wet things
 * Can turn small fires into big fires
@@ -201,11 +206,59 @@ Levels Examples:
 
 #### Earth
 * Moves terrain
-* 
+* Launch projectile stones
+* Combine with fire to create fireballs
+* Can create protecting barriers
 
+#### Magma
+**Synergy of Earth and Fire**
+* A liquid like water, burns everything in its path, massive damage
+* Turns to stone when cold or wet
+* Most skills are high level
+
+#### Frost
+**Synergy of Earth and Rain**
+* Creates ice or freezes water
+* Freezes enemies
+* Can launch frozen projectiles that freeze or make things cold
+* Can launch freezing water that makes things wet and cold
+
+#### Iron
+**Synergy of Magma and Frost**
+* Can shatter stones into shards of metal
+* Can change stone shape
+* Can destroy or manipulate weapons and armor
+* Can destroy metal objects
+* Can create weapons out of stone
+
+#### Wild
+**Synergy of Fae and Earth**
+* Creates plants in soil
+* Plants entangle anyone nearby until destroyed
+* Plants can burn
+* Plants can poison
+* Trees can block movement
+
+#### Decay
+**Synergy of Fire and Rain**
+* Causes weakness
+* Can create acid which can destroy things
+* Can make some things destructible
+* Can weaken enemy resistances ?
+
+#### Disease
+**Synergy of Wild and Decay**
+* Can create disease which can spread to nearby enemies
+* Can paralyze enemies
+* Can blind enemies
+
+#### Curse
+** Synergy of Decay and Disease**
+* Causes enemies to hurt themselves
+* Damage you take makes you stronger, retaliates on nearby enemies
 
 ## Pacts
-Pacts are permanent changes to the game that should be neither beneficial or negative. Pacts can be made at shrines with special offerings. Pacts are always enabled and can not be undone.
+Pacts are permanent changes to the game that should be neither beneficial or negative. Pacts can be made at shrines with special offerings. Pacts are always enabled and can not be undone. Unlike magic, pacts only affect how the world works. They have no physical manifestation or direct effects on the player or enemies.
 
 ### Winter
 * Rain is converted to Snow. Freezes things instead of making them Wet.
