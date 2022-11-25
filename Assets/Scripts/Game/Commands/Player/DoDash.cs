@@ -10,5 +10,6 @@ public struct DoDash : ICommand
         var character = model.Characters.GetItem(model.Player.Id);
         var dir = character.Movement.Direction;
         character.Movement.DesiredMove = dir * player.Dash.Speed;
+        player.Dash.IsDashing = true;
     }
 }

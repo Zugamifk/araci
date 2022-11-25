@@ -5,6 +5,7 @@ using UnityEngine;
 public interface IMovementModel
 {
     Vector2 Position { get; }
+    Vector2 Direction { get; }
     Vector2 DesiredMove { get; }
     Space MovementSpace { get; }
 

@@ -6,6 +6,22 @@ public class Player : MonoBehaviour
 {
     [SerializeField]
     Transform _attackRoot;
+    [SerializeField]
+    DashEffect _dash;
+
+    bool _wasDashing;
+    private void Update()
+    {
+        var isDashing = Game.Model.Player.Dash.IsDashing;
+        if (_wasDashing!=isDashing)
+        {
+            if(isDashing)
+            {
+                _dash.DoDash();
+            }
+            _wasDashing = isDashing;
+        }
+    }
 
     public void DoAttack(Attack attack, IAttackModel model)
     {
