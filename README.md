@@ -24,6 +24,12 @@ Throughout the adventure, Araci meets characters who will give him quests for re
 Araci will meet an animal who bonds with him as a familiar. The familiar grants different bonuses to Araci depending on the animal.
 
 ## Basic Ideas
+* Focus on synergies between weapons, skills and the environment
+* Avoid randoms. Crit chance, dice rolls, roguelike "choose between 3" systems, etc.
+* Progression should be about choosing a path to complete the story with the desired build
+* Quests should not exist in a vaccuum. Each quest should alter the game with a unique reward, altering the map, changing the story, etc.
+* Avoid Metroidvania type area unlocking. No special items should be needed to access paths or areas that aren't available early on.
+* No roguelike permanent passive progression between runs (game should not get easier the more you play except by skill).
 * Every weapon should be distinct and have its own playstyle and feeling
 * Each weapon has a skill tree
 * Magic skills augment weapon attacks and give unique abilities and passive bonuses
@@ -265,6 +271,8 @@ Levels Examples:
 
 ## Pacts
 Pacts are permanent changes to the game that should be neither beneficial or negative. Pacts can be made at shrines with special offerings. Pacts are always enabled and can not be undone. Unlike magic, pacts only affect how the world works. They have no physical manifestation or direct effects on the player or enemies.
+Having multiple pacts should give a special bonues.
+In order to make a pact, a special offering must be given. These offerings should be rewarded as part of a quest.
 
 ### Winter
 * Rain is converted to Snow. Freezes things instead of making them Wet.
@@ -291,6 +299,28 @@ Pacts are permanent changes to the game that should be neither beneficial or neg
 * It is always day.
 * It is never dark
 * Fire blinds nearby enemies and self
+
+### Glass
+* All damage greatly increased
+* Max 2 hp
+
+### Silence
+* Offering grant weapon experience instead of magic skills
+* Lose all magic skills
+
+### Spite
+* Instantly kill any enemy who damages you
+* Enemies who die will explode dealing damage
+
+### Peace
+* Lose weapon
+* Magic skills trigger when dodging or blocking attacks
+* Greatly increased magic meter gain
+
+### Shadow 
+* Dodge changed to a fast teleport
+* Stepping towards and enemy teleports behind them
+* Enemies are always hidden until they enter combat
 
 ## Familiars
 Familiars are animal companions. You get to choose one. Different familiars give different bonuses.
