@@ -23,6 +23,8 @@ Throughout the adventure, Araci meets characters who will give him quests for re
 
 Araci will meet an animal who bonds with him as a familiar. The familiar grants different bonuses to Araci depending on the animal.
 
+A large ruined palace lies far off in the world. As araci explores the world and collects treasures, they will be added to the palace and stay between games. An important event should take place in the palace near the end of the game. It should be an optional event after the main story events are finished. Should be an opportinuty to test the strength of a game-finishing build.
+
 ## Basic Ideas
 * Focus on synergies between weapons, skills and the environment
 * Avoid randoms. Crit chance, dice rolls, roguelike "choose between 3" systems, etc.
@@ -393,6 +395,7 @@ At the centre of the map, the this is the location where the Sorcerer's summoned
 ### Regions / Biomes
 #### Cursed Valley
 A Deep winding valley covered in fog, with many hidden caves and paths. Lots of hidden enemies here. Many illusions. All magic is weaker here.
+A parade of ghosts wanders the area. As enemies die, their ghosts join the parade. The parade ignores Araci but if he enters it, he will quickly die.
 
 #### Fae Marsh
 A large swamp. Area is frequently dark. Lots of enemies hide in the water to ambush. Winding paths cause player to get lost. All magic is stronger here.
