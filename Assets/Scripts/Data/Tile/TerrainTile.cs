@@ -5,9 +5,12 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
-[CreateAssetMenu(menuName ="Tiles/Terrain Tile")]
+[CreateAssetMenu(menuName = "Tiles/Terrain Tile")]
 public class TerrainTile : Tile
 {
+    static readonly Matrix4x4 _flipHorz = Matrix4x4.Rotate(Quaternion.AngleAxis(180, Vector3.right));
+    static readonly Matrix4x4 _flipVert = Matrix4x4.Rotate(Quaternion.AngleAxis(180, Vector3.up));
+
     [Flags]
     enum Edge
     {
@@ -63,7 +66,7 @@ public class TerrainTile : Tile
             tilemap.RefreshTile(pos);
         }
 
-        pos = position + new Vector3Int(1,1,0);
+        pos = position + new Vector3Int(1, 1, 0);
         if (tilemap.GetTile(pos) == this)
         {
             tilemap.RefreshTile(pos);
@@ -94,10 +97,11 @@ public class TerrainTile : Tile
         bool southWestForceBorder = false;
         bool northWestForceBorder = false;
         Edge sideMask = 0;
-        if (IsBlob(tilemap, position + new Vector3Int(0,1,0)))
+        if (IsBlob(tilemap, position + new Vector3Int(0, 1, 0)))
         {
             sideMask |= Edge.North;
-        } else
+        }
+        else
         {
             northEastForceBorder = true;
             northWestForceBorder = true;
@@ -154,14 +158,21 @@ public class TerrainTile : Tile
         }
 
         Sprite sprite = null;
+        var matrix = Matrix4x4.identity;
         var index = (uint)sideMask;
         Debug.Log(index);
         switch (index)
         {
-            case 1:
             case 4:
+                matrix = _flipVert;
+                goto case 1;
             case 16:
+                matrix = _flipVert * _flipHorz;
+                goto case 1;
             case 64:
+                matrix = _flipHorz;
+                goto case 1;
+            case 1:
                 sprite = _threeSides;
                 break;
             case 31:
@@ -183,6 +194,9 @@ public class TerrainTile : Tile
         }
 
         tileData.sprite = sprite;
+        tileData.transform = matrix;
+        tileData.colliderType = ColliderType.Sprite;
+        tileData.flags = TileFlags.LockTransform;
     }
 
     bool IsBlob(ITilemap tilemap, Vector3Int position)
