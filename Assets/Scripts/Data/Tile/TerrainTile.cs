@@ -10,6 +10,7 @@ public class TerrainTile : Tile
 {
     static readonly Matrix4x4 _flipHorz = Matrix4x4.Rotate(Quaternion.AngleAxis(180, Vector3.right));
     static readonly Matrix4x4 _flipVert = Matrix4x4.Rotate(Quaternion.AngleAxis(180, Vector3.up));
+    static readonly Matrix4x4 _rotate = Matrix4x4.Rotate(Quaternion.AngleAxis(180, Vector3.forward));
 
     [Flags]
     enum Edge
@@ -44,6 +45,12 @@ public class TerrainTile : Tile
     Sprite _twoSidesAdjacentSide;
     [SerializeField]
     Sprite _twoSidesAdjacentMiddle;
+    [SerializeField]
+    Sprite _twoSidesOpposite;
+    [SerializeField]
+    Sprite _oneSideSideCorner;
+    [SerializeField]
+    Sprite _oneSideMiddleCorner;
 
     public override void RefreshTile(Vector3Int position, ITilemap tilemap)
     {
@@ -167,10 +174,9 @@ public class TerrainTile : Tile
             sideMask |= Edge.NorthWest;
         }
 
-        Sprite sprite = null;
+        Sprite sprite = _filled;
         var matrix = Matrix4x4.identity;
         var index = (uint)sideMask;
-        Debug.Log(index);
         switch (index)
         {
             // three sides
@@ -178,7 +184,7 @@ public class TerrainTile : Tile
                 matrix = _flipVert;
                 goto case 1;
             case 16:
-                matrix = _flipVert * _flipHorz;
+                matrix = _rotate;
                 goto case 1;
             case 64:
                 matrix = _flipHorz;
@@ -192,7 +198,7 @@ public class TerrainTile : Tile
                 break;
             // one side
             case 31:
-                matrix = _flipVert * _flipHorz;
+                matrix = _rotate;
                 goto case 241;
             case 124:
                 matrix = _flipVert;
@@ -244,6 +250,39 @@ public class TerrainTile : Tile
                 goto case 193;
             case 193:
                 sprite = _twoSidesAdjacentSide;
+                break;
+            // two sides opposite
+            case 68:
+                matrix = _flipHorz;
+                goto case 17;
+            case 17:
+                sprite = _twoSidesOpposite;
+                break;
+            // one side side corner
+            case 23:
+                matrix = _flipVert;
+                goto case 71;
+            case 113:
+                matrix = _flipHorz;
+                goto case 71;
+            case 116:
+                matrix = _rotate;
+                goto case 71;
+            case 71:
+                sprite = _oneSideSideCorner;
+                break;
+            // one side middle corner
+            case 29:
+                matrix = _flipVert;
+                goto case 197;
+            case 92:
+                matrix = _rotate;
+                goto case 197;
+            case 209:
+                matrix = _flipHorz;
+                goto case 197;
+            case 197:
+                sprite = _oneSideMiddleCorner;
                 break;
             default:
                 break;
