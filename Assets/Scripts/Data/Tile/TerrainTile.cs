@@ -34,6 +34,16 @@ public class TerrainTile : Tile
     Sprite _middleCorner;
     [SerializeField]
     Sprite _threeSides;
+    [SerializeField]
+    Sprite _fourCorners;
+    [SerializeField]
+    Sprite _twoSidesSideCorner;
+    [SerializeField]
+    Sprite _twoSidesMiddleCorner;
+    [SerializeField]
+    Sprite _twoSidesAdjacentSide;
+    [SerializeField]
+    Sprite _twoSidesAdjacentMiddle;
 
     public override void RefreshTile(Vector3Int position, ITilemap tilemap)
     {
@@ -163,6 +173,7 @@ public class TerrainTile : Tile
         Debug.Log(index);
         switch (index)
         {
+            // three sides
             case 4:
                 matrix = _flipVert;
                 goto case 1;
@@ -175,19 +186,64 @@ public class TerrainTile : Tile
             case 1:
                 sprite = _threeSides;
                 break;
+            // four corners
+            case 85:
+                sprite = _fourCorners;
+                break;
+            // one side
             case 31:
+                matrix = _flipVert * _flipHorz;
+                goto case 241;
             case 124:
-            case 241:
+                matrix = _flipVert;
+                goto case 241;
             case 199:
+                matrix = _flipHorz;
+                goto case 241;
+            case 241:
                 sprite = _oneSide;
                 break;
+            // side corner
             case 127:
+                matrix = _flipVert;
+                goto case 247;
             case 247:
                 sprite = _sideCorner;
                 break;
+            // middle corner
             case 223:
+                matrix = _flipHorz;
+                goto case 253;
             case 253:
                 sprite = _middleCorner;
+                break;
+            // two side middle corner
+            case 80:
+                matrix = _flipHorz;
+                goto case 5;
+            case 5:
+                sprite = _twoSidesMiddleCorner;
+                break;
+            // two sides side corner
+            case 20:
+                matrix = _flipVert;
+                goto case 65;
+            case 65:
+                sprite = _twoSidesSideCorner;
+                break;
+            // two sides middle
+            case 112:
+                matrix = _flipHorz;
+                goto case 7;
+            case 7:
+                sprite = _twoSidesAdjacentMiddle;
+                break;
+            // two sides side
+            case 28:
+                matrix = _flipVert;
+                goto case 193;
+            case 193:
+                sprite = _twoSidesAdjacentSide;
                 break;
             default:
                 break;
