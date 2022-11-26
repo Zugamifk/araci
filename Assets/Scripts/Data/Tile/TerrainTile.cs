@@ -350,7 +350,6 @@ public class TerrainTile : Tile
 
         tileData.sprite = sprite;
         tileData.transform = matrix;
-        tileData.colliderType = ColliderType.Sprite;
         tileData.flags = TileFlags.LockTransform;
     }
 
