@@ -457,6 +457,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Water_18
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2320396c5a6fe3c43b22d536061159bc
+      internalID: 1063667312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -485,6 +506,7 @@ TextureImporter:
       Water_16: -1023062799
       Water_13: 1758502822
       Water_3: 276577642
+      Water_18: 1063667312
       Water_17: 607304606
   spritePackingTag: 
   pSDRemoveMatte: 0

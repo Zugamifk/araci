@@ -51,6 +51,18 @@ public class TerrainTile : Tile
     Sprite _oneSideSideCorner;
     [SerializeField]
     Sprite _oneSideMiddleCorner;
+    [SerializeField]
+    Sprite _twoCornersAdjacent;
+    [SerializeField]
+    Sprite _twoCornersOppositeSide;
+    [SerializeField]
+    Sprite _twoCornersOppositeMiddle;
+    [SerializeField]
+    Sprite _threeCornersSide;
+    [SerializeField]
+    Sprite _threeCornersMiddle;
+    [SerializeField]
+    Sprite _oneSideTwoCorners;
 
     public override void RefreshTile(Vector3Int position, ITilemap tilemap)
     {
@@ -283,6 +295,54 @@ public class TerrainTile : Tile
                 goto case 197;
             case 197:
                 sprite = _oneSideMiddleCorner;
+                break;
+            // two corners adjacent
+            case 95:
+                matrix = _flipHorz;
+                goto case 125;
+            case 215:
+                matrix = _rotate;
+                goto case 125;
+            case 245:
+                matrix = _flipVert;
+                goto case 125;
+            case 125:
+                sprite = _twoCornersAdjacent;
+                break;
+            // two corners opposide side
+            case 119:
+                sprite = _twoCornersOppositeSide;
+                break;
+            // two corners opposite middle
+            case 221:
+                sprite = _twoCornersOppositeMiddle;
+                break;
+            // three corners side
+            case 213:
+                matrix = _flipVert;
+                goto case 93;
+            case 93:
+                sprite = _threeCornersSide;
+                break;
+            // three corners middle
+            case 117:
+                matrix = _flipHorz;
+                goto case 87;
+            case 87:
+                sprite = _threeCornersMiddle;
+                break;
+            // one side two corners
+            case 21:
+                matrix = _flipVert;
+                goto case 69;
+            case 84:
+                matrix = _rotate;
+                goto case 69;
+            case 81:
+                matrix = _flipHorz;
+                goto case 69;
+            case 69:
+                sprite = _oneSideTwoCorners;
                 break;
             default:
                 break;

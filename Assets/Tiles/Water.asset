@@ -47,3 +47,9 @@ MonoBehaviour:
   _twoSidesOpposite: {fileID: 594170829, guid: d0a10d8dd46162e44a908c527db6fdea, type: 3}
   _oneSideSideCorner: {fileID: -1286104398, guid: d0a10d8dd46162e44a908c527db6fdea, type: 3}
   _oneSideMiddleCorner: {fileID: 807751370, guid: d0a10d8dd46162e44a908c527db6fdea, type: 3}
+  _twoCornersAdjacent: {fileID: 1162647704, guid: d0a10d8dd46162e44a908c527db6fdea, type: 3}
+  _twoCornersOppositeSide: {fileID: 2046431831, guid: d0a10d8dd46162e44a908c527db6fdea, type: 3}
+  _twoCornersOppositeMiddle: {fileID: -1023062799, guid: d0a10d8dd46162e44a908c527db6fdea, type: 3}
+  _threeCornersSide: {fileID: 607304606, guid: d0a10d8dd46162e44a908c527db6fdea, type: 3}
+  _threeCornersMiddle: {fileID: 1063667312, guid: d0a10d8dd46162e44a908c527db6fdea, type: 3}
+  _oneSideTwoCorners: {fileID: -1309462533, guid: d0a10d8dd46162e44a908c527db6fdea, type: 3}
