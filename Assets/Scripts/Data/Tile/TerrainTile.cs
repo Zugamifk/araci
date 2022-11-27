@@ -351,6 +351,7 @@ public class TerrainTile : Tile
         tileData.sprite = sprite;
         tileData.transform = matrix;
         tileData.flags = TileFlags.LockTransform;
+        tileData.colliderType = ColliderType.Sprite;
     }
 
     bool IsBlob(ITilemap tilemap, Vector3Int position)
