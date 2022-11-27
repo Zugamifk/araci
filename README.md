@@ -410,7 +410,7 @@ A dry area with many valleys and steppes. Lots of dust and wind. Hot area. Many 
 A grassy plain with rocky outcroppings and hills.
 
 #### Ruined Temple
-A large stone temple and surrounding buildings. Many hidden areas and destructible objects
+A large stone temple and surrounding buildings. Many hidden areas and destructible objects. Masks line the walls, and most enemies also wear masks. Different masks give enemies different abilities. There are special shrines with masks throughout the temple, and if they are prayed at, enemies with that mask will be affected (killed? mask removed? cursed?)
 
 ## Enemies
 ### Kappa
