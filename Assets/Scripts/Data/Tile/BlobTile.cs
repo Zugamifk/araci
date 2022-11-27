@@ -1,3 +1,4 @@
+using PlasticPipe.PlasticProtocol.Messages;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,8 +6,9 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
-[CreateAssetMenu(menuName = "Tiles/Terrain Tile")]
-public class TerrainTile : Tile
+
+[CreateAssetMenu(menuName = "Tiles/Blob Tile")]
+public class BlobTile : Tile
 {
     static readonly Matrix4x4 _flipHorz = Matrix4x4.Rotate(Quaternion.AngleAxis(180, Vector3.right));
     static readonly Matrix4x4 _flipVert = Matrix4x4.Rotate(Quaternion.AngleAxis(180, Vector3.up));
@@ -25,6 +27,8 @@ public class TerrainTile : Tile
         NorthWest = 128
     }
 
+    [SerializeField, Tooltip("If true, treat empty tiles as matching this tile")]
+    bool _nullIsThis;
     [SerializeField]
     Sprite _filled;
     [SerializeField]
@@ -351,12 +355,12 @@ public class TerrainTile : Tile
         tileData.sprite = sprite;
         tileData.transform = matrix;
         tileData.flags = TileFlags.LockTransform;
-        tileData.colliderType = ColliderType.Sprite;
+        tileData.colliderType = colliderType;
     }
 
     bool IsBlob(ITilemap tilemap, Vector3Int position)
     {
         var tile = tilemap.GetTile(position);
-        return tile == null || tile == this;
+        return (_nullIsThis && tile == null) || tile == this;
     }
 }

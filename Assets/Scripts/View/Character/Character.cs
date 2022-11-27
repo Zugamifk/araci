@@ -23,16 +23,42 @@ public class Character : ModelViewBase<ICharacterModel>
         UpdatePosition();
     }
 
+    void UpdateCrouch(KeyCode crouchKey)
+    {
+        if (Input.GetKeyDown(crouchKey))
+        {
+            StartCoroutine(Crouch(true));
+        }
+
+        //stop crouch
+        if (Input.GetKeyUp(crouchKey))
+        {
+            StartCoroutine(Crouch(false));
+        }
+    }
+
+    IEnumerator Crouch(bool down)
+    {
+        for (float t = 0; t < 1; t += Time.deltaTime)
+        {
+            var h = Mathf.Lerp(.5f, 1, down ? 1 - t : t);
+            transform.localScale = new Vector3(1, h, 1);
+            yield return null;
+        }
+    }
+
     void Update()
     {
         var character = GetModel();
-        if(character == null)
+        if (character == null)
         {
             return;
-        } else if (character.Health.IsAlive)
+        }
+        else if (character.Health.IsAlive)
         {
             DoDesiredMove(character);
-        } else
+        }
+        else
         {
             Die();
         }
