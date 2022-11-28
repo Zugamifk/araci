@@ -78,18 +78,238 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: VillageEnvironment_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 227
+        width: 23
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a93a886746c8cb428e8afd8268b9c41
+      internalID: 324227695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VillageEnvironment_1
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 216
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c379cce9c71a00c4d9d4ebce5fd80593
+      internalID: -1382611652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VillageEnvironment_2
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 231
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bc430306c5550f448f46930bb70585f
+      internalID: -1164956802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VillageEnvironment_3
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 238
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31d7f40deda050f4ea95f0ebf8caeeb9
+      internalID: 974724208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VillageEnvironment_4
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 207
+        width: 37
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e310663825be952448445e88da9fc60a
+      internalID: -510104499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VillageEnvironment_5
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 234
+        width: 40
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6131241ca93dfa94eb1d7b529dbcda7a
+      internalID: -1911379621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VillageEnvironment_6
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 195
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62df48e2b2e24a64d953bf6464f575df
+      internalID: -1485749974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VillageEnvironment_7
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 183
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ece0994d6d70cbb44a50552afc90019a
+      internalID: -854790533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VillageEnvironment_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 183
+        width: 13
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8406dd25f88553c4cb14e6aea19dfceb
+      internalID: -36603007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VillageEnvironment_9
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 202
+        width: 21
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f7b8677ac94e0143a3159810b2faf30
+      internalID: -60472400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 55411731ba170bb48a25f96efef3ebe9
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      VillageEnvironment_9: -60472400
+      VillageEnvironment_1: -1382611652
+      VillageEnvironment_6: -1485749974
+      VillageEnvironment_3: 974724208
+      VillageEnvironment_4: -510104499
+      VillageEnvironment_2: -1164956802
+      VillageEnvironment_8: -36603007
+      VillageEnvironment_0: 324227695
+      VillageEnvironment_5: -1911379621
+      VillageEnvironment_7: -854790533
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
