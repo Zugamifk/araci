@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 436a105c77b13424e8fd9d2909966248
+guid: 025ab2ac6b27f1345b0a1dbe6a5e223b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -78,62 +78,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Walls_0
-      rect:
-        serializedVersion: 2
-        x: 31
-        y: 192
-        width: 33
-        height: 48
-      alignment: 9
-      pivot: {x: 0.019868042, y: 0.017559687}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 340734eba4af96246bc1365af4d8a627
-      internalID: -1824289476
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walls_1
-      rect:
-        serializedVersion: 2
-        x: 95
-        y: 192
-        width: 33
-        height: 48
-      alignment: 9
-      pivot: {x: 0.03217917, y: 0.017559687}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 242dbfa20ac8e994c975153d50178283
-      internalID: -2024378797
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ead1b7e5c5903734fa6b74fb460d6e6d
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Walls_0: -1824289476
-      Walls_1: -2024378797
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

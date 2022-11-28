@@ -15,7 +15,7 @@ public class WallBuilder : MonoBehaviour
 
     [SerializeField, CallMethodButton("UpdateSections", "Generate Walls")]
     Transform _endpoint;
-    [SerializeField, Min(.1f)]
+    [SerializeField, Min(.1f), CallMethodButton("ResetWalls", "Reset Walls")]
     float _sectionWidth = 1;
     [SerializeField]
     List<Section> _sections = new();
@@ -26,34 +26,17 @@ public class WallBuilder : MonoBehaviour
 
     void UpdateSections()
     {
+        var sections = _sectionRoot.GetComponentsInChildren<WallSection>();
+        foreach (var s in sections)
+        {
+            DestroyImmediate(s.gameObject);
+        }
         _sections.Clear();
 
         var a = transform.position;
         var b = _endpoint.position;
-        var sections = _sectionRoot.GetComponentsInChildren<WallSection>();
-        var pos = 0f;
+        var pos = a.y < b.y ? _sectionWidth : 0f;
         var distance = (b - a).magnitude;
-        for (int i = 0; i < sections.Length; i++)
-        {
-            pos += _sectionWidth;
-            if (pos < distance)
-            {
-                if (sections[i] == null)
-                {
-                    InstantiateSection();
-                } else
-                {
-                    _sections.Add(new Section()
-                    {
-                        Instance = sections[i],
-                        Type = sections[i].WallType
-                    });
-                }
-            } else if(sections[i]!=null)
-            {
-                DestroyImmediate(sections[i].gameObject);
-            }
-        }
 
         while (pos < distance)
         {
@@ -63,9 +46,10 @@ public class WallBuilder : MonoBehaviour
 
         var flip = (a.x > b.x && a.y < b.y) || (a.x < b.x && a.y > b.y);
         var flipRotation = Quaternion.AngleAxis(180, Vector3.up);
+        var offset = a.y < b.y ? 1 : 0;
         for (int i = 0; i < _sections.Count; i++)
         {
-            var t = (float)i * _sectionWidth / distance;
+            var t = (float)(i+offset) * _sectionWidth / distance;
             var tf = _sections[i].Instance.transform;
             tf.position = Vector3.Lerp(a, b, t);
             if (flip)
