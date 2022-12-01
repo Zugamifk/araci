@@ -18,6 +18,6 @@ public struct SpawnEnemy : ICommand
     {
         var id = Guid.NewGuid();
         new SpawnCharacter(_characterKey, _spawnKey, id).Execute(model);
-        Game.AddUpdater(new EnemyUpdater(id));
+        Game.AddUpdater(new AgentBehaviourUpdater(id, new SimpleEnemyBehaviour()));
     }
 }

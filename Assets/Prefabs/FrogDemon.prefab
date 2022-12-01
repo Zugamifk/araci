@@ -70,7 +70,7 @@ MonoBehaviour:
   Dimensions: {x: 0, y: 0}
   StartPosition: {x: 0, y: 0}
   StartIndex: 0
-  FrameCount: 5
+  FrameCount: 9
   AnimationClip: {fileID: -8971903376547975252, guid: 5af668a022214c44880af4c2b6d69f89, type: 2}
 --- !u!1 &4891620531076022809
 GameObject:

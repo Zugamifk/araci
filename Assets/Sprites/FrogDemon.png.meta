@@ -87,8 +87,8 @@ TextureImporter:
         y: 225
         width: 15
         height: 19
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5147603, y: 0.40677202}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -104,12 +104,12 @@ TextureImporter:
       name: FrogDemon_1
       rect:
         serializedVersion: 2
-        x: 44
-        y: 227
-        width: 29
-        height: 22
+        x: 42
+        y: 225
+        width: 19
+        height: 13
       alignment: 9
-      pivot: {x: 0.4941046, y: 0.20468348}
+      pivot: {x: 0.4883465, y: 0.48296648}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -125,12 +125,12 @@ TextureImporter:
       name: FrogDemon_2
       rect:
         serializedVersion: 2
-        x: 80
-        y: 227
-        width: 34
-        height: 19
+        x: 66
+        y: 225
+        width: 29
+        height: 22
       alignment: 9
-      pivot: {x: 0.5050284, y: 0.113062}
+      pivot: {x: 0.49236482, y: 0.2181993}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -146,12 +146,12 @@ TextureImporter:
       name: FrogDemon_3
       rect:
         serializedVersion: 2
-        x: 114
+        x: 101
         y: 225
-        width: 26
-        height: 24
+        width: 35
+        height: 22
       alignment: 9
-      pivot: {x: 0.5000003, y: 0.30765596}
+      pivot: {x: 0.5126519, y: 0.12762035}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -167,12 +167,12 @@ TextureImporter:
       name: FrogDemon_4
       rect:
         serializedVersion: 2
-        x: 151
-        y: 220
-        width: 17
-        height: 17
+        x: 140
+        y: 225
+        width: 34
+        height: 19
       alignment: 9
-      pivot: {x: 0.47988623, y: 0.530172}
+      pivot: {x: 0.49348718, y: 0.15039705}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -180,6 +180,90 @@ TextureImporter:
       bones: []
       spriteID: b14429b6c2743bb4b84d9b659a447af3
       internalID: -1020063739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrogDemon_5
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 221
+        width: 36
+        height: 21
+      alignment: 9
+      pivot: {x: 0.493849, y: 0.17314947}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58dc1cd4bc10df7419249e82d6d58521
+      internalID: 619584666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrogDemon_6
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 221
+        width: 26
+        height: 24
+      alignment: 9
+      pivot: {x: 0.508515, y: 0.3339386}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba9c2b025a691e84ba9bf5e937327b46
+      internalID: -796532122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrogDemon_7
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 191
+        width: 27
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c9f8ea914146a944bac479ac8306698
+      internalID: 303786089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrogDemon_8
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 191
+        width: 17
+        height: 17
+      alignment: 9
+      pivot: {x: 0.5, y: 0.30463365}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef31914b1af92645b7ef8feb8dc81dc
+      internalID: -404053315
       vertices: []
       indices: 
       edges: []
@@ -197,9 +281,13 @@ TextureImporter:
     nameFileIdTable:
       FrogDemon_1: -887700850
       FrogDemon_4: -1020063739
+      FrogDemon_8: -404053315
       FrogDemon_3: 1114065979
       FrogDemon_0: -412264147
+      FrogDemon_6: -796532122
       FrogDemon_2: 276171316
+      FrogDemon_5: 619584666
+      FrogDemon_7: 303786089
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
