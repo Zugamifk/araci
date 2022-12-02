@@ -68,6 +68,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Texture: {fileID: 2800000, guid: 994efda12f81cba4faac0039a8ad9be3, type: 3}
   Dimensions: {x: 16, y: 32}
+  StartPosition: {x: 0, y: 0}
   StartIndex: 0
   FrameCount: 4
   AnimationClip: {fileID: 3159893664822497733, guid: 47e207c13366f034e8ff30eb56e18f1c, type: 2}
@@ -141,8 +142,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1557392019
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 3542127132570728493, guid: 994efda12f81cba4faac0039a8ad9be3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
