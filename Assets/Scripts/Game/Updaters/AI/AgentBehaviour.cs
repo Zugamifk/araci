@@ -5,6 +5,11 @@ using UnityEngine;
 
 public abstract class AgentBehaviour
 {
-    public Guid Id;
-    public abstract void Update(GameModel model, ICharacterModel agent);
+    protected Guid _id;
+    public AgentBehaviour(Guid id)
+    {
+        _id = id;
+    }
+
+    public abstract void Update(GameModel model);
 }

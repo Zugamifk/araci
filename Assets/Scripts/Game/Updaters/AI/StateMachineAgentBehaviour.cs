@@ -1,18 +1,14 @@
+using StateMachines;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StateMachineAgentBehaviour : MonoBehaviour
+public abstract class StateMachineAgentBehaviour : AgentBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    protected StateMachine _aiState;
 
-    // Update is called once per frame
-    void Update()
+    protected StateMachineAgentBehaviour(Guid id) : base(id)
     {
-        
     }
 }

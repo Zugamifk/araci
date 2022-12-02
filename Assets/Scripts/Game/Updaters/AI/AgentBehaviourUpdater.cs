@@ -12,7 +12,6 @@ public class AgentBehaviourUpdater : IUpdater
     {
         _agentId = id;
         _behaviour = behaviour;
-        _behaviour.Id = id;
     }
 
     public void Update(GameModel model)
@@ -24,6 +23,6 @@ public class AgentBehaviourUpdater : IUpdater
             return;
         }
 
-        _behaviour.Update(model, agent);
+        _behaviour.Update(model);
     }
 }
