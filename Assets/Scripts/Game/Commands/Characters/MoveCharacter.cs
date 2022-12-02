@@ -9,13 +9,15 @@ public struct MoveCharacter : ICommand
     Vector2 _direction;
     Space _space;
     float? _speed;
+    string _specialMoveAnim;
 
-    public MoveCharacter(Guid id, Vector2 direction, Space space, float? speed = null)
+    public MoveCharacter(Guid id, Vector2 direction, Space space, float? speed = null, string specialMoveAnim = null)
     {
         _id = id;
         _direction = direction;
         _space = space;
         _speed = speed;
+        _specialMoveAnim = specialMoveAnim;
     }
 
     public void Execute(GameModel model)
@@ -28,5 +30,6 @@ public struct MoveCharacter : ICommand
             character.Movement.Direction = _direction;
         }
         character.Movement.MovementSpace = _space;
+        character.Movement.SpecialMoveKey = _specialMoveAnim;
     }
 }

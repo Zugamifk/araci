@@ -27,12 +27,11 @@ public class IdleEnemyState : EnemyBehaviourState
             var agent = Game.Model.Characters.GetItem(_id);
             if(player == null || agent == null)
             {
-                Debug.Log($"{player} {agent} {_id}");
                 return this;
             }
 
             var dir = (player.Movement.Position - agent.Movement.Position).normalized;
-            return new EnemyJumpState(_id, dir, 10, .2f);
+            return new EnemyJumpState(_id, dir, 5, .4f);
         }
         return this;
     }

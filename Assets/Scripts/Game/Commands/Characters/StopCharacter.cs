@@ -16,5 +16,6 @@ public class StopCharacter : ICommand
     {
         var character = model.Characters.GetItem(_id);
         character.Movement.DesiredMove = Vector3.zero;
+        character.Movement.SpecialMoveKey = string.Empty;
     }
 }

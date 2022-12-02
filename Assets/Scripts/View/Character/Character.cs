@@ -14,6 +14,7 @@ public class Character : ModelViewBase<ICharacterModel>
     DelayedAnimationEffect _deathEffect;
 
     Rigidbody2D _rigidBody;
+    string _currentSpecialAnim;
 
     public override ICharacterModel GetModel() => Game.Model.Characters.GetItem(Id);
 
@@ -57,6 +58,7 @@ public class Character : ModelViewBase<ICharacterModel>
         else if (character.Health.IsAlive)
         {
             DoDesiredMove(character);
+            UpdateAnimation(character);
         }
         else
         {
@@ -79,6 +81,25 @@ public class Character : ModelViewBase<ICharacterModel>
 
         Map.Instance.MoveObject(character.Movement, _rigidBody);
 
+        Game.Do(new UpdatePosition(Id, transform.position));
+    }
+
+    void UpdateAnimation(ICharacterModel character)
+    {
+        var specialAnim = character.Movement.SpecialMoveKey;
+        if (specialAnim != _currentSpecialAnim)
+        {
+            switch (specialAnim)
+            {
+                case Animation.JUMP:
+                    _animator.SetTrigger(Animation.JUMP);
+                    break;
+                default:
+                    break;
+            }
+            _currentSpecialAnim = specialAnim;
+        }
+
         var move = _rigidBody.velocity;
         if (move.magnitude > 0)
         {
@@ -96,9 +117,6 @@ public class Character : ModelViewBase<ICharacterModel>
             var angle = side < 0 ? 180 : 0;
             _viewRoot.transform.localRotation = Quaternion.Euler(0, angle, 0);
         }
-
-        Game.Do(new UpdatePosition(Id, transform.position));
-
     }
 
     void Die()

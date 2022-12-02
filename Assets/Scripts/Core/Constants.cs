@@ -11,3 +11,8 @@ public static class Skills
 {
     public const string RAIN = "Rain";
 }
+
+public static class Animation
+{
+    public const string JUMP = "Jump";
+}
