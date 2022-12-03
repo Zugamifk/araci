@@ -17,14 +17,14 @@ public class ApplyAttackEffect : ICommand
     public void Execute(GameModel model)
     {
         var attack = model.Attacks.GetItem(_id);
-        foreach(var target in _attackTargets)
+        foreach(var id in _attackTargets)
         {
-            var enemy = model.Characters.GetItem(target);
-            if (enemy == null) continue;
-            enemy.Health.CurrentHealth -= attack.Damage;
-            if(enemy.Health.CurrentHealth <=0)
+            var target = model.Characters.GetItem(id);
+            if (target == null) continue;
+            target.Health.CurrentHealth -= attack.Damage;
+            if(target.Health.CurrentHealth <=0)
             {
-                new KillEnemy(target).Execute(model);
+                new KillEnemy(id).Execute(model);
             }
         }
     }

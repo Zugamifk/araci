@@ -371,6 +371,7 @@ Some areas have special properties that add passive effects to the player.
 * Faster magic charge
 * Magic always at least one level
 
+
 ### Weather
 Different areas have different weather patterns. Different types of weather create different conditions that affect the player, enemies, and other things. Magic can affect or change the weather.
 
@@ -412,6 +413,11 @@ A grassy plain with rocky outcroppings and hills.
 #### Ruined Temple
 A large stone temple and surrounding buildings. Many hidden areas and destructible objects. Masks line the walls, and most enemies also wear masks. Different masks give enemies different abilities. There are special shrines with masks throughout the temple, and if they are prayed at, enemies with that mask will be affected (killed? mask removed? cursed?)
 
+## Themes
+### Symbols
+#### Hand Holding Up Three Fingers
+A sign used to identify those from the demon realm. Often carved into placed demons have visited, or places closely connected to their realm.
+
 ## Enemies
 ### Kappa
 Small but strong. Lives in water, hops on land. Usually stays in water but will attack if player is close to land. Smells bad, has a poison gas attack. Looks like a reptilian creature with a turtle shell. Moves very quickly in water, often hidden and submerged.
@@ -420,6 +426,9 @@ Drops:
 
 ### Ogre
 Large and tall man with a large head and lots of hair. Eats human flesh. About 1.5 times the height of a human. 
+
+### Shadow People
+Usually harmless, they act as guides for the player and mark hidden paths. Though they usually disappear quickly, it's not known what might happen to those who come in contact with them. (Shadow touched status? Death?)
 
 ## Bosses
 There are several bosses. The goal of the 
