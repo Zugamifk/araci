@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Data/Enemy")]
 public class EnemyData : CharacterData
 {
-    
+    public int AttackDamage;
 }

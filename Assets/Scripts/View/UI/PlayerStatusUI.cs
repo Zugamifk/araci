@@ -23,7 +23,7 @@ public class PlayerStatusUI : MonoBehaviour
         {
             for(int i=0;i < _healthMarkers.Length; i++)
             {
-                _healthMarkers[i].UpdateState(i < character.Health.CurrentHealth);
+                _healthMarkers[i].enabled = i < character.Health.CurrentHealth;
             }
         }
 

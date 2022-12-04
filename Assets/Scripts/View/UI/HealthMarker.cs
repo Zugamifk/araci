@@ -8,8 +8,13 @@ public class HealthMarker : MonoBehaviour
     [SerializeField]
     Image _view;
 
-    public void UpdateState(bool enabled)
+    private void OnEnable()
     {
-        _view.enabled = enabled;
+        _view.enabled = true;
+    }
+
+    private void OnDisable()
+    {
+        _view.enabled = false;
     }
 }

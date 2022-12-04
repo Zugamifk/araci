@@ -189,6 +189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4454758517151456431}
+  - component: {fileID: 342451379009173188}
   m_Layer: 5
   m_Name: HealthMarkers
   m_TagString: Untagged
@@ -220,6 +221,58 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &342451379009173188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3960694600486249522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3131a0925357ad4db4a923562aec4a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthMarkers:
+  - {fileID: 9089023136895696269}
+  - {fileID: 912603060286881591}
+  - {fileID: 436701094470777101}
+  - {fileID: 3872652206772851182}
+  _movementCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.003791809
+      value: 0.0075645447
+      inSlope: 2.0199144
+      outSlope: 2.0199144
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.49653134
+      value: 1.0028563
+      inSlope: 0.008360982
+      outSlope: 0.008360982
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9962158
+      value: 0.0018920898
+      inSlope: -2.0031924
+      outSlope: -2.0031924
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _movementStrength: 45
+  _maxAngle: 90
 --- !u!1 &8136749309734598564
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,7 +638,11 @@ MonoBehaviour:
   - {fileID: 8136749311154171855}
   - {fileID: 8136749310765579478}
   - {fileID: 8136749309734598566}
-  _healthMarkers: []
+  _healthMarkers:
+  - {fileID: 9089023136895696269}
+  - {fileID: 912603060286881591}
+  - {fileID: 436701094470777101}
+  - {fileID: 3872652206772851182}
 --- !u!1 &8136749310830537941
 GameObject:
   m_ObjectHideFlags: 0

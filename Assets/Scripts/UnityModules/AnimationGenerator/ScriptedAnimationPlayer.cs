@@ -41,7 +41,7 @@ namespace AnimationGenerator
             Evaluate(0);
         }
 
-        void Evaluate(float t)
+        public void Evaluate(float t)
         {
             var val = _data.Curve.Evaluate(t) * _data.Magnitude;
             _binding(val);
