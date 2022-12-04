@@ -15,6 +15,9 @@ public class Character : ModelViewBase<ICharacterModel>
     [SerializeField]
     Attack _attack;
 
+    [SerializeField]
+    DashEffect _dash;
+
     Rigidbody2D _rigidBody;
     Guid _lastActionId;
 
@@ -122,6 +125,9 @@ public class Character : ModelViewBase<ICharacterModel>
         {
             case Actions.ATTACK:
                 Attack(model);
+                break;
+            case Actions.DASH:
+                _dash?.DoDash();
                 break;
             default:
                 break;

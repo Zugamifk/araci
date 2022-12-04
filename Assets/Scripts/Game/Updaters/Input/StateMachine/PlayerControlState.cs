@@ -61,15 +61,16 @@ public class PlayerControlState : InputState
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            Game.Do(new DoDash());
-            return new PlayerDoingActionState(Game.Model.Player.Dash.Duration, EndedDash);
+            Dash();
+            return new PlayerDoingActionState(Game.Model.Player.Dash.Duration);
         }
 
         return this;
     }
 
-    void EndedDash()
+    void Dash()
     {
-        Game.Do(new EndDash());
+        var player = Game.Model.PlayerCharacter;
+        Game.Do(new DoDash(Game.Model.Player.Id, player.Movement.Direction, Game.Model.Player.Dash.Speed));
     }
 }

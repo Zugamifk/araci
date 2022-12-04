@@ -7,11 +7,10 @@ using UnityEngine;
 public class PlayerDoingActionState : InputState
 {
     float _endTime;
-    Action _onEnd;
-    public PlayerDoingActionState(float duration, Action onEnd)
+
+    public PlayerDoingActionState(float duration)
     {
         _endTime = Game.Model.Time.Time + duration;
-        _onEnd = onEnd;
     }
 
     public override IState UpdateState()
@@ -19,7 +18,6 @@ public class PlayerDoingActionState : InputState
         var done = Game.Model.Time.Time > _endTime;
         if(done)
         {
-            _onEnd?.Invoke();
             return new PlayerControlState();
         } else
         {

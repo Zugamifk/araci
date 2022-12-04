@@ -22,7 +22,7 @@ public class EnemyJumpState : EnemyBehaviourState
 
     public override void EnterState()
     {
-        Game.Do(new MoveCharacter(_id, _direction, Space.World, _jumpSpeed, Animation.JUMP));
+        Game.Do(new DoDash(_id, _direction, _jumpSpeed));
     }
 
     public override IState UpdateState()
