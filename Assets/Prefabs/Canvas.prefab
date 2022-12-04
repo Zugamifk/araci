@@ -238,40 +238,51 @@ MonoBehaviour:
   - {fileID: 912603060286881591}
   - {fileID: 436701094470777101}
   - {fileID: 3872652206772851182}
-  _movementCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0.003791809
-      value: 0.0075645447
-      inSlope: 2.0199144
-      outSlope: 2.0199144
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.49653134
-      value: 1.0028563
-      inSlope: 0.008360982
-      outSlope: 0.008360982
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.9962158
-      value: 0.0018920898
-      inSlope: -2.0031924
-      outSlope: -2.0031924
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _movementStrength: 45
+  _movementAnimation:
+    Curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: -0.0024271607
+        value: -0.002131939
+        inSlope: 0.5571886
+        outSlope: 0.5571886
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.23295146
+        value: 0.12901834
+        inSlope: -0.6848787
+        outSlope: -0.6848787
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.4962351
+        value: -0.378315
+        inSlope: -0.5882937
+        outSlope: -0.5882937
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.99757284
+        value: -0.002131939
+        inSlope: 0.7503585
+        outSlope: 0.7503585
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    Duration: 1
+    Magnitude: 1
   _maxAngle: 90
 --- !u!1 &8136749309734598564
 GameObject:
@@ -1052,7 +1063,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1062451846, guid: 3bb0bc04fe4603f4da8fa80d01db2c35, type: 3}
+  m_Sprite: {fileID: 980807052, guid: 3bb0bc04fe4603f4da8fa80d01db2c35, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

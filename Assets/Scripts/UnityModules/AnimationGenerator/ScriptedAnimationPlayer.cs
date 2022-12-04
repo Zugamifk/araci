@@ -27,7 +27,7 @@ namespace AnimationGenerator
             do
             {
                 Evaluate(0);
-                for (float t = 0; t < 1; t += Time.deltaTime / _data.Duration)
+                for (float t = 0; t < 1; t += Time.deltaTime)
                 {
                     Evaluate(t);
                     yield return null;
@@ -43,7 +43,7 @@ namespace AnimationGenerator
 
         public void Evaluate(float t)
         {
-            var val = _data.Curve.Evaluate(t) * _data.Magnitude;
+            var val = _data.Evaluate(t);
             _binding(val);
         }
     }

@@ -7,18 +7,12 @@ public class HealthMarkerAnimator : MonoBehaviour
     [SerializeField]
     HealthMarker[] _healthMarkers;
     [SerializeField]
-    AnimationCurve _movementCurve;
-    [SerializeField]
-    float _movementStrength;
+    ScriptedAnimationData _movementAnimation;
     [SerializeField, Range(0, 180)]
     float _maxAngle;
 
-    float _animParam = 0;
-
     private void Update()
     {
-        _animParam = (_animParam + Time.deltaTime) % 1;
-
         foreach (var h in _healthMarkers)
         {
             if (!h.enabled)
@@ -38,7 +32,7 @@ public class HealthMarkerAnimator : MonoBehaviour
 
         if (pc.Movement.DesiredMove.sqrMagnitude > 0)
         {
-            angle += _movementCurve.Evaluate(_animParam) * _movementStrength;
+            angle += _movementAnimation.Evaluate(Time.time);
         }
 
         marker.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);

@@ -77,6 +77,8 @@ MonoBehaviour:
   _viewRoot: {fileID: 8055718392576757753}
   _animator: {fileID: 9013854492117547540}
   _deathEffect: {fileID: 3132791422681340292}
+  _attack: {fileID: 0}
+  _dash: {fileID: 0}
 --- !u!58 &889806065591465617
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -92,7 +94,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.28
+  m_Radius: 0.13
 --- !u!50 &1285956790532063650
 Rigidbody2D:
   serializedVersion: 4
