@@ -16,7 +16,8 @@ public class ApplyAttackEffect : ICommand
 
     public void Execute(GameModel model)
     {
-        var attack = model.Attacks.GetItem(_id);
+        var attacker = model.Characters.GetItem(_id);
+        var attack = attacker.Attack;
         foreach(var id in _attackTargets)
         {
             var target = model.Characters.GetItem(id);

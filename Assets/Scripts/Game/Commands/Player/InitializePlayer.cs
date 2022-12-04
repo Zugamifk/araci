@@ -8,6 +8,7 @@ public struct InitializePlayer : ICommand
     {
         var player = model.Player;
         new CreateCharacter(player.Id, "Player", new Vector2(5, 10)).Execute(model);
+        var character = model.Characters.GetItem(player.Id);
 
         var level = player.Level;
         level.CurrentLevel = 0;
@@ -19,8 +20,7 @@ public struct InitializePlayer : ICommand
         weapon.Level.CurrentLevel = 0;
         var weaponLevelData = weaponData.LevelData.GetLevel(0);
         weapon.Level.RequiredExperience = weaponLevelData.RequiredExperience;
-        weapon.AttackCooldown.ReadyTime = 0;
-        weapon.AttackCooldown.Cooldown = weaponData.BaseAttackTime;
+        character.Attack.Cooldown = weaponData.BaseAttackTime;
 
         var playerData = DataService.GetData<PlayerData>();
         var dash = player.Dash;

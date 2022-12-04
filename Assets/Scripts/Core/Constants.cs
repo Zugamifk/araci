@@ -16,3 +16,9 @@ public static class Animation
 {
     public const string JUMP = "Jump";
 }
+
+public static class Actions
+{
+    public const string DASH = "Dash";
+    public const string ATTACK = "Attack";
+}

@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface IActionModel : IKeyHolder, IIdentifiable
 {
-    
+    ICooldownModel Cooldown { get; }
+    IAnimationStateModel AnimationState { get; }
 }

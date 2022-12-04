@@ -10,7 +10,10 @@ public class CharacterModel : ICharacterModel
     public float MoveSpeed { get; set; } = 10;
     public MovementModel Movement { get; set; } = new();
     public HealthModel Health { get; set; } = new();
-
+    public ActionModel CurrentAction { get; set; } = new();
+    public AttackModel Attack { get; set; } = new();
+    
     IMovementModel ICharacterModel.Movement => Movement;
     IHealthModel ICharacterModel.Health => Health;
+    IActionModel ICharacterModel.CurrentAction => CurrentAction;
 }

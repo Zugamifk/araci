@@ -13,4 +13,12 @@ public class AnimationEvents : MonoBehaviour
             Destroy(Root);
         }
     }
+
+    public void Disable()
+    {
+        if (Application.isPlaying)
+        {
+            Root.SetActive(false);
+        }
+    }
 }

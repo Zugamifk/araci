@@ -12,15 +12,23 @@ public class Character : ModelViewBase<ICharacterModel>
     Animator _animator;
     [SerializeField]
     DelayedAnimationEffect _deathEffect;
+    [SerializeField]
+    Attack _attack;
 
     Rigidbody2D _rigidBody;
-    string _currentSpecialAnim;
+    Guid _lastActionId;
 
     public override ICharacterModel GetModel() => Game.Model.Characters.GetItem(Id);
 
     public override void InitializeFromModel(ICharacterModel model)
     {
         _rigidBody = GetComponent<Rigidbody2D>();
+
+        if (_attack != null)
+        {
+            _attack.OnUpdatedAttackTargets += OnUpdatedAttackTargets;
+        }
+
         UpdatePosition();
     }
 
@@ -58,7 +66,7 @@ public class Character : ModelViewBase<ICharacterModel>
         else if (character.Health.IsAlive)
         {
             DoDesiredMove(character);
-            UpdateAnimation(character);
+            UpdateAction(character);
         }
         else
         {
@@ -82,23 +90,6 @@ public class Character : ModelViewBase<ICharacterModel>
         Map.Instance.MoveObject(character.Movement, _rigidBody);
 
         Game.Do(new UpdatePosition(Id, transform.position));
-    }
-
-    void UpdateAnimation(ICharacterModel character)
-    {
-        var specialAnim = character.Movement.SpecialMoveKey;
-        if (specialAnim != _currentSpecialAnim)
-        {
-            switch (specialAnim)
-            {
-                case Animation.JUMP:
-                    _animator.SetTrigger(Animation.JUMP);
-                    break;
-                default:
-                    break;
-            }
-            _currentSpecialAnim = specialAnim;
-        }
 
         var move = _rigidBody.velocity;
         if (move.magnitude > 0)
@@ -119,9 +110,49 @@ public class Character : ModelViewBase<ICharacterModel>
         }
     }
 
+    void UpdateAction(ICharacterModel model)
+    {
+        var action = model.CurrentAction;
+        if (action.Id == _lastActionId)
+        {
+            return;
+        }
+
+        switch (action.Key)
+        {
+            case Actions.ATTACK:
+                Attack();
+                break;
+            default:
+                break;
+        }
+
+        var specialAnim = action.AnimationState;
+        switch (specialAnim.Key)
+        {
+            case Animation.JUMP:
+                _animator.SetTrigger(Animation.JUMP);
+                break;
+            default:
+                break;
+        }
+
+        _lastActionId = action.Id;
+    }
+
+    void Attack()
+    {
+        _attack.gameObject.SetActive(true);
+    }
+
     void Die()
     {
         _deathEffect.Play();
         Game.Do(new RemoveCharacter(Id));
+    }
+
+    void OnUpdatedAttackTargets(IEnumerable<Guid> targets)
+    {
+        Game.Do(new ApplyAttackEffect(Id, new List<Guid>(targets)));
     }
 }

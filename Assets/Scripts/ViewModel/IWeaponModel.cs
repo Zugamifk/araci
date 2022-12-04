@@ -4,5 +4,4 @@ using UnityEngine;
 
 public interface IWeaponModel : IKeyHolder
 {
-    ICooldownModel AttackCooldown { get;}
 }

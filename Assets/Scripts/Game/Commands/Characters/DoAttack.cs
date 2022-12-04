@@ -18,17 +18,10 @@ public struct DoAttack : ICommand
 
     public void Execute(GameModel model)
     {
-        var data = DataService.GetData<AttackDataCollection>().Get(_key);
-        var attack = new AttackModel()
-        {
-            SourceId = _attackerId,
-            Key = _key,
-            TargetPosition = _targetPosition,
-            Damage = data.Damage
-        };
-        model.Attacks.AddItem(attack);
-
-        var weapon = model.Player.Weapon;
-        weapon.AttackCooldown.ReadyTime = model.TimeModel.Time + weapon.AttackCooldown.Cooldown;
+        var attacker = model.Characters.GetItem(_attackerId);
+        var action = attacker.CurrentAction;
+        action.Key = _key;
+        action.TargetPosition = _targetPosition;
+        action.Cooldown.ReadyTime = model.TimeModel.Time + attacker.Attack.Cooldown;
     }
 }
