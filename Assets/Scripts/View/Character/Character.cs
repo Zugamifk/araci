@@ -121,7 +121,7 @@ public class Character : ModelViewBase<ICharacterModel>
         switch (action.Key)
         {
             case Actions.ATTACK:
-                Attack();
+                Attack(model);
                 break;
             default:
                 break;
@@ -140,9 +140,12 @@ public class Character : ModelViewBase<ICharacterModel>
         _lastActionId = action.Id;
     }
 
-    void Attack()
+    void Attack(ICharacterModel model)
     {
         _attack.gameObject.SetActive(true);
+
+        var dir = model.CurrentAction.TargetPosition - (Vector2)_attack.transform.position;
+        _attack.transform.rotation = Math.PointAt(dir.normalized);
     }
 
     void Die()

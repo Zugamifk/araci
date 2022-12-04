@@ -329,6 +329,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4630135502748602286, guid: 3a7b9fe3cfcaaf54e84a07a72c035f7c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630135502748602286, guid: 3a7b9fe3cfcaaf54e84a07a72c035f7c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1557392019
+      objectReference: {fileID: 0}
     - target: {fileID: 6852805424172862842, guid: 3a7b9fe3cfcaaf54e84a07a72c035f7c, type: 3}
       propertyPath: m_Name
       value: Sword

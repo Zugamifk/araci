@@ -19,9 +19,12 @@ public struct DoAttack : ICommand
     public void Execute(GameModel model)
     {
         var attacker = model.Characters.GetItem(_attackerId);
-        var action = attacker.CurrentAction;
-        action.Key = _key;
-        action.TargetPosition = _targetPosition;
+        var action = new ActionModel()
+        {
+            Key = _key,
+            TargetPosition = _targetPosition,
+        };
         action.Cooldown.ReadyTime = model.TimeModel.Time + attacker.Attack.Cooldown;
+        attacker.CurrentAction = action;
     }
 }
