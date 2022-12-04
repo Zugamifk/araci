@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3722604414321376774}
   - component: {fileID: 2113776287272314388}
   m_Layer: 0
-  m_Name: Shrine Fire
+  m_Name: ShrineFire_Anim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

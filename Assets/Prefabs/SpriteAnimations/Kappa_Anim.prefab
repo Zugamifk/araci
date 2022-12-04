@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8987004013081130803}
   - component: {fileID: 3625476216061556356}
   m_Layer: 0
-  m_Name: Kappa
+  m_Name: Kappa_Anim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

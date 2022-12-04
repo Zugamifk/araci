@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 889806065591465617}
   - component: {fileID: 1285956790532063650}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: FrogDemon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

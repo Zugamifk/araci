@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1727892122298731765}
   - component: {fileID: 777874976693792005}
   m_Layer: 0
-  m_Name: FrogDemon
+  m_Name: FrogDemon_Anim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
