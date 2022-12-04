@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static Codice.Client.Common.WebApi.WebApiEndpoints;
 
 public class Attack : MonoBehaviour
 {

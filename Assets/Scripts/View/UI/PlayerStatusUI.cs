@@ -6,11 +6,13 @@ using UnityEngine.UI;
 public class PlayerStatusUI : MonoBehaviour
 {
     [SerializeField]
-    Image _healthBar;
+    Image _alertBar;
     [SerializeField]
     Image _experienceBar;
     [SerializeField]
     Image[] _skillChargeLevels;
+    [SerializeField]
+    HealthMarker[] _healthMarkers;
 
     private void Update()
     {
@@ -19,7 +21,10 @@ public class PlayerStatusUI : MonoBehaviour
 
         if (character != null && character.Health.MaxHealth > 0)
         {
-            _healthBar.fillAmount = (float)character.Health.CurrentHealth / (float)character.Health.MaxHealth;
+            for(int i=0;i < _healthMarkers.Length; i++)
+            {
+                _healthMarkers[i].UpdateState(i < character.Health.CurrentHealth);
+            }
         }
 
         if (player.Level.RequiredExperience > 0)

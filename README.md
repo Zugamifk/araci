@@ -430,6 +430,15 @@ Large and tall man with a large head and lots of hair. Eats human flesh. About 1
 ### Shadow People
 Usually harmless, they act as guides for the player and mark hidden paths. Though they usually disappear quickly, it's not known what might happen to those who come in contact with them. (Shadow touched status? Death?)
 
+### Kokopelli
+A flute playing spirit who travels around the world. He carries a large backpack full of goods meant to trade. He is able to summon help from far away if threatened by playing a song on his flute. Different songs will attract different enemies, and he is usually found playing one of these songs as he travels around. When attacked or in danger, he will play a loud burst on his flute and the nearby enemies will come to his possition.
+
+Possible combat behaviour:
+* Begins unpacking his wares, which are enchanted objects that create hazards in the nearby area
+* Plays a different song that buffs nearby enemies
+* Runs away
+* Transforms into a tall, slow moving version of self that uses its flute as a staff-like weapon that plays sounds when it's swung, letting out magical energy
+
 ## Bosses
 There are several bosses. The goal of the 
 
