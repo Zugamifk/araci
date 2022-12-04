@@ -13,7 +13,7 @@ public class WeaponData : ScriptableObject, IKeyHolder
     [SerializeField]
     SkillData _startingSkill;
     [SerializeField]
-    float _baseDamage;
+    int _baseDamage;
     [SerializeField]
     float _baseMeterPerHit;
     [SerializeField]
@@ -25,7 +25,7 @@ public class WeaponData : ScriptableObject, IKeyHolder
     public string DisplayName => _displayName;
 
     public string Description => _description;
-    public float BaseDamage => _baseDamage;
+    public int BaseDamage => _baseDamage;
     public float BaseMeterPerHit => _baseMeterPerHit;
     public float BaseAttackTime => _baseAttackTime;
     public LevelDataCollection LevelData => _levelData;
