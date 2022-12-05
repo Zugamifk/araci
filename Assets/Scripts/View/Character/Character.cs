@@ -85,11 +85,6 @@ public class Character : ModelViewBase<ICharacterModel>
 
     void DoDesiredMove(ICharacterModel character)
     {
-        if (character == null)
-        {
-            return;
-        }
-
         Map.Instance.MoveObject(character.Movement, _rigidBody);
 
         Game.Do(new UpdatePosition(Id, transform.position));

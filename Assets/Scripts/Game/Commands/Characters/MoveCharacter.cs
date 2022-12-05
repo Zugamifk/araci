@@ -25,12 +25,18 @@ public struct MoveCharacter : ICommand
         {
             throw new InvalidOperationException($"No character with id {_id}");
         }
-        var speed = _speed ?? character.MoveSpeed;
-        character.Movement.DesiredMove = _direction * speed;
+
         if(_direction.sqrMagnitude > 0)
         {
+            character.Movement.Speed = _speed ?? character.MoveSpeed;
             character.Movement.Direction = _direction;
+            character.Movement.Mode = MoveMode.Direction;
+        } else
+        {
+            character.Movement.Speed = 0;
+            character.Movement.Mode = MoveMode.None;
         }
+
         character.Movement.MovementSpace = _space;
     }
 }

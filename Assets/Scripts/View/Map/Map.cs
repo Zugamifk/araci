@@ -25,7 +25,7 @@ public class Map : MonoBehaviour
 
     public void MoveObject(IMovementModel model, Rigidbody2D rigidBody)
     {
-        var velocity = model.DesiredMove;
+        var velocity = model.Direction * model.Speed;
         switch (model.MovementSpace)
         {
             case Space.World:
