@@ -7,5 +7,5 @@ public class NarrativeModel : IIdentifiable
 {
     public Guid Id { get; set; }
     public string NarrativeKey { get; set; }
-    public string CurrentStateKey { get; set; }
+    public Guid CurrentStateId { get; set; }
 }

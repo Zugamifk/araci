@@ -25,13 +25,14 @@ public class NarrativeUpdater : IUpdater
         {
             throw new InvalidOperationException($"No narrative with id {_id}");
         }
-        if (string.IsNullOrEmpty(narrative.CurrentStateKey))
+        if (narrative.CurrentStateId == Guid.Empty)
         {
             throw new InvalidOperationException($"Empty state! This should not be updating");
         }
 
-        var data = DataService.GetData<NarrativeDataCollection>().GetData(narrative.NarrativeKey).NametoState[narrative.CurrentStateKey];
+        var data = DataService.GetData<NarrativeDataCollection>().GetData(narrative.NarrativeKey).IdtoState[narrative.CurrentStateId];
         var behaviour = _dataTypeToBehaviour[data.GetType()];
+        Debug.Log("Enter " + data.name);
         behaviour.EnterState(data);
         behaviour.Update();
 
@@ -42,7 +43,7 @@ public class NarrativeUpdater : IUpdater
             Game.RemoveUpdater(_id);
         } else
         {
-            narrative.CurrentStateKey = next.Name;
+            narrative.CurrentStateId = next.Id;
         }
     }
 }

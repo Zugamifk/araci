@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da6e6267a9e00eb4bb0a16f53b04f5f4, type: 3}
+  m_Name: SpawnFrogDemons
+  m_EditorClassIdentifier: 
+  _guid:
+    _serializedValue: 201fc843-432a-4d8e-ab54-3b55d35b0496
+  _description: 
+  _next: {fileID: 11400000, guid: 9f85ed0fdc74ed841b4ee11ae9b843b4, type: 2}
+  EnemyData: {fileID: 11400000, guid: 39b360abcb695d3468bccf6062246dc1, type: 2}
+  SpawnName: Test
+  Count: 25

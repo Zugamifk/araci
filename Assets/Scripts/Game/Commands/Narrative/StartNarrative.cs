@@ -21,7 +21,7 @@ public class StartNarrative : ICommand
         {
             Id = id,
             NarrativeKey = _key,
-            CurrentStateKey = data.StartState.Name
+            CurrentStateId = data.StartState.Id
         });
         Game.AddUpdater(id, new NarrativeUpdater(id));
     }

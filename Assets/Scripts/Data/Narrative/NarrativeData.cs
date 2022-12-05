@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.SceneTemplate;
@@ -11,14 +12,14 @@ namespace Narrative
         public string Key;
         public NarrativeState StartState;
 
-        public Dictionary<string, NarrativeState> NametoState = new();
+        public Dictionary<Guid, NarrativeState> IdtoState = new();
 
         private void OnEnable()
         {
             var state = StartState;
             while(state!=null)
             {
-                NametoState.Add(state.Name, state);
+                IdtoState.Add(state.Id, state);
                 state = state.Next;
             }
         }
