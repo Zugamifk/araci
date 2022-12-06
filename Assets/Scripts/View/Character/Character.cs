@@ -39,6 +39,11 @@ public class Character : ModelViewBase<ICharacterModel>
 
     void Update()
     {
+        if (_collider != null)
+        {
+            _collider.enabled = true;
+        }
+
         var character = GetModel();
         if (character == null)
         {
@@ -92,11 +97,6 @@ public class Character : ModelViewBase<ICharacterModel>
         if (action.Id == _lastActionId)
         {
             return;
-        }
-
-        if (_collider != null)
-        {
-            _collider.enabled = true;
         }
 
         switch (action.Key)
