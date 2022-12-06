@@ -17,6 +17,6 @@ MonoBehaviour:
   - ChargeNeeded: 15
   - ChargeNeeded: 30
   - ChargeNeeded: 60
-  _dashCooldown: 1
+  _dashCooldown: 0.5
   _dashSpeed: 10
-  _dashDuration: 0.3
+  _dashDuration: 0.15

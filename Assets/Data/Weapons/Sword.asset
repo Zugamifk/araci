@@ -18,5 +18,5 @@ MonoBehaviour:
   _startingSkill: {fileID: 0}
   _baseDamage: 10
   _baseMeterPerHit: 1
-  _baseAttackTime: 1
+  _baseAttackTime: 0.4
   _levelData: {fileID: 11400000, guid: fac58e7933b9f9c4f9351c616ace4e84, type: 2}
