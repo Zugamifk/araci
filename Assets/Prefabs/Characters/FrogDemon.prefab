@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2684019793343543045}
   - component: {fileID: 889806065591465617}
   - component: {fileID: 1285956790532063650}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FrogDemon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,6 +78,7 @@ MonoBehaviour:
   _animator: {fileID: 9013854492117547540}
   _deathEffect: {fileID: 3132791422681340292}
   _attack: {fileID: 0}
+  _collider: {fileID: 889806065591465617}
   _dash: {fileID: 0}
 --- !u!58 &889806065591465617
 CircleCollider2D:
@@ -171,6 +172,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogDemon
       objectReference: {fileID: 0}
+    - target: {fileID: 1637869227718300134, guid: 43107fc0783dfe241b0548428e35b688, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891620531076022809, guid: 43107fc0783dfe241b0548428e35b688, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43107fc0783dfe241b0548428e35b688, type: 3}
 --- !u!4 &8055718392576757753 stripped
@@ -239,6 +248,10 @@ PrefabInstance:
       value: BloodSplatter
       objectReference: {fileID: 0}
     - target: {fileID: 2743797178875330759, guid: 0b92cf61a546323449a7e1d01adac4ce, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2743797178875330759, guid: 0b92cf61a546323449a7e1d01adac4ce, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -249,6 +262,10 @@ PrefabInstance:
     - target: {fileID: 4235440409667365247, guid: 0b92cf61a546323449a7e1d01adac4ce, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6471155873698334421, guid: 0b92cf61a546323449a7e1d01adac4ce, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8485213090810180173, guid: 0b92cf61a546323449a7e1d01adac4ce, type: 3}
       propertyPath: m_Enabled

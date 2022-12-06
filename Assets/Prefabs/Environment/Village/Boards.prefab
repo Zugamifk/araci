@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1687100864115105346}
   - component: {fileID: 1687100864115105347}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1687100864643814111}
   - component: {fileID: 1687100864643814096}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1687100865343371067}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Boards
   m_TagString: Untagged
   m_Icon: {fileID: 0}

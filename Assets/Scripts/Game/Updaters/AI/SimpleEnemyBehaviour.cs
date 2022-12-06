@@ -15,6 +15,6 @@ public class SimpleEnemyBehaviour : AgentBehaviour
         var player = model.Characters.GetItem(model.Player.Id);
         var agent = Game.Model.Characters.GetItem(_id);
         var dir = player.Movement.Position - agent.Movement.Position;
-        Game.Do(new MoveCharacter(_id, dir.normalized, Space.Grid));
+        Game.Do(new MoveCharacter(_id, dir.normalized));
     }
 }

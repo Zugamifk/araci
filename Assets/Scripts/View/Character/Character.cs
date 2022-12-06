@@ -14,6 +14,8 @@ public class Character : ModelViewBase<ICharacterModel>
     DelayedAnimationEffect _deathEffect;
     [SerializeField]
     Attack _attack;
+    [SerializeField]
+    Collider2D _collider;
 
     [SerializeField]
     DashEffect _dash;
@@ -33,30 +35,6 @@ public class Character : ModelViewBase<ICharacterModel>
         }
 
         UpdatePosition();
-    }
-
-    void UpdateCrouch(KeyCode crouchKey)
-    {
-        if (Input.GetKeyDown(crouchKey))
-        {
-            StartCoroutine(Crouch(true));
-        }
-
-        //stop crouch
-        if (Input.GetKeyUp(crouchKey))
-        {
-            StartCoroutine(Crouch(false));
-        }
-    }
-
-    IEnumerator Crouch(bool down)
-    {
-        for (float t = 0; t < 1; t += Time.deltaTime)
-        {
-            var h = Mathf.Lerp(.5f, 1, down ? 1 - t : t);
-            transform.localScale = new Vector3(1, h, 1);
-            yield return null;
-        }
     }
 
     void Update()
@@ -87,7 +65,7 @@ public class Character : ModelViewBase<ICharacterModel>
     {
         Map.Instance.MoveObject(character.Movement, _rigidBody);
 
-        Game.Do(new UpdatePosition(Id, transform.position));
+        Game.Do(new UpdatePosition(Id, Map.Instance.WorldToGridSpace(transform.position)));
 
         var move = _rigidBody.velocity;
         if (move.magnitude > 0)
@@ -116,12 +94,18 @@ public class Character : ModelViewBase<ICharacterModel>
             return;
         }
 
+        if (_collider != null)
+        {
+            _collider.enabled = true;
+        }
+
         switch (action.Key)
         {
             case Actions.ATTACK:
                 Attack(model);
                 break;
             case Actions.DASH:
+                _collider.enabled = false;
                 _dash?.DoDash();
                 break;
             default:

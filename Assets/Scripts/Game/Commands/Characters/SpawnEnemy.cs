@@ -23,6 +23,20 @@ public struct SpawnEnemy : ICommand
         var data = DataService.GetData<CharacterDataCollection>().Get(_characterKey) as EnemyData;
         character.Attack.Damage = data.AttackDamage;
 
-        Game.AddUpdater(new AgentBehaviourUpdater(id, new FrogDemonBehaviour(id)));
+        var behaviour = GetBehaviour(id);
+        Game.AddUpdater(new AgentBehaviourUpdater(id, behaviour));
+    }
+
+    AgentBehaviour GetBehaviour(Guid id)
+    {
+        switch (_characterKey)
+        {
+            case Enemies.FROGDEMON:
+                return new FrogDemonBehaviour(id);
+            case Enemies.PIPER:
+                return new PiperBehaviour(id);
+            default:
+                throw new ArgumentException($"No behaviour for key \'{_characterKey}\' with ID {id}");
+        }
     }
 }

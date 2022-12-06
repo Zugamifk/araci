@@ -22,3 +22,15 @@ public static class Actions
     public const string DASH = "Dash";
     public const string ATTACK = "Attack";
 }
+
+public static class Enemies
+{
+    public const string FROGDEMON = "FrogDemon";
+    public const string PIPER = "Piper";
+}
+
+public static class Layers
+{
+    public const string CHARACTERS = "Characters";
+    public const string OBSTACLES = "Obstacles";
+}

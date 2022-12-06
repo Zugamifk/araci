@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4225374255768822454}
   - component: {fileID: 4225374255768822453}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4225374256237969012}
   - component: {fileID: 4225374256237969019}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4225374257235603162}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AxeStump
   m_TagString: Untagged
   m_Icon: {fileID: 0}

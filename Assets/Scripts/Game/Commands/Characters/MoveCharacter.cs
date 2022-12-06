@@ -7,14 +7,12 @@ public struct MoveCharacter : ICommand
 {
     Guid _id;
     Vector2 _direction;
-    Space _space;
     float? _speed;
 
-    public MoveCharacter(Guid id, Vector2 direction, Space space, float? speed = null)
+    public MoveCharacter(Guid id, Vector2 direction, float? speed = null)
     {
         _id = id;
         _direction = direction;
-        _space = space;
         _speed = speed;
     }
 
@@ -36,7 +34,5 @@ public struct MoveCharacter : ICommand
             character.Movement.Speed = 0;
             character.Movement.Mode = MoveMode.None;
         }
-
-        character.Movement.MovementSpace = _space;
     }
 }

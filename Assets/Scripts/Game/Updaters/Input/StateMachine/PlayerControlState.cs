@@ -1,3 +1,4 @@
+using Codice.Client.BaseCommands;
 using PlasticPipe.PlasticProtocol.Messages;
 using StateMachines;
 using System;
@@ -34,7 +35,9 @@ public class PlayerControlState : InputState
             movement += Vector2.right;
         }
 
-        Game.Do(new MoveCharacter(Game.Model.Player.Id, movement, Space.World));
+        var mapService = Services.Get<ITileMapService>();
+        movement = mapService.WorldToGridSpace(movement);
+        Game.Do(new MoveCharacter(Game.Model.Player.Id, movement));
     }
     
     void UpdateAttacks()

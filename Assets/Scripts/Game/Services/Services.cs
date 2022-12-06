@@ -7,33 +7,51 @@ public static class Services
 {
     static Dictionary<Type, IService> _typeToServiceLookup = new();
 
-    static List<Type> _monobehaviourServiceTypes = new();
-
-    static Services()
+    public static void InitializeServices()
     {
         var serviceTypes = ReflectionCache.AllConcreteTypesOf<IService>();
-        foreach(var type in serviceTypes)
+        List<Type> _monobehaviourServiceTypes = new();
+
+        foreach (var type in serviceTypes)
         {
             if (typeof(MonoBehaviour).IsAssignableFrom(type))
             {
                 _monobehaviourServiceTypes.Add(type);
-            } else
+            }
+            else
             {
                 var instance = (IService)Activator.CreateInstance(type);
-                _typeToServiceLookup.Add(type, instance);
+                AddService(instance);
+            }
+        }
+
+        var root = GameObject.FindObjectOfType<ViewServiceManager>().transform;
+        foreach (var type in _monobehaviourServiceTypes)
+        {
+            var instance = (IService)GameObject.FindObjectOfType(type);
+            if (instance != null)
+            {
+                AddService(instance);
+            }
+            else
+            {
+                var go = new GameObject(type.Name);
+                var service = (IService)go.AddComponent(type);
+                go.transform.SetParent(root);
+                AddService(service);
             }
         }
     }
 
-    public static void InitializeViewServices()
+    static void AddService(IService service)
     {
-        var root = GameObject.FindObjectOfType<ViewServiceManager>().transform;
-        foreach(var type in _monobehaviourServiceTypes)
+        var type = service.GetType();
+        foreach (var i in type.GetInterfaces())
         {
-            var go = new GameObject(type.Name);
-            var service = (IService)go.AddComponent(type);
-            go.transform.SetParent(root);
-            _typeToServiceLookup.Add(type, service);
+            if (i != typeof(IService) && typeof(IService).IsAssignableFrom(i))
+            {
+                _typeToServiceLookup.Add(i, service);
+            }
         }
     }
 

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3099951500689103951}
   - component: {fileID: 3099951500689103944}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3099951501909984170}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bucket
   m_TagString: Untagged
   m_Icon: {fileID: 0}

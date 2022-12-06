@@ -32,7 +32,6 @@ public class NarrativeUpdater : IUpdater
 
         var data = DataService.GetData<NarrativeDataCollection>().GetData(narrative.NarrativeKey).IdtoState[narrative.CurrentStateId];
         var behaviour = _dataTypeToBehaviour[data.GetType()];
-        Debug.Log("Enter " + data.name);
         behaviour.EnterState(data);
         behaviour.Update();
 

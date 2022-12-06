@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public static class Scenes
+public class Scenes : IService
 {
     const string BOOT_SCENE_NAME = "Game";
 
@@ -17,7 +17,7 @@ public static class Scenes
         }
     }
 
-    public static void ReloadGame()
+    public void ReloadGame()
     {
         // unload all scene, load boot scene
     }

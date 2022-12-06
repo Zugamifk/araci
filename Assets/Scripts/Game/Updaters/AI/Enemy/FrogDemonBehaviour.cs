@@ -10,8 +10,4 @@ public class FrogDemonBehaviour : StateMachineAgentBehaviour
     {
         _aiState = new StateMachine(new IdleEnemyState(id));
     }
-    public override void Update(GameModel model)
-    {
-        _aiState.Update();
-    }
 }

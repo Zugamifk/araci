@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6625318554617948221}
   - component: {fileID: 2526262276563786987}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1290733920318034092}
   - component: {fileID: 4408548231889478738}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StackedBarrels
   m_TagString: Untagged
   m_Icon: {fileID: 0}

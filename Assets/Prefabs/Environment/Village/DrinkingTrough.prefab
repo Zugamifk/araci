@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6900754459672548132}
   - component: {fileID: 6900754459672548135}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6900754459697039411}
   - component: {fileID: 6900754459697039410}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6900754461100394707}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DrinkingTrough
   m_TagString: Untagged
   m_Icon: {fileID: 0}

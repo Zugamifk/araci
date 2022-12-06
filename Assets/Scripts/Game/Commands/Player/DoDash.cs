@@ -18,7 +18,7 @@ public struct DoDash : ICommand
 
     public void Execute(GameModel model)
     {
-        new MoveCharacter(_id, _direction, Space.World, _speed).Execute(model);
+        new MoveCharacter(_id, _direction, _speed).Execute(model);
 
         var action = new ActionModel()
         {

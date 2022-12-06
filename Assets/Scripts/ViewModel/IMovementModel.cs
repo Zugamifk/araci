@@ -7,6 +7,4 @@ public interface IMovementModel
     float Speed { get; }
     Vector2 Position { get; }
     Vector2 Direction { get; }
-    Space MovementSpace { get; }
-
 }

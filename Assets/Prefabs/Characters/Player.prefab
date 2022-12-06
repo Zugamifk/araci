@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2684019793343543045}
   - component: {fileID: 4511861292804313966}
   - component: {fileID: 8742497947218608639}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,6 +67,7 @@ MonoBehaviour:
   _animator: {fileID: 6931277778629904008}
   _deathEffect: {fileID: 0}
   _attack: {fileID: 6290224836050891019}
+  _collider: {fileID: 8742497947218608639}
   _dash: {fileID: 3525105434721600401}
 --- !u!50 &4511861292804313966
 Rigidbody2D:
@@ -114,7 +115,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7677904324399576746}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AttackRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +149,7 @@ GameObject:
   - component: {fileID: 5239370183904289247}
   - component: {fileID: 242678359913791053}
   - component: {fileID: 7049840847739182185}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Detector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,6 +210,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Araci
       objectReference: {fileID: 0}
+    - target: {fileID: 2770063041475780860, guid: 23a6f88201970554290786dfe4b7e15c, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8073299073533420078, guid: 23a6f88201970554290786dfe4b7e15c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -252,6 +257,10 @@ PrefabInstance:
     - target: {fileID: 8073299073533420078, guid: 23a6f88201970554290786dfe4b7e15c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301700700546171506, guid: 23a6f88201970554290786dfe4b7e15c, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23a6f88201970554290786dfe4b7e15c, type: 3}
@@ -316,9 +325,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2859598799781057344, guid: 3a7b9fe3cfcaaf54e84a07a72c035f7c, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6852805424172862842, guid: 3a7b9fe3cfcaaf54e84a07a72c035f7c, type: 3}
       propertyPath: m_Name
       value: Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 6852805424172862842, guid: 3a7b9fe3cfcaaf54e84a07a72c035f7c, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a7b9fe3cfcaaf54e84a07a72c035f7c, type: 3}
@@ -348,6 +365,14 @@ PrefabInstance:
     - target: {fileID: 36954827475681521, guid: 8b4433e758bfa6a4ea76ddbd2ad7cab3, type: 3}
       propertyPath: m_Name
       value: Dash
+      objectReference: {fileID: 0}
+    - target: {fileID: 36954827475681521, guid: 8b4433e758bfa6a4ea76ddbd2ad7cab3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 215049319526241319, guid: 8b4433e758bfa6a4ea76ddbd2ad7cab3, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1894898873193049557, guid: 8b4433e758bfa6a4ea76ddbd2ad7cab3, type: 3}
       propertyPath: m_LocalPosition.x

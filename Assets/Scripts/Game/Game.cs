@@ -49,6 +49,8 @@ public class Game : MonoBehaviour
 
         _game = this;
 
+        Services.InitializeServices();
+
         InitializeTimeModel();
         InitializeInput();
     }

@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IPhysicsRaycaster : IService
 {
-    Vector2 Raycast(Vector2 position, Vector2 direction);
+    Vector2 Raycast(Vector2 gridPosition, Vector2 gridDirection, int layermask);
 }

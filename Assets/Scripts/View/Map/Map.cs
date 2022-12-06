@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class Map : MonoBehaviour
+public class Map : MonoBehaviour, ITileMapService
 {
     [SerializeField]
     Tilemap _tilemap;
@@ -13,12 +13,12 @@ public class Map : MonoBehaviour
         Instance = this;
     }
 
-    public Vector2 GetGridPosition(Vector2 worldPosition)
+    public Vector2 WorldToGridSpace(Vector2 worldPosition)
     {
         return _tilemap.LocalToCellInterpolated(worldPosition);
     }
 
-    public Vector2 GetWorldPosition(Vector2 gridPosition)
+    public Vector2 GridToWorldSpace(Vector2 gridPosition)
     {
         return _tilemap.CellToLocalInterpolated(gridPosition);
     }
@@ -31,18 +31,7 @@ public class Map : MonoBehaviour
     public void MoveObject(IMovementModel model, Rigidbody2D rigidBody)
     {
         var velocity = model.Direction * model.Speed;
-        switch (model.MovementSpace)
-        {
-            case Space.World:
-                break;
-            case Space.Local:
-                break;
-            case Space.Grid:
-                velocity = _tilemap.CellToLocalInterpolated(velocity);
-                break;
-            default:
-                break;
-        }
+        velocity = _tilemap.CellToLocalInterpolated(velocity);
         rigidBody.velocity = velocity;
     }
 
