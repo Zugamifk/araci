@@ -71,10 +71,14 @@ namespace SpriteAnimation
 
         public void RebuildAnimationData(SpriteAnimationData data)
         {
-            foreach(var clipData in data.Clips)
+            foreach (var clipData in data.Clips)
             {
                 CreateAnimationClip(data, clipData);
             }
+
+            EditorUtility.SetDirty(data.Animator);
+            EditorUtility.SetDirty(data.Prefab);
+            AssetDatabase.SaveAssets();
         }
 
         void CreateAnimationClip(SpriteAnimationData data, SpriteAnimationData.ClipData clipData)
