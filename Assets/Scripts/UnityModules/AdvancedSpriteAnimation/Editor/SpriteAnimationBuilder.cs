@@ -12,7 +12,7 @@ namespace SpriteAnimation
 {
     internal class SpriteAnimationBuilder
     {
-        const string SPRITE_PROPERTY_PATH = "View/Spirte";
+        const string SPRITE_PROPERTY_PATH = "Sprite";
         const string SPRITE_PROPERTY_NAME = "m_Sprite";
         public SpriteAnimationData CreateNewAnimationData(string name, string path)
         {
@@ -31,14 +31,6 @@ namespace SpriteAnimation
             assetPath = AssetDatabase.GenerateUniqueAssetPath(assetPath);
             var prefab = PrefabUtility.SaveAsPrefabAssetAndConnect(go, assetPath, InteractionMode.UserAction);
 
-            // configure data
-            var data = ScriptableObject.CreateInstance<SpriteAnimationData>();
-            data.name = "Data";
-            data.Name = name;
-            data.Prefab = prefab;
-            data.Animator = anim;
-            AssetDatabase.AddObjectToAsset(data, prefab);
-
             // configure animator controller
             var controller = new AnimatorController();
             controller.name = "Animator";
@@ -53,6 +45,14 @@ namespace SpriteAnimation
             AssetDatabase.AddObjectToAsset(layer.stateMachine, prefab);
 
             anim.runtimeAnimatorController = controller;
+
+            // configure data
+            var data = ScriptableObject.CreateInstance<SpriteAnimationData>();
+            data.name = "Data";
+            data.Name = name;
+            data.Prefab = prefab;
+            data.Controller = controller;
+            AssetDatabase.AddObjectToAsset(data, prefab);
 
             PrefabUtility.ApplyPrefabInstance(go, InteractionMode.UserAction);
             GameObject.DestroyImmediate(go);
@@ -73,21 +73,29 @@ namespace SpriteAnimation
         {
             foreach (var clipData in data.Clips)
             {
-                CreateAnimationClip(data, clipData);
+                ApplyClipData(data, clipData);
             }
 
-            EditorUtility.SetDirty(data.Animator);
+            EditorUtility.SetDirty(data.Controller);
             EditorUtility.SetDirty(data.Prefab);
             AssetDatabase.SaveAssets();
         }
 
-        void CreateAnimationClip(SpriteAnimationData data, SpriteAnimationData.ClipData clipData)
+        void ApplyClipData(SpriteAnimationData data, SpriteAnimationData.ClipData clipData)
         {
-            var clip = new AnimationClip();
+            bool isNewClip = false;
+            var clip = clipData.Clip;
+            if (clip == null)
+            {
+                clip = new AnimationClip();
+                clipData.Clip = clip;
+                isNewClip = true;
+            }
+
+            clip.ClearCurves();
+
             clip.name = clipData.Name;
 
-            var anim = data.Prefab.GetComponentInChildren<Animator>();
-            var controller = (AnimatorController)anim.runtimeAnimatorController;
             var sprites = AssetDatabase.LoadAllAssetsAtPath(AssetDatabase.GetAssetPath(clipData.Source))
                 .OfType<Sprite>()
                 .Skip(clipData.StartIndex)
@@ -119,9 +127,14 @@ namespace SpriteAnimation
             AnimationUtility.SetObjectReferenceCurve(clip, ecb, frames);
 
             clip.wrapMode = clipData.Loop ? WrapMode.Loop : WrapMode.Once;
-            controller.AddMotion(clip);
 
-            AssetDatabase.AddObjectToAsset(clip, controller);
+            if (isNewClip)
+            {
+                var controller = data.Controller;
+                controller.AddMotion(clip);
+
+                AssetDatabase.AddObjectToAsset(clip, controller);
+            }
         }
     }
 }
