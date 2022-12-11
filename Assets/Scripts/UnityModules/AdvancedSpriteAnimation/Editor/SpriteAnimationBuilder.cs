@@ -94,6 +94,7 @@ namespace SpriteAnimation
 
             clip.ClearCurves();
 
+            var oldClipName = clip.name;
             clip.name = clipData.Name;
 
             var sprites = AssetDatabase.LoadAllAssetsAtPath(AssetDatabase.GetAssetPath(clipData.Source))
@@ -128,13 +129,22 @@ namespace SpriteAnimation
 
             clip.wrapMode = clipData.Loop ? WrapMode.Loop : WrapMode.Once;
 
+            var controller = data.Controller;
             if (isNewClip)
             {
-                var controller = data.Controller;
                 controller.AddMotion(clip);
-
-                AssetDatabase.AddObjectToAsset(clip, controller);
             }
+            else
+            {
+                foreach(var state in controller.layers[0].stateMachine.states)
+                {
+                    if(state.state.name == oldClipName)
+                    {
+                        state.state.name = clip.name;
+                    }
+                }
+            }
+            AssetDatabase.AddObjectToAsset(clip, controller);
         }
     }
 }

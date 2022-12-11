@@ -8,11 +8,11 @@ public class SpriteAnimationData : ScriptableObject
     [System.Serializable]
     public class ClipData
     {
-        public string Name;
+        public string Name = "New Clip Data";
         public Texture Source;
         public int StartIndex;
-        public int FrameCount;
-        public float Duration;
+        public int FrameCount = 1;
+        public float Duration = 1;
         public bool Loop;
         public AnimationClip Clip;
     }
