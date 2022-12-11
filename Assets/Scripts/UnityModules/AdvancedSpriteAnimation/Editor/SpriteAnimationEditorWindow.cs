@@ -54,7 +54,6 @@ namespace SpriteAnimation
             foreach (var guid in allDataAssets)
             {
                 var data = AssetDatabase.LoadAssetAtPath<SpriteAnimationData>(AssetDatabase.GUIDToAssetPath(guid));
-                Debug.Log(data);
                 _nameToData.Add(data.Name, data);
             }
 
@@ -137,9 +136,17 @@ namespace SpriteAnimation
 
         void ShowCurrentDataGui()
         {
-            if(GUILayout.Button("Add New Clip"))
+            using (new EditorGUILayout.HorizontalScope())
             {
-                CreateNewClip();
+                if (GUILayout.Button("Add New Clip"))
+                {
+                    CreateNewClip();
+                }
+
+                if (GUILayout.Button("Rebuild"))
+                {
+                    RebuildSpriteAnimationData();
+                }
             }
 
             using(new EditorGUILayout.VerticalScope("box"))
@@ -165,7 +172,16 @@ namespace SpriteAnimation
             {
                 clipData.Name = EditorGUILayout.TextField("Name", clipData.Name);
                 clipData.Duration = EditorGUILayout.FloatField("Duration", clipData.Duration);
+                clipData.Loop = EditorGUILayout.Toggle("Loop Animation", clipData.Loop);
+                clipData.StartIndex = EditorGUILayout.IntField("Start Index", clipData.StartIndex);
+                clipData.FrameCount = EditorGUILayout.IntField("Frame Count", clipData.FrameCount);
+                clipData.Source = (Texture)EditorGUILayout.ObjectField("Source", clipData.Source, typeof(Texture), false);
             }
+        }
+
+        void RebuildSpriteAnimationData()
+        {
+            _builder.RebuildAnimationData(_currentData);
         }
     }
 }
