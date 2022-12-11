@@ -14,6 +14,7 @@ public class SpriteAnimationData : ScriptableObject
         public int FrameCount = 1;
         public float Duration = 1;
         public bool Loop;
+        public bool IsDefaultState;
         public AnimationClip Clip;
     }
 

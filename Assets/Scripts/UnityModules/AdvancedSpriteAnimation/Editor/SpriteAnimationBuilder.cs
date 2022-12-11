@@ -83,6 +83,11 @@ namespace SpriteAnimation
 
         void ApplyClipData(SpriteAnimationData data, SpriteAnimationData.ClipData clipData)
         {
+            if (!IsClipDataValid(data, clipData))
+            {
+                return;
+            }
+
             bool isNewClip = false;
             var clip = clipData.Clip;
             if (clip == null)
@@ -133,18 +138,39 @@ namespace SpriteAnimation
             if (isNewClip)
             {
                 controller.AddMotion(clip);
+                AssetDatabase.AddObjectToAsset(clip, controller);
             }
             else
             {
-                foreach(var state in controller.layers[0].stateMachine.states)
+                var state = GetState(data.Controller, oldClipName);
+                state.name = clip.name;
+            }
+        }
+
+        bool IsClipDataValid(SpriteAnimationData data, SpriteAnimationData.ClipData clipData)
+        {
+            return clipData.Source != null
+                && clipData.Duration > 0
+                && clipData.FrameCount > 0;
+        }
+
+        public void SetDefaultState(SpriteAnimationData data, SpriteAnimationData.ClipData clipData)
+        {
+            var state = GetState(data.Controller, clipData.Name);
+            data.Controller.layers[0].stateMachine.defaultState = state;
+        }
+
+        AnimatorState GetState(AnimatorController controller, string name)
+        {
+            foreach (var state in controller.layers[0].stateMachine.states)
+            {
+                if (state.state.name == name)
                 {
-                    if(state.state.name == oldClipName)
-                    {
-                        state.state.name = clip.name;
-                    }
+                    return state.state;
                 }
             }
-            AssetDatabase.AddObjectToAsset(clip, controller);
+
+            return null;
         }
     }
 }
