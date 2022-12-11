@@ -1,6 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="UnityEngine.UIElements" e="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Scripts/UnityModules/SpriteAnimation/Editor/SpriteAnimationEditor.uss?fileID=7433441132597879392&amp;guid=1c18ff0d1e61b8a4fbfeabfc78a34306&amp;type=3#SpriteAnimationEditor" />
-    <ui:TextField name="name" label="Name" />
+    <ui:TextField name="animatorName" label="Animator Name" />
+    <ui:DropdownField name="clip" label="Clip Name" />
     <uie:ObjectField name="sprite" />
     <uie:Vector2IntField label="Dimensions" name="dimensions" />
     <uie:IntegerField label="Start Index" name="startIndex" />

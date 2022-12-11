@@ -271,6 +271,22 @@ Levels Examples:
 * Damage you take makes you stronger, retaliates on nearby enemies
 * High level skills allow instantly killing enemies if certain conditions met
 
+### Shadow
+**Synergy of Fae and Rain
+_Hidden allies aid you_
+* Shadow people appear nearby, shooting arrows and luring enemies 
+* Can distract enemies
+* Attacks when the player attacks
+
+### Crystal
+**Synergy of Earth and Electricity
+* Binds enemies together
+* Triggered abilities affect all bound enemies at once
+* Effects become more powerful the more enemies are bound
+* Marks can also be left of the groud for similar effect
+
+## Skills
+### 
 ## Pacts
 Pacts are permanent changes to the game that should be neither beneficial or negative. Pacts can be made at shrines with special offerings. Pacts are always enabled and can not be undone. Unlike magic, pacts only affect how the world works. They have no physical manifestation or direct effects on the player or enemies.
 Having multiple pacts should give a special bonues.
@@ -376,10 +392,12 @@ Some areas have special properties that add passive effects to the player.
 Different areas have different weather patterns. Different types of weather create different conditions that affect the player, enemies, and other things. Magic can affect or change the weather.
 
 ### Shrines
-Shrines are scattered throughout the world. Player pray at a shrine to perform one of man actions
-* Make an offering for a magic skill
-* Make an offering for a pact
-* Heal (1 heart? full? depends on offering?)
+Shrines are scattered throughout the world. Player pray at a shrine to perform one of man actions. An offering is needed to make a prayer. For each offering, a skill point is granted as well as a blessing:
+* Knowledge: gain an extra skill point
+* Faith: make a pact
+* Health: Heal to full health
+* Protection: On death, return to life with limited health
+* 
 An offering can only be made once at each shrine.
 Shrines can be used to fast travel to other shrines.
 
@@ -419,6 +437,9 @@ A large stone temple and surrounding buildings. Many hidden areas and destructib
 A sign used to identify those from the demon realm. Often carved into placed demons have visited, or places closely connected to their realm.
 
 ## Enemies
+### Qualities
+* Rage: when parries, blocked, dodged or stunned, next attack gains extra strength and can't interrupted or blocked
+* 
 ### Kappa
 Small but strong. Lives in water, hops on land. Usually stays in water but will attack if player is close to land. Smells bad, has a poison gas attack. Looks like a reptilian creature with a turtle shell. Moves very quickly in water, often hidden and submerged.
 Drops:

@@ -8,12 +8,24 @@
         "type": "tabs",
         "children": [
           {
-            "id": "b34ff0e2b3b9f1c2",
+            "id": "7eb7f0b2d37be04f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "5c76f15fc037111e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Ideas.md",
                 "mode": "source",
                 "source": false
               }
@@ -136,6 +148,10 @@
     "direction": "horizontal",
     "width": 300
   },
-  "active": "617b7f1733033678",
-  "lastOpenFiles": []
+  "active": "7eb7f0b2d37be04f",
+  "lastOpenFiles": [
+    "Ideas.md",
+    "README.md",
+    "Script.md"
+  ]
 }

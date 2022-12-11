@@ -26,17 +26,18 @@ public class PrefabController
         var prefab = PrefabUtility.SaveAsPrefabAssetAndConnect(go, assetPath, InteractionMode.UserAction);
         GameObject.DestroyImmediate(go);
 
-        ConfigureNewSpriteAnimation(prefab);
+        ConfigureNewSpriteAnimation(prefab, "New Animation");
 
         return prefab;
     }
 
-    public void ConfigureNewSpriteAnimation(GameObject prefab)
+    public void ConfigureNewSpriteAnimation(GameObject prefab, string name)
     {
         var inst = (GameObject)PrefabUtility.InstantiatePrefab(prefab);
 
         var anim = inst.AddComponent<Animator>();
         var clip = new AnimationClip();
+        clip.name = name;
 
         var path = Path.Combine(k_AnimationAssetsPath, inst.name + ".controller");
         var cont = AnimatorController.CreateAnimatorControllerAtPathWithClip(path, clip);
@@ -57,8 +58,6 @@ public class PrefabController
 
     public void ApplySpriteAnimationChanges(GameObject prefab, string name, Texture2D texture, Vector2Int dimensions, int frameCount, int startIndex, float time, bool loop)
     {
-        //ImportSprite(texture, dimensions, frameCount, startIndex);
-
         var inst = (GameObject)PrefabUtility.InstantiatePrefab(prefab);
         var sa = inst.GetComponent<SpriteAnimation>();
         sa.Texture = texture;
@@ -106,45 +105,6 @@ public class PrefabController
     {
         AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(prefab.GetComponent<Animator>().runtimeAnimatorController));
         AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(prefab));
-    }
-
-    void ImportSprite(Texture2D texture, Vector2Int dimensions, int frameCount, int startIndex)
-    {
-        var path = AssetDatabase.GetAssetPath(texture);
-        var importer = AssetImporter.GetAtPath(path) as TextureImporter;
-        if (importer == null)
-        {
-            Debug.Log("no importer");
-            return;
-        }
-
-        importer.textureType = TextureImporterType.Sprite;
-        importer.spriteImportMode = SpriteImportMode.Multiple;
-        importer.filterMode = FilterMode.Point;
-        importer.isReadable = true;
-
-        AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceUpdate);
-
-        var tex = AssetDatabase.LoadAssetAtPath<Texture2D>(path);
-        var mt = new SpriteMetaData[frameCount];
-        int rowCount = tex.width / dimensions.x;
-        for (int i = 0; i < frameCount; i++)
-        {
-            int frame = startIndex + i;
-            int x = dimensions.x * (frame % rowCount);
-            int y = tex.height - dimensions.y * ((frame / rowCount)+1);
-            mt[i] = new SpriteMetaData()
-            {
-                name = $"{texture.name}_{i}",
-                rect = new Rect(x, y, dimensions.x, dimensions.y),
-                alignment = 0,
-                pivot = new Vector2(0, 0)
-            };
-        }
-
-        importer.spritesheet = mt;
-        EditorUtility.SetDirty(importer);
-        importer.SaveAndReimport();
     }
 
     void CreateAnimation(AnimationClip clip, Sprite[] sprites, float time)

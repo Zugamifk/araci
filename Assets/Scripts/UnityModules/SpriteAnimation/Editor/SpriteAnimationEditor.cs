@@ -10,7 +10,7 @@ public class SpriteAnimationEditor : EditorWindow
     const string EDITOR_UXML = "Assets/Scripts/UnityModules/SpriteAnimation/Editor/SpriteAnimationEditor.uxml";
     const string INFO_UXML = "Assets/Scripts/UnityModules/SpriteAnimation/Editor/SpriteAnimationInfo.uxml";
     
-    [MenuItem("Window/Sprite Animation Editor")]
+    //[MenuItem("Window/Sprite Animation Editor")]
     public static void ShowExample()
     {
         SpriteAnimationEditor wnd = GetWindow<SpriteAnimationEditor>();
@@ -68,7 +68,7 @@ public class SpriteAnimationEditor : EditorWindow
         var b = new Button(() =>
         {
             var go = (GameObject)m_RootObjectField.value;
-            m_PrefabController.ConfigureNewSpriteAnimation(go);
+            //m_PrefabController.ConfigureNewSpriteAnimation(go);
         });
         b.text = "Configure New Sprite Animation";
         info.Add(b);
@@ -83,8 +83,10 @@ public class SpriteAnimationEditor : EditorWindow
 
         var t = m_SpriteAnimationTree.Instantiate();
 
-        var name = t.Q<TextField>("name");
+        var name = t.Q<TextField>("animatorName");
         name.value = prefab.name;
+
+        var clip = t.Q<DropdownField>("clip");
 
         var sa = prefab.GetComponent<SpriteAnimation>();
         var texture = t.Q<ObjectField>("sprite");
