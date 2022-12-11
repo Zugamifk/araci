@@ -16,5 +16,5 @@ public class SpriteAnimationData : ScriptableObject
     public string Name;
     public Animator Animator;
     public GameObject Prefab;
-    public ClipData[] Clips;
+    public List<ClipData> Clips = new();
 }

@@ -184,7 +184,11 @@ MonoBehaviour:
   Name: Test
   Animator: {fileID: 7586361096596896519}
   Prefab: {fileID: 776210852633596715}
-  Clips: []
+  Clips:
+  - Name: 
+    Sprites: []
+    Duration: 0
+    Clip: {fileID: 0}
 --- !u!91 &8775436891539492310
 AnimatorController:
   m_ObjectHideFlags: 0

@@ -12,7 +12,6 @@ namespace SpriteAnimation
     {
         const string CONFIG_PATH = "Assets/Scripts/UnityModules/AdvancedSpriteAnimation/Editor/SpriteAnimationEditorConfig.asset";
         const string NEW_ANIMATION_OPTION = "New Animation...";
-        const string NEW_CLIP_OPTION = "New Clip...";
 
         [MenuItem("Window/Sprite Animation")]
         static void Open()
@@ -33,12 +32,8 @@ namespace SpriteAnimation
         SpriteAnimationData _currentData;
         [SerializeField]
         string _newDataName;
-
         [SerializeField]
-        string _clipName;
-        [SerializeField]
-        int _clipChoiceIndex;
-        string[] _clipOptions;
+        Vector2 _clipListScrollPosition;
 
         SpriteAnimationBuilder _builder = new();
 
@@ -77,6 +72,8 @@ namespace SpriteAnimation
                 OnChooseNewData();
             }
 
+            GUILayout.Space(10);
+
             if (_currentData == null)
             {
                 ShowCreateGui();
@@ -97,14 +94,6 @@ namespace SpriteAnimation
             }
 
             _currentData = _nameToData[name];
-
-            _clipChoiceIndex = 0;
-            _clipOptions = new string[_currentData.Clips.Length + 1];
-            _clipOptions[0] = NEW_CLIP_OPTION;
-            for (int i = 0; i < _currentData.Clips.Length; i++)
-            {
-                _clipOptions[i + 1] = _currentData.Clips[i].Name;
-            }
         }
 
         void ShowCreateGui()
@@ -125,6 +114,7 @@ namespace SpriteAnimation
             _nameToData.Add(_newDataName, _currentData);
             UpdateDataOptionsList(_newDataName);
             _newDataName = string.Empty;
+            OnChooseNewData();
         }
 
         void UpdateDataOptionsList(string chooseOption = null)
@@ -147,7 +137,35 @@ namespace SpriteAnimation
 
         void ShowCurrentDataGui()
         {
+            if(GUILayout.Button("Add New Clip"))
+            {
+                CreateNewClip();
+            }
 
+            using(new EditorGUILayout.VerticalScope("box"))
+            using(var scroll = new EditorGUILayout.ScrollViewScope(_clipListScrollPosition))
+            {
+                foreach(var clipData in _currentData.Clips)
+                {
+                    DrawClipData(clipData);
+                }
+
+                _clipListScrollPosition = scroll.scrollPosition;
+            }
+        }
+
+        void CreateNewClip()
+        {
+            _builder.CreateNewClipData(_currentData);
+        }
+
+        void DrawClipData(SpriteAnimationData.ClipData clipData)
+        {
+            using (new EditorGUILayout.VerticalScope("box"))
+            {
+                clipData.Name = EditorGUILayout.TextField("Name", clipData.Name);
+                clipData.Duration = EditorGUILayout.FloatField("Duration", clipData.Duration);
+            }
         }
     }
 }

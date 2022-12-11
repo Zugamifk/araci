@@ -46,5 +46,13 @@ namespace SpriteAnimation
             return data;
         }
 
+        public void CreateNewClipData(SpriteAnimationData data)
+        {
+            var clipData = new SpriteAnimationData.ClipData();
+
+            data.Clips.Add(clipData);
+            EditorUtility.SetDirty(data);
+            AssetDatabase.SaveAssets();
+        }
     }
 }
