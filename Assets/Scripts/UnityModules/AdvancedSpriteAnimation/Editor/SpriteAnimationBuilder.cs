@@ -1,4 +1,3 @@
-using Codice.Client.Common;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
@@ -76,6 +75,8 @@ namespace SpriteAnimation
                 ApplyClipData(data, clipData);
             }
 
+            ArrangeAnimatorStates(data);
+
             EditorUtility.SetDirty(data.Controller);
             EditorUtility.SetDirty(data.Prefab);
             AssetDatabase.SaveAssets();
@@ -145,6 +146,8 @@ namespace SpriteAnimation
                 var state = GetState(data.Controller, oldClipName);
                 state.name = clip.name;
             }
+
+            UpdateStateTransitions(data, clipData);
         }
 
         bool IsClipDataValid(SpriteAnimationData data, SpriteAnimationData.ClipData clipData)
@@ -158,6 +161,11 @@ namespace SpriteAnimation
         {
             var state = GetState(data.Controller, clipData.Name);
             data.Controller.layers[0].stateMachine.defaultState = state;
+
+            foreach (var clip in data.Clips)
+            {
+                clip.IsDefaultState = clipData == clip;
+            }
         }
 
         AnimatorState GetState(AnimatorController controller, string name)
@@ -170,7 +178,68 @@ namespace SpriteAnimation
                 }
             }
 
-            return null;
+            return default;
+        }
+
+        void UpdateStateTransitions(SpriteAnimationData data, SpriteAnimationData.ClipData clipData)
+        {
+            var sm = data.Controller.layers[0].stateMachine;
+            var state = GetState(data.Controller, clipData.Name); ;
+            AnimatorStateTransition anyState = null;
+            foreach(var t in sm.anyStateTransitions)
+            {
+                if(t.destinationState.name == clipData.Name)
+                {
+                    anyState = t;
+                    break;
+                }
+            }
+
+            if(anyState == null)
+            {
+                anyState = sm.AddAnyStateTransition(state);
+                anyState.destinationState = state;
+                anyState.duration = 0;
+                anyState.exitTime = 1;
+                anyState.canTransitionToSelf = false;
+                EditorUtility.SetDirty(sm);
+            }
+
+            anyState.hasExitTime = false;
+            foreach(var c in clipData.AnyStateTransition.Conditions)
+            {
+                anyState.AddCondition(c.mode, c.threshold, c.parameter);
+            }
+
+            EditorUtility.SetDirty(anyState);
+        }
+
+        void ArrangeAnimatorStates(SpriteAnimationData data)
+        {
+            var sm = data.Controller.layers[0].stateMachine;
+            var leftPos = 200;
+            var rightPos = 600;
+            var distance = 50; 
+
+            sm.anyStatePosition = new Vector3(leftPos, 0);
+            sm.exitPosition = new Vector3(leftPos - 200, 0);
+            var y = (distance * (data.Clips.Count-1)) / 2;
+
+            foreach(var clip in data.Clips)
+            {
+                var state = GetState(data.Controller, clip.Name);
+                sm.SetStatePosition(state, new Vector3(rightPos, y));
+                EditorUtility.SetDirty(state);
+
+                if (clip.IsDefaultState)
+                {
+                    sm.entryPosition = new Vector3(rightPos - 200, y);
+                }
+                
+                y -= distance;
+            }
+
+            EditorUtility.SetDirty(sm);
         }
     }
 }

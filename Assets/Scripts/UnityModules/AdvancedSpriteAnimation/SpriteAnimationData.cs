@@ -6,6 +6,13 @@ using UnityEngine;
 public class SpriteAnimationData : ScriptableObject
 {
     [System.Serializable]
+    public class TransitionInfo
+    {
+        public AnimatorCondition[] Conditions = new AnimatorCondition[0];
+        public string DestinationName;
+    }
+
+    [System.Serializable]
     public class ClipData
     {
         public string Name = "New Clip Data";
@@ -16,6 +23,8 @@ public class SpriteAnimationData : ScriptableObject
         public bool Loop;
         public bool IsDefaultState;
         public AnimationClip Clip;
+        public TransitionInfo AnyStateTransition;
+        public TransitionInfo OnEndTransition;
     }
 
     public string Name;

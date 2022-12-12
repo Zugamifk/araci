@@ -164,12 +164,27 @@ namespace SpriteAnimation
         void CreateNewClip()
         {
             _builder.CreateNewClipData(_currentData);
+
+            // set first new state as default
+            if(_currentData.Clips.Count == 1)
+            {
+                UpdateIsDefaultState(_currentData.Clips[0]);
+            }
         }
 
         void DrawClipData(SpriteAnimationData.ClipData clipData)
         {
             using (new EditorGUILayout.VerticalScope("box"))
             {
+                using(new EditorGUI.DisabledScope(clipData.IsDefaultState))
+                {
+                    var isDefault = EditorGUILayout.Toggle("Default State", clipData.IsDefaultState);
+                    if (isDefault != clipData.IsDefaultState)
+                    {
+                        UpdateIsDefaultState(clipData);
+                    }
+                }
+                
                 clipData.Name = EditorGUILayout.TextField("Name", clipData.Name);
                 clipData.Duration = EditorGUILayout.FloatField("Duration", clipData.Duration);
                 clipData.Loop = EditorGUILayout.Toggle("Loop Animation", clipData.Loop);
@@ -182,6 +197,11 @@ namespace SpriteAnimation
         void RebuildSpriteAnimationData()
         {
             _builder.RebuildAnimationData(_currentData);
+        }
+
+        void UpdateIsDefaultState(SpriteAnimationData.ClipData newDefault)
+        {
+            _builder.SetDefaultState(_currentData, newDefault);
         }
     }
 }
