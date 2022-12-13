@@ -37,6 +37,11 @@ namespace SpriteAnimation
 
         SpriteAnimationBuilder _builder = new();
 
+        [SerializeField]
+        SerializedObject _currentData_serObj;
+        [SerializeField]
+        SerializedProperty[] _clipData_serProps;
+
         private void OnEnable()
         {
             if (_config == null)
@@ -93,6 +98,9 @@ namespace SpriteAnimation
             }
 
             _currentData = _nameToData[name];
+            _currentData_serObj = new SerializedObject(_currentData);
+
+            UpdateClipDateSerializedObjects();
         }
 
         void ShowCreateGui()
@@ -152,9 +160,9 @@ namespace SpriteAnimation
             using(new EditorGUILayout.VerticalScope("box"))
             using(var scroll = new EditorGUILayout.ScrollViewScope(_clipListScrollPosition))
             {
-                foreach(var clipData in _currentData.Clips)
+                for(int i=0;i<_currentData.Clips.Count;i++)
                 {
-                    DrawClipData(clipData);
+                    DrawClipData(_currentData.Clips[i], _clipData_serProps[i]);
                 }
 
                 _clipListScrollPosition = scroll.scrollPosition;
@@ -170,27 +178,39 @@ namespace SpriteAnimation
             {
                 UpdateIsDefaultState(_currentData.Clips[0]);
             }
+
+            UpdateClipDateSerializedObjects();
         }
 
-        void DrawClipData(SpriteAnimationData.ClipData clipData)
+        void UpdateClipDateSerializedObjects()
+        {
+            _clipData_serProps = new SerializedProperty[_currentData.Clips.Count];
+            for(int i=0;i<_currentData.Clips.Count; i++)
+            {
+                _clipData_serProps[i] = _currentData_serObj.FindProperty("Clips").GetArrayElementAtIndex(i);
+            }
+        }
+
+        void DrawClipData(SpriteAnimationData.ClipData clipData, SerializedProperty clipProp)
         {
             using (new EditorGUILayout.VerticalScope("box"))
             {
                 using(new EditorGUI.DisabledScope(clipData.IsDefaultState))
                 {
-                    var isDefault = EditorGUILayout.Toggle("Default State", clipData.IsDefaultState);
+                    var isDefault = EditorGUILayout.PropertyField(clipProp.FindPropertyRelative("IsDefaultState"));
                     if (isDefault != clipData.IsDefaultState)
                     {
                         UpdateIsDefaultState(clipData);
                     }
                 }
                 
-                clipData.Name = EditorGUILayout.TextField("Name", clipData.Name);
-                clipData.Duration = EditorGUILayout.FloatField("Duration", clipData.Duration);
-                clipData.Loop = EditorGUILayout.Toggle("Loop Animation", clipData.Loop);
-                clipData.StartIndex = EditorGUILayout.IntField("Start Index", clipData.StartIndex);
-                clipData.FrameCount = EditorGUILayout.IntField("Frame Count", clipData.FrameCount);
-                clipData.Source = (Texture)EditorGUILayout.ObjectField("Source", clipData.Source, typeof(Texture), false);
+                EditorGUILayout.PropertyField(clipProp.FindPropertyRelative("Name"));
+                EditorGUILayout.PropertyField(clipProp.FindPropertyRelative("Duration"));
+                EditorGUILayout.PropertyField(clipProp.FindPropertyRelative("Loop"));
+                EditorGUILayout.PropertyField(clipProp.FindPropertyRelative("StartIndex"));
+                EditorGUILayout.PropertyField(clipProp.FindPropertyRelative("FrameCount"));
+                EditorGUILayout.PropertyField(clipProp.FindPropertyRelative("Source"));
+                EditorGUILayout.PropertyField(clipProp.FindPropertyRelative("AnyStateTransition"));
             }
         }
 
