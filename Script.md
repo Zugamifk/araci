@@ -9,33 +9,33 @@ _Araci kneels at the shrine. A vignette appears and shrinks around Araci before 
 
 Mysterious voice: Gods don't answer empty prayers, you know.
 
-_The screen fades back in and a man is now standing over Araci, holding somehitng in his hand
+_The screen fades back in and a man is now standing over Araci, holding something in his hand
 
 Man: Take this. Burn it. 
 
-_Araci takes the offering form the man and lays it at the foot of the shrine, then lits if on fire.
+_Araci takes the offering from the man and lays it at the foot of the shrine, then lights it on fire.
 
 **The prayer menu appears. For this prayer, only the prayer for knowledge is available.**
 
-Man: Ha! It seems someone is watching over you. Fortunate.
+Man: Ha! It seems someone's watching over you. 
 
 _The man pulls out his sword. After a brief pause, he tosses it to the ground in front of Araci
 
-Man: I am done fighting for their attention. 
+Man: I'm done fighting for their attention. 
 
 _He begins pulling off his armor, tossing the pieces to the ground as he does.
 
-Man: Maybe you will have better luck than I.
+Man: Maybe you'll have better luck than me.
 
-I am too old and tired to fight these battles. Perhaps these tools will work the hands of the Gods. To me, they have become a burden.
+I'm too old and tired to fight these battles. Maybe the gods will hold these tools for you. To me, they've become a burden.
 
-There's a temple not far from here. Some kind of demon is guarding the area. 
+You know the old temple upstream? Some kind of demon is there. 
 
 Kill him. Surely the Gods will be watching.
 
 _The man pauses
 
-Man: Nothing to say? I will take your boat. A fair exchange, I think.
+Man: Nothing to say? I'll take your boat. A fair exchange, I think.
 
 _The man begins to walk away, then stops
 
@@ -43,9 +43,9 @@ Man: The world is a cruel place. Justice is bittersweet. Don't let vengeance des
 
 _The man leaves.
 
-**The player is prompted to interact with the weapon and amor.**
+**The player is prompted to interact with the weapon and armor.**
 
-_Araci puts on the armor and picks up the sword. He swings it clumsily a few times, accidently digging thrusting it into the ground. With a brief tug, he pull it out again._
+_Araci puts on the armor and picks up the sword. He swings it clumsily a few times, accidently thrusting it into the ground. With a brief tug, he pull it out again._
 
 _A burning house collapses, opening an exit path.
 

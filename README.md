@@ -46,6 +46,7 @@ A large ruined palace lies far off in the world. As araci explores the world and
 * Tools can be bought/found that allow processing offerings
 * Some skill trees can only be levelled with rare offerings
 * Avoid armour, resistances, etc. all enemies should take the same damage, or make concept more intuitive
+* Narrative sequences should end in a way forward opening up, as obvious as possible
 
 ## Key Words
 * Fire: Spreads over Flammable tiles and characters, deals damage over time. Converts to Ash
@@ -461,7 +462,14 @@ Possible combat behaviour:
 * Transforms into a tall, slow moving version of self that uses its flute as a staff-like weapon that plays sounds when it's swung, letting out magical energy
 
 ## Bosses
-There are several bosses. The goal of the 
+There are several bosses. 
+
+### Post game bosses
+These bosses are the gods that grant the powers to the player. They should test the strength of a build that can beat the game as post game content
+
+* Should not have any resistance to the abilities the player took from them, if they did
+* Each should test a specific aspect that a build can focus on. Damage, hp, dodge, environment effects, etc.
+* 
 
 
 ## Rewards
