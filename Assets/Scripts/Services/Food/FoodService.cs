@@ -54,21 +54,26 @@ namespace Food
             }
         }
 
-        void UpdateTemperature(IFood food, float externalTemperature, float time)
+        public void Heat(ILiquid liquid, float externalTemperature, float time)
         {
-            var density = food.Weight / food.Volume;
-            var heatConductivity = (float)food.HeatTransferRate / density;
-            var heatDifferential = (externalTemperature - food.Temperature);
+            UpdateTemperature(liquid, externalTemperature, time);
+        }
 
-            food.Temperature += time * heatDifferential * heatConductivity;
+        void UpdateTemperature(IHeatable heatable, float externalTemperature, float time)
+        {
+            var density = heatable.Weight / heatable.Volume;
+            var heatConductivity = (float)heatable.HeatTransferRate / density;
+            var heatDifferential = (externalTemperature - heatable.Temperature);
+
+            heatable.Temperature += time * heatDifferential * heatConductivity;
 
             // its possible that things can heat up in less than the given time, so clamp it
             if(heatDifferential > 0)
             {
-                food.Temperature = Mathf.Min(food.Temperature, externalTemperature);
+                heatable.Temperature = Mathf.Min(heatable.Temperature, externalTemperature);
             } else
             {
-                food.Temperature = Mathf.Max(food.Temperature, externalTemperature);
+                heatable.Temperature = Mathf.Max(heatable.Temperature, externalTemperature);
             }
         }
 
