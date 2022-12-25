@@ -8,7 +8,13 @@ namespace Food
     public interface IFood
     {
         string Name { get; set; }
-        float Amount { get; set; }
+        float Weight { get; set; }
+        float Volume { get; set; }
         float Temperature { get; set; }
+        float HeatTransferRate { get; set; }
+        float SolidPercent { get; set; }
+        float CookTemperature { get; set; }
+        float CookedPercent { get; set; }
+        float CookRate { get; set; }
     }
 }
