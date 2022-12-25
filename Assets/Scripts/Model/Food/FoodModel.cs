@@ -7,7 +7,6 @@ namespace Food
     public class FoodModel : IFoodModel, IFood
     {
         public string Name { get; set; }
-        public float Amount { get; set; }
         public float Temperature { get; set; }
         public float CookTemperature { get; set; } 
         public float Weight { get; set; }

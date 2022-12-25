@@ -7,7 +7,6 @@ namespace Food.Tests
     public class IFood_Mock : IFood
     {
         public string Name { get; set; } = "Mock Food";
-        public float Amount { get; set; } = 1000;
         public float Temperature { get; set; } = 50;
         public float CookTemperature { get; set; } = 100;
         public float Weight { get; set; } = 1000;

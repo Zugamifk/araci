@@ -26,14 +26,15 @@ namespace Demo.Food
         [SerializeField]
         TMP_InputField _startTemperature;
         [SerializeField]
-        Image _heatProgress;
+        RectTransform _heatProgress;
         [SerializeField]
-        Image _cookProgress;
+        RectTransform _cookProgress;
         [SerializeField]
         TextMeshProUGUI _temperature;
         [SerializeField]
         TextMeshProUGUI _cookedPercent;
 
+        float _startTemperatureValue;
         FoodModel _foodModel;
 
         private void Start()
@@ -51,6 +52,8 @@ namespace Demo.Food
             _cookTemperature.text = string.Empty;
             _cookRate.text = string.Empty;
             _startTemperature.text = string.Empty;
+
+            _foodModel = null;
         }
 
         private void Update()
@@ -63,6 +66,31 @@ namespace Demo.Food
 
         void OnClickedStart()
         {
+            CreateFoodModel();
+        }
+
+        void OnSelectedDropdownItem()
+        {
+            FillInfoFields();
+        }
+
+        void CreateFoodModel()
+        {
+            _startTemperatureValue = float.Parse(_startTemperature.text);
+            _foodModel = new FoodModel()
+            {
+                Weight = float.Parse(_weight.text),
+                Volume = float.Parse(_volume.text),
+                CookTemperature = float.Parse(_cookTemperature.text),
+                HeatTransferRate = float.Parse(_heatTransferRate.text),
+                SolidPercent = _solidity.value,
+                CookRate = float.Parse(_cookRate.text),
+                Temperature = float.Parse(_startTemperature.text)
+            };
+        }
+
+        void FillInfoFields()
+        {
 
         }
 
@@ -70,6 +98,20 @@ namespace Demo.Food
         {
             var service = Services.Get<IFoodService>();
             service.Heat(_foodModel, float.Parse(_temperature.text), Time.deltaTime);
+
+            UpdateProgress(_heatProgress, Mathf.InverseLerp(_startTemperatureValue, _foodModel.CookTemperature, _foodModel.Temperature));
+            UpdateProgress(_cookProgress, _foodModel.CookedPercent);
+
+            _temperature.text = $"Temperature: {_foodModel.Temperature:0.0} C";
+            _cookedPercent.text = $"Cooking Progress: {Mathf.RoundToInt(_foodModel.CookedPercent)}%";
+        }
+
+        void UpdateProgress(RectTransform bar, float percent)
+        {
+            var anchor = bar.anchorMax;
+            anchor.x = percent;
+            bar.anchorMax = anchor;
+            bar.sizeDelta = Vector2.zero;
         }
     }
 }
