@@ -21,6 +21,7 @@ namespace Food.Tests
             _foodService = new FoodService();
         }
 
+        #region GetFood
         [Test]
         public void GetFood_ReturnsNotNull()
         {
@@ -54,7 +55,7 @@ namespace Food.Tests
         [Test]
         public void GetFood_ZeroMeasure_ThrowsArgumentException()
         {
-            Assert.Throws<ArgumentException>(()=> _foodService.GetFood(TEST_FOOD_NAME, 0));
+            Assert.Throws<ArgumentException>(() => _foodService.GetFood(TEST_FOOD_NAME, 0));
         }
 
         [Test]
@@ -64,14 +65,52 @@ namespace Food.Tests
         }
 
         [Test]
+        public void GetFood_IsRaw_True()
+        {
+            var food = _foodService.GetFood(TEST_FOOD_NAME, TEST_FOOD_AMOUNT);
+            Assert.IsTrue(food.IsRaw);
+        }
+        #endregion
+
+        #region EatFood
+        [Test]
         public void EatFood_RemovesAmount()
         {
             var food = _foodService.GetFood(TEST_FOOD_NAME, TEST_FOOD_AMOUNT);
 
-            _foodService.Eat(food, TEST_EAT_AMOUNT);
+            var eatenFood = _foodService.Eat(food, TEST_EAT_AMOUNT);
 
             float expectedRemaining = TEST_FOOD_AMOUNT - TEST_EAT_AMOUNT;
-            Assert.AreEqual(expectedRemaining, food.Amount);
+            Assert.AreEqual(expectedRemaining, eatenFood.Amount);
         }
+
+        [Test]
+        public void EatFood_EatAmountMoreThanAmount_ThrowsInvalidOperationException()
+        {
+            var food = _foodService.GetFood(TEST_FOOD_NAME, TEST_FOOD_AMOUNT);
+
+            Assert.Throws<InvalidOperationException>(() => _foodService.Eat(food, TEST_FOOD_AMOUNT + TEST_EAT_AMOUNT));
+        }
+
+        [Test]
+        public void EatFood_EatAmountNegative_ThrowsArgumentException()
+        {
+            var food = _foodService.GetFood(TEST_FOOD_NAME, TEST_FOOD_AMOUNT);
+
+            Assert.Throws<ArgumentException>(() => _foodService.Eat(food, -1));
+        }
+        #endregion
+
+        #region CookFood
+        [Test]
+        public void CookFood_IsRaw_False()
+        {
+            var food = _foodService.GetFood(TEST_FOOD_NAME, TEST_FOOD_AMOUNT);
+
+            var newFood = _foodService.Cook(food);
+
+            Assert.False(newFood.IsRaw);
+        }
+        #endregion
     }
 }

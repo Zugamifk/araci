@@ -9,5 +9,6 @@ namespace Food
     {
         string Name { get; }
         float Amount { get; }
+        bool IsRaw { get; }
     }
 }

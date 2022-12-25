@@ -5,10 +5,19 @@ using UnityEngine;
 
 namespace Food
 {
-    public class FoodModel : IFoodModel
+    public struct FoodModel : IFoodModel
     {
-        public string Name { get; set; }
+        public string Name { get; }
 
-        public float Amount { get; set; }
+        public float Amount { get; }
+
+        public bool IsRaw { get; set; }
+
+        public FoodModel(string name, float amount)
+        {
+            Name = name;
+            Amount = amount;
+            IsRaw = true;
+        }
     }
 }
