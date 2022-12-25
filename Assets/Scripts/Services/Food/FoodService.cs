@@ -48,7 +48,7 @@ namespace Food
 
             UpdateTemperature(food, externalTemperature, time);
 
-            if (food.Temperature > food.CookTemperature)
+            if (food.Temperature >= food.CookTemperature)
             {
                 UpdateCookedPercent(food, time);
             }

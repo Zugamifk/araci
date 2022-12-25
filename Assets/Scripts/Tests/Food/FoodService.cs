@@ -109,6 +109,30 @@ namespace Food.Tests
 
             Assert.AreEqual(expectedTemp, food.Temperature);
         }
+
+        [Test]
+        [TestCase(100, 100, 200, 1, 0, 0, TestName = "Trivial case")]
+        [TestCase(200, 100, 200, 1, 0, .5f, TestName = "Trivial case with temp differential")]
+        [TestCase(100, 200, 200, 1, 0, 0, TestName = "Trivial case with negative temp differential")]
+
+        [TestCase(200, 100, 400, 1, 0, .25f, TestName = "Double volume")]
+        [TestCase(200, 100, 100, 1, 0, 1, TestName = "Half volume")]
+        [TestCase(200, 100, 200, 2, 0, 1, TestName = "Double cook rate")]
+        [TestCase(200, 100, 200, .5f, 0, .25f, TestName = "Half cook rate")]
+        [TestCase(200, 100, 200, 1, 1, .25f, TestName = "Fully Solid")]
+        public void Heat_TestCookPercentChange(float foodTemp, float cookTemp, float volume, float cookRate, float solidPercent, float expectedProgress)
+        {
+            var food = new IFood_Mock();
+            food.Temperature = foodTemp;
+            food.CookTemperature = cookTemp;
+            food.Volume = volume;
+            food.CookRate = cookRate;
+            food.SolidPercent = solidPercent;
+
+            _foodService.Heat(food, foodTemp, 1);
+
+            Assert.AreEqual(expectedProgress, food.CookedPercent);
+        }
         #endregion
     }
 }
