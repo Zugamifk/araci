@@ -80,7 +80,23 @@ namespace Food.Tests
 
         #region Heat
         [Test]
-        [TestCase(1, 1, 1, 100, 100, 100)]
+        [TestCase(1, 1, 1, 100, 100, 100, TestName = "Trivial case")]
+        [TestCase(1, 1, 1, 100, 200, 200, TestName = "Trivial case with temp differential")]
+        [TestCase(1, 1, 1, 200, 100, 100, TestName = "Trivial case with negative temp differential")]
+
+        [TestCase(2, 1, 1, 100, 200, 150, TestName = "Double Weight")]
+        [TestCase(.5f, 1, 1, 100, 200, 200, TestName = "Half Weight")]
+        [TestCase(1, 2, 1, 100, 200, 200, TestName = "Double Volume")]
+        [TestCase(1, .5f, 1, 100, 200, 150, TestName = "Half Volume")]
+        [TestCase(1, 1, 2, 100, 200, 200, TestName = "Double Heat Transfer Rate")]
+        [TestCase(1, 1, .5f, 100, 200, 150, TestName = "Half Heat Transfer Rate")]
+
+        [TestCase(2, 1, 1, 200, 100, 150, TestName = "Double Weight with negative temp differential")]
+        [TestCase(.5f, 1, 1, 200, 100, 100, TestName = "Half Weight with negative temp differential")]
+        [TestCase(1, 2, 1, 200, 100, 100, TestName = "Double Volume with negative temp differential")]
+        [TestCase(1, .5f, 1, 200, 100, 150, TestName = "Half Volume with negative temp differential")]
+        [TestCase(1, 1, 2, 200, 100, 100, TestName = "Double Heat Transfer Rate with negative temp differential")]
+        [TestCase(1, 1, .5f, 200, 100, 150, TestName = "Half Heat Transfer Rate with negative temp differential")]
         public void Heat_TestTemperatureChange(float weight, float volume, float heatTransferRate, float foodTemp, float externalTemp, float expectedTemp)
         {
             var food = new IFood_Mock();

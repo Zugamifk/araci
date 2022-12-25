@@ -60,7 +60,16 @@ namespace Food
             var heatConductivity = (float)food.HeatTransferRate / density;
             var heatDifferential = (externalTemperature - food.Temperature);
 
-            food.Temperature += time * heatDifferential * heatConductivity / density;
+            food.Temperature += time * heatDifferential * heatConductivity;
+
+            // its possible that things can heat up in less than the given time, so clamp it
+            if(heatDifferential > 0)
+            {
+                food.Temperature = Mathf.Min(food.Temperature, externalTemperature);
+            } else
+            {
+                food.Temperature = Mathf.Max(food.Temperature, externalTemperature);
+            }
         }
 
         void UpdateCookedPercent(IFood food, float time)
