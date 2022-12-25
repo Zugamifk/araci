@@ -8,14 +8,12 @@ namespace Food
 {
     public class FoodService
     {
-        public IFoodModel Cook(IFoodModel food)
+        public void Cook(IFood food)
         {
-            var newFood = new FoodModel(food.Name, food.Amount);
-            newFood.IsRaw = false;
-            return newFood;
+            food.IsRaw = false;
         }
 
-        public IFoodModel Eat(IFoodModel food, float amount)
+        public void Eat(IFood food, float amount)
         {
             if (amount > food.Amount)
             {
@@ -26,22 +24,7 @@ namespace Food
                 throw new ArgumentException($"Can not eat {amount}! Amount to eat can not be negative!");
             }
 
-            return GetFood(food.Name, food.Amount - amount);
-        }
-
-        public IFoodModel GetFood(string name, float measure)
-        {
-            if (string.IsNullOrEmpty(name))
-            {
-                throw new ArgumentException("Name can not be empty!");
-            }
-            else if (measure <= 0)
-            {
-                throw new ArgumentException("Measure must be greater than 0!");
-            }
-
-            var food = new FoodModel(name, measure);
-            return food;
+            food.Amount -= amount;
         }
     }
 }

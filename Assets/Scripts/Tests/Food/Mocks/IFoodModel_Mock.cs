@@ -1,19 +1,18 @@
-using Core;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Food
+namespace Food.Tests
 {
-    public struct FoodModel : IFoodModel
+    public class IFood_Mock : IFood
     {
-        public string Name { get; }
+        public string Name { get; set; }
 
-        public float Amount { get; }
+        public float Amount { get; set; }
 
         public bool IsRaw { get; set; }
 
-        public FoodModel(string name, float amount)
+        public IFood_Mock(string name, float amount)
         {
             Name = name;
             Amount = amount;
