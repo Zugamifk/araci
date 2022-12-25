@@ -1,14 +1,14 @@
-using Core;
+using Food;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Food
 {
-    public interface IFood
+    public interface ILiquid
     {
-        string Name { get; set; }
-        float Amount { get; set; }
         float Temperature { get; set; }
+        float FreezeTemperature { get; }
+        float BoilTemperature { get; }
     }
 }

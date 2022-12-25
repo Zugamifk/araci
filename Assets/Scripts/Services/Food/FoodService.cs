@@ -8,11 +8,6 @@ namespace Food
 {
     public class FoodService
     {
-        public void Cook(IFood food)
-        {
-            food.IsRaw = false;
-        }
-
         public void Eat(IFood food, float amount)
         {
             if (amount > food.Amount)
@@ -25,6 +20,11 @@ namespace Food
             }
 
             food.Amount -= amount;
+        }
+
+        public void Heat(IFood food, float temperatureChange)
+        {
+            food.Temperature += temperatureChange;
         }
     }
 }
