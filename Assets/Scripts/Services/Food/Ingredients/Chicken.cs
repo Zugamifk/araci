@@ -4,8 +4,7 @@ using UnityEngine;
 
 namespace Food
 {
-    public class Chicken : Ingredient, ICookable
+    public class Chicken : Meat
     {
-         public CookState CookState { get; set; }
     }
 }

@@ -9,10 +9,10 @@ namespace Food
         // no moisture
         Dry,
 
-        // wet on the surface
-        Wet,
+        // some moisture
+        Moist,
 
-        // Contains moisture inside as well
-        Soaked
+        // maximum moisture content
+        Saturated
     }
 }

@@ -45,6 +45,28 @@ namespace Food.Tests
 
             Assert.AreEqual(CookState.Burnt, cookable.CookState);
         }
+
+        [Test]
+        public void Cook_Roast_Moist_IsDry()
+        {
+            var cookable = new ICookable_Mock();
+            cookable.Moisture = MoistureState.Moist;
+
+            _foodService.Cook(cookable, new Roast());
+
+            Assert.AreEqual(MoistureState.Dry, cookable.Moisture);
+        }
+
+        [Test]
+        public void Cook_Roast_Saturated_IsMoist()
+        {
+            var cookable = new ICookable_Mock();
+            cookable.Moisture = MoistureState.Saturated;
+
+            _foodService.Cook(cookable, new Roast());
+
+            Assert.AreEqual(MoistureState.Moist, cookable.Moisture);
+        }
         #endregion
 
         #region AddToContainer

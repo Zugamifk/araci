@@ -19,6 +19,17 @@ namespace Food
                 default:
                     break;
             }
+
+            switch (cookable.Moisture)
+            {
+                case MoistureState.Moist:
+                    cookable.Moisture = MoistureState.Dry;
+                    break;
+                case MoistureState.Saturated:
+                    cookable.Moisture = MoistureState.Moist;
+                    break;
+                default: break;
+            }
         }
     }
 }
