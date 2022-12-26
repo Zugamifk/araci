@@ -1,20 +1,21 @@
-using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NUnit.Framework;
 using UnityEngine.WSA;
+using System;
 
 namespace Food.Tests
 {
-    public class RoastTests
+    public class BoilTests : MonoBehaviour
     {
-        Roast _roast = new();
+        Boil _boil = new();
 
         [Test]
-        [TestCase(MoistureState.Dry, CookState.Raw, CookState.Burnt)]
-        [TestCase(MoistureState.Dry, CookState.Cooked, CookState.Burnt)]
+        [TestCase(MoistureState.Dry, CookState.Raw, CookState.Raw)]
+        [TestCase(MoistureState.Dry, CookState.Cooked, CookState.Cooked)]
         [TestCase(MoistureState.Dry, CookState.Burnt, CookState.Burnt)]
-        [TestCase(MoistureState.Moist, CookState.Raw, CookState.Cooked)]
+        [TestCase(MoistureState.Moist, CookState.Raw, CookState.Raw)]
         [TestCase(MoistureState.Moist, CookState.Cooked, CookState.Cooked)]
         [TestCase(MoistureState.Moist, CookState.Burnt, CookState.Burnt)]
         [TestCase(MoistureState.Saturated, CookState.Raw, CookState.Cooked)]
@@ -26,28 +27,28 @@ namespace Food.Tests
             cookable.Moisture = moisture;
             cookable.CookState = cookState;
 
-            _roast.Cook(cookable);
+            _boil.Cook(cookable);
 
             Assert.AreEqual(expectedCookState, cookable.CookState);
         }
 
         [Test]
-        [TestCase(MoistureState.Dry, CookState.Raw, MoistureState.Dry)]
-        [TestCase(MoistureState.Dry, CookState.Cooked, MoistureState.Dry)]
-        [TestCase(MoistureState.Dry, CookState.Burnt, MoistureState.Dry)]
-        [TestCase(MoistureState.Moist, CookState.Raw, MoistureState.Moist)]
-        [TestCase(MoistureState.Moist, CookState.Cooked, MoistureState.Dry)]
-        [TestCase(MoistureState.Moist, CookState.Burnt, MoistureState.Dry)]
+        [TestCase(MoistureState.Dry, CookState.Raw, MoistureState.Moist)]
+        [TestCase(MoistureState.Dry, CookState.Cooked, MoistureState.Moist)]
+        [TestCase(MoistureState.Dry, CookState.Burnt, MoistureState.Moist)]
+        [TestCase(MoistureState.Moist, CookState.Raw, MoistureState.Saturated)]
+        [TestCase(MoistureState.Moist, CookState.Cooked, MoistureState.Saturated)]
+        [TestCase(MoistureState.Moist, CookState.Burnt, MoistureState.Saturated)]
         [TestCase(MoistureState.Saturated, CookState.Raw, MoistureState.Saturated)]
-        [TestCase(MoistureState.Saturated, CookState.Cooked, MoistureState.Moist)]
-        [TestCase(MoistureState.Saturated, CookState.Burnt, MoistureState.Moist)]
+        [TestCase(MoistureState.Saturated, CookState.Cooked, MoistureState.Saturated)]
+        [TestCase(MoistureState.Saturated, CookState.Burnt, MoistureState.Saturated)]
         public void Cook_ExpectedMoisture(MoistureState moisture, CookState cookState, MoistureState expectedMoisture)
         {
             var cookable = new ICookable_Mock();
             cookable.Moisture = moisture;
             cookable.CookState = cookState;
 
-            _roast.Cook(cookable);
+            _boil.Cook(cookable);
 
             Assert.AreEqual(expectedMoisture, cookable.Moisture);
         }
