@@ -40,8 +40,9 @@ namespace Demo.Food
 
         private void Start()
         {
-            LoadOptions();
             Clear();
+            LoadOptions();
+            FillInfoFields();
         }
 
         void Clear()
@@ -56,6 +57,12 @@ namespace Demo.Food
             _cookRate.text = string.Empty;
             _startTemperature.text = string.Empty;
 
+            UpdateProgress(_heatProgress, 0);
+            UpdateProgress(_cookProgress, 0);
+
+            _temperature.text = $"Temperature: 0 C";
+            _cookedPercent.text = $"Cooking Progress: 0%";
+
             _foodModel = null;
         }
 
@@ -68,7 +75,10 @@ namespace Demo.Food
                 options.Add(new TMP_Dropdown.OptionData(data.Name));
                 _nameToDataLookup.Add(data.Name, data);
             }
+
+            _foodOptionsDropdown.options.Clear();
             _foodOptionsDropdown.AddOptions(options);
+            _foodOptionsDropdown.value = 0;
         }
 
         private void Update()
@@ -79,12 +89,12 @@ namespace Demo.Food
             }
         }
 
-        void OnClickedStart()
+        public void OnClickedStart()
         {
             CreateFoodModel();
         }
 
-        void OnSelectedDropdownItem()
+        public void OnSelectedDropdownItem()
         {
             FillInfoFields();
         }
@@ -120,7 +130,7 @@ namespace Demo.Food
         void UpdateFoodModel()
         {
             var service = Services.Get<IFoodService>();
-            service.Heat(_foodModel, float.Parse(_temperature.text), Time.deltaTime);
+            service.Heat(_foodModel, float.Parse(_startTemperature.text), Time.deltaTime);
 
             UpdateProgress(_heatProgress, Mathf.InverseLerp(_startTemperatureValue, _foodModel.CookTemperature, _foodModel.Temperature));
             UpdateProgress(_cookProgress, _foodModel.CookedPercent);
