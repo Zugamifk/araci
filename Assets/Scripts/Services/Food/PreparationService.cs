@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Food
 {
-    public class FoodService : IFoodService
+    public class PreparationService : IFoodService
     {
         public void AddToContainer(Ingredient ingredient, Container container)
         {

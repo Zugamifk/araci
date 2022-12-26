@@ -10,10 +10,13 @@ namespace Food
 
         public override void Do(PreparationContext context)
         {
-            //foreach(var ingredient in context.Container.Contents)
-            //{
-            //    _roastProcess.Process(ingredient);
-            //}
+            foreach (var ingredient in context.Container.Contents)
+            {
+                if (ingredient is ICookable)
+                {
+                    _roastProcess.Process(ingredient);
+                }
+            }
         }
     }
 }

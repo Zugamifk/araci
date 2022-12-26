@@ -8,13 +8,9 @@ using System;
 
 namespace Food.Tests
 {
-    public class FoodServiceTests
+    public class PreparationService_Tests
     {
-        FoodService _foodService = new();
-
-        #region Cook
-
-        #endregion
+        PreparationService _foodService = new();
 
         #region AddToContainer
         [Test]
