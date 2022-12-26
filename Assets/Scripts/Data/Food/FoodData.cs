@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Food
 {
     [CreateAssetMenu(menuName = "Data/Food")]
-    public class FoodData : ScriptableObject, IKeyHolder, IFoodData
+    public class FoodData : ScriptableObject, IKeyHolder
     {
         [field: SerializeField]
         public string Key
@@ -34,30 +34,6 @@ namespace Food
 
         [field: SerializeField]
         public float Volume
-        {
-            get; set;
-        }
-
-        [field: SerializeField]
-        public float HeatTransferRate
-        {
-            get; set;
-        }
-
-        [field: SerializeField]
-        public float SolidPercent
-        {
-            get; set;
-        }
-
-        [field: SerializeField]
-        public float CookTemperature
-        {
-            get; set;
-        }
-
-        [field: SerializeField]
-        public float CookRate
         {
             get; set;
         }
