@@ -9,7 +9,7 @@ namespace Food.Tests
 {
     public class BoilTests : MonoBehaviour
     {
-        Boil _boil = new();
+        BoilProcess _boil = new();
 
         [Test]
         [TestCase(MoistureState.Dry, CookState.Raw, CookState.Raw)]
@@ -27,7 +27,7 @@ namespace Food.Tests
             cookable.Moisture = moisture;
             cookable.CookState = cookState;
 
-            _boil.Cook(cookable);
+            _boil.Process(cookable);
 
             Assert.AreEqual(expectedCookState, cookable.CookState);
         }
@@ -48,7 +48,7 @@ namespace Food.Tests
             cookable.Moisture = moisture;
             cookable.CookState = cookState;
 
-            _boil.Cook(cookable);
+            _boil.Process(cookable);
 
             Assert.AreEqual(expectedMoisture, cookable.Moisture);
         }

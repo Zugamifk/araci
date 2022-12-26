@@ -4,9 +4,8 @@ using UnityEngine;
 
 namespace Food.Tests
 {
-    public class ICookable_Mock : ICookable
+    public class ICookable_Mock : Ingredient, ICookable
     {
         public CookState CookState { get; set; }
-        public MoistureState Moisture { get; set; }
     }
 }

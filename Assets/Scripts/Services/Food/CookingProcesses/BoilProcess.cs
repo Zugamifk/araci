@@ -4,37 +4,41 @@ using UnityEngine;
 
 namespace Food
 {
-    public class Roast : ICookingMethod
+    public class BoilProcess : IProcess
     {
-        public void Cook(ICookable cookable)
+        public void Process(Ingredient ingredient)
         {
-            switch((cookable.CookState, cookable.Moisture))
+            if (ingredient is not ICookable cookable)
+            {
+                throw new System.InvalidOperationException($"{ingredient.Name} is not cookable!");
+            }
+
+            switch ((cookable.CookState, cookable.Moisture))
             {
                 case (CookState.Raw, MoistureState.Dry):
-                    cookable.CookState = CookState.Burnt;
+                    cookable.Moisture = MoistureState.Moist;
                     break;
                 case (CookState.Raw, MoistureState.Moist):
-                    cookable.CookState = CookState.Cooked;
+                    cookable.Moisture = MoistureState.Saturated;
                     break;
                 case (CookState.Raw, MoistureState.Saturated):
                     cookable.CookState = CookState.Cooked;
                     break;
                 case (CookState.Cooked, MoistureState.Dry):
-                    cookable.CookState = CookState.Burnt;
+                    cookable.Moisture = MoistureState.Moist;
                     break;
                 case (CookState.Cooked, MoistureState.Moist):
-                    cookable.Moisture = MoistureState.Dry;
+                    cookable.Moisture = MoistureState.Saturated;
                     break;
                 case (CookState.Cooked, MoistureState.Saturated):
-                    cookable.Moisture = MoistureState.Moist;
                     break;
                 case (CookState.Burnt, MoistureState.Dry):
+                    cookable.Moisture = MoistureState.Moist;
                     break;
                 case (CookState.Burnt, MoistureState.Moist):
-                    cookable.Moisture = MoistureState.Dry;
+                    cookable.Moisture = MoistureState.Saturated;
                     break;
                 case (CookState.Burnt, MoistureState.Saturated):
-                    cookable.Moisture = MoistureState.Moist;
                     break;
             }
         }

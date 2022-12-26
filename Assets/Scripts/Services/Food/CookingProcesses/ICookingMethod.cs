@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace Food
 {
-    public interface ICookingMethod
+    public interface IProcess
     {
-        void Cook(ICookable cookable);
+        void Process(Ingredient ingredient);
     }
 }

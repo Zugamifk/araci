@@ -9,11 +9,6 @@ namespace Food
 {
     public class FoodService : IFoodService
     {
-        public void Cook(ICookable cookable, ICookingMethod method)
-        {
-            method.Cook(cookable);
-        }
-
         public void AddToContainer(Ingredient ingredient, Container container)
         {
             if(ingredient.Volume + container.GetContentsVolume() > container.Volume)

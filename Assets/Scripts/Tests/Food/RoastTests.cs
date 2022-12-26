@@ -8,7 +8,7 @@ namespace Food.Tests
 {
     public class RoastTests
     {
-        Roast _roast = new();
+        RoastProcess _roast = new();
 
         [Test]
         [TestCase(MoistureState.Dry, CookState.Raw, CookState.Burnt)]
@@ -26,7 +26,7 @@ namespace Food.Tests
             cookable.Moisture = moisture;
             cookable.CookState = cookState;
 
-            _roast.Cook(cookable);
+            _roast.Process(cookable);
 
             Assert.AreEqual(expectedCookState, cookable.CookState);
         }
@@ -47,7 +47,7 @@ namespace Food.Tests
             cookable.Moisture = moisture;
             cookable.CookState = cookState;
 
-            _roast.Cook(cookable);
+            _roast.Process(cookable);
 
             Assert.AreEqual(expectedMoisture, cookable.Moisture);
         }
