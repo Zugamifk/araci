@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace Food
 {
-    public interface IIngredient : IHeatable
+    public interface ICookable
     {
-        string Name { get; set; }
+        public CookState CookState { get; set; }
     }
 }

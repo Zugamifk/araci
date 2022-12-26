@@ -9,6 +9,9 @@ namespace Food
 {
     public class FoodService : IFoodService
     {
-        
+        public void Cook(ICookable cookable, ICookingMethod method)
+        {
+            method.Cook(cookable);
+        }
     }
 }

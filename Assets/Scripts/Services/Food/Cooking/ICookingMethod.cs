@@ -4,9 +4,8 @@ using UnityEngine;
 
 namespace Food
 {
-    public interface IHeatable
+    public interface ICookingMethod
     {
-        float Weight { get; set; }
-        float Volume { get; set; }
+        void Cook(ICookable cookable);
     }
 }
