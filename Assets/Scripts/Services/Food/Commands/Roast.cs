@@ -12,7 +12,7 @@ namespace Food
         {
             foreach (var ingredient in context.Container.Contents)
             {
-                if (ingredient is ICookable)
+                if (ingredient is Cookable)
                 {
                     _roastProcess.Process(ingredient);
                 }

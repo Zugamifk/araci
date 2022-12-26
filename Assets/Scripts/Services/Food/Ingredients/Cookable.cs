@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Food
 {
-    public interface ICookable
+    public abstract class Cookable : Ingredient
     {
         public CookState CookState { get; set; }
         public MoistureState Moisture { get; set; }

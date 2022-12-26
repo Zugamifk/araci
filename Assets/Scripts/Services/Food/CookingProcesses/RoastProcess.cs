@@ -8,7 +8,7 @@ namespace Food
     {
         public void Process(Ingredient ingredient)
         {
-            if(ingredient is not ICookable cookable)
+            if(ingredient is not Cookable cookable)
             {
                 throw new System.InvalidOperationException($"{ingredient.Name} is not cookable!");
             }

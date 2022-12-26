@@ -4,8 +4,11 @@ using UnityEngine;
 
 namespace Food
 {
-    public class Pot : Container
+    public enum LiquidState
     {
-        public override float Volume { get; set; } = 4000;
+        Frozen,
+        Liquid,
+        Boiling,
+        Vapor
     }
 }

@@ -9,7 +9,5 @@ namespace Food
         public string Name;
 
         public float Volume;
-
-        public MoistureState Moisture { get; set; }
     }
 }
