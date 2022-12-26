@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Key>k__BackingField: Potato
   <Name>k__BackingField: Potato
-  <Weight>k__BackingField: 0
-  <Volume>k__BackingField: 0
-  <HeatTransferRate>k__BackingField: 0
-  <SolidPercent>k__BackingField: 0
-  <CookTemperature>k__BackingField: 0
-  <CookRate>k__BackingField: 0
+  <Description>k__BackingField: A single potato
+  <Weight>k__BackingField: 225
+  <Volume>k__BackingField: 380
+  <HeatTransferRate>k__BackingField: 1
+  <SolidPercent>k__BackingField: 0.8
+  <CookTemperature>k__BackingField: 60
+  <CookRate>k__BackingField: 1

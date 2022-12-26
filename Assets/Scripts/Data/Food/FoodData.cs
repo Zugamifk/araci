@@ -20,6 +20,13 @@ namespace Food
         }
 
         [field: SerializeField]
+        [field: TextArea]
+        public string Description
+        {
+            get; set;
+        }
+
+        [field: SerializeField]
         public float Weight
         {
             get; set;

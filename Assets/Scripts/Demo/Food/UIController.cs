@@ -20,7 +20,7 @@ namespace Demo.Food
         [SerializeField]
         Slider _solidity;
         [SerializeField]
-        TMP_InputField _cookTemperature;
+        TMP_InputField _minimumCookTemperature;
         [SerializeField]
         TMP_InputField _cookRate;
         [SerializeField]
@@ -33,6 +33,8 @@ namespace Demo.Food
         TextMeshProUGUI _temperature;
         [SerializeField]
         TextMeshProUGUI _cookedPercent;
+        [SerializeField]
+        TMP_InputField _cookTemperature;
 
         float _startTemperatureValue;
         FoodModel _foodModel;
@@ -53,10 +55,16 @@ namespace Demo.Food
             _volume.text = string.Empty;
             _heatTransferRate.text = string.Empty;
             _solidity.value = 0;
-            _cookTemperature.text = string.Empty;
+            _minimumCookTemperature.text = string.Empty;
             _cookRate.text = string.Empty;
             _startTemperature.text = string.Empty;
+            _cookTemperature.text = string.Empty;
 
+            ResetCooking();
+        }
+
+        void ResetCooking()
+        {
             UpdateProgress(_heatProgress, 0);
             UpdateProgress(_cookProgress, 0);
 
@@ -96,6 +104,7 @@ namespace Demo.Food
 
         public void OnSelectedDropdownItem()
         {
+            ResetCooking();
             FillInfoFields();
         }
 
@@ -106,7 +115,7 @@ namespace Demo.Food
             {
                 Weight = float.Parse(_weight.text),
                 Volume = float.Parse(_volume.text),
-                CookTemperature = float.Parse(_cookTemperature.text),
+                CookTemperature = float.Parse(_minimumCookTemperature.text),
                 HeatTransferRate = float.Parse(_heatTransferRate.text),
                 SolidPercent = _solidity.value,
                 CookRate = float.Parse(_cookRate.text),
@@ -122,21 +131,22 @@ namespace Demo.Food
             _volume.text = data.Volume.ToString();
             _heatTransferRate.text = data.HeatTransferRate.ToString();
             _solidity.value = data.SolidPercent;
-            _cookTemperature.text = data.CookTemperature.ToString();
+            _minimumCookTemperature.text = data.CookTemperature.ToString();
             _cookRate.text = data.CookRate.ToString();
             _startTemperature.text = "0";
+            _cookTemperature.text = "0";
         }
 
         void UpdateFoodModel()
         {
             var service = Services.Get<IFoodService>();
-            service.Heat(_foodModel, float.Parse(_startTemperature.text), Time.deltaTime);
+            service.Heat(_foodModel, float.Parse(_cookTemperature.text), Time.deltaTime);
 
             UpdateProgress(_heatProgress, Mathf.InverseLerp(_startTemperatureValue, _foodModel.CookTemperature, _foodModel.Temperature));
             UpdateProgress(_cookProgress, _foodModel.CookedPercent);
 
             _temperature.text = $"Temperature: {_foodModel.Temperature:0.0} C";
-            _cookedPercent.text = $"Cooking Progress: {Mathf.RoundToInt(_foodModel.CookedPercent)}%";
+            _cookedPercent.text = $"Cooking Progress: {Mathf.RoundToInt(100* _foodModel.CookedPercent)}%";
         }
 
         void UpdateProgress(RectTransform bar, float percent)
