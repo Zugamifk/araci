@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Food
 {
-    public class RoastPreparation : PreparationStep
+    public class Roast : PreparationStep
     {
         static RoastProcess _roastProcess = new();
 

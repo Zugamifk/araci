@@ -7,7 +7,7 @@ namespace Food
 {
     public abstract class Container : Tool
     {
-        public abstract float Volume { get; }
+        public abstract float Volume { get; set; }
         public ISet<Ingredient> Contents { get; set; } = new HashSet<Ingredient>();
 
         public float GetContentsVolume()

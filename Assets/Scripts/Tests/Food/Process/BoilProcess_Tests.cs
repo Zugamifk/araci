@@ -7,7 +7,7 @@ using System;
 
 namespace Food.Tests
 {
-    public class BoilProcess_Tests : MonoBehaviour
+    public class BoilProcess_Tests
     {
         BoilProcess _boil = new();
 

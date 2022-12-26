@@ -6,6 +6,6 @@ namespace Food
 {
     public class Pot : Container
     {
-        public override float Volume { get; } = 4000;
+        public override float Volume { get; set; } = 4000;
     }
 }
