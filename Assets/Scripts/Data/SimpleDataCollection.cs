@@ -12,6 +12,7 @@ public abstract class SimpleDataCollection<TData> : ScriptableObject
 
     public TData Get(string key) => _keyToData[key];
     public TData this[string key] => _keyToData[key];
+    public IEnumerable<TData> AllData => _data;
 
     protected virtual void OnEnable()
     {

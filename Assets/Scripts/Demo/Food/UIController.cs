@@ -10,7 +10,7 @@ namespace Demo.Food
     public class UIController : MonoBehaviour
     {
         [SerializeField]
-        Dropdown _foodOptionsDropdown;
+        TMP_Dropdown _foodOptionsDropdown;
         [SerializeField]
         TMP_InputField _weight;
         [SerializeField]
@@ -36,14 +36,17 @@ namespace Demo.Food
 
         float _startTemperatureValue;
         FoodModel _foodModel;
+        Dictionary<string, IFoodData> _nameToDataLookup = new();
 
         private void Start()
         {
+            LoadOptions();
             Clear();
         }
 
         void Clear()
         {
+            _foodOptionsDropdown.options.Clear();
             _foodOptionsDropdown.value = 0;
             _weight.text = string.Empty;
             _volume.text = string.Empty;
@@ -54,6 +57,18 @@ namespace Demo.Food
             _startTemperature.text = string.Empty;
 
             _foodModel = null;
+        }
+
+        void LoadOptions()
+        {
+            var dataCollection = DataService.GetData<FoodDataCollection>();
+            var options = new List<TMP_Dropdown.OptionData>();
+            foreach(var data in dataCollection.AllData)
+            {
+                options.Add(new TMP_Dropdown.OptionData(data.Name));
+                _nameToDataLookup.Add(data.Name, data);
+            }
+            _foodOptionsDropdown.AddOptions(options);
         }
 
         private void Update()
@@ -91,7 +106,15 @@ namespace Demo.Food
 
         void FillInfoFields()
         {
-
+            var option = _foodOptionsDropdown.options[_foodOptionsDropdown.value];
+            var data = _nameToDataLookup[option.text];
+            _weight.text = data.Weight.ToString();
+            _volume.text = data.Volume.ToString();
+            _heatTransferRate.text = data.HeatTransferRate.ToString();
+            _solidity.value = data.SolidPercent;
+            _cookTemperature.text = data.CookTemperature.ToString();
+            _cookRate.text = data.CookRate.ToString();
+            _startTemperature.text = "0";
         }
 
         void UpdateFoodModel()

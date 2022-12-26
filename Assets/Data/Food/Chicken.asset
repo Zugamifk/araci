@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe5f6f9bde60d014393dd6a4a07e7f6d, type: 3}
+  m_Name: Chicken
+  m_EditorClassIdentifier: 
+  <Key>k__BackingField: Chicken
+  <Name>k__BackingField: Chicken
+  <Weight>k__BackingField: 0
+  <Volume>k__BackingField: 0
+  <HeatTransferRate>k__BackingField: 0
+  <SolidPercent>k__BackingField: 0
+  <CookTemperature>k__BackingField: 0
+  <CookRate>k__BackingField: 0
