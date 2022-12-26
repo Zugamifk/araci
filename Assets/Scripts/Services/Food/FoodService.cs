@@ -13,5 +13,15 @@ namespace Food
         {
             method.Cook(cookable);
         }
+
+        public void AddToContainer(Ingredient ingredient, Container container)
+        {
+            if(ingredient.Volume + container.GetContentsVolume() > container.Volume)
+            {
+                throw new InvalidOperationException($"Not enough space in container to add ingredient!");
+            }
+
+            container.Contents.Add(ingredient);
+        }
     }
 }

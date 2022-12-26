@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace Food
 {
-    public class Chicken : Ingredient, ICookable
+    public class Pot : Container
     {
-         public CookState CookState { get; set; }
+        public override float Volume { get; } = 4000;
     }
 }

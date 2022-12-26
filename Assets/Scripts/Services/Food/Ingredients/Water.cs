@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 
 namespace Food
 {
-    public class Chicken : Ingredient, ICookable
+    public class Water : Ingredient
     {
-         public CookState CookState { get; set; }
+
     }
 }

@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace Food
 {
-    public interface IIngredient
+    public abstract class Tool
     {
-        public string Name { get; }
+        public string Name;
     }
 }
