@@ -13,60 +13,7 @@ namespace Food.Tests
         FoodService _foodService = new();
 
         #region Cook
-        [Test]
-        public void Cook_Roast_Raw_IsCooked()
-        {
-            var cookable = new ICookable_Mock();
-            cookable.CookState = CookState.Raw;
 
-            _foodService.Cook(cookable, new Roast());
-
-            Assert.AreEqual(CookState.Cooked, cookable.CookState);
-        }
-
-        [Test]
-        public void Cook_Roast_Cooked_IsBurnt()
-        {
-            var cookable = new ICookable_Mock();
-            cookable.CookState = CookState.Cooked;
-
-            _foodService.Cook(cookable, new Roast());
-
-            Assert.AreEqual(CookState.Burnt, cookable.CookState);
-        }
-
-        [Test]
-        public void Cook_Roast_Burnt_IsBurnt()
-        {
-            var cookable = new ICookable_Mock();
-            cookable.CookState = CookState.Burnt;
-
-            _foodService.Cook(cookable, new Roast());
-
-            Assert.AreEqual(CookState.Burnt, cookable.CookState);
-        }
-
-        [Test]
-        public void Cook_Roast_Moist_IsDry()
-        {
-            var cookable = new ICookable_Mock();
-            cookable.Moisture = MoistureState.Moist;
-
-            _foodService.Cook(cookable, new Roast());
-
-            Assert.AreEqual(MoistureState.Dry, cookable.Moisture);
-        }
-
-        [Test]
-        public void Cook_Roast_Saturated_IsMoist()
-        {
-            var cookable = new ICookable_Mock();
-            cookable.Moisture = MoistureState.Saturated;
-
-            _foodService.Cook(cookable, new Roast());
-
-            Assert.AreEqual(MoistureState.Moist, cookable.Moisture);
-        }
         #endregion
 
         #region AddToContainer
