@@ -6,7 +6,7 @@ using UnityEngine.WSA;
 
 namespace Food.Tests
 {
-    public class RoastTests
+    public class RoastProcess_Tests
     {
         RoastProcess _roast = new();
 
