@@ -11,7 +11,6 @@ namespace Food
         {
             var water = new Water();
             water.Temperature = Temperature.Warm;
-            water.LiquidState = LiquidState.Liquid;
             return water;
         }
     }
