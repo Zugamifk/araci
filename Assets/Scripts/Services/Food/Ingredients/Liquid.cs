@@ -8,14 +8,15 @@ namespace Food
     public abstract class Liquid : Ingredient
     {
         public Temperature Temperature { get; set; }
-        
+
 
         public void ApplyTemperature(Temperature temperature)
         {
-            if(temperature > Temperature)
+            if (temperature > Temperature)
             {
                 IncreaseTemperature();
-            } else if(temperature < Temperature)
+            }
+            else if (temperature < Temperature)
             {
                 DecreaseTemperature();
             }
@@ -64,9 +65,14 @@ namespace Food
             }
         }
 
-        public LiquidState GetLiquidState()
+        public LiquidState GetLiquidState() => Temperature switch
         {
-            throw new NotImplementedException();
-        }
+            Temperature.Freezing => LiquidState.Frozen,
+            Temperature.Cold => LiquidState.Liquid,
+            Temperature.Warm => LiquidState.Liquid,
+            Temperature.Hot => LiquidState.Liquid,
+            Temperature.Scalding => LiquidState.Boiling,
+            _ => throw new InvalidOperationException($"Temperature {Temperature} is not valid!")
+        };
     }
 }

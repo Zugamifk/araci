@@ -38,5 +38,20 @@ namespace Food.Tests
 
             Assert.AreEqual(expected, liquid.Temperature);
         }
+
+        [Test]
+        [TestCase(Temperature.Freezing, LiquidState.Frozen)]
+        [TestCase(Temperature.Cold, LiquidState.Liquid)]
+        [TestCase(Temperature.Warm, LiquidState.Liquid)]
+        [TestCase(Temperature.Hot, LiquidState.Liquid)]
+        [TestCase(Temperature.Scalding, LiquidState.Boiling)]
+        public void GetLiquidState_ReturnsExpectedValueByTemperature(Temperature temperature, LiquidState expectedState)
+        {
+            var liquid = new Liquid_Mock();
+            liquid.Temperature = temperature;
+
+            var liquidState = liquid.GetLiquidState();
+            Assert.AreEqual(expectedState, liquidState);
+        }
     }
 }

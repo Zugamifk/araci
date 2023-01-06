@@ -8,7 +8,6 @@ namespace Food
     {
         Frozen,
         Liquid,
-        Boiling,
-        Vapor
+        Boiling
     }
 }
