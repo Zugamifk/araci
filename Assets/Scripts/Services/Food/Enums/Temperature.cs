@@ -6,7 +6,7 @@ namespace Food
 {
     public enum Temperature
     {
-        // belolw freezing, around -5-10
+        // below freezing, around -5-10
         Freezing,
 
         // just above freezing 5-10C
@@ -19,6 +19,6 @@ namespace Food
         Hot,
 
         // above boiling, 100-110
-        Scalding
+        Boiling,
     }
 }

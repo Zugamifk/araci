@@ -43,8 +43,40 @@ namespace Food.Tests
         }
 
         [Test]
-        public void AffectsAllContainerContents()
+        public void AllLiquids_Boiling()
         {
+            var ingredient1 = new Liquid_Mock();
+            ingredient1.Name = "1";
+            ingredient1.Temperature = Temperature.Freezing;
+
+            var ingredient2 = new Liquid_Mock();
+            ingredient2.Name = "2";
+            ingredient1.Temperature = Temperature.Freezing;
+
+            var ingredients = new List<Ingredient>() {
+                ingredient1,
+                ingredient2
+            };
+            var steps = new List<PreparationStep>()
+            {
+                new AddToContainer("1"),
+                new AddToContainer("2"),
+                new Boil()
+            };
+
+            _preparationService.Prepare(ingredients, new Container_Mock(), steps);
+
+            Assert.AreEqual(LiquidState.Boiling, ingredient1.GetLiquidState());
+            Assert.AreEqual(LiquidState.Boiling, ingredient2.GetLiquidState());
+        }
+
+        [Test]
+        public void AllCookables_Cooked()
+        {
+            var liquid = new Liquid_Mock();
+            liquid.Name = "Liquid";
+            liquid.Temperature = Temperature.Freezing;
+
             var ingredient1 = new ICookable_Mock();
             ingredient1.Name = "1";
             ingredient1.Moisture = MoistureState.Moist;
@@ -56,11 +88,13 @@ namespace Food.Tests
             ingredient2.CookState = CookState.Raw;
 
             var ingredients = new List<Ingredient>() {
+                liquid,
                 ingredient1,
                 ingredient2
             };
             var steps = new List<PreparationStep>()
             {
+                new AddToContainer("Liquid"),
                 new AddToContainer("1"),
                 new AddToContainer("2"),
                 new Boil()

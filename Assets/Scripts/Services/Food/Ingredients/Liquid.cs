@@ -35,7 +35,7 @@ namespace Food
                 case Temperature.Hot:
                     Temperature = Temperature.Warm;
                     break;
-                case Temperature.Scalding:
+                case Temperature.Boiling:
                     Temperature = Temperature.Hot;
                     break;
                 default:
@@ -57,9 +57,9 @@ namespace Food
                     Temperature = Temperature.Hot;
                     break;
                 case Temperature.Hot:
-                    Temperature = Temperature.Scalding;
+                    Temperature = Temperature.Boiling;
                     break;
-                case Temperature.Scalding:
+                case Temperature.Boiling:
                 default:
                     break;
             }
@@ -71,7 +71,7 @@ namespace Food
             Temperature.Cold => LiquidState.Liquid,
             Temperature.Warm => LiquidState.Liquid,
             Temperature.Hot => LiquidState.Liquid,
-            Temperature.Scalding => LiquidState.Boiling,
+            Temperature.Boiling => LiquidState.Boiling,
             _ => throw new InvalidOperationException($"Temperature {Temperature} is not valid!")
         };
     }
