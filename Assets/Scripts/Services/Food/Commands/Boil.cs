@@ -9,7 +9,10 @@ namespace Food
     {
         public override void Do(PreparationContext context)
         {
-            throw new System.NotImplementedException();
+            if(context.Container.Contents.Count == 0)
+            {
+                throw new System.InvalidOperationException($"Can't boil with an empty container!");
+            }
         }
     }
 }
