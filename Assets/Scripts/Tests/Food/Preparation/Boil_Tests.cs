@@ -107,10 +107,10 @@ namespace Food.Tests
         }
 
         [Test]
-        [TestCase(MoistureState.Dry, CookState.Raw, CookState.Raw)]
+        [TestCase(MoistureState.Dry, CookState.Raw, CookState.Cooked)]
         [TestCase(MoistureState.Dry, CookState.Cooked, CookState.Cooked)]
         [TestCase(MoistureState.Dry, CookState.Burnt, CookState.Burnt)]
-        [TestCase(MoistureState.Moist, CookState.Raw, CookState.Raw)]
+        [TestCase(MoistureState.Moist, CookState.Raw, CookState.Cooked)]
         [TestCase(MoistureState.Moist, CookState.Cooked, CookState.Cooked)]
         [TestCase(MoistureState.Moist, CookState.Burnt, CookState.Burnt)]
         [TestCase(MoistureState.Saturated, CookState.Raw, CookState.Cooked)]
@@ -118,17 +118,23 @@ namespace Food.Tests
         [TestCase(MoistureState.Saturated, CookState.Burnt, CookState.Burnt)]
         public void Cook_ExpectedCookState(MoistureState moisture, CookState cookState, CookState expectedCookState)
         {
+            var liquid = new Liquid_Mock();
+            liquid.Name = "Liquid";
+            liquid.Temperature = Temperature.Freezing;
+
             var cookable = new ICookable_Mock();
             cookable.Name = "1";
             cookable.Moisture = moisture;
             cookable.CookState = cookState;
 
             var ingredients = new List<Ingredient>() {
+                liquid,
                 cookable
             };
 
             var steps = new List<PreparationStep>()
             {
+                new AddToContainer("Liquid"),
                 new AddToContainer("1"),
                 new Boil()
             };
@@ -139,9 +145,9 @@ namespace Food.Tests
         }
 
         [Test]
-        [TestCase(MoistureState.Dry, CookState.Raw, MoistureState.Moist)]
-        [TestCase(MoistureState.Dry, CookState.Cooked, MoistureState.Moist)]
-        [TestCase(MoistureState.Dry, CookState.Burnt, MoistureState.Moist)]
+        [TestCase(MoistureState.Dry, CookState.Raw, MoistureState.Saturated)]
+        [TestCase(MoistureState.Dry, CookState.Cooked, MoistureState.Saturated)]
+        [TestCase(MoistureState.Dry, CookState.Burnt, MoistureState.Saturated)]
         [TestCase(MoistureState.Moist, CookState.Raw, MoistureState.Saturated)]
         [TestCase(MoistureState.Moist, CookState.Cooked, MoistureState.Saturated)]
         [TestCase(MoistureState.Moist, CookState.Burnt, MoistureState.Saturated)]
@@ -150,17 +156,23 @@ namespace Food.Tests
         [TestCase(MoistureState.Saturated, CookState.Burnt, MoistureState.Saturated)]
         public void Cook_ExpectedMoisture(MoistureState moisture, CookState cookState, MoistureState expectedMoisture)
         {
+            var liquid = new Liquid_Mock();
+            liquid.Name = "Liquid";
+            liquid.Temperature = Temperature.Freezing;
+
             var cookable = new ICookable_Mock();
             cookable.Name = "1";
             cookable.Moisture = moisture;
             cookable.CookState = cookState;
 
             var ingredients = new List<Ingredient>() {
+                liquid,
                 cookable
             };
 
             var steps = new List<PreparationStep>()
             {
+                new AddToContainer("Liquid"),
                 new AddToContainer("1"),
                 new Boil()
             };
