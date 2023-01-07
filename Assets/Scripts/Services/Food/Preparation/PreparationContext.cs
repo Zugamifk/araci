@@ -6,7 +6,7 @@ namespace Food
 {
     public class PreparationContext
     {
-        public string SpecialName;
+        public Description Description = new();
         public Container Container;
         public Dictionary<string, Ingredient> Ingredients = new();
     }

@@ -15,6 +15,8 @@ namespace Food
                     RoastIngredient(cookable);
                 }
             }
+
+            context.Description.CookingMethod = "Roasted";
         }
 
         void RoastIngredient(Cookable cookable)

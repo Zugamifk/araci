@@ -15,7 +15,7 @@ namespace Food
             var context = new PreparationContext();
             foreach (var i in ingredients)
             {
-                context.Ingredients[i.Name] = i;
+                context.Ingredients[i.Key] = i;
             }
             context.Container = container;
             preparation.Context = context;

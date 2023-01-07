@@ -26,6 +26,8 @@ namespace Food
 
             BringToBoil();
             CookAllIngredients();
+
+            context.Description.CookingMethod = "Boiled";
         }
 
         void SplitIngredients(IEnumerable<Ingredient> ingredients)

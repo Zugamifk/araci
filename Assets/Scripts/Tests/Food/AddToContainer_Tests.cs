@@ -17,7 +17,7 @@ namespace Food.Tests
         public void AddToContainer_AddsToContainerVolume()
         {
             var ingredient = new Ingredient_Mock();
-            ingredient.Name = "1";
+            ingredient.MockKey = "1";
             ingredient.Volume = 250;
 
             var ingredients = new List<Ingredient>() { 
@@ -36,10 +36,10 @@ namespace Food.Tests
         public void AddToContainer_TwoItems_AddsToContainerVolume()
         {
             var ingredient1 = new Ingredient_Mock();
-            ingredient1.Name = "1";
+            ingredient1.MockKey = "1";
             ingredient1.Volume = 250;
             var ingredient2 = new Ingredient_Mock();
-            ingredient2.Name = "2";
+            ingredient2.MockKey = "2";
             ingredient2.Volume = 450;
 
             var ingredients = new List<Ingredient>() { 
@@ -61,7 +61,7 @@ namespace Food.Tests
         public void AddToContainer_NoSpace_ThrowsInvalidOperationException()
         {
             var ingredient = new Ingredient_Mock();
-            ingredient.Name = "1";
+            ingredient.MockKey = "1";
             ingredient.Volume = 1200;
 
             var ingredients = new List<Ingredient>() {

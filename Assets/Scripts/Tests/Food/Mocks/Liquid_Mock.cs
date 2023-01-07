@@ -6,6 +6,7 @@ namespace Food.Tests
 {
     public class Liquid_Mock : Liquid
     {
-        
+        public string MockKey;
+        public override string Key => MockKey;
     }
 }

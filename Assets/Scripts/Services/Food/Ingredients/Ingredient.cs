@@ -6,7 +6,7 @@ namespace Food
 {
     public abstract class Ingredient
     {
-        public string Name;
+        public abstract string Key { get; }
 
         public float Volume;
     }

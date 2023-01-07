@@ -14,12 +14,12 @@ namespace Food.Tests
         public void AffectsAllContainerContents()
         {
             var ingredient1 = new ICookable_Mock();
-            ingredient1.Name = "1";
+            ingredient1.MockKey = "1";
             ingredient1.Moisture = MoistureState.Moist;
             ingredient1.CookState = CookState.Raw;
 
             var ingredient2 = new ICookable_Mock();
-            ingredient2.Name = "2";
+            ingredient2.MockKey = "2";
             ingredient2.Moisture = MoistureState.Saturated;
             ingredient2.CookState = CookState.Raw;
 
@@ -45,7 +45,7 @@ namespace Food.Tests
         {
 
             var ingredient = new Ingredient_Mock();
-            ingredient.Name = "1";
+            ingredient.MockKey = "1";
 
             var ingredients = new List<Ingredient>() {
                 ingredient
@@ -73,7 +73,7 @@ namespace Food.Tests
         public void Cook_ExpectedCookState(MoistureState moisture, CookState cookState, CookState expectedCookState)
         {
             var cookable = new ICookable_Mock();
-            cookable.Name = "1";
+            cookable.MockKey = "1";
             cookable.Moisture = moisture;
             cookable.CookState = cookState;
 
@@ -104,7 +104,7 @@ namespace Food.Tests
         public void Cook_ExpectedMoisture(MoistureState moisture, CookState cookState, MoistureState expectedMoisture)
         {
             var cookable = new ICookable_Mock();
-            cookable.Name = "1";
+            cookable.MockKey = "1";
             cookable.Moisture = moisture;
             cookable.CookState = cookState;
 

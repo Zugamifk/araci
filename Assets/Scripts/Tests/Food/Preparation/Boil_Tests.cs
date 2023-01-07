@@ -25,7 +25,7 @@ namespace Food.Tests
         public void NoLiquid_ThrowsInvalidOperationException()
         {
             var ingredient = new ICookable_Mock();
-            ingredient.Name = "1";
+            ingredient.MockKey = "1";
             ingredient.Moisture = MoistureState.Saturated;
             ingredient.CookState = CookState.Raw;
 
@@ -46,11 +46,11 @@ namespace Food.Tests
         public void AllLiquids_Boiling()
         {
             var ingredient1 = new Liquid_Mock();
-            ingredient1.Name = "1";
+            ingredient1.MockKey = "1";
             ingredient1.Temperature = Temperature.Freezing;
 
             var ingredient2 = new Liquid_Mock();
-            ingredient2.Name = "2";
+            ingredient2.MockKey = "2";
             ingredient1.Temperature = Temperature.Freezing;
 
             var ingredients = new List<Ingredient>() {
@@ -74,16 +74,16 @@ namespace Food.Tests
         public void AllCookables_Cooked()
         {
             var liquid = new Liquid_Mock();
-            liquid.Name = "Liquid";
+            liquid.MockKey = "Liquid";
             liquid.Temperature = Temperature.Freezing;
 
             var ingredient1 = new ICookable_Mock();
-            ingredient1.Name = "1";
+            ingredient1.MockKey = "1";
             ingredient1.Moisture = MoistureState.Moist;
             ingredient1.CookState = CookState.Raw;
 
             var ingredient2 = new ICookable_Mock();
-            ingredient2.Name = "2";
+            ingredient2.MockKey = "2";
             ingredient2.Moisture = MoistureState.Saturated;
             ingredient2.CookState = CookState.Raw;
 
@@ -119,11 +119,11 @@ namespace Food.Tests
         public void Cook_ExpectedCookState(MoistureState moisture, CookState cookState, CookState expectedCookState)
         {
             var liquid = new Liquid_Mock();
-            liquid.Name = "Liquid";
+            liquid.MockKey = "Liquid";
             liquid.Temperature = Temperature.Freezing;
 
             var cookable = new ICookable_Mock();
-            cookable.Name = "1";
+            cookable.MockKey = "1";
             cookable.Moisture = moisture;
             cookable.CookState = cookState;
 
@@ -157,11 +157,11 @@ namespace Food.Tests
         public void Cook_ExpectedMoisture(MoistureState moisture, CookState cookState, MoistureState expectedMoisture)
         {
             var liquid = new Liquid_Mock();
-            liquid.Name = "Liquid";
+            liquid.MockKey = "Liquid";
             liquid.Temperature = Temperature.Freezing;
 
             var cookable = new ICookable_Mock();
-            cookable.Name = "1";
+            cookable.MockKey = "1";
             cookable.Moisture = moisture;
             cookable.CookState = cookState;
 

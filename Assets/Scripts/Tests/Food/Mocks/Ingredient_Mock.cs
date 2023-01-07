@@ -6,9 +6,11 @@ namespace Food.Tests
 {
     public class Ingredient_Mock : Ingredient
     {
+        public string MockKey;
+        public override string Key => MockKey;
+
         public Ingredient_Mock()
         {
-            Name = "Ingredient Mock";
             Volume = 250;
         }   
     }
