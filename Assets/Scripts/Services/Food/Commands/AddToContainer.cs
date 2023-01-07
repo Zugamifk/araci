@@ -24,6 +24,8 @@ namespace Food
             }
 
             context.Container.Contents.Add(ingredient);
+
+            context.Description.MainIngredient = ingredient.Key;
         }
     }
 }

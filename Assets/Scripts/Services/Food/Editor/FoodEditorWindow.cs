@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System;
 
 namespace Food.Editor
 {
@@ -16,7 +17,12 @@ namespace Food.Editor
 
         private void OnGUI()
         {
-            
+            if(GUILayout.Button("Roasted Chicken"))
+            {
+                var recipe = new RoastedChicken();
+                var food = recipe.Prepare();
+                Debug.Log(food.Description);
+            }
         }
     }
 }
