@@ -21,92 +21,100 @@ namespace SpriteAnimation
         }
 
         [SerializeField]
-        SpriteAnimationEditorWindowConfig _config;
+        SpriteAnimationEditorWindowConfig config;
 
-        Dictionary<string, SpriteAnimationData> _nameToData = new();
+        Dictionary<string, SpriteAnimationData> nameToData = new();
         [SerializeField]
-        int _dataChoiceIndex;
-        string[] _dataOptions;
-
-        [SerializeField]
-        SpriteAnimationData _currentData;
-        [SerializeField]
-        string _newDataName;
-        [SerializeField]
-        Vector2 _clipListScrollPosition;
-
-        SpriteAnimationBuilder _builder = new();
+        int dataChoiceIndex;
+        string[] dataOptions;
 
         [SerializeField]
-        SerializedObject _currentData_serObj;
+        SpriteAnimationData currentData;
         [SerializeField]
-        SerializedProperty[] _clipData_serProps;
+        string newDataName;
+        [SerializeField]
+        Vector2 clipListScrollPosition;
+
+        SpriteAnimationBuilder builder = new();
+
+        [SerializeField]
+        SerializedObject currentData_serObj;
+        [SerializeField]
+        SerializedProperty[] clipData_serProps;
 
         private void OnEnable()
         {
-            if (_config == null)
+            if (config == null)
             {
-                _config = AssetDatabase.LoadAssetAtPath<SpriteAnimationEditorWindowConfig>(CONFIG_PATH);
+                config = AssetDatabase.LoadAssetAtPath<SpriteAnimationEditorWindowConfig>(CONFIG_PATH);
             }
 
-            if (_config == null)
+            if (config == null)
             {
                 throw new System.ArgumentException($"No config found at {CONFIG_PATH}");
             }
 
-            _nameToData.Clear();
-            var allDataAssets = AssetDatabase.FindAssets("t:SpriteAnimationData", new[] { _config.SavePath });
+            nameToData.Clear();
+            var allDataAssets = AssetDatabase.FindAssets("t:SpriteAnimationData", new[] { config.SavePath });
             foreach (var guid in allDataAssets)
             {
                 var data = AssetDatabase.LoadAssetAtPath<SpriteAnimationData>(AssetDatabase.GUIDToAssetPath(guid));
-                _nameToData.Add(data.Name, data);
+                nameToData.Add(data.Name, data);
             }
 
             UpdateDataOptionsList();
 
-            _currentData = null;
+            currentData = null;
         }
 
         private void OnGUI()
         {
-            var newData = EditorGUILayout.Popup("Animation", _dataChoiceIndex, _dataOptions);
-            if (newData != _dataChoiceIndex)
+            if(currentData_serObj!=null)
             {
-                _dataChoiceIndex = newData;
+                currentData_serObj.Update();
+                UpdateClipDateSerializedObjects();
+            }
+
+            var newData = EditorGUILayout.Popup("Animation", dataChoiceIndex, dataOptions);
+            if (newData != dataChoiceIndex)
+            {
+                dataChoiceIndex = newData;
                 OnChooseNewData();
             }
 
             GUILayout.Space(10);
 
-            if (_currentData == null)
+            if (currentData == null)
             {
                 ShowCreateGui();
             }
             else
             {
                 ShowCurrentDataGui();
+                currentData_serObj.ApplyModifiedProperties();
             }
         }
 
         void OnChooseNewData()
         {
-            var name = _dataOptions[_dataChoiceIndex];
+            var name = dataOptions[dataChoiceIndex];
             if (name == NEW_ANIMATION_OPTION)
             {
-                _currentData = null;
+                currentData = null;
+                currentData_serObj = null;
                 return;
             }
 
-            _currentData = _nameToData[name];
-            _currentData_serObj = new SerializedObject(_currentData);
+            currentData = nameToData[name];
+            currentData_serObj = new SerializedObject(currentData);
 
             UpdateClipDateSerializedObjects();
         }
 
         void ShowCreateGui()
         {
-            _newDataName = EditorGUILayout.TextField("Name", _newDataName);
-            using (new EditorGUI.DisabledScope(string.IsNullOrEmpty(_newDataName)))
+            newDataName = EditorGUILayout.TextField("Name", newDataName);
+            using (new EditorGUI.DisabledScope(string.IsNullOrEmpty(newDataName)))
             {
                 if (GUILayout.Button("Create"))
                 {
@@ -117,32 +125,39 @@ namespace SpriteAnimation
 
         void CreateNewData()
         {
-            _currentData = _builder.CreateNewAnimationData(_newDataName, _config.SavePath);
-            _nameToData.Add(_newDataName, _currentData);
-            UpdateDataOptionsList(_newDataName);
-            _newDataName = string.Empty;
+            currentData = builder.CreateNewAnimationData(newDataName, config.SavePath);
+            nameToData.Add(newDataName, currentData);
+            UpdateDataOptionsList(newDataName);
+            newDataName = string.Empty;
             OnChooseNewData();
         }
 
         void UpdateDataOptionsList(string chooseOption = null)
         {
-            _dataChoiceIndex = 0;
-            _dataOptions = new string[_nameToData.Count + 1];
-            _dataOptions[0] = NEW_ANIMATION_OPTION;
+            dataChoiceIndex = 0;
+            dataOptions = new string[nameToData.Count + 1];
+            dataOptions[0] = NEW_ANIMATION_OPTION;
             int i = 1;
-            var keys = _nameToData.Keys.ToList();
+            var keys = nameToData.Keys.ToList();
             keys.Sort();
             foreach (var name in keys)
             {
                 if (name == chooseOption)
                 {
-                    _dataChoiceIndex = i;
+                    dataChoiceIndex = i;
                 }
-                _dataOptions[i++] = name;
+                dataOptions[i++] = name;
             }
         }
 
         void ShowCurrentDataGui()
+        {
+            DrawActionsBar();
+
+            DrawClipDataArea();
+        }
+
+        void DrawActionsBar()
         {
             using (new EditorGUILayout.HorizontalScope())
             {
@@ -156,43 +171,50 @@ namespace SpriteAnimation
                     RebuildSpriteAnimationData();
                 }
             }
+        }
 
-            using(new EditorGUILayout.VerticalScope("box"))
-            using(var scroll = new EditorGUILayout.ScrollViewScope(_clipListScrollPosition))
+        void DrawClipDataArea()
+        {
+            using (new EditorGUILayout.VerticalScope("box"))
+            using (var scroll = new EditorGUILayout.ScrollViewScope(clipListScrollPosition))
             {
-                for(int i=0;i<_currentData.Clips.Count;i++)
+                for (int i = 0; i < currentData.Clips.Count; i++)
                 {
-                    DrawClipData(_currentData.Clips[i], _clipData_serProps[i]);
+                    DrawClipData(i);
+                    if (currentData.Clips.Count > 1 && GUILayout.Button("Delete"))
+                    {
+                        DeleteClip(i);
+                    }
                 }
 
-                _clipListScrollPosition = scroll.scrollPosition;
+                clipListScrollPosition = scroll.scrollPosition;
             }
         }
 
         void CreateNewClip()
         {
-            _builder.CreateNewClipData(_currentData);
+            builder.CreateNewClipData(currentData);
 
             // set first new state as default
-            if(_currentData.Clips.Count == 1)
+            if(currentData.Clips.Count == 1)
             {
-                UpdateIsDefaultState(_currentData.Clips[0]);
+                UpdateIsDefaultState(currentData.Clips[0]);
             }
-
-            UpdateClipDateSerializedObjects();
         }
 
         void UpdateClipDateSerializedObjects()
         {
-            _clipData_serProps = new SerializedProperty[_currentData.Clips.Count];
-            for(int i=0;i<_currentData.Clips.Count; i++)
+            clipData_serProps = new SerializedProperty[currentData.Clips.Count];
+            for(int i=0;i<currentData.Clips.Count; i++)
             {
-                _clipData_serProps[i] = _currentData_serObj.FindProperty("Clips").GetArrayElementAtIndex(i);
+                clipData_serProps[i] = currentData_serObj.FindProperty("Clips").GetArrayElementAtIndex(i);
             }
         }
 
-        void DrawClipData(SpriteAnimationData.ClipData clipData, SerializedProperty clipProp)
+        void DrawClipData(int index)
         {
+            var clipData = currentData.Clips[index];
+            var clipProp = clipData_serProps[index];
             using (new EditorGUILayout.VerticalScope("box"))
             {
                 using(new EditorGUI.DisabledScope(clipData.IsDefaultState))
@@ -210,18 +232,23 @@ namespace SpriteAnimation
                 EditorGUILayout.PropertyField(clipProp.FindPropertyRelative("StartIndex"));
                 EditorGUILayout.PropertyField(clipProp.FindPropertyRelative("FrameCount"));
                 EditorGUILayout.PropertyField(clipProp.FindPropertyRelative("Source"));
-                EditorGUILayout.PropertyField(clipProp.FindPropertyRelative("AnyStateTransition"));
             }
+        }
+
+        void DeleteClip(int index)
+        {
+            builder.RemoveClipData(currentData, index);
+            UpdateIsDefaultState(currentData.Clips[0]);
         }
 
         void RebuildSpriteAnimationData()
         {
-            _builder.RebuildAnimationData(_currentData);
+            builder.RebuildAnimationData(currentData);
         }
 
         void UpdateIsDefaultState(SpriteAnimationData.ClipData newDefault)
         {
-            _builder.SetDefaultState(_currentData, newDefault);
+            builder.SetDefaultState(currentData, newDefault);
         }
     }
 }

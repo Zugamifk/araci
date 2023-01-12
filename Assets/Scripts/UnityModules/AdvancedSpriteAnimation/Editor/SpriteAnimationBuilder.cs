@@ -68,6 +68,13 @@ namespace SpriteAnimation
             AssetDatabase.SaveAssets();
         }
 
+        public void RemoveClipData(SpriteAnimationData data, int i)
+        {
+            data.Clips.RemoveAt(i);
+            EditorUtility.SetDirty(data);
+            AssetDatabase.SaveAssets();
+        }
+
         public void RebuildAnimationData(SpriteAnimationData data)
         {
             foreach (var clipData in data.Clips)
@@ -206,10 +213,6 @@ namespace SpriteAnimation
             }
 
             anyState.hasExitTime = false;
-            foreach(var c in clipData.AnyStateTransition.Conditions)
-            {
-                anyState.AddCondition(c.mode, c.threshold, c.parameter);
-            }
 
             EditorUtility.SetDirty(anyState);
         }
