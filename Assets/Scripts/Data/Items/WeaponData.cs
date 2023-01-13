@@ -11,8 +11,6 @@ public class WeaponData : ScriptableObject, IKeyHolder
     [SerializeField]
     string _description;
     [SerializeField]
-    SkillData _startingSkill;
-    [SerializeField]
     int _baseDamage;
     [SerializeField]
     float _baseMeterPerHit;
