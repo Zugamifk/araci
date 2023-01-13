@@ -113,13 +113,9 @@ public class Character : ModelViewBase<ICharacterModel>
         }
 
         var specialAnim = action.AnimationState;
-        switch (specialAnim.Key)
+        if(!string.IsNullOrEmpty(specialAnim.Key))
         {
-            case Animation.JUMP:
-                _animator.SetTrigger(Animation.JUMP);
-                break;
-            default:
-                break;
+            _animator.SetTrigger(specialAnim.Key);
         }
 
         _lastActionId = action.Id;
