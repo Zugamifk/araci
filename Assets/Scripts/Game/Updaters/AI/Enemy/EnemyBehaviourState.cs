@@ -6,10 +6,10 @@ using UnityEngine;
 
 public abstract class EnemyBehaviourState : IState
 {
-    protected Guid _id;
+    protected Guid id;
     public EnemyBehaviourState(Guid id)
     {
-        _id = id;
+        this.id = id;
     }
 
     public virtual void EnterState()

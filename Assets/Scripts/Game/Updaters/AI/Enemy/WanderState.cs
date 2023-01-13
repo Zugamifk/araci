@@ -10,7 +10,7 @@ public class WanderState : EnemyBehaviourState
     Vector2 _destination;
     public WanderState(Guid id) : base(id)
     {
-        var character = Game.Model.Characters.GetItem(_id);
+        var character = Game.Model.Characters.GetItem(base.id);
         GetNewDestination(character);
     }
 
@@ -18,7 +18,7 @@ public class WanderState : EnemyBehaviourState
     {
         var ms = Services.Get<ITileMapService>();
 
-        var character = Game.Model.Characters.GetItem(_id);
+        var character = Game.Model.Characters.GetItem(id);
         var to = _destination - character.Movement.Position;
         Debug.DrawLine(ms.GridToWorldSpace(character.Movement.Position), ms.GridToWorldSpace(_destination), Color.green);
         if (to.magnitude < REACH_THRESHOLD)
@@ -26,7 +26,7 @@ public class WanderState : EnemyBehaviourState
             GetNewDestination(character);
         } else
         {
-            Game.Do(new MoveCharacter(_id, to.normalized));
+            Game.Do(new MoveCharacter(id, to.normalized));
         }
         return this;
     }

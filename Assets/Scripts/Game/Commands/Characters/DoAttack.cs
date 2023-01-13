@@ -5,14 +5,12 @@ using UnityEngine;
 
 public struct DoAttack : ICommand
 {
-    string _key;
     Guid _attackerId;
     Vector2 _targetPosition;
 
-    public DoAttack(Guid attackerId, string key, Vector2 targetPosition)
+    public DoAttack(Guid attackerId, Vector2 targetPosition)
     {
         _attackerId = attackerId;
-        _key = key;
         _targetPosition = targetPosition;
     }
 
@@ -21,7 +19,7 @@ public struct DoAttack : ICommand
         var attacker = model.Characters.GetItem(_attackerId);
         var action = new ActionModel()
         {
-            Key = _key,
+            Key = Actions.ATTACK,
             TargetPosition = _targetPosition,
         };
         action.Cooldown.ReadyTime = model.TimeModel.Time + attacker.Attack.Cooldown;

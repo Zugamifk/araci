@@ -22,14 +22,14 @@ public class EnemyJumpState : EnemyBehaviourState
 
     public override void EnterState()
     {
-        Game.Do(new DoDash(_id, _direction, _jumpSpeed));
+        Game.Do(new DoDash(id, _direction, _jumpSpeed));
     }
 
     public override IState UpdateState()
     {
         if (Game.Model.Time.Time - _jumpStartTime > _jumpDuration)
         {
-            return new IdleEnemyState(_id);
+            return new IdleEnemyState(id);
         }
         else return this;
     }
