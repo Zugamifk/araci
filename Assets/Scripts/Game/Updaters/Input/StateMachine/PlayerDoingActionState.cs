@@ -1,27 +1,30 @@
-using StateMachines;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerDoingActionState : InputState
+namespace Input
 {
-    float _endTime;
-
-    public PlayerDoingActionState(float duration)
+    public class PlayerDoingActionState : InputState
     {
-        _endTime = Game.Model.Time.Time + duration;
-    }
+        float _endTime;
 
-    public override IState UpdateState()
-    {
-        var done = Game.Model.Time.Time > _endTime;
-        if(done)
+        public PlayerDoingActionState(float duration)
         {
-            return new PlayerControlState();
-        } else
+            _endTime = Game.Model.Time.Time + duration;
+        }
+
+        public override InputState Update()
         {
-            return this;
+            var done = Game.Model.Time.Time > _endTime;
+            if (done)
+            {
+                return new PlayerControlState();
+            }
+            else
+            {
+                return this;
+            }
         }
     }
 }

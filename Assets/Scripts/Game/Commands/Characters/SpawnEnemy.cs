@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Behaviour;
 
 public struct SpawnEnemy : ICommand
 {
@@ -33,8 +34,8 @@ public struct SpawnEnemy : ICommand
         {
             case Enemies.FROGDEMON:
                 return new FrogDemonBehaviour(id);
-            case Enemies.PIPER:
-                return new PiperBehaviour(id);
+            //case Enemies.PIPER:
+            //    return new PiperBehaviour(id);
             default:
                 throw new ArgumentException($"No behaviour for key \'{_characterKey}\' with ID {id}");
         }

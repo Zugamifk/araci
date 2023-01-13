@@ -1,14 +1,16 @@
-using StateMachines;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InactiveState : InputState
+namespace Input
 {
-    public override IState UpdateState()
+    public class InactiveState : InputState
     {
-        // Do nothing;
+        public override InputState Update()
+        {
+            // Do nothing;
 
-        return this;
+            return this;
+        }
     }
 }

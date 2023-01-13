@@ -1,15 +1,14 @@
-using StateMachines;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class InputState : IState
+public abstract class InputState
 {
     public InputStateContext Context { get; set; }
 
-    public virtual void EnterState()
+    public virtual void Initialize()
     {
     }
 
-    public abstract IState UpdateState();
+    public abstract InputState Update();
 }

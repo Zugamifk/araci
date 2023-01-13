@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using System;
-
+using Behaviour;
 public class GameModel : IGameModel
 {
     public IdentifiableCollection<CharacterModel> Characters { get; } = new();
     public IdentifiableCollection<NarrativeModel> Narratives { get; } = new();
     public IdentifiableCollection<ShrineModel> Shrines { get; } = new();
+    public IdentifiableCollection<BehaviourModel> Behaviours { get; } = new();
     public Dictionary<string, SpawnModel> Spawns { get; } = new();
     public PlayerModel Player { get; } = new();
     public CharacterModel PlayerCharacter => Characters.GetItem(Player.Id);

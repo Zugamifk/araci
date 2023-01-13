@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static UnityEngine.Input;
 
 public class MouseUpdater : MonoBehaviour
 {
@@ -26,12 +27,12 @@ public class MouseUpdater : MonoBehaviour
 
     bool HandleWorldInput()
     {
-        if (!Input.GetMouseButtonUp(0))
+        if (!GetMouseButtonUp(0))
         {
             return false;
         }
 
-        Ray ray = _raycastCamera.ScreenPointToRay(Input.mousePosition);
+        Ray ray = _raycastCamera.ScreenPointToRay(mousePosition);
 
         if (!Physics.Raycast(ray, out RaycastHit hit))
         {
