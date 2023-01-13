@@ -27,7 +27,6 @@ public struct InitializePlayer : ICommand
         var dash = player.Dash;
         dash.Duration = playerData.DashDuration;
         dash.Speed = playerData.DashSpeed;
-        dash.Cooldown.Cooldown = playerData.DashCooldown;
     }
 
 }

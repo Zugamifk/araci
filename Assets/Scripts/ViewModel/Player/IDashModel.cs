@@ -6,5 +6,4 @@ public interface IDashModel
 {
     float Duration { get; }
     float Speed { get; }
-    ICooldownModel Cooldown { get; }
 }
