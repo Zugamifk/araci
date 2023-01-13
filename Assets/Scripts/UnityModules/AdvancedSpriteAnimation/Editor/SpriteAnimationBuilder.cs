@@ -93,6 +93,7 @@ namespace SpriteAnimation
         {
             if (!IsClipDataValid(data, clipData))
             {
+                Debug.LogWarning($"Can'y apply ClipData {data.Name}, not valid.");
                 return;
             }
 

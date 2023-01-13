@@ -175,6 +175,11 @@ namespace SpriteAnimation
 
         void DrawClipDataArea()
         {
+            if(currentData.Clips.Count != clipData_serProps.Length)
+            {
+                return;
+            }
+
             using (new EditorGUILayout.VerticalScope("box"))
             using (var scroll = new EditorGUILayout.ScrollViewScope(clipListScrollPosition))
             {
