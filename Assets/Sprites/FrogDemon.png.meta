@@ -87,8 +87,8 @@ TextureImporter:
         y: 225
         width: 15
         height: 19
-      alignment: 9
-      pivot: {x: 0.5147603, y: 0.40677202}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -108,8 +108,8 @@ TextureImporter:
         y: 225
         width: 19
         height: 13
-      alignment: 9
-      pivot: {x: 0.4883465, y: 0.48296648}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -129,8 +129,8 @@ TextureImporter:
         y: 225
         width: 29
         height: 22
-      alignment: 9
-      pivot: {x: 0.49236482, y: 0.2181993}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -150,8 +150,8 @@ TextureImporter:
         y: 225
         width: 35
         height: 22
-      alignment: 9
-      pivot: {x: 0.5126519, y: 0.12762035}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -171,8 +171,8 @@ TextureImporter:
         y: 225
         width: 34
         height: 19
-      alignment: 9
-      pivot: {x: 0.49348718, y: 0.15039705}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -192,8 +192,8 @@ TextureImporter:
         y: 221
         width: 36
         height: 21
-      alignment: 9
-      pivot: {x: 0.493849, y: 0.17314947}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -213,8 +213,8 @@ TextureImporter:
         y: 221
         width: 26
         height: 24
-      alignment: 9
-      pivot: {x: 0.508515, y: 0.3339386}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -255,8 +255,8 @@ TextureImporter:
         y: 191
         width: 17
         height: 17
-      alignment: 9
-      pivot: {x: 0.5, y: 0.30463365}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -264,6 +264,90 @@ TextureImporter:
       bones: []
       spriteID: cef31914b1af92645b7ef8feb8dc81dc
       internalID: -404053315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrogDemon_9
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 192
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c0d20d6a11d27d4e876ee48cc997a60
+      internalID: -962243980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrogDemon_10
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 187
+        width: 13
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9e75cb693d630e4e930733aa7f2502f
+      internalID: 1954127539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrogDemon_11
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 187
+        width: 34
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffc18f73bbce49b49b21372e184d0575
+      internalID: -1562153124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrogDemon_12
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 185
+        width: 33
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adc844408fbcd2242ba416f5a0279734
+      internalID: -315720934
       vertices: []
       indices: 
       edges: []
@@ -279,15 +363,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      FrogDemon_11: -1562153124
       FrogDemon_1: -887700850
       FrogDemon_4: -1020063739
       FrogDemon_8: -404053315
       FrogDemon_3: 1114065979
+      FrogDemon_9: -962243980
       FrogDemon_0: -412264147
+      FrogDemon_10: 1954127539
       FrogDemon_6: -796532122
       FrogDemon_2: 276171316
       FrogDemon_5: 619584666
       FrogDemon_7: 303786089
+      FrogDemon_12: -315720934
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

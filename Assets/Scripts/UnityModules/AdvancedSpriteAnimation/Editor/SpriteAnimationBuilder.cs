@@ -117,7 +117,7 @@ namespace SpriteAnimation
                 .Take(clipData.FrameCount)
                 .ToArray();
             var renderer = data.Prefab.GetComponentInChildren<SpriteRenderer>();
-            renderer.sprite = sprites[clipData.StartIndex];
+            renderer.sprite = sprites[0];
 
             var frameCount = sprites.Length;
             clip.frameRate = frameCount / clipData.Duration;
@@ -152,7 +152,14 @@ namespace SpriteAnimation
             else
             {
                 var state = GetState(data.Controller, oldClipName);
-                state.name = clip.name;
+                if(state == null)
+                {
+                    controller.AddMotion(clip);
+                }
+                else
+                {
+                    state.name = clip.name;
+                }
             }
 
             UpdateStateTransitions(data, clipData);
