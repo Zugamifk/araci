@@ -73,13 +73,8 @@ public class Character : ModelViewBase<ICharacterModel>
         Game.Do(new UpdatePosition(Id, Map.Instance.WorldToGridSpace(transform.position)));
 
         var move = _rigidBody.velocity;
-        if (move.magnitude > 0)
+        if (Mathf.Approximately(move.sqrMagnitude, 0))
         {
-            _animator.SetBool("Walking", true);
-        }
-        else
-        {
-            _animator.SetBool("Walking", false);
             return;
         }
 
@@ -110,12 +105,6 @@ public class Character : ModelViewBase<ICharacterModel>
                 break;
             default:
                 break;
-        }
-
-        var specialAnim = action.AnimationState;
-        if(!string.IsNullOrEmpty(specialAnim.Key))
-        {
-            _animator.SetTrigger(specialAnim.Key);
         }
 
         _lastActionId = action.Id;

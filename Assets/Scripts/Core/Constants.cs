@@ -14,7 +14,9 @@ public static class Skills
 
 public static class Animation
 {
+    public const string WALK = "Walk";
     public const string JUMP = "Jump";
+    public const string ATTACK = "Attack";
 }
 
 public static class Actions
