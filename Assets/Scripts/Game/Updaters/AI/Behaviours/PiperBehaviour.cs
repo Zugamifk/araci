@@ -9,6 +9,7 @@ namespace Behaviour
     {
         public PiperBehaviour(Guid id) : base(id)
         {
+            currentState = new WanderState(id);
         }
 
         protected override BehaviourState TransitionState(AIModel behaviour, PiperBehaviourModel agent)

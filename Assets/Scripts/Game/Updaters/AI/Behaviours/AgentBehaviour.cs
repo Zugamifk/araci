@@ -16,6 +16,8 @@ namespace Behaviour
             currentState = new IdleState(id);
         }
 
+        public abstract void Initialize(GameModel model);
+
         public abstract void Update(GameModel model);
     }
 
@@ -24,6 +26,11 @@ namespace Behaviour
     {
         protected AgentBehaviour(Guid id) : base(id)
         {
+        }
+
+        public sealed override void Initialize(GameModel model)
+        {
+            EnterState(model, currentState);
         }
 
         public sealed override void Update(GameModel model)

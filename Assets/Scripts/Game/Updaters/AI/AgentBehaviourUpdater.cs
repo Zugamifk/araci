@@ -7,25 +7,33 @@ namespace Behaviour
 {
     public class AgentBehaviourUpdater : IUpdater
     {
-        Guid _agentId;
-        AgentBehaviour _behaviour;
+        Guid agentId;
+        AgentBehaviour behaviour;
+        bool initialized;
 
         public AgentBehaviourUpdater(Guid id, AgentBehaviour behaviour)
         {
-            _agentId = id;
-            _behaviour = behaviour;
+            agentId = id;
+            this.behaviour = behaviour;
+            initialized = false;
         }
 
         public void Update(GameModel model)
         {
-            var agent = model.Characters.GetItem(_agentId);
+            var agent = model.Characters.GetItem(agentId);
             if (agent == null)
             {
-                Game.RemoveUpdater(_agentId);
+                Game.RemoveUpdater(agentId);
                 return;
             }
 
-            _behaviour.Update(model);
+            if(!initialized)
+            {
+                behaviour.Initialize(model);
+                initialized = true;
+            }
+
+            behaviour.Update(model);
         }
     }
 }
