@@ -24,6 +24,10 @@ public class CharacterAnimator : MonoBehaviour
     private void Update()
     {
         var character = Game.Model.Characters.GetItem(identifiable.Id);
+        if (character == null)
+        {
+            return;
+        }
 
         DoWalkAnimation(character);
         DoActionAnimation(character);
