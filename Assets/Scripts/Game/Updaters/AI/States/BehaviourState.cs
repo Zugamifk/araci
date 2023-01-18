@@ -8,7 +8,7 @@ namespace Behaviour
     public abstract class BehaviourState
     {
         protected Guid id;
-        public bool CanTransition { get; protected set; } = false;
+        public bool CanTransition { get; set; } = false;
         public BehaviourState(Guid id)
         {
             this.id = id;

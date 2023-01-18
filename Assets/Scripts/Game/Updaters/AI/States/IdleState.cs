@@ -10,6 +10,12 @@ namespace Behaviour
     {
         public IdleState(Guid id) : base(id)
         {
+            CanTransition = true;
+        }
+
+        public override void Initialize(GameModel model)
+        {
+            Game.Do(new StopCharacter(id));
         }
 
         public override void Update(GameModel gameModel)

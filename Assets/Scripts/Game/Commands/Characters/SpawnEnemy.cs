@@ -42,7 +42,12 @@ public struct SpawnEnemy : ICommand
         switch (characterKey)
         {
             case Enemies.FROGDEMON:
-                aiModel.Agent = new FrogDemonBehaviourModel();
+                {
+                    var agent = new FrogDemonBehaviourModel();
+                    agent.JumpCooldown.Duration = 3;
+                    agent.JumpCooldown.ReadyTime = model.TimeModel.Time + UnityEngine.Random.value;
+                    aiModel.Agent = agent;
+                }
                 break;
             case Enemies.PIPER:
                 aiModel.Agent = new PiperBehaviourModel();
