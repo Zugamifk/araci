@@ -5,11 +5,13 @@ using UnityEngine;
 using UnityEngine.TextCore.Text;
 
 [RequireComponent(typeof(Identifiable))]
-[RequireComponent (typeof(Character))]
+[RequireComponent(typeof(Character))]
 public class CharacterAnimator : MonoBehaviour
 {
     [SerializeField]
     Animator animator;
+    [SerializeField]
+    bool hasWalkAnimation;
 
     Identifiable identifiable;
     Guid lastActionId;
@@ -23,21 +25,33 @@ public class CharacterAnimator : MonoBehaviour
     {
         var character = Game.Model.Characters.GetItem(identifiable.Id);
 
-        animator.SetBool(Animation.WALK, character.Movement.Mode != MoveMode.None);
+        DoWalkAnimation(character);
+        DoActionAnimation(character);
+    }
 
-        if(lastActionId!=character.CurrentAction.Id)
+    void DoWalkAnimation(ICharacterModel character)
+    {
+        if (!hasWalkAnimation)
         {
-            DoActionAnimation(character);
+            return;
         }
+
+        animator.SetBool(Animation.WALK, character.Movement.Mode != MoveMode.None);
     }
 
     void DoActionAnimation(ICharacterModel character)
     {
+        if (lastActionId == character.CurrentAction.Id)
+        {
+            return;
+        }
+
         var specialAnim = character.CurrentAction.AnimationState;
         if (!string.IsNullOrEmpty(specialAnim.Key))
         {
             animator.SetTrigger(specialAnim.Key);
         }
+
         lastActionId = character.CurrentAction.Id;
     }
 }

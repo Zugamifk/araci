@@ -83,6 +83,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 6931277778629904008}
+  hasWalkAnimation: 1
 --- !u!50 &4511861292804313966
 Rigidbody2D:
   serializedVersion: 4
