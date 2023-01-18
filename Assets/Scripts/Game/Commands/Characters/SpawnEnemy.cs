@@ -3,41 +3,70 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Behaviour;
+using UnityEngine.EventSystems;
 
 public struct SpawnEnemy : ICommand
 {
-    string _characterKey;
-    string _spawnKey;
+    string characterKey;
+    string spawnKey;
 
     public SpawnEnemy(string characterKey, string spawnKey)
     {
-        _characterKey = characterKey;
-        _spawnKey = spawnKey;
+        this.characterKey = characterKey;
+        this.spawnKey = spawnKey;
     }
 
     public void Execute(GameModel model)
     {
         var id = Guid.NewGuid();
-        new SpawnCharacter(_characterKey, _spawnKey, id).Execute(model);
-
-        var character = model.Characters.GetItem(id);
-        var data = DataService.GetData<CharacterDataCollection>().Get(_characterKey) as EnemyData;
-        character.Attack.Damage = data.AttackDamage;
-
-        var behaviour = GetBehaviour(id);
-        Game.AddUpdater(new AgentBehaviourUpdater(id, behaviour));
+        CreateEnemyCharacter(model, id);
+        CreateBehaviourModel(model, id);
+        CreateBehaviour(id);
     }
 
-    AgentBehaviour GetBehaviour(Guid id)
+    void CreateEnemyCharacter(GameModel model, Guid id)
     {
-        switch (_characterKey)
+        new SpawnCharacter(characterKey, spawnKey, id).Execute(model);
+
+        var character = model.Characters.GetItem(id);
+        var data = DataService.GetData<CharacterDataCollection>().Get(characterKey) as EnemyData;
+        character.Attack.Damage = data.AttackDamage;
+    }
+
+    void CreateBehaviourModel(GameModel model, Guid id)
+    {
+        AIModel aiModel = new AIModel()
+        {
+            Id = id
+        };
+        switch (characterKey)
         {
             case Enemies.FROGDEMON:
-                return new FrogDemonBehaviour(id);
-            //case Enemies.PIPER:
-            //    return new PiperBehaviour(id);
+                aiModel.Agent = new FrogDemonBehaviourModel();
+                break;
+            case Enemies.PIPER:
+                aiModel.Agent = new PiperBehaviourModel();
+                break;
             default:
-                throw new ArgumentException($"No behaviour for key \'{_characterKey}\' with ID {id}");
+                throw new ArgumentException($"No model for key \'{characterKey}\' with ID {id}");
         }
+        model.Behaviours.AddItem(aiModel);
+    }
+
+    void CreateBehaviour(Guid id)
+    {
+        AgentBehaviour behaviour = null;
+        switch (characterKey)
+        {
+            case Enemies.FROGDEMON:
+                behaviour =  new FrogDemonBehaviour(id);
+                break;
+            case Enemies.PIPER:
+                behaviour = new PiperBehaviour(id);
+                break;
+            default:
+                throw new ArgumentException($"No behaviour for key \'{characterKey}\' with ID {id}");
+        }
+        Game.AddUpdater(new AgentBehaviourUpdater(id, behaviour));
     }
 }

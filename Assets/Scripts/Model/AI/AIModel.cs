@@ -5,9 +5,9 @@ using UnityEngine;
 
 namespace Behaviour
 {
-    public class BehaviourModel : IBehaviourModel
+    public class AIModel : IAIModel
     {
-        public Guid Id { get; }
+        public Guid Id { get; set; }
         public AgentModel Agent { get; set; }
         public BehaviourStateModel State { get; set; }
     }

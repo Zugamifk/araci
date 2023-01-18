@@ -8,9 +8,12 @@ namespace Behaviour
     public abstract class AgentBehaviour
     {
         protected Guid id;
+        protected BehaviourState currentState { get; set; }
+
         public AgentBehaviour(Guid id)
         {
             this.id = id;
+            currentState = new IdleState(id);
         }
 
         public abstract void Update(GameModel model);
@@ -27,9 +30,24 @@ namespace Behaviour
         {
             var behaviour = model.Behaviours.GetItem(id);
             var agent = (TAgentModel)behaviour.Agent;
-            Update(behaviour, agent);
+            currentState.Update(model);
+
+            if (currentState.CanTransition)
+            {
+                var newState = TransitionState(behaviour, agent);
+                if (newState != null)
+                {
+                    EnterState(model, newState);
+                }
+            }
         }
 
-        protected abstract void Update(BehaviourModel behaviour, TAgentModel agent);
+        void EnterState(GameModel model, BehaviourState state)
+        {
+            state.Initialize(model);
+            currentState = state;
+        }
+
+        protected abstract BehaviourState TransitionState(AIModel behaviour, TAgentModel agent);
     }
 }

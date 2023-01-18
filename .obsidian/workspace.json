@@ -65,7 +65,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Design Manifesto.md",
+                "file": "Ideas.md",
                 "mode": "source",
                 "source": false
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Design Manifesto.md",
+                "file": "Ideas.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -167,7 +167,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Design Manifesto.md",
+                "file": "Ideas.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -190,7 +190,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Design Manifesto.md"
+                "file": "Ideas.md"
               }
             }
           }
@@ -213,8 +213,8 @@
   },
   "active": "86fa185010677500",
   "lastOpenFiles": [
-    "Untitled.md",
     "Design Manifesto.md",
+    "Untitled.md",
     "Ideas.md",
     "README.md",
     "Script.md",

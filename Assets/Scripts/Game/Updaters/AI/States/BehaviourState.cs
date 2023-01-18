@@ -8,16 +8,17 @@ namespace Behaviour
     public abstract class BehaviourState
     {
         protected Guid id;
+        public bool CanTransition { get; protected set; } = false;
         public BehaviourState(Guid id)
         {
             this.id = id;
         }
 
-        public virtual void InitializeState(GameModel model)
+        public virtual void Initialize(GameModel model)
         {
         }
 
-        public abstract void UpdateState(GameModel model);
+        public abstract void Update(GameModel model);
     }
 
     public abstract class BehaviourState<TStateModel> : BehaviourState
@@ -27,15 +28,15 @@ namespace Behaviour
         {
         }
 
-        public sealed override void InitializeState(GameModel model)
+        public sealed override void Initialize(GameModel model)
         {
             var behaviourModel = model.Behaviours.GetItem(id);
             behaviourModel.State = InitializeState(behaviourModel);
         }
 
-        protected abstract TStateModel InitializeState(BehaviourModel behaviourModel);
+        protected abstract TStateModel InitializeState(AIModel behaviourModel);
 
-        public sealed override void UpdateState(GameModel model)
+        public sealed override void Update(GameModel model)
         {
             var behaviourModel = model.Behaviours.GetItem(id);
             var stateModel = (TStateModel)behaviourModel.State;

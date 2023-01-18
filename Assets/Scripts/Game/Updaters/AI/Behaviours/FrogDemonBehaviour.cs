@@ -5,15 +5,16 @@ using UnityEngine;
 
 namespace Behaviour
 {
-    public class FrogDemonBehaviour : AgentBehaviour<FrogDemonModel>
+    public class FrogDemonBehaviour : AgentBehaviour<FrogDemonBehaviourModel>
     {
         public FrogDemonBehaviour(Guid id) : base(id)
         {
+            currentState = new IdleState(id);
         }
 
-        protected override void Update(BehaviourModel behaviour, FrogDemonModel agent)
+        protected override BehaviourState TransitionState(AIModel behaviour, FrogDemonBehaviourModel agent)
         {
-            throw new NotImplementedException();
+            return null;
         }
     }
 }

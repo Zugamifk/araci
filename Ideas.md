@@ -16,3 +16,6 @@ Cooking can transform a food or enhance its effects. Coking can also be a proces
 
 ### Ingredients
 Different ingredients are important for different cooking processes and recipes.
+
+# Alternate Present Day Sory
+Araci is a old man with a fading memory. He has kept the story of the demons and the assassin secret for his entire life, thinking no one will believe him. As he's grown older, he feels as though he's going mad anyway, and let out hints of his younger years to his family one night. His family, interested, has encouraged him to write a memoir. The playthroughs of the "past" are the runs of the main game. Each time araci fails, the story fades back to the present day with the old man saying "No, it couldn't have gone like that". When he succeeds he says "Yes! That was it!". Then the narrative moves forward with a new piece of information given

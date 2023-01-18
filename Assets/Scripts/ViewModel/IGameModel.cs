@@ -7,6 +7,7 @@ public interface IGameModel
 {
     IIdentifiableLookup<ICharacterModel> Characters { get; }
     IIdentifiableLookup<IShrineModel> Shrines { get; }
+    IIdentifiableLookup<IAIModel> Behaviours { get; }
     IPlayerModel Player { get; }
     ICharacterModel PlayerCharacter { get; }
     IInputModel Input { get; }

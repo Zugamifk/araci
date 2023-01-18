@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace Behaviour
 {
-    public class FrogDemonModel : AgentModel
+    public class FrogDemonBehaviourModel : AgentModel
     {
-
+        public CooldownModel JumpCooldown { get; set; } = new();
     }
 }

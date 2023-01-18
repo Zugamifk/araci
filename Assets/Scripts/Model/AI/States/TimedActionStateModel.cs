@@ -4,6 +4,5 @@ using UnityEngine;
 
 public class TimedActionStateModel : BehaviourStateModel
 {
-    public float StartTime { get; set; }
-    public float Duration { get; set; }
+    public float EndTime { get; set; }
 }
