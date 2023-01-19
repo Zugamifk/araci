@@ -4,6 +4,7 @@ using UnityEngine;
 
 public interface ICharacterModel : IIdentifiable, IKeyHolder
 {
+    IAttackModel Attack { get; }
     IActionModel CurrentAction { get; }
     IMovementModel Movement { get; }
     IHealthModel Health { get; }

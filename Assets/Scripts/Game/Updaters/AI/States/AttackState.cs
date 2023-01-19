@@ -1,3 +1,4 @@
+using Codice.CM.Common;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,28 +6,34 @@ using UnityEngine;
 
 namespace Behaviour
 {
-    //public class AttackState : BehaviourState<AttackStateModel>
-    //{
-    //    public AttackState(Guid id, Vector3 direction, float duration)
-    //        : base(id)
-    //    {
-    //        this.direction = direction;
-    //        startTime = Game.Model.Time.Time;
-    //        this.duration = duration;
-    //    }
+    public class AttackState : TimedActionState<AttackStateModel>
+    {
+        Vector3 direction;
+        float duration;
 
-    //    public override void EnterState()
-    //    {
-    //        Game.Do(new DoAttack(id, Vector3.zero));
-    //    }
+        public AttackState(Guid id, Vector3 direction, float duration)
+            : base(id)
+        {
+            this.direction = direction;
+            this.duration = duration;
+        }
 
-    //    public override IState ProcessState(GameModel model)
-    //    {
-    //        if (Game.Model.Time.Time - startTime > duration)
-    //        {
-    //            return new IdleState(id);
-    //        }
-    //        else return this;
-    //    }
-    //}
+        protected override AttackStateModel InitializeState(AIModel behaviourModel)
+        {
+            Game.Do(new DoAttack(id, direction));
+
+            var model = new AttackStateModel()
+            {
+                Direction = direction,
+            };
+            InitializeTimedAction(model, duration);
+
+            return model;
+        }
+
+        protected override void UpdateState(AttackStateModel stateModel)
+        {
+            UpdateCanTransition(stateModel);
+        }
+    }
 }

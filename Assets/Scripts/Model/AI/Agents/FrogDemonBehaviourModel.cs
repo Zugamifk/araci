@@ -7,5 +7,6 @@ namespace Behaviour
     public class FrogDemonBehaviourModel : AgentModel
     {
         public CooldownModel JumpCooldown { get; set; } = new();
+        public CooldownModel AttackCooldown { get; set; } = new();
     }
 }

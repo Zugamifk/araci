@@ -31,6 +31,7 @@ public struct SpawnEnemy : ICommand
         var character = model.Characters.GetItem(id);
         var data = DataService.GetData<CharacterDataCollection>().Get(characterKey) as EnemyData;
         character.Attack.Damage = data.AttackDamage;
+        character.Attack.Range = data.AttackRange;
     }
 
     void CreateBehaviourModel(GameModel model, Guid id)
@@ -46,6 +47,7 @@ public struct SpawnEnemy : ICommand
                     var agent = new FrogDemonBehaviourModel();
                     agent.JumpCooldown.Duration = 3;
                     agent.JumpCooldown.ReadyTime = model.TimeModel.Time + UnityEngine.Random.value;
+                    agent.AttackCooldown.Duration = 1;
                     aiModel.Agent = agent;
                 }
                 break;

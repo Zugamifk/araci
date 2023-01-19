@@ -16,4 +16,5 @@ public class CharacterModel : ICharacterModel
     IMovementModel ICharacterModel.Movement => Movement;
     IHealthModel ICharacterModel.Health => Health;
     IActionModel ICharacterModel.CurrentAction => CurrentAction;
+    IAttackModel ICharacterModel.Attack => Attack;
 }

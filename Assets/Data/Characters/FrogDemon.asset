@@ -18,3 +18,4 @@ MonoBehaviour:
   _hitPoints: 1
   _experienceReward: 25
   AttackDamage: 1
+  AttackRange: 1

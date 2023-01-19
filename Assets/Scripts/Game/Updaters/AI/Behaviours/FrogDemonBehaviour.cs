@@ -14,24 +14,34 @@ namespace Behaviour
             currentState.CanTransition = true;
         }
 
-        protected override BehaviourState TransitionState(AIModel behaviour, FrogDemonBehaviourModel agent)
+        protected override BehaviourState TransitionState(AIModel ai, FrogDemonBehaviourModel behaviour)
         {
             var cooldownService = Services.Get<ICooldownService>();
-            if(cooldownService.IsReady(agent.JumpCooldown))
+            var player = Game.Model.PlayerCharacter;
+            var agent = Game.Model.Characters.GetItem(id);
+            var toAgent = player.Movement.Position - agent.Movement.Position;
+            if (toAgent.magnitude < agent.Attack.Range && cooldownService.IsReady(behaviour.AttackCooldown))
             {
-                cooldownService.StartCooldown(agent.JumpCooldown);
-                return GetJumpState();
+                cooldownService.StartCooldown(behaviour.AttackCooldown);
+                return GetAttackState(toAgent.normalized);
+            }
+            else if (cooldownService.IsReady(behaviour.JumpCooldown))
+            {
+                cooldownService.StartCooldown(behaviour.JumpCooldown);
+                return GetJumpState(toAgent.normalized);
             }
 
             return new IdleState(id);
         }
 
-        JumpState GetJumpState()
+        AttackState GetAttackState(Vector2 direction)
         {
-            var player = Game.Model.PlayerCharacter;
-            var agent = Game.Model.Characters.GetItem(id);
-            var dir = (player.Movement.Position - agent.Movement.Position).normalized;
-            return new JumpState(id, dir, 5, .4f);
+            return new AttackState(id, direction, .4f);
+        }
+
+        JumpState GetJumpState(Vector2 direction)
+        {
+            return new JumpState(id, direction, 5, .4f);
         }
     }
 }

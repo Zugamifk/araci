@@ -6,4 +6,5 @@ using UnityEngine;
 public class EnemyData : CharacterData
 {
     public int AttackDamage;
+    public float AttackRange;
 }
