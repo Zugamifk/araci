@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class InfoPane
 {
-    public string TabeTitle;
+    public string TabTitle;
 
     public abstract void DrawContents();
 }

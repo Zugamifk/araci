@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.Rendering;
 
 public class ModelViewerWindow : EditorWindow
 {
@@ -12,22 +13,17 @@ public class ModelViewerWindow : EditorWindow
         window.Show();
     }
 
-    string[] tabs;
-    Dictionary<string, InfoPane> infoPanes;
+    InfoPane[] infoPanes;
+    int currentPaneIndex = 0;
 
-    private void OnEnable()
-    {
-        if(!Application.isPlaying)
-        {
-            return;
-        }
-
-        LoadModel();
-    }
     void LoadModel()
     {
         var game = Game.Model;
-        infoPanes.Add("Characters", new ModelListPane());
+        infoPanes = new InfoPane[]
+        {
+            new ModelListPane<ICharacterModel>("Characters", game.Characters),
+            new ModelListPane<IShrineModel>("Shrines", game.Shrines),
+        };
     }
 
     private void OnGUI()
@@ -48,11 +44,33 @@ public class ModelViewerWindow : EditorWindow
 
     void DrawMainUI()
     {
-        DrawTabs();
+        if (infoPanes == null)
+        {
+            LoadModel();
+        }
+
+        using (new EditorGUILayout.HorizontalScope())
+        {
+            DrawTabs();
+
+            infoPanes[currentPaneIndex].DrawContents();
+        }
     }
 
     void DrawTabs()
     {
-
+        using(new EditorGUILayout.VerticalScope("box"))
+        {
+            for(int i=0;i<infoPanes.Length;i++)
+            {
+                using (new EditorGUI.DisabledScope(i == currentPaneIndex))
+                {
+                    if (GUILayout.Button(infoPanes[i].TabTitle, GUILayout.Width(100)))
+                    {
+                        currentPaneIndex = i;
+                    }
+                }
+            }
+        }
     }
 }

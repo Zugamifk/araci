@@ -5,6 +5,5 @@ using UnityEngine;
 
 public class IdentifiableCollection
 {
-    public string DisplayName;
     public Dictionary<Guid, Identifiable> Identifiables = new Dictionary<Guid, Identifiable>();
 }
