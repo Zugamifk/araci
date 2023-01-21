@@ -4,15 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public abstract class ModelListPane : InfoPane
-{
-    public ModelListPane(string tabTitle)
-    {
-        TabTitle = tabTitle;
-    }
-}
-
-public abstract class ModelListPane<TIdentifiable> : ModelListPane
+public abstract class ModelListPane<TIdentifiable> : InfoPane
     where TIdentifiable : IIdentifiable
 {
     IIdentifiableLookup<TIdentifiable> collection;

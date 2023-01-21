@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -57,5 +58,23 @@ public static class ModelDrawers
     {
         EditorGUILayout.LabelField($"Damage: {model.Damage}");
         EditorGUILayout.LabelField($"Cooldown: {model.Cooldown}");
+    }
+
+    public static void DrawSpawnModel(SpawnModel model)
+    {
+        EditorGUILayout.LabelField($"Id: {model.Id}");
+        EditorGUILayout.LabelField($"Key: {model.Key}");
+        EditorGUILayout.LabelField($"Corners: {model.BoundingCorners[0]}, {model.BoundingCorners[1]}, {model.BoundingCorners[2]}, {model.BoundingCorners[3]}");
+        using (new EditorGUI.IndentLevelScope())
+        {
+            EditorGUILayout.LabelField("Spawn Queue", EditorStyles.boldLabel);
+            using (new EditorGUILayout.VerticalScope("box"))
+            {
+                foreach (var id in model.SpawnQueue)
+                {
+                    EditorGUILayout.LabelField(id.ToString());
+                }
+            }
+        }
     }
 }
