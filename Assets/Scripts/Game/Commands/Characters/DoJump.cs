@@ -3,13 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public struct DoDash : ICommand
+public struct DoJump : ICommand
 {
     Guid _id;
     Vector2 _direction;
     float _speed;
 
-    public DoDash(Guid id, Vector2 direction, float speed)
+    public DoJump(Guid id, Vector2 direction, float speed)
     {
         _id = id;
         _direction = direction;
@@ -24,10 +24,8 @@ public struct DoDash : ICommand
         {
             Key = Actions.DASH
         };
+        action.AnimationState.Key = Animation.JUMP;
         var character = model.Characters.GetItem(_id);
         character.CurrentAction = action;
-
-        var cooldownService = Services.Get<ICooldownService>();
-        cooldownService.StartCooldown(model.Player.Dash.Cooldown);
     }
 }

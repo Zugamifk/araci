@@ -21,7 +21,7 @@ namespace Behaviour
 
         protected override JumpStateModel InitializeState(AIModel behaviourModel)
         {
-            Game.Do(new DoDash(id, direction, speed));
+            Game.Do(new DoJump(id, direction, speed));
 
             var model = new JumpStateModel()
             {
