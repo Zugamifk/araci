@@ -29,14 +29,6 @@ public class GameModel : IGameModel
         }
     }
 
-    public TModel CreateModel<TModel>()
-        where TModel : IRegisteredModel, new()
-    {
-        var result = new TModel();
-        SetModel(result);
-        return result;
-    }
-
     public void SetModel<TModel>(TModel model)
         where TModel : IRegisteredModel
     {

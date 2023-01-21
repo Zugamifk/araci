@@ -77,4 +77,46 @@ public static class ModelDrawers
             }
         }
     }
+
+    public static void DrawLevel(LevelModel model)
+    {
+        EditorGUILayout.LabelField($"Current Level: {model.CurrentLevel}");
+        EditorGUILayout.LabelField($"Current Experience: {model.CurrentExperience}");
+        EditorGUILayout.LabelField($"Last Level Required Experience: {model.LastLevelRequiredExperience}");
+        EditorGUILayout.LabelField($"Required Experience: {model.RequiredExperience}");
+    }
+
+    public static void DrawSkill(SkillModel model)
+    {
+        EditorGUILayout.LabelField($"Key: {model.Key}");
+    }
+
+    public static void DrawWeapon(WeaponModel model)
+    {
+        EditorGUILayout.LabelField($"Key: {model.Key}");
+        EditorGUILayout.LabelField($"Name: {model.Name}");
+        EditorGUILayout.LabelField($"Description: {model.Description}");
+        using (new EditorGUILayout.VerticalScope("box"))
+        {
+            EditorGUILayout.LabelField("Level", EditorStyles.boldLabel);
+            using (new EditorGUI.IndentLevelScope())
+            {
+                DrawLevel(model.Level);
+            }
+        }
+    }
+
+    public static void DrawDash(DashModel model)
+    {
+        EditorGUILayout.LabelField($"Duration: {model.Duration}");
+        EditorGUILayout.LabelField($"Speed: {model.Speed}");
+        using (new EditorGUILayout.VerticalScope("box"))
+        {
+            EditorGUILayout.LabelField("Cooldown", EditorStyles.boldLabel);
+            using (new EditorGUI.IndentLevelScope())
+            {
+                DrawCooldown(model.Cooldown);
+            }
+        }
+    }
 }

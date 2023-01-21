@@ -20,7 +20,6 @@ public class SpawnModelListPane : InfoPane
         {
             foreach (var item in spawns)
             {
-
                 DrawItem(item.Key, item.Value);
             }
 
