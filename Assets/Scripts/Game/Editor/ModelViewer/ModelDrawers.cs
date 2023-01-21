@@ -27,7 +27,6 @@ public static class ModelDrawers
     {
         EditorGUILayout.LabelField($"Ready Time: {model.ReadyTime}");
         EditorGUILayout.LabelField($"Duration: {model.Duration}");
-        EditorGUILayout.LabelField($"Cooldown: {model.Cooldown}");
     }
 
     public static void DrawAnimationState(AnimationStateModel model)
@@ -83,11 +82,6 @@ public static class ModelDrawers
         EditorGUILayout.LabelField($"Required Experience: {model.RequiredExperience}");
     }
 
-    public static void DrawSkill(SkillModel model)
-    {
-        EditorGUILayout.LabelField($"Key: {model.Key}");
-    }
-
     public static void DrawWeapon(WeaponModel model)
     {
         EditorGUILayout.LabelField($"Key: {model.Key}");
@@ -107,14 +101,6 @@ public static class ModelDrawers
     {
         EditorGUILayout.LabelField($"Duration: {model.Duration}");
         EditorGUILayout.LabelField($"Speed: {model.Speed}");
-        using (new EditorGUILayout.VerticalScope("box"))
-        {
-            EditorGUILayout.LabelField("Cooldown", EditorStyles.boldLabel);
-            using (new EditorGUI.IndentLevelScope())
-            {
-                DrawCooldown(model.Cooldown);
-            }
-        }
     }
 
     public static void DrawInteractable(InteractableModel model)

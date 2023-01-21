@@ -30,19 +30,6 @@ public class PlayerModelPane : InfoPane
 
                 using (new EditorGUILayout.VerticalScope("box"))
                 {
-                    EditorGUILayout.LabelField("Owned Skills", EditorStyles.boldLabel);
-                    foreach (var skill in player.OwnedSkills)
-                    {
-                        using (new EditorGUILayout.VerticalScope("box"))
-                        {
-                            EditorGUILayout.LabelField(skill.Key, EditorStyles.boldLabel);
-                            ModelDrawers.DrawSkill(skill.Value);
-                        }
-                    }
-                }
-
-                using (new EditorGUILayout.VerticalScope("box"))
-                {
                     EditorGUILayout.LabelField("Weapon", EditorStyles.boldLabel);
                     ModelDrawers.DrawWeapon(player.Weapon);
                 }
