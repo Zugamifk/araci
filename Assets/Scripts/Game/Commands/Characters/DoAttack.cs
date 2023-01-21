@@ -23,7 +23,9 @@ public struct DoAttack : ICommand
             TargetPosition = _targetPosition,
         };
         action.AnimationState.Key = Animation.ATTACK;
-        action.Cooldown.ReadyTime = model.TimeModel.Time + attacker.Attack.Cooldown;
         attacker.CurrentAction = action;
+
+        var cooldownService = Services.Get<ICooldownService>();
+        cooldownService.StartCooldown(attacker.Attack.Cooldown);
     }
 }

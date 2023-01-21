@@ -45,7 +45,7 @@ namespace Input
             if (GetMouseButtonDown(0))
             {
                 var cooldownService = Services.Get<ICooldownService>();
-                if (cooldownService.IsReady(Game.Model.PlayerCharacter.CurrentAction.Cooldown))
+                if (cooldownService.IsReady(Game.Model.PlayerCharacter.Attack.Cooldown))
                 {
                     Game.Do(new DoAttack(Game.Model.Player.Id, Camera.main.ScreenToWorldPoint(mousePosition)));
                 }

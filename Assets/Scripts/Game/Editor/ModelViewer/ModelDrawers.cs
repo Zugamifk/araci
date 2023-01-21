@@ -15,11 +15,6 @@ public static class ModelDrawers
         EditorGUILayout.LabelField($"Target Position: {action.TargetPosition}");
         using (new EditorGUILayout.VerticalScope("box"))
         {
-            EditorGUILayout.LabelField("Cooldown", EditorStyles.boldLabel);
-            DrawCooldown(action.Cooldown);
-        }
-        using (new EditorGUILayout.VerticalScope("box"))
-        {
             EditorGUILayout.LabelField("Animation State", EditorStyles.boldLabel);
             DrawAnimationState(action.AnimationState);
         }
@@ -55,7 +50,11 @@ public static class ModelDrawers
     public static void DrawAttack(AttackModel model)
     {
         EditorGUILayout.LabelField($"Damage: {model.Damage}");
-        EditorGUILayout.LabelField($"Cooldown: {model.Cooldown}");
+        using (new EditorGUILayout.VerticalScope("box"))
+        {
+            EditorGUILayout.LabelField("Cooldown", EditorStyles.boldLabel);
+            DrawCooldown(model.Cooldown);
+        }
     }
 
     public static void DrawSpawnModel(SpawnModel model)

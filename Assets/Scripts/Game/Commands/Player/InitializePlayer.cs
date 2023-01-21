@@ -20,7 +20,7 @@ public struct InitializePlayer : ICommand
         weapon.Level.CurrentLevel = 0;
         var weaponLevelData = weaponData.LevelData.GetLevel(0);
         weapon.Level.RequiredExperience = weaponLevelData.RequiredExperience;
-        character.Attack.Cooldown = weaponData.BaseAttackTime;
+        character.Attack.Cooldown.Duration = weaponData.BaseAttackTime;
         character.Attack.Damage = weaponData.BaseDamage;
 
         var playerData = DataService.GetData<PlayerData>();

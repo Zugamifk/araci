@@ -20,10 +20,13 @@ namespace Behaviour
             var player = Game.Model.PlayerCharacter;
             var agent = Game.Model.Characters.GetItem(id);
             var toAgent = player.Movement.Position - agent.Movement.Position;
-            if (toAgent.magnitude < agent.Attack.Range && cooldownService.IsReady(behaviour.AttackCooldown))
+            if (toAgent.magnitude < agent.Attack.Range)
             {
-                cooldownService.StartCooldown(behaviour.AttackCooldown);
-                return GetAttackState(toAgent.normalized);
+                if (cooldownService.IsReady(behaviour.AttackCooldown))
+                {
+                    cooldownService.StartCooldown(behaviour.AttackCooldown);
+                    return GetAttackState(toAgent.normalized);
+                }
             }
             else if (cooldownService.IsReady(behaviour.JumpCooldown))
             {

@@ -6,5 +6,11 @@ public class AttackModel : IAttackModel
 {
     public float Range { get; set; }
     public int Damage { get; set; }
-    public float Cooldown { get; set; }
+    public CooldownModel Cooldown { get; set; } = new();
+
+    public float WindUpTime;
+    public float AttackTime;
+    public float WindDownTime;
+
+    ICooldownModel IAttackModel.Cooldown => Cooldown;
 }
