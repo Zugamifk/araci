@@ -18,6 +18,11 @@ namespace Behaviour
         {
             var cooldownService = Services.Get<ICooldownService>();
             var player = Game.Model.PlayerCharacter;
+            if(player == null)
+            {
+                return new IdleState(id);
+            }
+
             var agent = Game.Model.Characters.GetItem(id);
             var toAgent = player.Movement.Position - agent.Movement.Position;
             if (toAgent.magnitude < agent.Attack.Range)

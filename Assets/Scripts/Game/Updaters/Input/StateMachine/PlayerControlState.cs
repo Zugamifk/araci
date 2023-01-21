@@ -10,6 +10,11 @@ namespace Input
     {
         public override InputState Update()
         {
+            if(Game.Model.PlayerCharacter == null)
+            {
+                return new InactiveState();
+            }
+
             UpdateMovement();
             UpdateAttacks();
             return UpdateActions();
