@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Behaviour
 {
-    public class PiperBehaviourModel : AgentModel
+    public class PiperAgentModel : AgentModel
     {
         
     }

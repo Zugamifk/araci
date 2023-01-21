@@ -11,41 +11,38 @@ public class CharacterModelListPane : ModelListPane<CharacterModel>
 
     protected override void DrawItemData(CharacterModel item)
     {
-        using (new EditorGUI.IndentLevelScope())
+        EditorGUILayout.LabelField($"Key: {item.Key}");
+        EditorGUILayout.LabelField($"Move Speed: {item.MoveSpeed}");
+
+        using (new EditorGUILayout.VerticalScope("box"))
         {
-            EditorGUILayout.LabelField($"Key: {item.Key}");
-            EditorGUILayout.LabelField($"Move Speed: {item.MoveSpeed}");
-
-            using (new EditorGUILayout.VerticalScope("box"))
+            EditorGUILayout.LabelField("Current Action", EditorStyles.boldLabel);
+            if (item.CurrentAction != null)
             {
-                EditorGUILayout.LabelField("Current Action", EditorStyles.boldLabel);
-                if (item.CurrentAction != null)
-                {
-                    ModelDrawers.DrawAction(item.CurrentAction);
-                }
-                else
-                {
-                    GUILayout.Label("No current action");
-                }
+                ModelDrawers.DrawAction(item.CurrentAction);
             }
-
-            using (new EditorGUILayout.VerticalScope("box"))
+            else
             {
-                EditorGUILayout.LabelField("Attack", EditorStyles.boldLabel);
-                ModelDrawers.DrawAttack(item.Attack);
+                GUILayout.Label("No current action");
             }
+        }
 
-            using (new EditorGUILayout.VerticalScope("box"))
-            {
-                EditorGUILayout.LabelField("Movement", EditorStyles.boldLabel);
-                ModelDrawers.DrawMovement(item.Movement);
-            }
+        using (new EditorGUILayout.VerticalScope("box"))
+        {
+            EditorGUILayout.LabelField("Attack", EditorStyles.boldLabel);
+            ModelDrawers.DrawAttack(item.Attack);
+        }
 
-            using (new EditorGUILayout.VerticalScope("box"))
-            {
-                EditorGUILayout.LabelField("Health", EditorStyles.boldLabel);
-                ModelDrawers.DrawHealth(item.Health);
-            }
+        using (new EditorGUILayout.VerticalScope("box"))
+        {
+            EditorGUILayout.LabelField("Movement", EditorStyles.boldLabel);
+            ModelDrawers.DrawMovement(item.Movement);
+        }
+
+        using (new EditorGUILayout.VerticalScope("box"))
+        {
+            EditorGUILayout.LabelField("Health", EditorStyles.boldLabel);
+            ModelDrawers.DrawHealth(item.Health);
         }
     }
 }

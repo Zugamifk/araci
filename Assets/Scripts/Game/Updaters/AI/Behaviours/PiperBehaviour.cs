@@ -5,14 +5,14 @@ using UnityEngine;
 
 namespace Behaviour
 {
-    public class PiperBehaviour : AgentBehaviour<PiperBehaviourModel>
+    public class PiperBehaviour : AgentBehaviour<PiperAgentModel>
     {
         public PiperBehaviour(Guid id) : base(id)
         {
             currentState = new WanderState(id);
         }
 
-        protected override BehaviourState TransitionState(AIModel behaviour, PiperBehaviourModel agent)
+        protected override BehaviourState TransitionState(AIModel behaviour, PiperAgentModel agent)
         {
             return null;
         }

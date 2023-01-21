@@ -44,7 +44,7 @@ public struct SpawnEnemy : ICommand
         {
             case Enemies.FROGDEMON:
                 {
-                    var agent = new FrogDemonBehaviourModel();
+                    var agent = new FrogDemonAgentModel();
                     agent.JumpCooldown.Duration = 3;
                     agent.JumpCooldown.ReadyTime = model.TimeModel.Time + UnityEngine.Random.value;
                     agent.AttackCooldown.Duration = 1;
@@ -52,7 +52,7 @@ public struct SpawnEnemy : ICommand
                 }
                 break;
             case Enemies.PIPER:
-                aiModel.Agent = new PiperBehaviourModel();
+                aiModel.Agent = new PiperAgentModel();
                 break;
             default:
                 throw new ArgumentException($"No model for key \'{characterKey}\' with ID {id}");

@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Behaviour
 {
-    public class FrogDemonBehaviour : AgentBehaviour<FrogDemonBehaviourModel>
+    public class FrogDemonBehaviour : AgentBehaviour<FrogDemonAgentModel>
     {
         public FrogDemonBehaviour(Guid id) : base(id)
         {
@@ -14,7 +14,7 @@ namespace Behaviour
             currentState.CanTransition = true;
         }
 
-        protected override BehaviourState TransitionState(AIModel ai, FrogDemonBehaviourModel behaviour)
+        protected override BehaviourState TransitionState(AIModel ai, FrogDemonAgentModel behaviour)
         {
             var cooldownService = Services.Get<ICooldownService>();
             var player = Game.Model.PlayerCharacter;

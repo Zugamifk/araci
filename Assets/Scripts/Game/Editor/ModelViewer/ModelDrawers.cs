@@ -1,8 +1,10 @@
+using Behaviour;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public static class ModelDrawers
 {
@@ -108,5 +110,49 @@ public static class ModelDrawers
         EditorGUILayout.LabelField($"Id: {model.Id}");
         EditorGUILayout.LabelField($"Position: {model.Position}");
 
+    }
+    public static void DrawAgent(AgentModel model)
+    {
+        if (model is FrogDemonAgentModel frogDemon)
+        {
+            EditorGUILayout.LabelField("Frog Demon", EditorStyles.boldLabel);
+            using (new EditorGUILayout.VerticalScope("box"))
+            {
+                EditorGUILayout.LabelField("Jump Cooldown", EditorStyles.boldLabel);
+                DrawCooldown(frogDemon.JumpCooldown);
+            }
+            using (new EditorGUILayout.VerticalScope("box"))
+            {
+                EditorGUILayout.LabelField("Attack Cooldown", EditorStyles.boldLabel);
+                DrawCooldown(frogDemon.AttackCooldown);
+            }
+        }
+        else if (model is PiperAgentModel piperAgent)
+        {
+            EditorGUILayout.LabelField("Piper", EditorStyles.boldLabel);
+            // nothing for now
+        }
+    }
+
+    public static void DrawBehaviourState(BehaviourStateModel model)
+    {
+        if (model is WanderStateModel wander)
+        {
+            EditorGUILayout.LabelField("Wander", EditorStyles.boldLabel);
+            EditorGUILayout.LabelField($"Destination: {wander.Destination}");
+        }
+        else if (model is AttackStateModel attack)
+        {
+            EditorGUILayout.LabelField("Attack", EditorStyles.boldLabel);
+            EditorGUILayout.LabelField($"Direction: {attack.Direction}");
+            EditorGUILayout.LabelField($"EndTime: {attack.EndTime}");
+        }
+        else if (model is JumpStateModel jump)
+        {
+            EditorGUILayout.LabelField("Jump", EditorStyles.boldLabel);
+            EditorGUILayout.LabelField($"Direction: {jump.Direction}");
+            EditorGUILayout.LabelField($"Speed: {jump.Speed}");
+            EditorGUILayout.LabelField($"EndTime: {jump.EndTime}");
+        }
     }
 }
