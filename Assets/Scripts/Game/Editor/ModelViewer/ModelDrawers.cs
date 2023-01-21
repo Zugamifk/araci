@@ -119,4 +119,11 @@ public static class ModelDrawers
             }
         }
     }
+
+    public static void DrawInteractable(InteractableModel model)
+    {
+        EditorGUILayout.LabelField($"Id: {model.Id}");
+        EditorGUILayout.LabelField($"Position: {model.Position}");
+
+    }
 }
