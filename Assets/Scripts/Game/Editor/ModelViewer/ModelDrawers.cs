@@ -11,18 +11,15 @@ public static class ModelDrawers
         EditorGUILayout.LabelField($"ID: {action.Id}");
         EditorGUILayout.LabelField($"Key: {action.Key}");
         EditorGUILayout.LabelField($"Target Position: {action.TargetPosition}");
-        using (new EditorGUI.IndentLevelScope())
+        using (new EditorGUILayout.VerticalScope("box"))
         {
-            using (new EditorGUILayout.VerticalScope("box"))
-            {
-                EditorGUILayout.LabelField("Cooldown", EditorStyles.boldLabel);
-                DrawCooldown(action.Cooldown);
-            }
-            using (new EditorGUILayout.VerticalScope("box"))
-            {
-                EditorGUILayout.LabelField("Animation State", EditorStyles.boldLabel);
-                DrawAnimationState(action.AnimationState);
-            }
+            EditorGUILayout.LabelField("Cooldown", EditorStyles.boldLabel);
+            DrawCooldown(action.Cooldown);
+        }
+        using (new EditorGUILayout.VerticalScope("box"))
+        {
+            EditorGUILayout.LabelField("Animation State", EditorStyles.boldLabel);
+            DrawAnimationState(action.AnimationState);
         }
     }
 

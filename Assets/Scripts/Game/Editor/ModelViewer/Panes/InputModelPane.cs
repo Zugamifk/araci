@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class InputPane : InfoPane
+public class InputModelPane : InfoPane
 {
     Vector2 scrollPosition;
 
-    public InputPane(string tabTitle) : base(tabTitle)
+    public InputModelPane(string tabTitle) : base(tabTitle)
     {
     }
 

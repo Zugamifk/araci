@@ -4,11 +4,11 @@ using UnityEditor;
 using UnityEngine;
 using static UnityEditor.Progress;
 
-public class PlayerPane : InfoPane
+public class PlayerModelPane : InfoPane
 {
     Vector2 scrollPosition;
 
-    public PlayerPane(string tabTitle) : base(tabTitle)
+    public PlayerModelPane(string tabTitle) : base(tabTitle)
     {
     }
 
