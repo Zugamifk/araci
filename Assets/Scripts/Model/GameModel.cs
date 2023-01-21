@@ -14,33 +14,6 @@ public class GameModel : IGameModel
     public CharacterModel PlayerCharacter => Characters.GetItem(Player.Id);
     public InputModel Input { get; } = new();
     public TimeModel TimeModel = new TimeModel();
-    public Dictionary<Type, object> TypeToModel = new();
-
-    public TModel GetModel<TModel>()
-        where TModel : IRegisteredModel
-    {
-        if (TypeToModel.TryGetValue(typeof(TModel), out object model))
-        {
-            return (TModel)model;
-        }
-        else
-        {
-            return default;
-        }
-    }
-
-    public void SetModel<TModel>(TModel model)
-        where TModel : IRegisteredModel
-    {
-        TypeToModel[typeof(TModel)] = model;
-        foreach (var i in typeof(TModel).GetInterfaces())
-        {
-            if (typeof(IRegisteredModel).IsAssignableFrom(i))
-            {
-                TypeToModel[i] = model;
-            }
-        }
-    }
 
     #region IGameModel
     ITimeModel IGameModel.Time => TimeModel;

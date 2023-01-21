@@ -11,5 +11,4 @@ public interface IGameModel
     ICharacterModel PlayerCharacter { get; }
     IInputModel Input { get; }
     ITimeModel Time { get; }
-    TModel GetModel<TModel>() where TModel : IRegisteredModel;
 }
