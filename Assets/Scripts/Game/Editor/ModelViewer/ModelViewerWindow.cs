@@ -28,7 +28,8 @@ public class ModelViewerWindow : EditorWindow
             new SpawnModelListPane("Spawns", game.Spawns),
             new PlayerModelPane("Player"),
             new InputModelPane("Input"),
-            new TimeModelPane("Time")
+            new TimeModelPane("Time"),
+            new CommandListPane("Commands"),
         };
     }
 

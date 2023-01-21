@@ -99,6 +99,7 @@ public class Game : MonoBehaviour
     #region Editor
 #if UNITY_EDITOR 
     public static GameModel EditorModel => game.model;
+    public static IEnumerable<ICommand> EditorCommands => commandQueue;
 #endif
     #endregion
 }
