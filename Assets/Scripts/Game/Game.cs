@@ -9,46 +9,46 @@ using Input;
 public class Game : MonoBehaviour
 {
     [SerializeField]
-    DataReferences _gameData;
+    DataReferences gameData;
 
-    GameModel _model = new GameModel();
+    GameModel model = new GameModel();
 
-    static Game _game;
-    static Queue<ICommand> _commandQueue = new Queue<ICommand>();
-    static Dictionary<Guid, IUpdater> _idToUpdater = new();
-    static HashSet<IUpdater> _uniqueUpdaters = new();
-    static Stack<Guid> _toRemove = new();
+    static Game game;
+    static Queue<ICommand> commandQueue = new Queue<ICommand>();
+    static Dictionary<Guid, IUpdater> idToUpdater = new();
+    static HashSet<IUpdater> uniqueUpdaters = new();
+    static Stack<Guid> toRemove = new();
 
-    public static IGameModel Model => _game._model;
+    public static IGameModel Model => game.model;
 
     public static void Do(ICommand command)
     {
-        _commandQueue.Enqueue(command);
+        commandQueue.Enqueue(command);
     }
 
     internal static void AddUpdater(IUpdater updater)
     {
-        _uniqueUpdaters.Add(updater);
+        uniqueUpdaters.Add(updater);
     }
 
     internal static void AddUpdater(Guid id, IUpdater updater)
     {
-        _idToUpdater.Add(id, updater);
+        idToUpdater.Add(id, updater);
     }
 
     internal static void RemoveUpdater(Guid id)
     {
-        _toRemove.Push(id);
+        toRemove.Push(id);
     }
 
     void Awake()
     {
-        if(_game!=null)
+        if(game!=null)
         {
             throw new InvalidOperationException($"Second Game instance detected!");
         }
 
-        _game = this;
+        game = this;
 
         Services.InitializeServices();
 
@@ -58,32 +58,32 @@ public class Game : MonoBehaviour
 
     private void Update()
     {
-        while (_commandQueue.Count > 0)
+        while (commandQueue.Count > 0)
         {
-            var command = _commandQueue.Dequeue();
-            command.Execute(_model);
+            var command = commandQueue.Dequeue();
+            command.Execute(model);
         }
 
-        while(_toRemove.Count > 0)
+        while(toRemove.Count > 0)
         {
-            var id = _toRemove.Pop();
-            _idToUpdater.Remove(id);
+            var id = toRemove.Pop();
+            idToUpdater.Remove(id);
         }
 
-        foreach (var updater in _uniqueUpdaters)
+        foreach (var updater in uniqueUpdaters)
         {
-            updater.Update(_model);
+            updater.Update(model);
         }
 
-        foreach (var updater in _idToUpdater.Values)
+        foreach (var updater in idToUpdater.Values)
         {
-            updater.Update(_model);
+            updater.Update(model);
         }
     }
 
     void InitializeTimeModel()
     {
-        var timeModel = _model.TimeModel;
+        var timeModel = model.TimeModel;
         var time = DateTime.Now;
         timeModel.RealTime = TimeSpan.FromSeconds(time.TimeOfDay.TotalSeconds / TimeModel.TIME_MULTIPLIER);
 
@@ -94,4 +94,11 @@ public class Game : MonoBehaviour
     {
         AddUpdater(new InputUpdater());
     }
+
+
+    #region Editor
+#if UNITY_EDITOR 
+    public static GameModel EditorModel => game.model;
+#endif
+    #endregion
 }
