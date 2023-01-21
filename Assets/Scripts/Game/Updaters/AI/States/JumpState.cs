@@ -15,7 +15,7 @@ namespace Behaviour
             : base(id)
         {
             this.direction = direction;
-            this.speed = speed;
+            this.speed = speed; 
             this.duration = duration;
         }
 

@@ -116,6 +116,13 @@ public class Character : ModelViewBase<ICharacterModel>
 
         var dir = model.CurrentAction.TargetPosition - (Vector2)_attack.transform.position;
         _attack.transform.rotation = Math.PointAt(dir.normalized);
+
+        var side = dir.x;
+        if (!Mathf.Approximately(side, 0))
+        {
+            var angle = side < 0 ? 180 : 0;
+            _viewRoot.transform.localRotation = Quaternion.Euler(0, angle, 0);
+        }
     }
 
     void Die()
