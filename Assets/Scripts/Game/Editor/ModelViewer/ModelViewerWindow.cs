@@ -18,10 +18,11 @@ public class ModelViewerWindow : EditorWindow
 
     void LoadModel()
     {
-        var game = Game.Model;
+        var game = Game.EditorModel;
         infoPanes = new InfoPane[]
         {
             new CharacterModelListPane("Characters", game.Characters),
+            new NarrativeModelListPane("Narrative", game.Narratives),
         };
     }
 

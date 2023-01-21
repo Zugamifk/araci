@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class CharacterModelListPane : ModelListPane<ICharacterModel>
+public class CharacterModelListPane : ModelListPane<CharacterModel>
 {
-    public CharacterModelListPane(string tabTitle, IIdentifiableLookup<ICharacterModel> collection) : base(tabTitle, collection)
+    public CharacterModelListPane(string tabTitle, IIdentifiableLookup<CharacterModel> collection) : base(tabTitle, collection)
     {
     }
 
-    protected override void DrawItemData(ICharacterModel item)
+    protected override void DrawItemData(CharacterModel item)
     {
         using (new EditorGUI.IndentLevelScope())
         {
             EditorGUILayout.LabelField($"Key: {item.Key}");
+            EditorGUILayout.LabelField($"Move Speed: {item.MoveSpeed}");
 
             using (new EditorGUILayout.VerticalScope("box"))
             {
@@ -26,6 +27,12 @@ public class CharacterModelListPane : ModelListPane<ICharacterModel>
                 {
                     GUILayout.Label("No current action");
                 }
+            }
+
+            using (new EditorGUILayout.VerticalScope("box"))
+            {
+                EditorGUILayout.LabelField("Attack", EditorStyles.boldLabel);
+                ModelDrawers.DrawAttack(item.Attack);
             }
 
             using (new EditorGUILayout.VerticalScope("box"))
