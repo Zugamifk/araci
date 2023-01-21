@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 8485213090810180173}
   - component: {fileID: 3899065341576539892}
   - component: {fileID: 1969568830097799197}
-  m_Layer: 0
+  - component: {fileID: 3132791422681340292}
+  m_Layer: 7
   m_Name: BloodSplatter_Anim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +44,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2743797178875330759}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 38f50cc3c04c1c54abcbee17f338f111, type: 2}
   m_CullingMode: 0
@@ -86,6 +87,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Root: {fileID: 2743797178875330759}
+--- !u!114 &3132791422681340292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2743797178875330759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7975fe38ca5bcc047a24487858b97636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 8485213090810180173}
+  _delay: 0.1
 --- !u!1 &6471155873698334421
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,7 +111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1561240285511298251}
   - component: {fileID: 4235440409667365247}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +174,7 @@ SpriteRenderer:
   m_SortingLayerID: 1557392019
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2113152533, guid: c58bfd458832e2e4c975edac27cf54b6, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -167,6 +182,6 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

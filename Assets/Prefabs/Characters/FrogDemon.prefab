@@ -64,6 +64,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55fab6e2504757a40abbf94993b6de98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetType: 2
 --- !u!114 &2684019793343543045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,7 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _viewRoot: {fileID: 6474047331895615511}
   _animator: {fileID: 1288640904744936527}
-  _deathEffect: {fileID: 3132791422681340292}
+  _deathEffect: {fileID: 6576342381854547326}
   _attack: {fileID: 2139349546957255937}
   _collider: {fileID: 889806065591465617}
   _dash: {fileID: 0}
@@ -178,6 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de57673371829743a63e62641336931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetType: 1
 --- !u!58 &2216986598762448739
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -316,58 +318,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: BloodSplatter
       objectReference: {fileID: 0}
-    - target: {fileID: 2743797178875330759, guid: 0b92cf61a546323449a7e1d01adac4ce, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2743797178875330759, guid: 0b92cf61a546323449a7e1d01adac4ce, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4235440409667365247, guid: 0b92cf61a546323449a7e1d01adac4ce, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4235440409667365247, guid: 0b92cf61a546323449a7e1d01adac4ce, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6471155873698334421, guid: 0b92cf61a546323449a7e1d01adac4ce, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8485213090810180173, guid: 0b92cf61a546323449a7e1d01adac4ce, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b92cf61a546323449a7e1d01adac4ce, type: 3}
---- !u!95 &431146992379016887 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8485213090810180173, guid: 0b92cf61a546323449a7e1d01adac4ce, type: 3}
-  m_PrefabInstance: {fileID: 8086835174404687098}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6034640230562094302 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2559571740714457124, guid: 0b92cf61a546323449a7e1d01adac4ce, type: 3}
   m_PrefabInstance: {fileID: 8086835174404687098}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &6208732438547645501 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2743797178875330759, guid: 0b92cf61a546323449a7e1d01adac4ce, type: 3}
+--- !u!114 &6576342381854547326 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3132791422681340292, guid: 0b92cf61a546323449a7e1d01adac4ce, type: 3}
   m_PrefabInstance: {fileID: 8086835174404687098}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3132791422681340292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6208732438547645501}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7975fe38ca5bcc047a24487858b97636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 431146992379016887}
-  _delay: 0.1

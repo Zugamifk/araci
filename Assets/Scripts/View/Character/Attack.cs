@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
+    [SerializeField]
+    TargetType targetType;
+
     List<Guid> _attackTargets = new();
 
     public event Action<IEnumerable<Guid>> OnUpdatedAttackTargets;
@@ -16,10 +19,10 @@ public class Attack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        var enemy = collision.gameObject.GetComponent<Enemy>();
-        if(enemy!=null)
+        var target = collision.gameObject.GetComponent<ActionTarget>();
+        if(target != null && target.IsType(targetType))
         {
-            var ident = enemy.GetComponent<Identifiable>();
+            var ident = target.GetComponent<Identifiable>();
             _attackTargets.Add(ident.Id);
         }
     }
