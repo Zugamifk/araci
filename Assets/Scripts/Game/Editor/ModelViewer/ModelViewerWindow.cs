@@ -9,7 +9,7 @@ public class ModelViewerWindow : EditorWindow
     [MenuItem("Window/Model Viewer")]
     static void Open()
     {
-        ModelViewerWindow window = CreateInstance<ModelViewerWindow>();
+        ModelViewerWindow window = GetWindow<ModelViewerWindow>("Model Viewer");
         window.Show();
     }
 
