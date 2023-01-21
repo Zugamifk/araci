@@ -22,7 +22,8 @@ public class ModelViewerWindow : EditorWindow
         infoPanes = new InfoPane[]
         {
             new CharacterModelListPane("Characters", game.Characters),
-            new NarrativeModelListPane("Narrative", game.Narratives),
+            new NarrativeModelListPane("Narratives", game.Narratives),
+            new ShrineModelListPane("Shrines", game.Shrines),
         };
     }
 
