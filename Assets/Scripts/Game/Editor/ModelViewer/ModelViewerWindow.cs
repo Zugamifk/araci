@@ -21,8 +21,7 @@ public class ModelViewerWindow : EditorWindow
         var game = Game.Model;
         infoPanes = new InfoPane[]
         {
-            new ModelListPane<ICharacterModel>("Characters", game.Characters),
-            new ModelListPane<IShrineModel>("Shrines", game.Shrines),
+            new CharacterModelListPane("Characters", game.Characters),
         };
     }
 
@@ -34,6 +33,14 @@ public class ModelViewerWindow : EditorWindow
         } else
         {
             DrawEditorModeMessage();
+        }
+    }
+
+    private void Update()
+    {
+        if (Application.isPlaying)
+        {
+            Repaint();
         }
     }
 
