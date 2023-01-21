@@ -27,5 +27,8 @@ public struct DoDash : ICommand
         action.AnimationState.Key = Animation.JUMP;
         var character = model.Characters.GetItem(_id);
         character.CurrentAction = action;
+
+        var cooldownService = Services.Get<ICooldownService>();
+        cooldownService.StartCooldown(model.Player.Dash.Cooldown);
     }
 }

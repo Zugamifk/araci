@@ -4,5 +4,9 @@ using UnityEngine;
 
 public interface ICooldownModel
 {
+    float Duration
+    {
+        get;
+    }
     float ReadyTime { get; }
 }

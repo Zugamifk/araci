@@ -4,6 +4,7 @@ using UnityEngine;
 
 public interface IDashModel
 {
-    float Duration { get; }
+    ICooldownModel Cooldown { get; }
     float Speed { get; }
+    float Duration { get; }
 }

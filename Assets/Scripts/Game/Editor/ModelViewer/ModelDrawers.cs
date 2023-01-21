@@ -102,6 +102,11 @@ public static class ModelDrawers
     {
         EditorGUILayout.LabelField($"Duration: {model.Duration}");
         EditorGUILayout.LabelField($"Speed: {model.Speed}");
+        using (new EditorGUILayout.VerticalScope("box"))
+        {
+            EditorGUILayout.LabelField("Cooldown", EditorStyles.boldLabel);
+            DrawCooldown(model.Cooldown);
+        }
     }
 
     public static void DrawInteractable(InteractableModel model)

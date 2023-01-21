@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e726bf8deadea74384f8dbc4f84422b, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  _meterLevels:
-  - ChargeNeeded: 5
-  - ChargeNeeded: 15
-  - ChargeNeeded: 30
-  - ChargeNeeded: 60
-  _dashCooldown: 0.5
-  _dashSpeed: 10
-  _dashDuration: 0.15
+  meterLevels:
+  - ChargeNeeded: 1
+  - ChargeNeeded: 2
+  - ChargeNeeded: 3
+  dashSpeed: 10
+  dashDuration: 1
+  dashCooldown: 2

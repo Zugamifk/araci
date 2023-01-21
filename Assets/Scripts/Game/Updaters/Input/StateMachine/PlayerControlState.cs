@@ -63,7 +63,9 @@ namespace Input
                 }
             }
 
-            if (GetKeyDown(KeyCode.LeftShift))
+            var cooldownService = Services.Get<ICooldownService>();
+
+            if (cooldownService.IsReady(Game.Model.Player.Dash.Cooldown) && GetKeyDown(KeyCode.LeftShift))
             {
                 Dash();
                 return new PlayerDoingActionState(Game.Model.Player.Dash.Duration);

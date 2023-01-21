@@ -25,8 +25,9 @@ public struct InitializePlayer : ICommand
 
         var playerData = DataService.GetData<PlayerData>();
         var dash = player.Dash;
-        dash.Duration = playerData.DashDuration;
+        dash.Cooldown.Duration = playerData.DashCooldown;
         dash.Speed = playerData.DashSpeed;
+        dash.Duration = playerData.DashDuration;
     }
 
 }

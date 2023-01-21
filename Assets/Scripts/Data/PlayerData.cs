@@ -10,13 +10,16 @@ public class PlayerData : ScriptableObject, IRegisteredData
         public float ChargeNeeded;
     }
     [SerializeField]
-    MeterLevel[] _meterLevels;
+    MeterLevel[] meterLevels;
     [SerializeField]
-    float _dashSpeed;
+    float dashSpeed;
     [SerializeField]
-    float _dashDuration;
+    float dashDuration;
+    [SerializeField]
+    float dashCooldown;
 
-    public MeterLevel[] MeterLevels => _meterLevels;
-    public float DashSpeed => _dashSpeed;
-    public float DashDuration => _dashDuration;
+    public MeterLevel[] MeterLevels => meterLevels;
+    public float DashSpeed => dashSpeed;
+    public float DashDuration => dashDuration;
+    public float DashCooldown => dashCooldown;
 }
