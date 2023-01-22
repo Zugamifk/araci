@@ -23,7 +23,7 @@ public abstract class SimpleDataCollection<TData> : ScriptableObject
             }
             else
             {
-                throw new System.InvalidOperationException("Null in BuildingCollection!");
+                throw new System.InvalidOperationException($"Null in {name}!");
             }
         }
     }
