@@ -90,6 +90,9 @@ Specializes in Katanas, Bombs, and Fire.
 ### Assassin
 On a mysterios mission to kill the sorcerers. Has gained a lot of power
 
+## Progression
+There is no permanent passive skill tree like in many roguelikes. Instead, completing a story line will  cause a permanent change in the world. The changes could be characters appearing, new paths opening, new areas being unlocked, or new items being made available. In general they should make the game easier, but only in the sense that it should be easier to reach farther into the game. This way players will spend less time in the early parts of the game as the progress. Upgrades should be paced so players are spending most of the time in a run in progressively deeper parts of the game.
+
 ## Weapons
 Start with a choice of weapon. Each weapon has a different skill tree. Weapons should have a primary attack and a secondary attack or ability. Weapons have attack combos, some attacks require other conditions such as moving in a direction. Attacking with a weapon grants experience which grant skill points each level. Higher level weapon skills allow expending levels of the magic meter to do powerful techniques.
 
@@ -430,7 +433,7 @@ A dry area with many valleys and steppes. Lots of dust and wind. Hot area. Many 
 A grassy plain with rocky outcroppings and hills.
 
 #### Ruined Temple
-A large stone temple and surrounding buildings. Many hidden areas and destructible objects. Masks line the walls, and most enemies also wear masks. Different masks give enemies different abilities. There are special shrines with masks throughout the temple, and if they are prayed at, enemies with that mask will be affected (killed? mask removed? cursed?)
+A large stone temple and surrounding buildings. Many hidden areas and destructible objects. Masks line the walls, and most enemies also wear masks. Different masks give enemies different abilities. There are special shrines with masks throughout the temple, and if they are prayed at, enemies with that mask will be affected (killed? mask removed? cursed?). Praying at all of the shrines opens a demon portal. The demon who owns the portal is the god of the temple. When killed, he will drop a charm or wearable item granting the effects of all the masks.
 
 ## Themes
 ### Symbols
