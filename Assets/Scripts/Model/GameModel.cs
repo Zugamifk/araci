@@ -8,6 +8,7 @@ public class GameModel : IGameModel
 {
     public IdentifiableCollection<CharacterModel> Characters { get; } = new();
     public IdentifiableCollection<NarrativeModel> Narratives { get; } = new();
+    public DialogModel Dialog { get; set; }
     public IdentifiableCollection<ShrineModel> Shrines { get; } = new();
     public IdentifiableCollection<AIModel> Behaviours { get; } = new();
     public Dictionary<string, SpawnModel> Spawns { get; } = new();
