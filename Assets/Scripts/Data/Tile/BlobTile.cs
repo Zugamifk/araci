@@ -30,43 +30,43 @@ public class BlobTile : Tile
     [SerializeField, Tooltip("If true, treat empty tiles as matching this tile")]
     bool _nullIsThis;
     [SerializeField]
-    Sprite _filled;
+    Tile _filled;
     [SerializeField]
-    Sprite _oneSide;
+    Tile _oneSide;
     [SerializeField]
-    Sprite _sideCorner;
+    Tile _sideCorner;
     [SerializeField]
-    Sprite _middleCorner;
+    Tile _middleCorner;
     [SerializeField]
-    Sprite _threeSides;
+    Tile _threeSides;
     [SerializeField]
-    Sprite _fourCorners;
+    Tile _fourCorners;
     [SerializeField]
-    Sprite _twoSidesSideCorner;
+    Tile _twoSidesSideCorner;
     [SerializeField]
-    Sprite _twoSidesMiddleCorner;
+    Tile _twoSidesMiddleCorner;
     [SerializeField]
-    Sprite _twoSidesAdjacentSide;
+    Tile _twoSidesAdjacentSide;
     [SerializeField]
-    Sprite _twoSidesAdjacentMiddle;
+    Tile _twoSidesAdjacentMiddle;
     [SerializeField]
-    Sprite _twoSidesOpposite;
+    Tile _twoSidesOpposite;
     [SerializeField]
-    Sprite _oneSideSideCorner;
+    Tile _oneSideSideCorner;
     [SerializeField]
-    Sprite _oneSideMiddleCorner;
+    Tile _oneSideMiddleCorner;
     [SerializeField]
-    Sprite _twoCornersAdjacent;
+    Tile _twoCornersAdjacent;
     [SerializeField]
-    Sprite _twoCornersOppositeSide;
+    Tile _twoCornersOppositeSide;
     [SerializeField]
-    Sprite _twoCornersOppositeMiddle;
+    Tile _twoCornersOppositeMiddle;
     [SerializeField]
-    Sprite _threeCornersSide;
+    Tile _threeCornersSide;
     [SerializeField]
-    Sprite _threeCornersMiddle;
+    Tile _threeCornersMiddle;
     [SerializeField]
-    Sprite _oneSideTwoCorners;
+    Tile _oneSideTwoCorners;
 
     public override void RefreshTile(Vector3Int position, ITilemap tilemap)
     {
@@ -190,7 +190,7 @@ public class BlobTile : Tile
             sideMask |= Edge.NorthWest;
         }
 
-        Sprite sprite = _filled;
+        Tile tile = _filled;
         var matrix = Matrix4x4.identity;
         var index = (uint)sideMask;
         switch (index)
@@ -206,11 +206,11 @@ public class BlobTile : Tile
                 matrix = _flipHorz;
                 goto case 1;
             case 1:
-                sprite = _threeSides;
+                tile = _threeSides;
                 break;
             // four corners
             case 85:
-                sprite = _fourCorners;
+                tile = _fourCorners;
                 break;
             // one side
             case 31:
@@ -223,56 +223,56 @@ public class BlobTile : Tile
                 matrix = _flipHorz;
                 goto case 241;
             case 241:
-                sprite = _oneSide;
+                tile = _oneSide;
                 break;
             // side corner
             case 127:
                 matrix = _flipVert;
                 goto case 247;
             case 247:
-                sprite = _sideCorner;
+                tile = _sideCorner;
                 break;
             // middle corner
             case 223:
                 matrix = _flipHorz;
                 goto case 253;
             case 253:
-                sprite = _middleCorner;
+                tile = _middleCorner;
                 break;
             // two side middle corner
             case 80:
                 matrix = _flipHorz;
                 goto case 5;
             case 5:
-                sprite = _twoSidesMiddleCorner;
+                tile = _twoSidesMiddleCorner;
                 break;
             // two sides side corner
             case 20:
                 matrix = _flipVert;
                 goto case 65;
             case 65:
-                sprite = _twoSidesSideCorner;
+                tile = _twoSidesSideCorner;
                 break;
             // two sides middle
             case 112:
                 matrix = _flipHorz;
                 goto case 7;
             case 7:
-                sprite = _twoSidesAdjacentMiddle;
+                tile = _twoSidesAdjacentMiddle;
                 break;
             // two sides side
             case 28:
                 matrix = _flipVert;
                 goto case 193;
             case 193:
-                sprite = _twoSidesAdjacentSide;
+                tile = _twoSidesAdjacentSide;
                 break;
             // two sides opposite
             case 68:
                 matrix = _flipHorz;
                 goto case 17;
             case 17:
-                sprite = _twoSidesOpposite;
+                tile = _twoSidesOpposite;
                 break;
             // one side side corner
             case 23:
@@ -285,7 +285,7 @@ public class BlobTile : Tile
                 matrix = _rotate;
                 goto case 71;
             case 71:
-                sprite = _oneSideSideCorner;
+                tile = _oneSideSideCorner;
                 break;
             // one side middle corner
             case 29:
@@ -298,7 +298,7 @@ public class BlobTile : Tile
                 matrix = _flipHorz;
                 goto case 197;
             case 197:
-                sprite = _oneSideMiddleCorner;
+                tile = _oneSideMiddleCorner;
                 break;
             // two corners adjacent
             case 95:
@@ -311,29 +311,29 @@ public class BlobTile : Tile
                 matrix = _flipVert;
                 goto case 125;
             case 125:
-                sprite = _twoCornersAdjacent;
+                tile = _twoCornersAdjacent;
                 break;
             // two corners opposide side
             case 119:
-                sprite = _twoCornersOppositeSide;
+                tile = _twoCornersOppositeSide;
                 break;
             // two corners opposite middle
             case 221:
-                sprite = _twoCornersOppositeMiddle;
+                tile = _twoCornersOppositeMiddle;
                 break;
             // three corners side
             case 213:
                 matrix = _flipVert;
                 goto case 93;
             case 93:
-                sprite = _threeCornersSide;
+                tile = _threeCornersSide;
                 break;
             // three corners middle
             case 117:
                 matrix = _flipHorz;
                 goto case 87;
             case 87:
-                sprite = _threeCornersMiddle;
+                tile = _threeCornersMiddle;
                 break;
             // one side two corners
             case 21:
@@ -346,13 +346,14 @@ public class BlobTile : Tile
                 matrix = _flipHorz;
                 goto case 69;
             case 69:
-                sprite = _oneSideTwoCorners;
+                tile = _oneSideTwoCorners;
                 break;
             default:
                 break;
         }
 
-        tileData.sprite = sprite;
+        tile.GetTileData(position, tilemap, ref tileData);
+
         tileData.transform = matrix;
         tileData.flags = TileFlags.LockTransform;
         tileData.colliderType = colliderType;
