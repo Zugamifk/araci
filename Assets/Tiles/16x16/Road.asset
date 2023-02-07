@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73343ec3843ac094fb11169305832801, type: 3}
+  m_Name: Road
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: -1865825891, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 1
+  m_ColliderType: 2
+  _sprites:
+  - {fileID: -1865825891, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
+  - {fileID: 1200614955, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
+  - {fileID: 686752616, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
+  - {fileID: 927273552, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
+  - {fileID: 1564549032, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
+  - {fileID: 1052030430, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
+  - {fileID: 1365843428, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
+  - {fileID: 968865522, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
+  - {fileID: -230534460, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
+  - {fileID: 909096683, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
+  - {fileID: 2077930021, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
+  - {fileID: 2030169845, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
+  - {fileID: 327495212, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
+  - {fileID: 194459914, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
+  - {fileID: 864320387, guid: d117b8e7f1a6dfa45b5ca3b82c831a78, type: 3}
