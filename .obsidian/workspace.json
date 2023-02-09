@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Design Manifesto.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Design Manifesto.md",
+                "file": "README.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Design Manifesto.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Design Manifesto.md"
+                "file": "README.md"
               }
             }
           }
@@ -162,12 +162,12 @@
   "active": "3d1026166cd7d953",
   "lastOpenFiles": [
     "Ideas.md",
-    "README.md",
+    "Script.md",
     "Sword combat.md",
+    "Design Manifesto.md",
+    "README.md",
     "TO DO.md",
     "Art Bible.md",
-    "Design Manifesto.md",
-    "Script.md",
     "Food.md",
     "Food - Physics Based.md",
     "Unit Testing Food Diary.md"

@@ -435,6 +435,10 @@ A grassy plain with rocky outcroppings and hills.
 #### Ruined Temple
 A large stone temple and surrounding buildings. Many hidden areas and destructible objects. Masks line the walls, and most enemies also wear masks. Different masks give enemies different abilities. There are special shrines with masks throughout the temple, and if they are prayed at, enemies with that mask will be affected (killed? mask removed? cursed?). Praying at all of the shrines opens a demon portal. The demon who owns the portal is the god of the temple. When killed, he will drop a charm or wearable item granting the effects of all the masks.
 
+#### Catacombs
+A massive dark complex of tombs and ossuaries. The tombs are for nobles and each one has a unique coat of arms. Many of the tombs are unsealed and the bodies are gone. They have become restless undead nobles, and have left the catacombs to wander the land and complete unfinished business. When the undead nobles are killed, they will eventually rise again and return to their tomb to recuperate. While in the tomb, Araci can seal them inside again, preventing them from returning. 
+The catacombs are not filled with undead. Instead, there is a massive creature living deep inside, with massive tendrils reaching deep inside the halls and passages of the catacomb. The tendrils end with special organs that grab and consume the bones and corpses in the ossuaries. If destroyed, the tendrils retract back to the main body. The massive creature is a final boss for this area. 
+
 ## Themes
 ### Symbols
 #### Hand Holding Up Three Fingers
