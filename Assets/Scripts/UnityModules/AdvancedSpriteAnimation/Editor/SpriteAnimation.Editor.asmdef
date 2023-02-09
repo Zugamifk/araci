@@ -1,0 +1,18 @@
+{
+    "name": "SpriteAnimation.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:98f3c1cee45791440b77e15dd4cb14cf"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

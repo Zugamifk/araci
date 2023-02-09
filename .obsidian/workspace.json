@@ -11,160 +11,28 @@
             "id": "99af750c531790a1",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "TO DO.md",
+                "mode": "source",
+                "source": false
+              }
             }
           },
           {
             "id": "3d1026166cd7d953",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "060a4a134e2ab4d0",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "d62630ca03b7a8fe",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "e0b9fa23d92549cb",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "a683b9656eb51d2e",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "6234f89f7ddb00af",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "87392014f4e26d48",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "38d546381f345079",
-            "type": "leaf",
-            "state": {
               "type": "markdown",
               "state": {
                 "file": "README.md",
                 "mode": "source",
                 "source": false
               }
-            }
-          },
-          {
-            "id": "5495220831b34b82",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "8d88a9ef8ff4ea5e",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "b03176b3a23b8d65",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "fbf1ec17f33c255b",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "ddee94b9170939d5",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "38d3633544f6a6d7",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "a85e80e31714442d",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "4d73fab520ec0f1c",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "16423b60a6229a93",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
             }
           }
         ],
-        "currentTab": 17
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -230,6 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "README.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -246,6 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -267,7 +137,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "README.md"
+              }
             }
           }
         ],
@@ -287,17 +159,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "16423b60a6229a93",
+  "active": "3d1026166cd7d953",
   "lastOpenFiles": [
-    "Notes/TO DO.md",
-    "Notes/Sword combat.md",
-    "Notes/Shrines.md",
-    "Notes/Magic.md",
-    "Notes/Locations.md",
-    "Notes/Items.md",
-    "Notes/Ideas.md",
-    "Notes/Food.md",
-    "Notes/Design Manifesto.md",
-    "Notes/Creatures.md"
+    "Ideas.md",
+    "Script.md",
+    "Sword combat.md",
+    "Design Manifesto.md",
+    "README.md",
+    "TO DO.md",
+    "Art Bible.md",
+    "Food.md",
+    "Food - Physics Based.md",
+    "Unit Testing Food Diary.md"
   ]
 }

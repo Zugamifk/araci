@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using static log4net.Appender.ColoredConsoleAppender;
 
 public static class Colorx
 {
