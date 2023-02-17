@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: TwoSidesOpposite
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -239384447, guid: 932af3c62819069419c7041c27dbc966, type: 3}
+  m_Sprite: {fileID: 1623386338, guid: c54009f9d5ff53b4094c59a2d08195df, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
