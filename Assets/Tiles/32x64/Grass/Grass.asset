@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 4807664d4de91cc4891f7d0efc85cafe, type: 3}
   m_Name: Grass
   m_EditorClassIdentifier: Data::BlobTile
-  m_Sprite: {fileID: -955475698, guid: 2ab53e50b4f5a2f4cbe022dfc1ded72c, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
@@ -33,24 +33,24 @@ MonoBehaviour:
     e33: 1
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 1
-  m_ColliderType: 0
+  m_ColliderType: 1
   _nullIsThis: 0
-  _filled: {fileID: 11400000, guid: 9c9a706c1344ad64bac41d7b82529495, type: 2}
-  _oneSide: {fileID: 11400000, guid: d2ea5a4e5bfe2f64398c99318c491a58, type: 2}
-  _sideCorner: {fileID: 11400000, guid: 7d1c0a1cc5be93f4e8238ce6a6696b1c, type: 2}
-  _middleCorner: {fileID: 11400000, guid: a34d523394f5fff4b8c3638a3e45233a, type: 2}
-  _threeSides: {fileID: 11400000, guid: 068c13c35661a0841a46a2b165def27b, type: 2}
-  _fourCorners: {fileID: 11400000, guid: 2ce8c19a901d1434dbd9540af9f3eaff, type: 2}
-  _twoSidesSideCorner: {fileID: 11400000, guid: 6459b02eb28d01d4093e2dcd203340ab, type: 2}
-  _twoSidesMiddleCorner: {fileID: 11400000, guid: b0dd9bc304dc03743ae9fd0c41fbfc00, type: 2}
-  _twoSidesAdjacentSide: {fileID: 11400000, guid: 276fcba073f521546bd373781fd16571, type: 2}
-  _twoSidesAdjacentMiddle: {fileID: 11400000, guid: 5d5168959af22c14886e70debf8e44c0, type: 2}
-  _twoSidesOpposite: {fileID: 11400000, guid: 4c02bf27d759f2d4aa5f2273bebfc707, type: 2}
-  _oneSideSideCorner: {fileID: 11400000, guid: d9018b396a2e0614d84ff1763f3e3da4, type: 2}
-  _oneSideMiddleCorner: {fileID: 11400000, guid: c0b9899c2ddfc5843a16fdf99db15acf, type: 2}
-  _twoCornersAdjacent: {fileID: 11400000, guid: 3fa49b1442cc9ab4ca4ca622d6b33f6a, type: 2}
-  _twoCornersOppositeSide: {fileID: 11400000, guid: 09f9129aefd5d1246a7a88f4a7e26339, type: 2}
-  _twoCornersOppositeMiddle: {fileID: 11400000, guid: 8e25146c1e6bbf8478cf67c5ba7b8304, type: 2}
-  _threeCornersSide: {fileID: 11400000, guid: 57f4452d4387c3846bb0b22c39b90666, type: 2}
-  _threeCornersMiddle: {fileID: 11400000, guid: cdd8e44781755a1468af0dd0ef035893, type: 2}
-  _oneSideTwoCorners: {fileID: 11400000, guid: 96729ed5c826f6f449457d35242f4965, type: 2}
+  _filled: {fileID: 0}
+  _oneSide: {fileID: 0}
+  _sideCorner: {fileID: 0}
+  _middleCorner: {fileID: 0}
+  _threeSides: {fileID: 0}
+  _fourCorners: {fileID: 0}
+  _twoSidesSideCorner: {fileID: 0}
+  _twoSidesMiddleCorner: {fileID: 0}
+  _twoSidesAdjacentSide: {fileID: 0}
+  _twoSidesAdjacentMiddle: {fileID: 0}
+  _twoSidesOpposite: {fileID: 0}
+  _oneSideSideCorner: {fileID: 0}
+  _oneSideMiddleCorner: {fileID: 0}
+  _twoCornersAdjacent: {fileID: 0}
+  _twoCornersOppositeSide: {fileID: 0}
+  _twoCornersOppositeMiddle: {fileID: 0}
+  _threeCornersSide: {fileID: 0}
+  _threeCornersMiddle: {fileID: 0}
+  _oneSideTwoCorners: {fileID: 0}

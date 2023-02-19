@@ -38,4 +38,10 @@ Some examples of clues:
 * A circle of trees. The clue is buried in the center of the circle.
 * A Large banner. The treasure is held by an enemy who also carries the banner.
 * A coat of arms. The treasure is sealed in a tomb bearing the coat of arms.
-* 
+
+# Dance as a Theme
+As an ongoing theme in the game, dancing should appear, along with music. Enemies and NPCs should often move as though they are dancing. The sounds of the environment and different creatures should synchronize to create music naturally. Focus on bright colours and high contrast.
+An important technical challenge would be finding a way to track footprints without fading them over time. Different creatures have different footprints. Similarly, attacks or other damaging effects on objects should stay if the object is not destroyed. Debris should stay on the ground and be swept away by the wind into piles. Seasons change, and weather effects changes constantly. Non-environmental sounds should be natural sounding effects like drums, wood or stone strikes, scraping, jingling, ringing.
+Enemies should not be immediately hostile, but instead go about their natural paths. They should only attack the player if given the opportunity, though they may stalk the player. Even demons follow this nature, though their world, sounds, style, will stand out as very different from the normal world.
+The Assassin and the Sorcerers are consumed with narcissism and do not follow these rules. Their movements are stiff, they have dark colours, and they leave a clear trail of destruction and corruption in their wake, though that effect will fade over time. 
+Araci wears a cloak that is highly animated with the wind and his movements. While moving normally, his arms and hands are hidden under the cloak, but when he is attacking or being hurt, his arms come out and are always visible. This transition should fit the transition in tone between movement and combat.

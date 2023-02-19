@@ -25,14 +25,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "Revenge - Script.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "060a4a134e2ab4d0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Ideas.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "Ideas.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "Ideas.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "Ideas.md"
               }
             }
           }
@@ -159,17 +171,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3d1026166cd7d953",
+  "active": "060a4a134e2ab4d0",
   "lastOpenFiles": [
+    "The Festival - Script.md",
+    "Revenge - Script.md",
     "Ideas.md",
-    "Script.md",
+    "README.md",
     "Sword combat.md",
     "Design Manifesto.md",
-    "README.md",
     "TO DO.md",
     "Art Bible.md",
     "Food.md",
-    "Food - Physics Based.md",
-    "Unit Testing Food Diary.md"
+    "Food - Physics Based.md"
   ]
 }
