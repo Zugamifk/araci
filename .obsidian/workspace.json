@@ -54,9 +54,33 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "e0b9fa23d92549cb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes/Stories.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a683b9656eb51d2e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes/Stories.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -183,17 +207,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "85301c735283055f",
+  "active": "a683b9656eb51d2e",
   "lastOpenFiles": [
+    "Notes/Locations.md",
+    "Notes/Stories.md",
+    "Notes/Characters.md",
     "Notes/Ideas.md",
+    "Notes/Revenge - Script.md",
     "README.md",
     "Notes/Design Manifesto.md",
     "Notes/Art Bible.md",
     "Notes/The Festival - Script.md",
-    "Notes/Revenge - Script.md",
-    "Notes/Sword combat.md",
-    "Notes/TO DO.md",
-    "Food.md",
-    "Food - Physics Based.md"
+    "Notes/Sword combat.md"
   ]
 }
