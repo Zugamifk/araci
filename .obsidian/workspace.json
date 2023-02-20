@@ -73,7 +73,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes/Stories.md",
+                "file": "Notes/Characters.md",
                 "mode": "source",
                 "source": false
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Notes/Stories.md",
+                "file": "Notes/Characters.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -163,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Notes/Stories.md",
+                "file": "Notes/Characters.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -186,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Notes/Stories.md"
+                "file": "Notes/Characters.md"
               }
             }
           }
@@ -209,9 +209,9 @@
   },
   "active": "a683b9656eb51d2e",
   "lastOpenFiles": [
-    "Notes/Locations.md",
     "Notes/Stories.md",
     "Notes/Characters.md",
+    "Notes/Locations.md",
     "Notes/Ideas.md",
     "Notes/Revenge - Script.md",
     "README.md",

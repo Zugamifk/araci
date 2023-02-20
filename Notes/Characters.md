@@ -35,9 +35,16 @@ A powerful warrior who guards the inner cloister. Has authority over the monks a
 
 # Important Temple Character
 Meets Araci in the inner cloister of the temple complex. Will betray Araci at the Ruin Island if he visited the Underground Temple Complex before visiting the island.
+Could be a Sorcerer, or *The Sorcerer Assassin*.
 
 # Ruin Architect
 A leader of the rebuilding efforts at the Ruined Island. Is killed by the *Ruin Assassin* when met on the island. Could be a sorcerer.
 
 # Ruin Assassin
 Kills the *Ruin Architect*. Could be *The Sorcerer Assassin*.
+
+# Ruined Island Excavation Leader
+Discovers the gallery under the ruined island. Takes over the Ruin Island expedition after *Ruin Architect* is discovered dead.
+
+# Group of Travellers
+A group of mysterious characters who travel the world and encounter Araci throughout the game. They are very observant of Araci's actions and their effects on the world. They are not hostile, but not friendly either. They will often share useful information with Araci about his decisions and actions as the game progresses.
