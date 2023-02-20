@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TO DO.md",
+                "file": "Notes/TO DO.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Revenge - Script.md",
+                "file": "Notes/Revenge - Script.md",
                 "mode": "source",
                 "source": false
               }
@@ -37,14 +37,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Ideas.md",
+                "file": "Notes/Ideas.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d62630ca03b7a8fe",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes/Stories.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -110,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Ideas.md",
+                "file": "Notes/Stories.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -127,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Ideas.md",
+                "file": "Notes/Stories.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Ideas.md"
+                "file": "Notes/Stories.md"
               }
             }
           }
@@ -171,16 +183,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "060a4a134e2ab4d0",
+  "active": "85301c735283055f",
   "lastOpenFiles": [
-    "The Festival - Script.md",
-    "Revenge - Script.md",
-    "Ideas.md",
+    "Notes/Ideas.md",
     "README.md",
-    "Sword combat.md",
-    "Design Manifesto.md",
-    "TO DO.md",
-    "Art Bible.md",
+    "Notes/Design Manifesto.md",
+    "Notes/Art Bible.md",
+    "Notes/The Festival - Script.md",
+    "Notes/Revenge - Script.md",
+    "Notes/Sword combat.md",
+    "Notes/TO DO.md",
     "Food.md",
     "Food - Physics Based.md"
   ]

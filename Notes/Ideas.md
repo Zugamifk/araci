@@ -45,3 +45,6 @@ An important technical challenge would be finding a way to track footprints with
 Enemies should not be immediately hostile, but instead go about their natural paths. They should only attack the player if given the opportunity, though they may stalk the player. Even demons follow this nature, though their world, sounds, style, will stand out as very different from the normal world.
 The Assassin and the Sorcerers are consumed with narcissism and do not follow these rules. Their movements are stiff, they have dark colours, and they leave a clear trail of destruction and corruption in their wake, though that effect will fade over time. 
 Araci wears a cloak that is highly animated with the wind and his movements. While moving normally, his arms and hands are hidden under the cloak, but when he is attacking or being hurt, his arms come out and are always visible. This transition should fit the transition in tone between movement and combat.
+
+# Alternative Progression
+As this idea fleshes out and more stories are added, the rogue-like system feels poorly suited for a narrative heavy game. Restarting constantly, even in a fully open world, may not be the best approach. Maybe weigh pros and cons of different progression systems.
