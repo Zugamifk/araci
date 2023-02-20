@@ -37,3 +37,12 @@ Game examples that use weapon switching:
 * The Witcher Iron Sword/Silver Sword. Separate upgrade trees, different playstyles, no synergy between the 2. The game is designed around requiring you to learn 2 playstyles and knowing when to switch between the 2. It sacrifices fluid gameplay for narrative reasons.
 * Borderlands/Skul. Both game have mechanics based on giving you a bonus when switching weapons, to encourage you to switch weapons even when not necessary. This isn't fun, switchign weapons adds nothing to the game and forcing it with bonuses makes me want to avoid that part of the game entirely.
 * Doom 2016/Eternal use limited ammo to force players to switch weapons a lot during a fight, to encourage a varied playstyle so the game doesn't get monotonous, in theory. This isn't necessary. Compare to the Half Life series, which offers you over a dozen weapons and enough ammo for them all. Players still find reasons to switch weapons for different situations, without being forced to. Good level design will encourage varying weapon choices.
+
+#### All Stories Should Be Connected To Each Other And The Game
+No story should exist on its own. They should instead be vignettes that tie together into a larger narrative theme and arc of the game itself. Each story arc should progress the larger story or provide some sort of exposition to the player. To help solidify this concept:
+* All stories should depend on other stories before they can be started, or have other stories depend on them
+* All main stories, linear or not, should end with new gameplay opportunities or a significant change to the game state or environment to anchor them to the game itself
+* Optional stories should complement main stories and provide alternate storylines or add extra parts to those stories
+* If a character only appears for a single story they should be referenced outside this story, or if they are complete strangers their mark should be left on the world somehow after they are gone
+* If a major event happens outside of a storyline it should be acknowledged in future stories
+* The player gaining stronger in-game (levelling up, acquiring resources, gaining influence with characters) should be a part of the main story line.
