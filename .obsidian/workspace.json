@@ -73,7 +73,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes/Characters.md",
+                "file": "Notes/Ideas.md",
                 "mode": "source",
                 "source": false
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Notes/Characters.md",
+                "file": "Notes/Ideas.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -163,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Notes/Characters.md",
+                "file": "Notes/Ideas.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -186,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Notes/Characters.md"
+                "file": "Notes/Ideas.md"
               }
             }
           }
@@ -211,13 +211,13 @@
   "lastOpenFiles": [
     "Notes/Stories.md",
     "Notes/Characters.md",
+    "Notes/The Festival - Script.md",
     "Notes/Locations.md",
+    "README.md",
     "Notes/Ideas.md",
     "Notes/Revenge - Script.md",
-    "README.md",
     "Notes/Design Manifesto.md",
     "Notes/Art Bible.md",
-    "Notes/The Festival - Script.md",
     "Notes/Sword combat.md"
   ]
 }

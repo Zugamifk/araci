@@ -13,13 +13,17 @@ Inspiration:
 * Genichiro, *Sekiro*
 
 ## Old Araci
-Is writing a story about his past.
+Old Araci is a well respected man living close to the nobles in a large city. Though he is still low born, the nobles of the city regard him as legendary though many do noth speak of him. He carries titles (*Which titles*?) which warrent respect.
 
 # The Sorcerer Assassin
 On a mysterious mission to kill the sorcerers. Has gained a lot of power
 
 # Celeste
 Araci's daughter in the present day. She is the one who encourages Araci to record his memories. As she sees him find more inspiration in writing, she brings him gifts to motivate him and help him jog his memory. These gifts have an effect on the game and story of the past.
+
+Generally, Araci keeps his past from everyone, but especially Celeste (*Why?*). Instead, any story he shares in the present day is told to other characters and written in the book she brings him. Those characters share hints of what they heard to Celeste, which inspires her to bring him his next gift.
+
+These discussions should happen at the start and end of different stories. 
 
 # Celeste's Mother
 Unknown. Her revelation should be an important plot point.
@@ -48,3 +52,12 @@ Discovers the gallery under the ruined island. Takes over the Ruin Island expedi
 
 # Group of Travellers
 A group of mysterious characters who travel the world and encounter Araci throughout the game. They are very observant of Araci's actions and their effects on the world. They are not hostile, but not friendly either. They will often share useful information with Araci about his decisions and actions as the game progresses.
+
+# Kokopelli
+A flute playing spirit who travels around the world. He carries a large backpack full of goods meant to trade. He is able to summon help from far away if threatened by playing a song on his flute. Different songs will attract different enemies, and he is usually found playing one of these songs as he travels around. When attacked or in danger, he will play a loud burst on his flute and the nearby enemies will come to his possition.
+
+Possible combat behaviour:
+* Begins unpacking his wares, which are enchanted objects that create hazards in the nearby area
+* Plays a different song that buffs nearby enemies
+* Runs away
+* Transforms into a tall, slow moving version of self that uses its flute as a staff-like weapon that plays sounds when it's swung, letting out magical energy

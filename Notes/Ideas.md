@@ -48,3 +48,35 @@ Araci wears a cloak that is highly animated with the wind and his movements. Whi
 
 # Alternative Progression
 As this idea fleshes out and more stories are added, the rogue-like system feels poorly suited for a narrative heavy game. Restarting constantly, even in a fully open world, may not be the best approach. Maybe weigh pros and cons of different progression systems.
+## Rogue-Like
+The player restarts from the beginning each time they die, losing most, if not all, progression.
+### Pros
+* Allows a level of procedural generation to allow the player to rediscover old areas in a new way
+* Allows players to play many different builds to fully explore the character progression system to find a build that works for them
+* Allows the game to be designed in a much broader way where the palyer is never expected to fully explore the world in a single run, even if they do finish the game
+### Cons
+* Requires much more content generation. Procedural level content, wider variety of skills and items to use.
+* Much more repetition as players are guarenteed to fight the same enemies and use the smae items over and over
+* Frustrating to lose when the game feels unfair and player has to start from the beginning.
+* Stories have to be constructed in a way where they can be interrupted partway and either continued later or started over. Much more consideration needed for how narrative is constructed.
+## Save Points (FromSoft style)
+Create specific points in the world where the player is allowed to save. If the player dies, they must restart from these points.
+### Pros
+* Careful level design allows placing these points before large linear sections or difficult encounters.
+* Still provides a level of challenge as the player must reach the next save point without dying.
+* Can be hidden. Could be Shrines, similar to bonfires in Souls games.
+### Cons
+* Limits level design to smaller open sections, otherwise savepoint have to be placed in easily findable ways.
+* May create a false sense of security where players play for long periods without remembering to save. Could lead to losing a lot of progress on death.
+## Free Saving with Autosave
+Players can save whenever they want. Autosave happens at regular time intervals and at certain specific points in the game.
+### Pros
+* The safest way to make sure players do not lose progress.
+### Cons
+* Allows "savescumming". May make the game too easy.
+
+## Possible Hybrid
+* Save points are Shrines.
+* Shrines can only be saved at once, and are automatically activated when found.
+* Each shrine save is a separate save file, so players can backtrack to previous saves if they are unhappy with their current path.
+* A map can be used to track a player's path from shrine to shrine. Travelling back to previous save points could offer interesting narrative opportunities.
