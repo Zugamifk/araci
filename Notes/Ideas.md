@@ -80,3 +80,6 @@ Players can save whenever they want. Autosave happens at regular time intervals 
 * Shrines can only be saved at once, and are automatically activated when found.
 * Each shrine save is a separate save file, so players can backtrack to previous saves if they are unhappy with their current path.
 * A map can be used to track a player's path from shrine to shrine. Travelling back to previous save points could offer interesting narrative opportunities.
+
+# Araci's Belongings
+Old Araci has sold most of his old belongings in order to pay his bills. Celeste is trying to find them to help job Araci's memory. Each item she returns to him unlocks an item Young Araci finds and uses it in the next vignette. 

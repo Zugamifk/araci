@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes/Revenge - Script.md",
+                "file": "Notes/Scripts/Revenge - Script.md",
                 "mode": "source",
                 "source": false
               }
@@ -78,9 +78,69 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "6234f89f7ddb00af",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes/Items.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "87392014f4e26d48",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes/Magic.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "38d546381f345079",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "5495220831b34b82",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8d88a9ef8ff4ea5e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes/Magic.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 10
       }
     ],
     "direction": "vertical"
@@ -146,7 +206,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Notes/Ideas.md",
+                "file": "Notes/Magic.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -163,7 +223,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Notes/Ideas.md",
+                "file": "Notes/Magic.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -186,7 +246,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Notes/Ideas.md"
+                "file": "Notes/Magic.md"
               }
             }
           }
@@ -207,17 +267,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a683b9656eb51d2e",
+  "active": "85301c735283055f",
   "lastOpenFiles": [
-    "Notes/Stories.md",
-    "Notes/Characters.md",
-    "Notes/The Festival - Script.md",
-    "Notes/Locations.md",
+    "Notes/Items.md",
+    "Notes/Shrines.md",
     "README.md",
+    "Notes/Creatures.md",
+    "Notes/Food.md",
+    "Notes/Magic.md",
+    "Notes/Characters.md",
     "Notes/Ideas.md",
-    "Notes/Revenge - Script.md",
-    "Notes/Design Manifesto.md",
-    "Notes/Art Bible.md",
-    "Notes/Sword combat.md"
+    "Notes/Sword combat.md",
+    "Notes/Stories.md"
   ]
 }
