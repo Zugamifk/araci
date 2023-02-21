@@ -194,9 +194,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "16423b60a6229a93",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes/Stories/How Araci Learned To Cook.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 16
+        "currentTab": 17
       }
     ],
     "direction": "vertical"
@@ -262,7 +274,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Notes/Characters.md",
+                "file": "Notes/Stories/How Araci Learned To Cook.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -279,7 +291,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Notes/Characters.md",
+                "file": "Notes/Stories/How Araci Learned To Cook.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -302,7 +314,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Notes/Characters.md"
+                "file": "Notes/Stories/How Araci Learned To Cook.md"
               }
             }
           }
@@ -323,17 +335,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4d73fab520ec0f1c",
+  "active": "16423b60a6229a93",
   "lastOpenFiles": [
-    "Notes/Stories/The Fallen Viaduct.md",
+    "Notes/Stories/How Araci Died.md",
+    "Notes/Characters.md",
+    "Notes/Stories/The Downfall of the Bandits.md",
+    "Notes/Creatures.md",
+    "Notes/Scripts/Revenge - Script.md",
     "Notes/Stories/Old Araci's Tale.md",
     "Notes/Stories/How Araci Learned To Cook.md",
-    "Notes/Stories/How Araci Died.md",
-    "Notes/Stories.md",
-    "Notes/Untitled.md",
-    "Notes/Art Bible.md",
-    "README.md",
     "Notes/Ideas.md",
-    "Notes/Food.md"
+    "Notes/Food.md",
+    "Notes/Locations.md"
   ]
 }
