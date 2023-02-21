@@ -1,3 +1,11 @@
+## Design Workflow
+
+Level of Quality
+* L0 - Specification / Design
+* L1 - Functional
+* L2 - Complete
+* L3 - Polished
+
 ## Progression
 Araci grows and becomes stronger in many different ways.
 * Making offerings at shrines in exchange for Favor, a currency used for enchantments and blessings.

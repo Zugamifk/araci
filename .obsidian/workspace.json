@@ -201,7 +201,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes/Stories/How Araci Learned To Cook.md",
+                "file": "Notes/TO DO.md",
                 "mode": "source",
                 "source": false
               }
@@ -274,7 +274,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Notes/Stories/How Araci Learned To Cook.md",
+                "file": "Notes/TO DO.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -291,7 +291,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Notes/Stories/How Araci Learned To Cook.md",
+                "file": "Notes/TO DO.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -314,7 +314,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Notes/Stories/How Araci Learned To Cook.md"
+                "file": "Notes/TO DO.md"
               }
             }
           }
@@ -337,15 +337,15 @@
   },
   "active": "16423b60a6229a93",
   "lastOpenFiles": [
-    "Notes/Stories/How Araci Died.md",
-    "Notes/Characters.md",
-    "Notes/Stories/The Downfall of the Bandits.md",
-    "Notes/Creatures.md",
-    "Notes/Scripts/Revenge - Script.md",
-    "Notes/Stories/Old Araci's Tale.md",
-    "Notes/Stories/How Araci Learned To Cook.md",
+    "Notes/Sword combat.md",
+    "Notes/Shrines.md",
+    "Notes/Magic.md",
+    "Notes/Locations.md",
+    "Notes/Items.md",
     "Notes/Ideas.md",
     "Notes/Food.md",
-    "Notes/Locations.md"
+    "Notes/Design Manifesto.md",
+    "Notes/Creatures.md",
+    "Notes/Core Game Concepts.md"
   ]
 }
