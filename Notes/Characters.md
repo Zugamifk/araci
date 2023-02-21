@@ -25,6 +25,9 @@ Generally, Araci keeps his past from everyone, but especially Celeste (*Why?*). 
 
 These discussions should happen at the start and end of different stories. 
 
+# Special Tea Ingredient Vendor
+Sells Old Araci the *Special Tea Ingredient* and knows where to find it. Is not who he appears to be. Should show up later in the story.
+
 # Celeste's Mother
 Unknown. Her revelation should be an important plot point.
 
@@ -52,6 +55,8 @@ Discovers the gallery under the ruined island. Takes over the Ruin Island expedi
 
 # Group of Travellers
 A group of mysterious characters who travel the world and encounter Araci throughout the game. They are very observant of Araci's actions and their effects on the world. They are not hostile, but not friendly either. They will often share useful information with Araci about his decisions and actions as the game progresses.
+
+The travellers are the ones who teach Araci the secrets of cooking. They teach Araci how to hunt and give him his hunting bow.
 
 # Kokopelli
 A flute playing spirit who travels around the world. He carries a large backpack full of goods meant to trade. He is able to summon help from far away if threatened by playing a song on his flute. Different songs will attract different enemies, and he is usually found playing one of these songs as he travels around. When attacked or in danger, he will play a loud burst on his flute and the nearby enemies will come to his possition.
