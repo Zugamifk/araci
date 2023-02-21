@@ -7,4 +7,8 @@ Shrines exist throughout the world and are places for Araci to rest and recupera
 
 When resting at a shrine, many actions are available.
 * If the candles are not lit, they can be lit to save the game. They will eventually go out over time.
-* Give an offering at the statue. Depending on the offering, the gods will grant Araci with an amount of magical power.
+* Give an offering at the statue. Offerings build favor with different spirits and gods.
+* Make a Pact. 
+* Spend favor to gain a blessing or enchantment.
+* Cook food.
+* Rest to pass time and heal.

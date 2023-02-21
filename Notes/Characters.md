@@ -1,9 +1,6 @@
 # Araci
 ## Young Araci
-His village was destroyed by demons. He is on a quest to close the portals and kill the last demon.
-Specializes in Katanas, Bombs, and natural magics.
-
-Araci is not a skilled warrior or mage. He learns new skills as the game progresses. His exact set of skills depends on player progression of the character, through choices made at chrines and through the story.
+Araci is not a skilled warrior or mage. He learns new skills as the game progresses. His exact set of skills depends on player progression of the character, through choices made at shrines and through the story.
 
 Araci could be non-binary. Araci is usually depicted wearing a long orange cloak covering his arms and most of his body. The cloak has intricate patterns around its base. He has long sholder-length hair, a blue shirt and yellow pants with simple leather boots.
 
@@ -14,6 +11,12 @@ Inspiration:
 
 ## Old Araci
 Old Araci is a well respected man living close to the nobles in a large city. Though he is still low born, the nobles of the city regard him as legendary though many do noth speak of him. He carries titles (*Which titles*?) which warrent respect.
+
+# Sorcerers
+The group of immortal magic users who opened the first portal to the Ethereal realm. They were gifted powerful magic by the Great Lord Demon. When a Sorcerer died, their power would be passed on to their killer, or to the other Sorcerers. When one last Sorcerer remained, the Great Lod Demon would return to take them back to the Ethereal realm where they would become and eternal servant to the demon.
+
+# Great Lord Demon
+The demon who granted the Sorcerers their gifts.
 
 # The Sorcerer Assassin
 On a mysterious mission to kill the sorcerers. Has gained a lot of power
