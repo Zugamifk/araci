@@ -1,8 +1,8 @@
 # Araci
 ## Young Araci
-Araci is not a skilled warrior or mage. He learns new skills as the game progresses. His exact set of skills depends on player progression of the character, through choices made at shrines and through the story.
+Araci is not a skilled warrior or mage. They learn new skills as the game progresses. Their exact set of skills depends on player progression of the character, through choices made at shrines and through the story.
 
-Araci could be non-binary. Araci is usually depicted wearing a long orange cloak covering his arms and most of his body. The cloak has intricate patterns around its base. He has long sholder-length hair, a blue shirt and yellow pants with simple leather boots.
+Araci is non-binary. Araci is usually depicted wearing a long orange cloak covering their arms and most of their body. The cloak has intricate patterns around its base. They have long sholder-length hair, a blue shirt and yellow pants with simple leather boots.
 
 As the game progresses, Araci may collect charms that will be worn on the outside of the cloak.
 
@@ -34,6 +34,15 @@ Sells Old Araci the *Special Tea Ingredient* and knows where to find it. Is not 
 # Celeste's Mother
 Unknown. Her revelation should be an important plot point.
 
+# Village  Bandits
+
+The group of 5 bandits who attacked Araci's village. They came to Araci's vilage looking for valuable to steal and found nothing. Disappointed, they forced Araci into a duel with their leader. The leader quickly killed Araci (so they thought) and disappointed, they left the village. The leader chose to fight Araci precisely as a demonstration of how quickly he could deal with any of the other bandits if they chose to go against him. He and his second in command do not like each other.
+* The Bandit Leader is an experienced swordsman. The other bandits fear him. He is worried that his second in command is polotting to kill him to usurp his position. He also suspects the hunter will attempt to desert them, leaving them without a reliable source of food.
+* The second in command is the one who leant Araci his sword for the duel. He was disappointed at Araci for not even wounding the leader.
+* The newest recruit is from a nearby village. It was he who guided the other 4 to nearby villages, including Araci's.
+* One bandit is an expert hunter. He is unsure he wants to be a bandit, but is afraid to leave the group. The leader suspects this.
+* One bandit is very happy to serve under the leader, who lets him carry out the most monstrous deeds he wants without punishment. He was the one who burned the village and killed the village's livestock, as well as many of the villagers, although all the bandits took part in the killing.
+
 # Temple High Priest
 Carries the keys to the Inner Cloister. Is found dead in the forest, killed by wildlife, after the collapse  of the viaduct.
 
@@ -60,6 +69,8 @@ Discovers the gallery under the ruined island. Takes over the Ruin Island expedi
 A group of mysterious characters who travel the world and encounter Araci throughout the game. They are very observant of Araci's actions and their effects on the world. They are not hostile, but not friendly either. They will often share useful information with Araci about his decisions and actions as the game progresses.
 
 The travellers are the ones who teach Araci the secrets of cooking. They teach Araci how to hunt and give him his hunting bow.
+
+* The healer of the group is the one who saved Araci's life after the Village Bandits attacked.
 
 # Kokopelli
 A flute playing spirit who travels around the world. He carries a large backpack full of goods meant to trade. He is able to summon help from far away if threatened by playing a song on his flute. Different songs will attract different enemies, and he is usually found playing one of these songs as he travels around. When attacked or in danger, he will play a loud burst on his flute and the nearby enemies will come to his possition.

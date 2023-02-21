@@ -13,3 +13,6 @@ These areweapons that can be crafted and are meant to be used as ranged weapons 
 # Charms
 Araci will find small precious objects through the game with special properties. These objects can be worn to provide a benefit to Araci, or offered at a shrine for large amounts of favor.
 
+### Glutton's Charm
+Adds more slots to the satiety meter.
+
