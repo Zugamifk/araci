@@ -47,24 +47,16 @@
             "id": "d62630ca03b7a8fe",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notes/Stories.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           },
           {
             "id": "e0b9fa23d92549cb",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notes/Stories.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           },
           {
@@ -133,14 +125,78 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes/Magic.md",
+                "file": "Notes/Characters.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b03176b3a23b8d65",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "fbf1ec17f33c255b",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "ddee94b9170939d5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes/Stories/Old Araci's Tale.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "38d3633544f6a6d7",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "a85e80e31714442d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes/Stories/How Araci Learned To Cook.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4d73fab520ec0f1c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes/Characters.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 10
+        "currentTab": 16
       }
     ],
     "direction": "vertical"
@@ -206,7 +262,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Notes/Magic.md",
+                "file": "Notes/Characters.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -223,7 +279,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Notes/Magic.md",
+                "file": "Notes/Characters.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -246,7 +302,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Notes/Magic.md"
+                "file": "Notes/Characters.md"
               }
             }
           }
@@ -267,17 +323,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "85301c735283055f",
+  "active": "4d73fab520ec0f1c",
   "lastOpenFiles": [
-    "Notes/Items.md",
-    "Notes/Shrines.md",
+    "Notes/Stories/The Fallen Viaduct.md",
+    "Notes/Stories/Old Araci's Tale.md",
+    "Notes/Stories/How Araci Learned To Cook.md",
+    "Notes/Stories/How Araci Died.md",
+    "Notes/Stories.md",
+    "Notes/Untitled.md",
+    "Notes/Art Bible.md",
     "README.md",
-    "Notes/Creatures.md",
-    "Notes/Food.md",
-    "Notes/Magic.md",
-    "Notes/Characters.md",
     "Notes/Ideas.md",
-    "Notes/Sword combat.md",
-    "Notes/Stories.md"
+    "Notes/Food.md"
   ]
 }

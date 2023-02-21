@@ -10,3 +10,6 @@ This is Araci's main ranged weapon. Giving to him by the *Group of Travellers*, 
 ## Pots
 These areweapons that can be crafted and are meant to be used as ranged weapons in combat. Though only a limited amount can be carried at a time, they have a wide range of effects and can be enchanted for even stronger effects.
 
+# Charms
+Araci will find small precious objects through the game with special properties. These objects can be worn to provide a benefit to Araci, or offered at a shrine for large amounts of favor.
+
