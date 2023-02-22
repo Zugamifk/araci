@@ -1,3 +1,7 @@
+#### L1
+
+Araci returns to their village to find everyone dead. They are challenged to a duel where they receive a mortal wound. They are saved by a healer from the Group of Travellers. They take them under their wing.
+
 ### Cast
 * *Village Bandits*
 * *Strange Healer* - from the *Group of Travellers*

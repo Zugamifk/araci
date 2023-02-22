@@ -1,228 +1,52 @@
 {
   "main": {
-    "id": "99bc4a8724fb4dbc",
+    "id": "cbaa38f0f995c9b3",
     "type": "split",
     "children": [
       {
-        "id": "8210a77fe3210b11",
+        "id": "f0b0098062124017",
         "type": "tabs",
         "children": [
           {
-            "id": "99af750c531790a1",
+            "id": "384954c15eda2157",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes/TO DO.md",
+                "file": "Notes/Stories/The Fallen Viaduct.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "3d1026166cd7d953",
+            "id": "f2c50e6cb771dddc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes/Scripts/Revenge - Script.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "060a4a134e2ab4d0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notes/Ideas.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "d62630ca03b7a8fe",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "e0b9fa23d92549cb",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "a683b9656eb51d2e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notes/Ideas.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "6234f89f7ddb00af",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notes/Items.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "87392014f4e26d48",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notes/Magic.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "38d546381f345079",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "5495220831b34b82",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "8d88a9ef8ff4ea5e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notes/Characters.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "b03176b3a23b8d65",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "fbf1ec17f33c255b",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "ddee94b9170939d5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notes/Stories/Old Araci's Tale.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "38d3633544f6a6d7",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "a85e80e31714442d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notes/Stories/How Araci Learned To Cook.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "4d73fab520ec0f1c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notes/Characters.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "16423b60a6229a93",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notes/TO DO.md",
+                "file": "Notes/Stories/The Fallen Viaduct.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 17
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "36f115a47077a5b0",
+    "id": "8034c53a58cfd6be",
     "type": "split",
     "children": [
       {
-        "id": "c366363ddb5b9f50",
+        "id": "c940e1dbb55dc003",
         "type": "tabs",
         "children": [
           {
-            "id": "85301c735283055f",
+            "id": "544989f4957f15d3",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -232,7 +56,7 @@
             }
           },
           {
-            "id": "de575847d467e2db",
+            "id": "bd89204748641282",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -247,7 +71,7 @@
             }
           },
           {
-            "id": "1c625d552c974919",
+            "id": "88acf01fc452294a",
             "type": "leaf",
             "state": {
               "type": "starred",
@@ -261,22 +85,22 @@
     "width": 300
   },
   "right": {
-    "id": "6ed5424f1e0b9ee7",
+    "id": "7d4f98aa31387db8",
     "type": "split",
     "children": [
       {
-        "id": "075769084b8f0e85",
+        "id": "e8c46b5474e957d0",
         "type": "tabs",
         "children": [
           {
-            "id": "93f5e94cfaf075d2",
+            "id": "f5e7f3148ae477f0",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Notes/TO DO.md",
-                "collapseAll": true,
-                "extraContext": true,
+                "file": "Notes/Stories/The Fallen Viaduct.md",
+                "collapseAll": false,
+                "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
@@ -286,19 +110,19 @@
             }
           },
           {
-            "id": "68e1e4a940ef4a65",
+            "id": "827195c3b8ea18f0",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Notes/TO DO.md",
+                "file": "Notes/Stories/The Fallen Viaduct.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "3a0c8ebbfec71089",
+            "id": "9fc027932f5fad8c",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -309,21 +133,21 @@
             }
           },
           {
-            "id": "617b7f1733033678",
+            "id": "4bc85d8cc6e295d2",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Notes/TO DO.md"
+                "file": "Notes/Stories/The Fallen Viaduct.md"
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -335,17 +159,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "16423b60a6229a93",
+  "active": "f2c50e6cb771dddc",
   "lastOpenFiles": [
-    "Notes/Sword combat.md",
-    "Notes/Shrines.md",
-    "Notes/Magic.md",
-    "Notes/Locations.md",
-    "Notes/Items.md",
-    "Notes/Ideas.md",
-    "Notes/Food.md",
+    "Notes/Stories/The Downfall of the Bandits.md",
+    "Notes/Stories/Old Araci's Tale.md",
+    "Notes/Stories/How Araci Learned To Cook.md",
+    "Notes/Stories/How Araci Died.md",
+    "Notes/Stories/An Injustice In War.md",
+    "Notes/Core Game Concepts.md",
     "Notes/Design Manifesto.md",
-    "Notes/Creatures.md",
-    "Notes/Core Game Concepts.md"
+    "Notes/Stories/The Fallen Viaduct.md"
   ]
 }
