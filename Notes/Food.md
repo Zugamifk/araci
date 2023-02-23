@@ -2,6 +2,10 @@ Cooking is one of the two main crafting systems in the game. Food ingredients ca
 
 Rather than using a hunger system, this game uses a "Fullness" system. You are able to consume only a certain amount of food at a time, then it needs to be digested over time. As long as food is being digested, it will provide certain effects to Araci (or anyone who eats it). Learning to cook means learning what different ingredients do, and how processing them in different ways enhances or changes those effects. Combining certain ingredients can create new ingredients. While food can be eaten at any stage of the cooking process, a finished meal will usually provide the best effects.
 
+Food can be prepared or found and eaten. Eating food fills the Satiety meter. While there is no penalty for having an empty satiety meter, food can not be eaten with a full satiety meter.
+When a food is eaten, it will add fullness to the satiety meter. Ass the meter lowers, the first food eaten will be reduced first. When that food's contribution to the meter disappears, its bonus is lost. The same food can be eaten multiple times and bonuses for that food will stack.
+The Satiety meter has a fixed, discrete number of slots. Each food item takes a number of slots. The meter increases and decreases one slot at a time. Foods that take multiple satiety slots may reduce their effect as the meter is reduced.
+
 Food does not spoil and can be kept indefinitely, though food will lose the Freshness quality after a period of time.
 
 ## Cooking
