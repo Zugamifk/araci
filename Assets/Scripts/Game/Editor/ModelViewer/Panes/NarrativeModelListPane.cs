@@ -16,12 +16,12 @@ public class NarrativeModelListPane : ModelListPane<NarrativeModel>
     protected override void DrawItemData(NarrativeModel item)
     {
         EditorGUILayout.LabelField($"Narrative Key: {item.NarrativeKey}");
-        EditorGUILayout.LabelField($"Current State Index: {item.CurrentStateIndex}");
+        EditorGUILayout.LabelField($"Current State Index: {item.CurrentActionIndex}");
 
         var data = narrativeDataCollection.GetData(item.NarrativeKey);
-        if (item.CurrentStateIndex >= 0 && item.CurrentStateIndex < data.StateCount)
+        if (item.CurrentActionIndex >= 0 && item.CurrentActionIndex < data.ActionCount)
         {
-            var state = data.GetStateData(item.CurrentStateIndex);
+            var state = data.GetActionData(item.CurrentActionIndex);
 
             using (new EditorGUI.IndentLevelScope())
             {

@@ -15,10 +15,10 @@ namespace Narrative
         [SerializeField]
         string key;
         [SerializeField]
-        NarrativeStateData[] states;
+        NarrativeActionData[] actions;
 
         public string Key => key;
-        public int StateCount => states.Length;
-        public NarrativeStateData GetStateData(int index) => states[index];
+        public int ActionCount => actions.Length;
+        public NarrativeActionData GetActionData(int index) => actions[index];
     }
 }

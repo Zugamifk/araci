@@ -70,7 +70,7 @@ public class Character : ModelViewBase<ICharacterModel>
     {
         Map.Instance.MoveObject(character.Movement, _rigidBody);
 
-        Game.Do(new UpdatePosition(Id, Map.Instance.WorldToGridSpace(transform.position)));
+        Game.Do(new SetCharacterPosition(Id, Map.Instance.WorldToGridSpace(transform.position)));
 
         var move = _rigidBody.velocity;
         if (Mathf.Approximately(move.sqrMagnitude, 0))

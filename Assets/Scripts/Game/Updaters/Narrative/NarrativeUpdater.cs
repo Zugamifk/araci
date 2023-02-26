@@ -8,17 +8,17 @@ using UnityEngine.EventSystems;
 public class NarrativeUpdater : IUpdater
 {
     #region Populate Behaviour Lookup
-    static Dictionary<Type, NarrativeStateBehaviour> _dataTypeToBehaviour = new();
+    static Dictionary<Type, NarrativeActionProcessor> _dataTypeToActionProcessor = new();
     static NarrativeUpdater()
     {
-        RegisterBehaviour<SpawnEnemiesStateBehaviour, SpawnEnemiesStateData>();
+        RegisterAction<SpawnEnemiesStateBehaviour, SpawnEnemiesActionData>();
     }
 
-    static void RegisterBehaviour<TNarrativeStateBehaviour, TNarrativeStateData>()
-        where TNarrativeStateBehaviour : NarrativeStateBehaviour, new()
-        where TNarrativeStateData : NarrativeStateData
+    static void RegisterAction<TNarrativeStateBehaviour, TNarrativeStateData>()
+        where TNarrativeStateBehaviour : NarrativeActionProcessor, new()
+        where TNarrativeStateData : NarrativeActionData
     {
-        _dataTypeToBehaviour[typeof(TNarrativeStateData)] = new TNarrativeStateBehaviour();
+        _dataTypeToActionProcessor[typeof(TNarrativeStateData)] = new TNarrativeStateBehaviour();
     }
     #endregion
 
@@ -38,33 +38,33 @@ public class NarrativeUpdater : IUpdater
 
         var narrativeData = DataService.GetData<NarrativeDataCollection>().GetData(narrative.NarrativeKey);
 
-        if (narrative.CurrentStateIndex < 0)
+        if (narrative.CurrentActionIndex < 0)
         {
-            EnterNextState(model, narrative, narrativeData);
+            BeginNextAction(model, narrative, narrativeData);
         }
 
-        var stateData = narrativeData.GetStateData(narrative.CurrentStateIndex);
-        var behaviour = _dataTypeToBehaviour[stateData.GetType()];
+        var stateData = narrativeData.GetActionData(narrative.CurrentActionIndex);
+        var actionProcessor = _dataTypeToActionProcessor[stateData.GetType()];
 
-        behaviour.OnUpdateState(model, narrative, stateData);
+        actionProcessor.OnUpdate(model, narrative, stateData);
 
-        if (behaviour.IsFinished)
+        if (actionProcessor.IsFinished)
         {
-            behaviour.OnExitState(model, narrative, stateData);
+            actionProcessor.OnFinish(model, narrative, stateData);
 
-            EnterNextState(model, narrative, narrativeData);
+            BeginNextAction(model, narrative, narrativeData);
         }
     }
 
-    void EnterNextState(GameModel gameModel, NarrativeModel narrativeModel, NarrativeData narrativeData)
+    void BeginNextAction(GameModel gameModel, NarrativeModel narrativeModel, NarrativeData narrativeData)
     {
-        narrativeModel.CurrentStateIndex++;
-        if (narrativeModel.CurrentStateIndex < narrativeData.StateCount)
+        narrativeModel.CurrentActionIndex++;
+        if (narrativeModel.CurrentActionIndex < narrativeData.ActionCount)
         {
-            var stateData = narrativeData.GetStateData(narrativeModel.CurrentStateIndex);
-            var behaviour = _dataTypeToBehaviour[stateData.GetType()];
+            var actionData = narrativeData.GetActionData(narrativeModel.CurrentActionIndex);
+            var action = _dataTypeToActionProcessor[actionData.GetType()];
 
-            behaviour.OnEnterState(gameModel, narrativeModel, stateData);
+            action.OnStart(gameModel, narrativeModel, actionData);
         }
         else
         {

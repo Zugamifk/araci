@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Narrative
 {
-    public abstract class NarrativeStateData : ScriptableObject
+    public abstract class NarrativeActionData : ScriptableObject
     {
         [SerializeField]
         string displayName;
