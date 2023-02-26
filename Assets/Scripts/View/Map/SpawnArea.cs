@@ -24,7 +24,7 @@ public class SpawnArea : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = new Color(150, 150, 255);
+        Gizmos.color = new Color(1, 0, 1);
         Gizmos.matrix = transform.localToWorldMatrix;
         Gizmos.DrawWireCube( _bounds.center, _bounds.size );
     }

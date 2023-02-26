@@ -15,6 +15,6 @@ MonoBehaviour:
   displayName: Test Narrative
   description: This is a just a test narrative for testing the system.
   key: Test
-  states:
-  - {fileID: 11400000, guid: b90b08e03d5cee34797d6d87541ec350, type: 2}
+  actions:
   - {fileID: 11400000, guid: 9f85ed0fdc74ed841b4ee11ae9b843b4, type: 2}
+  - {fileID: 11400000, guid: b90b08e03d5cee34797d6d87541ec350, type: 2}
