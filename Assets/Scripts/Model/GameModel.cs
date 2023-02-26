@@ -17,6 +17,7 @@ public class GameModel : IGameModel
     public InputModel Input { get; } = new();
     public TimeModel TimeModel = new TimeModel();
 
+
     #region IGameModel
     ITimeModel IGameModel.Time => TimeModel;
     IInputModel IGameModel.Input => Input;

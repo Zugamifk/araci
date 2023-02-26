@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "f0b0098062124017",
+        "id": "c02260c55a10a6dc",
         "type": "tabs",
         "children": [
           {
-            "id": "384954c15eda2157",
+            "id": "8baf520d353dad81",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -18,33 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "f2c50e6cb771dddc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notes/Core Design.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "52be6e61cf20c1f0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notes/Stories/The Demon Warrior.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -110,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Notes/Stories/The Demon Warrior.md",
+                "file": "Notes/Stories/The Fallen Viaduct.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Notes/Stories/The Demon Warrior.md",
+                "file": "Notes/Stories/The Fallen Viaduct.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Notes/Stories/The Demon Warrior.md"
+                "file": "Notes/Stories/The Fallen Viaduct.md"
               }
             }
           }
@@ -171,17 +146,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "52be6e61cf20c1f0",
+  "active": "8baf520d353dad81",
   "lastOpenFiles": [
-    "Notes/Scripts/Untitled.md",
-    "Notes/Core Design.md",
-    "Notes/Stories/How Araci Died.md",
-    "Notes/Stories/How Araci Learned To Cook.md",
-    "Notes/Food.md",
-    "Notes/Stories/The Fallen Viaduct.md",
     "Notes/Stories/The Downfall of the Bandits.md",
-    "Notes/Stories/Old Araci's Tale.md",
+    "Notes/Stories/The Demon Warrior.md",
     "Notes/Stories/An Injustice In War.md",
-    "Notes/Design Manifesto.md"
+    "Notes/Stories/Old Araci's Tale.md",
+    "Notes/Stories/How Araci Learned To Cook.md",
+    "Notes/Stories/How Araci Died.md",
+    "Notes/Stories/The Fallen Viaduct.md",
+    "Notes/Core Design.md",
+    "Notes/Stories/The Mother of the Dead.md",
+    "Notes/Scripts/Untitled.md"
   ]
 }
