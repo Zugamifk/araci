@@ -6,21 +6,19 @@ using UnityEngine;
 namespace Narrative
 {
     [CreateAssetMenu(menuName ="Narratives/New Narrative")]
-    public class NarrativeData : ScriptableObject
+    public class NarrativeData : ScriptableObject, IKeyHolder
     {
-        public string Key;
-        public NarrativeState StartState;
+        [SerializeField]
+        string displayName;
+        [SerializeField, TextArea]
+        string description;
+        [SerializeField]
+        string key;
+        [SerializeField]
+        NarrativeStateData[] states;
 
-        public Dictionary<Guid, NarrativeState> IdtoState = new();
-
-        private void OnEnable()
-        {
-            var state = StartState;
-            while(state!=null)
-            {
-                IdtoState.Add(state.Id, state);
-                state = state.Next;
-            }
-        }
+        public string Key => key;
+        public int StateCount => states.Length;
+        public NarrativeStateData GetStateData(int index) => states[index];
     }
 }

@@ -10,11 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7185d7d5842fbd74794c400ad7ade46b, type: 3}
-  m_Name: TestNarrative
+  m_Name: Narrative
   m_EditorClassIdentifier: 
-  displayName: Test Narrative
-  description: This is a just a test narrative for testing the system.
-  key: Test
-  states:
-  - {fileID: 11400000, guid: b90b08e03d5cee34797d6d87541ec350, type: 2}
-  - {fileID: 11400000, guid: 9f85ed0fdc74ed841b4ee11ae9b843b4, type: 2}
+  Key: Test
+  StartState: {fileID: 11400000, guid: b90b08e03d5cee34797d6d87541ec350, type: 2}

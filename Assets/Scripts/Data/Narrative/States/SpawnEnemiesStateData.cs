@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Narrative
 {
     [CreateAssetMenu(menuName ="Narratives/States/Spawn Enemies")]
-    public class SpawnEnemiesState : NarrativeState
+    public class SpawnEnemiesStateData : NarrativeStateData
     {
         public EnemyData EnemyData;
         public string SpawnName;

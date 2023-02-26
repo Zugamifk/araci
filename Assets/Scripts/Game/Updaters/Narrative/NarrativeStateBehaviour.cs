@@ -5,22 +5,10 @@ using UnityEngine;
 
 public abstract class NarrativeStateBehaviour
 {
-    public bool IsDone { get; protected set; }
-    public void EnterState(NarrativeState data)
-    {
-        IsDone = false;
-        OnEnterState(data);
-    }
-    protected abstract void OnEnterState(NarrativeState data);
-    public abstract void Update();
-}
+    public bool IsFinished { get; protected set; }
 
-public abstract class NarrativeStateBehaviour<TStateData> : NarrativeStateBehaviour
-    where TStateData : NarrativeState
-{
-    protected TStateData _data;
-    protected sealed override void OnEnterState(NarrativeState data)
-    {
-        _data = (TStateData)data;
-    }
+    public virtual void OnEnterState(GameModel gameModel, NarrativeModel narrativeModel, NarrativeStateData data) { }
+    public virtual void OnUpdateState(GameModel gameModel, NarrativeModel narrativeModel, NarrativeStateData data) { }
+    public virtual void OnExitState(GameModel gameModel, NarrativeModel narrativeModel, NarrativeStateData data) { }
+
 }

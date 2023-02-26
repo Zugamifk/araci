@@ -7,5 +7,5 @@ public class NarrativeModel : IIdentifiable
 {
     public Guid Id { get; set; }
     public string NarrativeKey { get; set; }
-    public Guid CurrentStateId { get; set; }
+    public int CurrentStateIndex { get; set; } = -1;
 }

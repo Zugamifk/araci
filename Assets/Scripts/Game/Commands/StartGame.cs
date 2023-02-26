@@ -7,7 +7,7 @@ public struct StartGame : ICommand
     public void Execute(GameModel model)
     {
         new InitializePlayer().Execute(model);
-        //new SpawnEnemy("Piper", "Test").Execute(model);
-        //new StartNarrative("Test").Execute(model);
+        new SpawnEnemy("Piper", "Test").Execute(model);
+        new StartNarrative("Test").Execute(model);
     }
 }
