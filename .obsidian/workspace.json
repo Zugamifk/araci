@@ -18,8 +18,31 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "621729a88b9dc83c",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.1.15"
+              }
+            }
+          },
+          {
+            "id": "f2660d14b895d5b7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes/Narrative Concepts.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -85,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Notes/Stories/The Fallen Viaduct.md",
+                "file": "Notes/Narrative Concepts.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Notes/Stories/The Fallen Viaduct.md",
+                "file": "Notes/Narrative Concepts.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +148,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Notes/Stories/The Fallen Viaduct.md"
+                "file": "Notes/Narrative Concepts.md"
               }
             }
           }
@@ -146,8 +169,20 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8baf520d353dad81",
+  "active": "f2660d14b895d5b7",
   "lastOpenFiles": [
+    "Library/Artifacts/68/6881b8e8aa964b8ce44d714dde06dced",
+    "Library/Artifacts/13/131ae58ab4646a68714bbf5d404d90cb",
+    "Library/Bee/backend_profiler0.traceevents",
+    "Library/Bee/TundraBuildState.state",
+    "Library/Artifacts/b8/b8b079b123a028881420727edec078c9",
+    "Library/Artifacts/09/09b6e4d68d4f6d1a6e6ef92b05e3db94",
+    "Library/Search/propertyAliases.db_4bfd0955e7344a279c9513ee97623b33_temp",
+    "Library/Artifacts/8b/8bc3ae71bd06d0aa99de0e6e5cace9b1",
+    "Library/Artifacts/d0/d0e786c8428dd217ab4a0fb37062aa93",
+    "Library/Search/propertyDatabase.db_5a7a67f9b28740a58ff37b1a30a22e4c_temp",
+    "Library/Bee/backend_profiler1.traceevents",
+    "Notes/Narrative Concepts.md",
     "Notes/Stories/The Downfall of the Bandits.md",
     "Notes/Stories/The Demon Warrior.md",
     "Notes/Stories/An Injustice In War.md",

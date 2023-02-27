@@ -12,6 +12,7 @@ public class GameModel : IGameModel
     public IdentifiableCollection<ShrineModel> Shrines { get; } = new();
     public IdentifiableCollection<AIModel> Behaviours { get; } = new();
     public Dictionary<string, SpawnModel> Spawns { get; } = new();
+    public Dictionary<string, Vector2> MapLocations { get; } = new();
     public PlayerModel Player { get; } = new();
     public CharacterModel PlayerCharacter => Characters.GetItem(Player.Id);
     public InputModel Input { get; } = new();
