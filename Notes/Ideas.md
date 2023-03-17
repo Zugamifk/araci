@@ -83,3 +83,6 @@ Players can save whenever they want. Autosave happens at regular time intervals 
 
 ## Araci's Belongings
 Old Araci has sold most of his old belongings in order to pay his bills. Celeste is trying to find them to help job Araci's memory. Each item she returns to him unlocks an item Young Araci finds and uses it in the next vignette. 
+
+## Ninkasi
+Ancient sumerian goddess of beer brewing. could be an interesting story to tie with cooking

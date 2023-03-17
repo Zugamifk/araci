@@ -13,6 +13,6 @@ namespace Narrative
         string positionKey;
 
         public string Character => characterKey;
-        public string Position => positionKey;
+        public string Location => positionKey;
     }
 }

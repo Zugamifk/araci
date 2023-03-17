@@ -11,7 +11,8 @@ public class NarrativeUpdater : IUpdater
     static Dictionary<Type, NarrativeActionProcessor> _dataTypeToActionProcessor = new();
     static NarrativeUpdater()
     {
-        RegisterAction<SpawnEnemiesStateBehaviour, SpawnEnemiesActionData>();
+        RegisterAction<SpawnEnemiesActionProcessor, SpawnEnemiesActionData>();
+        RegisterAction<PositionCharacterActionProcessor, PositionCharacterActionData>();
     }
 
     static void RegisterAction<TNarrativeStateBehaviour, TNarrativeStateData>()

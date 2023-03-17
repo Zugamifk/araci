@@ -7,6 +7,7 @@ using Behaviour;
 public class GameModel : IGameModel
 {
     public IdentifiableCollection<CharacterModel> Characters { get; } = new();
+    public Dictionary<string, Guid> UniqueKeyToId { get; } = new();
     public IdentifiableCollection<NarrativeModel> Narratives { get; } = new();
     public DialogModel Dialog { get; set; }
     public IdentifiableCollection<ShrineModel> Shrines { get; } = new();

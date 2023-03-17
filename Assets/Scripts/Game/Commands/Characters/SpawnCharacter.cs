@@ -8,12 +8,14 @@ public class SpawnCharacter : ICommand
     string characterKey;
     string spawnKey;
     Guid id;
+    bool isUnique;
 
-    public SpawnCharacter(string characterKey, string spawnKey, Guid id = default)
+    public SpawnCharacter(string characterKey, string spawnKey, Guid id = default, bool isUnique = false)
     {
         this.characterKey = characterKey;
         this.spawnKey = spawnKey;
         this.id = id == default ? Guid.NewGuid() : id;
+        this.isUnique = isUnique;
     }
 
     public void Execute(GameModel model)

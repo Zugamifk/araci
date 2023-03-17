@@ -10,7 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7185d7d5842fbd74794c400ad7ade46b, type: 3}
-  m_Name: Narrative
+  m_Name: HowAraciDied
   m_EditorClassIdentifier: 
-  Key: Test
-  StartState: {fileID: 11400000, guid: b90b08e03d5cee34797d6d87541ec350, type: 2}
+  displayName: How Araci Died
+  description: This story describes Araci's first memory of the attack on his village.
+    Araci meets the bandits and duels their leader. He is mortally wounded, but saved
+    by a mysterious stranger.
+  key: HowAraciDied
+  actions:
+  - {fileID: 11400000, guid: 7fec252c83fa9934590e601f8613a806, type: 2}

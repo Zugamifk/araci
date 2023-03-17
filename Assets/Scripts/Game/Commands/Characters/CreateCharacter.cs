@@ -6,29 +6,36 @@ using UnityEngine;
 public class CreateCharacter : ICommand
 {
 
-    Guid _id;
-    string _key;
-    Vector2 _position;
+    Guid id;
+    string key;
+    Vector2 position;
+    bool isUnique;
 
-    public CreateCharacter(Guid id, string key, Vector2 position)
+    public CreateCharacter(Guid id, string key, Vector2 position, bool isUnique = false)
     {
-        _id = id;
-        _key = key;
-        _position = position;
+        this.id = id;
+        this.key = key;
+        this.position = position;
+        this.isUnique = isUnique;
     }
 
     public void Execute(GameModel model)
     {
-        var data = DataService.GetData<CharacterDataCollection>().Get(_key);
+        var data = DataService.GetData<CharacterDataCollection>().Get(key);
         var character = new CharacterModel()
         {
-            Id = _id,
-            Key = _key,
+            Id = id,
+            Key = key,
             MoveSpeed = data.MoveSpeed
         };
-        character.Movement.Position = _position;
+        character.Movement.Position = position;
         character.Health.CurrentHealth = data.HitPoints;
         character.Health.MaxHealth = data.HitPoints;
         model.Characters.AddItem(character);
+
+        if (isUnique)
+        {
+            model.UniqueKeyToId.Add(key, id);
+        }
     }
 }

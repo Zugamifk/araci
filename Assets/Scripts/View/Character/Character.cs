@@ -1,7 +1,10 @@
+using Codice.Client.BaseCommands;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Identifiable))]
 public class Character : ModelViewBase<ICharacterModel>
@@ -60,6 +63,12 @@ public class Character : ModelViewBase<ICharacterModel>
         }
     }
 
+    private void LateUpdate()
+    {
+        Game.Do(new SetCharacterPosition(Id, Map.Instance.WorldToGridSpace(transform.position)));
+        UpdatePosition();
+    }
+
     void UpdatePosition()
     {
         var character = GetModel();
@@ -69,8 +78,6 @@ public class Character : ModelViewBase<ICharacterModel>
     void DoDesiredMove(ICharacterModel character)
     {
         Map.Instance.MoveObject(character.Movement, _rigidBody);
-
-        Game.Do(new SetCharacterPosition(Id, Map.Instance.WorldToGridSpace(transform.position)));
 
         var move = _rigidBody.velocity;
         if (Mathf.Approximately(move.sqrMagnitude, 0))

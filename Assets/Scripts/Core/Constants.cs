@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public static class Characters
+{
+    public const string Araci = "Araci";
+}
+
 public static class Weapons
 {
     public const string SWORD = "Sword";

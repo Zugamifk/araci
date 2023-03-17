@@ -40,9 +40,57 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "8d22d7364d5bb42a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes/Numbers.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e01add4529689e33",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4774e3a685f9045e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes/Locations.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8207dd54ec637ca2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes/Ideas.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -108,8 +156,8 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Notes/Narrative Concepts.md",
-                "collapseAll": false,
+                "file": "Notes/Ideas.md",
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -125,7 +173,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Notes/Narrative Concepts.md",
+                "file": "Notes/Ideas.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -148,7 +196,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Notes/Narrative Concepts.md"
+                "file": "Notes/Ideas.md"
               }
             }
           }
@@ -156,8 +204,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -169,28 +216,41 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f2660d14b895d5b7",
+  "active": "8207dd54ec637ca2",
   "lastOpenFiles": [
-    "Library/Artifacts/68/6881b8e8aa964b8ce44d714dde06dced",
-    "Library/Artifacts/13/131ae58ab4646a68714bbf5d404d90cb",
+    "Temp/UnityTempFile-4094ce5543768924f98758592f21b985",
+    "Library/Artifacts/61/615ad25aafe0cfd485a480f3349c1d87",
+    "Temp/UnityTempFile-fc580814a398146478fe62320500455b",
+    "Temp/UnityTempFile-db43c1e8cece04747b6ae35d5aec43e9",
     "Library/Bee/backend_profiler0.traceevents",
     "Library/Bee/TundraBuildState.state",
-    "Library/Artifacts/b8/b8b079b123a028881420727edec078c9",
-    "Library/Artifacts/09/09b6e4d68d4f6d1a6e6ef92b05e3db94",
-    "Library/Search/propertyAliases.db_4bfd0955e7344a279c9513ee97623b33_temp",
-    "Library/Artifacts/8b/8bc3ae71bd06d0aa99de0e6e5cace9b1",
-    "Library/Artifacts/d0/d0e786c8428dd217ab4a0fb37062aa93",
-    "Library/Search/propertyDatabase.db_5a7a67f9b28740a58ff37b1a30a22e4c_temp",
-    "Library/Bee/backend_profiler1.traceevents",
+    "Library/Artifacts/30/306cfb2ff516b989bcd633649b39d90d",
+    "Temp/UnityTempFile-6f45ae3e1162a9141b3a7be7cdaedf5b",
+    "Library/Artifacts/97/972dcaef9dd6885f88b4b89886321d02",
+    "Temp/UnityTempFile-560f0b57fdd55d1419fa008aaaf7f690",
+    "Temp/UnityTempFile-b124c481f32c2f549bcd9e51d360e7e8",
+    "Notes/Characters.md",
+    "Notes/Stories/The Worm Mind.md",
+    "Notes/Locations.md",
+    "Notes/Magic.md",
+    "Notes/Symbols.md",
+    "Notes/Numbers.md",
+    "README.md",
+    "Notes/Ideas.md",
+    "Notes/Sword combat.md",
+    "Notes/TO DO.md",
+    "Notes/Core Design.md",
+    "Notes/Design/Food.md",
+    "Notes/Food.md",
+    "Notes/Stories/The Demon Warrior.md",
+    "Notes/Stories/The Monk Thieves.md",
     "Notes/Narrative Concepts.md",
     "Notes/Stories/The Downfall of the Bandits.md",
-    "Notes/Stories/The Demon Warrior.md",
     "Notes/Stories/An Injustice In War.md",
     "Notes/Stories/Old Araci's Tale.md",
     "Notes/Stories/How Araci Learned To Cook.md",
     "Notes/Stories/How Araci Died.md",
     "Notes/Stories/The Fallen Viaduct.md",
-    "Notes/Core Design.md",
     "Notes/Stories/The Mother of the Dead.md",
     "Notes/Scripts/Untitled.md"
   ]

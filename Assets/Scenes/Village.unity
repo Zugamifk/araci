@@ -1238,7 +1238,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 13
+      m_TileSpriteIndex: 15
       m_TileMatrixIndex: 3
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -4298,7 +4298,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 13
       m_TileMatrixIndex: 2
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -4449,8 +4449,8 @@ Tilemap:
   - m_RefCount: 418
     m_Data: {fileID: 11400000, guid: f2d3015d857eda646b85d805510bc612, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 1
-    m_Data: {fileID: 722373766, guid: f8ac05fdeb5ed1b4cac79dafd62298c3, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 8
     m_Data: {fileID: 779867880, guid: f8ac05fdeb5ed1b4cac79dafd62298c3, type: 3}
   - m_RefCount: 9
@@ -4476,11 +4476,11 @@ Tilemap:
   - m_RefCount: 9
     m_Data: {fileID: -1223077525, guid: f8ac05fdeb5ed1b4cac79dafd62298c3, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -809127827, guid: f8ac05fdeb5ed1b4cac79dafd62298c3, type: 3}
+    m_Data: {fileID: 722373766, guid: f8ac05fdeb5ed1b4cac79dafd62298c3, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 1394897121, guid: f8ac05fdeb5ed1b4cac79dafd62298c3, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -809127827, guid: f8ac05fdeb5ed1b4cac79dafd62298c3, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -1378711922, guid: f8ac05fdeb5ed1b4cac79dafd62298c3, type: 3}
   m_TileMatrixArray:
@@ -4651,7 +4651,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 528523885}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.07095668, y: 1.599926, z: -0.01096277}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4728,7 +4728,7 @@ GameObject:
   - component: {fileID: 660337663}
   - component: {fileID: 660337662}
   m_Layer: 7
-  m_Name: Start
+  m_Name: StartTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61126,6 +61126,51 @@ Transform:
   m_Father: {fileID: 1773091225}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1397507868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1397507869}
+  - component: {fileID: 1397507870}
+  m_Layer: 0
+  m_Name: AraciSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1397507869
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397507868}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.254, y: -6.148, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1476541723}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1397507870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397507868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dcc8275bb9899a45acbb665a88e6190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: PlayerStart
 --- !u!1 &1476541722
 GameObject:
   m_ObjectHideFlags: 0
@@ -61155,6 +61200,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 660337661}
+  - {fileID: 1397507869}
   m_Father: {fileID: 1773091225}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

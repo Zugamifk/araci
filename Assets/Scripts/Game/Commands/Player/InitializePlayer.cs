@@ -7,7 +7,7 @@ public struct InitializePlayer : ICommand
     public void Execute(GameModel model)
     {
         var player = model.Player;
-        new CreateCharacter(player.Id, "Player", new Vector2(5, 10)).Execute(model);
+        new CreateCharacter(player.Id, Characters.Araci, new Vector2(5, 10), true).Execute(model);
         var character = model.Characters.GetItem(player.Id);
 
         var level = player.Level;
