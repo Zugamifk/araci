@@ -28,11 +28,9 @@ public struct MoveCharacter : ICommand
         {
             character.Movement.Speed = _speed ?? character.MoveSpeed;
             character.Movement.Direction = _direction;
-            character.Movement.Mode = MoveMode.Direction;
         } else
         {
             character.Movement.Speed = 0;
-            character.Movement.Mode = MoveMode.None;
         }
     }
 }

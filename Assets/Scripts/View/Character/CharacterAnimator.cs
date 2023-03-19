@@ -40,7 +40,8 @@ public class CharacterAnimator : MonoBehaviour
             return;
         }
 
-        animator.SetBool(Animation.WALK, character.Movement.Mode != MoveMode.None);
+        var isWalking = character.Movement.Speed > 0;
+        animator.SetBool(Animation.WALK, isWalking);
     }
 
     void DoActionAnimation(ICharacterModel character)

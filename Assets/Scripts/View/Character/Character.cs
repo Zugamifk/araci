@@ -63,12 +63,6 @@ public class Character : ModelViewBase<ICharacterModel>
         }
     }
 
-    private void LateUpdate()
-    {
-        Game.Do(new SetCharacterPosition(Id, Map.Instance.WorldToGridSpace(transform.position)));
-        UpdatePosition();
-    }
-
     void UpdatePosition()
     {
         var character = GetModel();

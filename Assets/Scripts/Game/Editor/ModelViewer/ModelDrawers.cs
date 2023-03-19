@@ -32,11 +32,9 @@ public static class ModelDrawers
 
     public static void DrawMovement(MovementModel model)
     {
-        EditorGUILayout.LabelField($"Mode: {model.Mode}");
         EditorGUILayout.LabelField($"Speed: {model.Speed}");
         EditorGUILayout.LabelField($"Position: {model.Position}");
         EditorGUILayout.LabelField($"Direction: {model.Direction}");
-        EditorGUILayout.LabelField($"Destination: {model.Destination}");
     }
 
     public static void DrawHealth(HealthModel model)
