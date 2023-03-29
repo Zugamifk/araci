@@ -88,9 +88,31 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "d1c31dfc1f6f360d",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.1.16"
+              }
+            }
+          },
+          {
+            "id": "1a4900aef667f74d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes/Stories/The Farm.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 6
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -156,7 +178,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Notes/Ideas.md",
+                "file": "Notes/Stories/The Farm.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -173,7 +195,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Notes/Ideas.md",
+                "file": "Notes/Stories/The Farm.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -196,7 +218,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Notes/Ideas.md"
+                "file": "Notes/Stories/The Farm.md"
               }
             }
           }
@@ -216,8 +238,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8207dd54ec637ca2",
+  "active": "1a4900aef667f74d",
   "lastOpenFiles": [
+    "Notes/Stories/The Farm.md",
     "Temp/UnityTempFile-4094ce5543768924f98758592f21b985",
     "Library/Artifacts/61/615ad25aafe0cfd485a480f3349c1d87",
     "Temp/UnityTempFile-fc580814a398146478fe62320500455b",
@@ -228,7 +251,6 @@
     "Temp/UnityTempFile-6f45ae3e1162a9141b3a7be7cdaedf5b",
     "Library/Artifacts/97/972dcaef9dd6885f88b4b89886321d02",
     "Temp/UnityTempFile-560f0b57fdd55d1419fa008aaaf7f690",
-    "Temp/UnityTempFile-b124c481f32c2f549bcd9e51d360e7e8",
     "Notes/Characters.md",
     "Notes/Stories/The Worm Mind.md",
     "Notes/Locations.md",

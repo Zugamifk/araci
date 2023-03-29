@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.TextCore.Text;
 
 [RequireComponent(typeof(Identifiable))]
 public class Character : ModelViewBase<ICharacterModel>
@@ -78,6 +79,9 @@ public class Character : ModelViewBase<ICharacterModel>
         {
             return;
         }
+
+        var tilePosition = Map.Instance.WorldToGridSpace(_viewRoot.transform.position);
+        Game.Do(new SetCharacterPosition(character.Id, tilePosition));
 
         var side = move.x;
         if (!Mathf.Approximately(side, 0))
