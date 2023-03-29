@@ -64,6 +64,19 @@ public class Character : ModelViewBase<ICharacterModel>
         }
     }
 
+    private void FixedUpdate()
+    {
+        var character = GetModel();
+        if (character == null)
+        {
+            return;
+        }
+        else if (character.Health.IsAlive)
+        {
+            UpdatePosition();
+        }
+    }
+
     void UpdatePosition()
     {
         var character = GetModel();
