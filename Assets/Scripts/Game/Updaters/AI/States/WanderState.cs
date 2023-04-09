@@ -26,14 +26,14 @@ namespace Behaviour
             var ms = Services.Get<ITileMapService>();
 
             var character = Game.Model.Characters.GetItem(id);
-            var to = stateModel.Destination - character.Movement.Position;
-            Debug.DrawLine(ms.GridToWorldSpace(character.Movement.Position), ms.GridToWorldSpace(stateModel.Destination), Color.green);
-            if (to.magnitude < REACH_THRESHOLD)
+            //Debug.DrawLine(ms.GridToWorldSpace(character.Movement.Position), ms.GridToWorldSpace(stateModel.Destination), Color.green);
+            if (character.Movement.IsApproximateAtPosition(stateModel.Destination))
             {
                 GetNewDestination(character, stateModel);
             }
             else
             {
+                var to = stateModel.Destination - character.Movement.Position;
                 Game.Do(new MoveCharacter(id, to.normalized));
             }
         }

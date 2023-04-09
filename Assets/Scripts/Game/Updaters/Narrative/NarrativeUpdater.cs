@@ -13,13 +13,14 @@ public class NarrativeUpdater : IUpdater
     {
         RegisterAction<SpawnEnemiesActionProcessor, SpawnEnemiesActionData>();
         RegisterAction<PositionCharacterActionProcessor, PositionCharacterActionData>();
+        RegisterAction<CharacterMoveToPositionActionProcessor, CharacterMoveToPositionActionData>();
     }
 
-    static void RegisterAction<TNarrativeStateBehaviour, TNarrativeStateData>()
-        where TNarrativeStateBehaviour : NarrativeActionProcessor, new()
+    static void RegisterAction<TNarrativeActionProcessor, TNarrativeStateData>()
+        where TNarrativeActionProcessor : NarrativeActionProcessor, new()
         where TNarrativeStateData : NarrativeActionData
     {
-        _dataTypeToActionProcessor[typeof(TNarrativeStateData)] = new TNarrativeStateBehaviour();
+        _dataTypeToActionProcessor[typeof(TNarrativeStateData)] = new TNarrativeActionProcessor();
     }
     #endregion
 
