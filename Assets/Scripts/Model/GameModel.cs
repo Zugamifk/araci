@@ -25,6 +25,7 @@ public class GameModel : IGameModel
     IInputModel IGameModel.Input => Input;
 
     IIdentifiableLookup<ICharacterModel> IGameModel.Characters => Characters;
+    IDialogModel IGameModel.Dialog => Dialog;
     IIdentifiableLookup<IShrineModel> IGameModel.Shrines => Shrines;
     IIdentifiableLookup<IAIModel> IGameModel.Behaviours => Behaviours;
     IPlayerModel IGameModel.Player => Player;

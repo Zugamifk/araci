@@ -6,9 +6,9 @@ using UnityEngine;
 public class DialogData : ScriptableObject, IKeyHolder
 {
     [SerializeField]
-    string key;
+    KeyAsset key;
     [SerializeField]
-    string speakerKey;
+    KeyAsset speakerKey;
     [SerializeField, TextArea]
     string[] lines;
 
