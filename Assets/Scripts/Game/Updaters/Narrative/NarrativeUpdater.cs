@@ -58,6 +58,8 @@ public class NarrativeUpdater : IUpdater
         }
     }
 
+
+
     void BeginNextAction(GameModel gameModel, NarrativeModel narrativeModel, NarrativeData narrativeData)
     {
         narrativeModel.CurrentActionIndex++;

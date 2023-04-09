@@ -8,9 +8,9 @@ namespace Narrative
     public class PositionCharacterActionData : NarrativeActionData
     {
         [SerializeField]
-        string characterKey;
+        KeyAsset characterKey;
         [SerializeField]
-        string positionKey;
+        KeyAsset positionKey;
 
         public string Character => characterKey;
         public string Location => positionKey;

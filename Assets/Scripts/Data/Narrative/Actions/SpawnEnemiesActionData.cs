@@ -8,7 +8,7 @@ namespace Narrative
     public class SpawnEnemiesActionData : NarrativeActionData
     {
         public EnemyData EnemyData;
-        public string SpawnName;
+        public KeyAsset SpawnName;
         public int Count;
     }
 }

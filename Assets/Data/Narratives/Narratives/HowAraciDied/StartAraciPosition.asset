@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Araci's position
   description: The start position for araci, in starting the game
-  characterKey: Araci
-  positionKey: PlayerStart
+  characterKey: {fileID: 11400000, guid: 8a2e3b9eb9080844385f4629eb75ab70, type: 2}
+  positionKey: {fileID: 11400000, guid: 292a648e9b13e474c9c5bddbd87a3682, type: 2}

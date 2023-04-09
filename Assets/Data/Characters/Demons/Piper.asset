@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Piper
   m_EditorClassIdentifier: 
   _prefab: {fileID: 2684019793343543044, guid: 357cd23f4b129af4586ce7107a91c60c, type: 3}
-  _key: Piper
+  _key: {fileID: 11400000, guid: ae87cf7f8eb878541b9ac96d11ee7055, type: 2}
   _moveSpeed: 1
   _hitPoints: 1
   _experienceReward: 25
   AttackDamage: 1
+  AttackRange: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FrogDemon
   m_EditorClassIdentifier: 
   _prefab: {fileID: 2684019793343543044, guid: 2a434083348faba4f90efcf141687157, type: 3}
-  _key: FrogDemon
+  _key: {fileID: 11400000, guid: 0277ee8a5cb221641be230d3f40cb0ea, type: 2}
   _moveSpeed: 1
   _hitPoints: 1
   _experienceReward: 25

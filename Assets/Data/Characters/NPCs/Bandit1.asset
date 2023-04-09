@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bandit1
   m_EditorClassIdentifier: 
   _prefab: {fileID: 5471373943290461044, guid: 926e1abbaf353ec4abb19d3fede731bd, type: 3}
-  _key: Bandit1
+  _key: {fileID: 11400000, guid: 2e0b1ddf055435e4fb9e9f28dc6d93a5, type: 2}
   _moveSpeed: 2
   _hitPoints: 3
   _experienceReward: 25
