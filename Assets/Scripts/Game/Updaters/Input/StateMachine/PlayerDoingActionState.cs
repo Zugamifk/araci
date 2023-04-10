@@ -14,16 +14,12 @@ namespace Input
             _endTime = Game.Model.Time.Time + duration;
         }
 
-        public override InputState Update()
+        public override void Update(IInputStateMachine inputStateMachine)
         {
             var done = Game.Model.Time.Time > _endTime;
             if (done)
             {
-                return new PlayerControlState();
-            }
-            else
-            {
-                return this;
+                inputStateMachine.PopState();
             }
         }
     }

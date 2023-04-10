@@ -10,5 +10,5 @@ public abstract class InputState
     {
     }
 
-    public abstract InputState Update();
+    public abstract void Update(IInputStateMachine inputStateMachine);
 }

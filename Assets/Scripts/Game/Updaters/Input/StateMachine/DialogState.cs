@@ -4,11 +4,15 @@ using UnityEngine;
 
 namespace Input
 {
-    public class InactiveState : InputState
+    public class DialogState : InputState
     {
         public override void Update(IInputStateMachine inputStateMachine)
         {
-            // Do nothing;
+            if(Game.Model.Dialog == null)
+            {
+                inputStateMachine.PopState();
+                return;
+            }
         }
     }
 }

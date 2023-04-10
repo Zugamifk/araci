@@ -8,16 +8,21 @@ namespace Input
 {
     public class PlayerControlState : InputState
     {
-        public override InputState Update()
+        public override void Update(IInputStateMachine inputStateMachine)
         {
             if(Game.Model.PlayerCharacter == null)
             {
-                return new InactiveState();
+                inputStateMachine.SetState(new InactiveState());
+                return;
+            } else if (Game.Model.Dialog!=null)
+            {
+                inputStateMachine.PushState(new DialogState());
+                return;
             }
 
             UpdateMovement();
             UpdateAttacks();
-            return UpdateActions();
+            UpdateActions(inputStateMachine);
         }
 
         void UpdateMovement()
@@ -57,7 +62,7 @@ namespace Input
             }
         }
 
-        InputState UpdateActions()
+        void UpdateActions(IInputStateMachine inputStateMachine)
         {
             if (GetKeyDown(KeyCode.E))
             {
@@ -73,10 +78,8 @@ namespace Input
             if (cooldownService.IsReady(Game.Model.Player.Dash.Cooldown) && GetKeyDown(KeyCode.LeftShift))
             {
                 Dash();
-                return new PlayerDoingActionState(Game.Model.Player.Dash.Duration);
+                inputStateMachine.PushState(new PlayerDoingActionState(Game.Model.Player.Dash.Duration));
             }
-
-            return this;
         }
 
         void Dash()
