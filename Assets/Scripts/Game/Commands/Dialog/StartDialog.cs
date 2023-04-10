@@ -5,23 +5,23 @@ using UnityEngine;
 public class StartDialog : ICommand
 {
     string dialogKey;
-    string targetKey;
+    string speakerKey;
 
-    public StartDialog(string dialogKey, string targetKey)
+    public StartDialog(string dialogKey, string speakerKey)
     {
         this.dialogKey = dialogKey;
-        this.targetKey = targetKey;
+        this.speakerKey = speakerKey;
     }
 
     public void Execute(GameModel model)
     {
         var dialogCollection = DataService.GetData<DialogDataCollection>();
         var dialogData = dialogCollection.Get(dialogKey);
-        var targetCharacterId = model.UniqueKeyToId[targetKey];
+        var speakerId = model.UniqueKeyToId[speakerKey];
         var dialogModel = new DialogModel()
         {
             Key = dialogKey,
-            SpeakerId = targetCharacterId,
+            SpeakerId = speakerId,
             CurrentLineIndex = 0,
             CurrentLine = dialogData.Lines[0]
         };

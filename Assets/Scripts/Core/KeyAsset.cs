@@ -13,4 +13,12 @@ public class KeyAsset : ScriptableObject
     public override string ToString() => key;
 
     public static implicit operator string(KeyAsset keyAsset) => keyAsset.Key;
+
+    private void OnEnable()
+    {
+        if (string.IsNullOrEmpty(Key))
+        {
+            key = name;
+        }
+    }
 }
