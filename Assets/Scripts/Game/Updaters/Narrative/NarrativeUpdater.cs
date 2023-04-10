@@ -14,6 +14,7 @@ public class NarrativeUpdater : IUpdater
         RegisterAction<SpawnEnemiesActionProcessor, SpawnEnemiesActionData>();
         RegisterAction<PositionCharacterActionProcessor, PositionCharacterActionData>();
         RegisterAction<CharacterMoveToPositionActionProcessor, CharacterMoveToPositionActionData>();
+        RegisterAction<DialogActionProcessor, DialogActionData>();
     }
 
     static void RegisterAction<TNarrativeActionProcessor, TNarrativeStateData>()

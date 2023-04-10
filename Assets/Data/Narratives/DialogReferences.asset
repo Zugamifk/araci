@@ -9,12 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ee10044faeb9c64cb3403f2e966e1f1, type: 3}
-  m_Name: Dialog1
+  m_Script: {fileID: 11500000, guid: b0adc1e3929c3e64389a45351eeb8f7f, type: 3}
+  m_Name: DialogReferences
   m_EditorClassIdentifier: 
-  key: {fileID: 11400000, guid: a97f21e962561244db8ba8a14bfa34a9, type: 2}
-  speakerKey: {fileID: 11400000, guid: 8a2e3b9eb9080844385f4629eb75ab70, type: 2}
-  lines:
-  - "Test1\t"
-  - Test2
-  - Test3
+  _data:
+  - {fileID: 11400000, guid: 61a516b10dd10bc4aac260f2444503a1, type: 2}
