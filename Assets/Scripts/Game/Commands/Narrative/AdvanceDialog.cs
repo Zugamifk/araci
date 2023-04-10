@@ -5,12 +5,6 @@ using UnityEngine;
 
 public class AdvanceDialog : ICommand
 {
-    Guid id;
-    public AdvanceDialog(Guid id)
-    {
-        this.id = id;
-    }
-
     public void Execute(GameModel model)
     {
         var dialogCollection = DataService.GetData<DialogDataCollection>();

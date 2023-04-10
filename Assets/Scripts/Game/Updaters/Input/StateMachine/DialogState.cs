@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.Input;
 
 namespace Input
 {
@@ -12,6 +13,11 @@ namespace Input
             {
                 inputStateMachine.PopState();
                 return;
+            }
+
+            if (GetKeyDown(KeyCode.E))
+            {
+                Game.Do(new AdvanceDialog());
             }
         }
     }
