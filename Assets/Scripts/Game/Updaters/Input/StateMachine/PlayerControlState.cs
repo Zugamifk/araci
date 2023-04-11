@@ -46,7 +46,7 @@ namespace Input
             }
 
             var mapService = Services.Get<ITileMapService>();
-            movement = mapService.WorldToGridSpace(movement);
+            movement = mapService.WorldToGridSpace(movement.normalized);
             Game.Do(new MoveCharacter(Game.Model.Player.Id, movement));
         }
 

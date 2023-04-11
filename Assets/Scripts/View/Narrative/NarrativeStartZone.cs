@@ -8,7 +8,6 @@ public class NarrativeStartZone : NarrativeTriggerZone
 
     protected override void OnEnter()
     {
-        Debug.Log("Triggered");
         //Game.Do(new StartNarrative(narrativeKey));
     }
 }
