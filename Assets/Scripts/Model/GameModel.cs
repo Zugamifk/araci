@@ -14,6 +14,8 @@ public class GameModel : IGameModel
     public IdentifiableCollection<AIModel> Behaviours { get; } = new();
     public Dictionary<string, SpawnModel> Spawns { get; } = new();
     public Dictionary<string, Vector2> MapLocations { get; } = new();
+    public InventoryModel Inventory { get; } = new();
+    public IdentifiableCollection<ItemModel> Items { get; } = new();
     public PlayerModel Player { get; } = new();
     public CharacterModel PlayerCharacter => Characters.GetItem(Player.Id);
     public InputModel Input { get; } = new();
@@ -30,6 +32,8 @@ public class GameModel : IGameModel
     IIdentifiableLookup<IAIModel> IGameModel.Behaviours => Behaviours;
     IPlayerModel IGameModel.Player => Player;
     ICharacterModel IGameModel.PlayerCharacter => PlayerCharacter;
+    IInventoryModel IGameModel.Inventory => Inventory;
+    IIdentifiableLookup<IItemModel> IGameModel.Items => Items;
     #endregion
 
 }

@@ -105,14 +105,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes/Stories/The Farm.md",
+                "file": "Notes/Stories/Old Araci's Tale.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "9570e0b747b63187",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes/Stories/The Cultist.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 9
       }
     ],
     "direction": "vertical"
@@ -178,7 +190,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Notes/Stories/The Farm.md",
+                "file": "Notes/Stories/The Cultist.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -195,7 +207,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Notes/Stories/The Farm.md",
+                "file": "Notes/Stories/The Cultist.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -218,7 +230,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Notes/Stories/The Farm.md"
+                "file": "Notes/Stories/The Cultist.md"
               }
             }
           }
@@ -238,19 +250,25 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1a4900aef667f74d",
+  "active": "9570e0b747b63187",
   "lastOpenFiles": [
-    "Notes/Stories/The Farm.md",
-    "Temp/UnityTempFile-4094ce5543768924f98758592f21b985",
-    "Library/Artifacts/61/615ad25aafe0cfd485a480f3349c1d87",
-    "Temp/UnityTempFile-fc580814a398146478fe62320500455b",
-    "Temp/UnityTempFile-db43c1e8cece04747b6ae35d5aec43e9",
     "Library/Bee/backend_profiler0.traceevents",
     "Library/Bee/TundraBuildState.state",
-    "Library/Artifacts/30/306cfb2ff516b989bcd633649b39d90d",
-    "Temp/UnityTempFile-6f45ae3e1162a9141b3a7be7cdaedf5b",
-    "Library/Artifacts/97/972dcaef9dd6885f88b4b89886321d02",
-    "Temp/UnityTempFile-560f0b57fdd55d1419fa008aaaf7f690",
+    "Library/TempArtifacts/Extra/4ee248060f08a2a4bb5a3c317002df19",
+    "Library/Artifacts/21/21c0c2915deb960ac92b35d2895435bb",
+    "Library/Artifacts/c4/c4bb528dff1b9de6673cfcfa67059251",
+    "Library/Bee/tundra.log.json",
+    "Library/Artifacts/5b/5b1564e97f0f07f19c3d9ed8f2fb9de5",
+    "Assets/Scripts/Game/Commands/Items/CreateItemBase.cs.meta",
+    "Temp/Bin/Release",
+    "Assets/Scripts/Game/Commands/Items/CreateItemBase.cs",
+    "Library/Bee/backend_profiler1.traceevents",
+    "Notes/Stories/Old Araci's Tale.md",
+    "Notes/Stories/The Cultist.md",
+    "Notes/Stories/How Araci Died.md",
+    "Notes/Stories/An Injustice In War.md",
+    "Notes/Ideas.md",
+    "Notes/Stories/The Farm.md",
     "Notes/Characters.md",
     "Notes/Stories/The Worm Mind.md",
     "Notes/Locations.md",
@@ -258,7 +276,6 @@
     "Notes/Symbols.md",
     "Notes/Numbers.md",
     "README.md",
-    "Notes/Ideas.md",
     "Notes/Sword combat.md",
     "Notes/TO DO.md",
     "Notes/Core Design.md",
@@ -268,12 +285,8 @@
     "Notes/Stories/The Monk Thieves.md",
     "Notes/Narrative Concepts.md",
     "Notes/Stories/The Downfall of the Bandits.md",
-    "Notes/Stories/An Injustice In War.md",
-    "Notes/Stories/Old Araci's Tale.md",
     "Notes/Stories/How Araci Learned To Cook.md",
-    "Notes/Stories/How Araci Died.md",
     "Notes/Stories/The Fallen Viaduct.md",
-    "Notes/Stories/The Mother of the Dead.md",
-    "Notes/Scripts/Untitled.md"
+    "Notes/Stories/The Mother of the Dead.md"
   ]
 }

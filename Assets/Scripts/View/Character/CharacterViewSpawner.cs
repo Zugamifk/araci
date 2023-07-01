@@ -5,9 +5,7 @@ using UnityEngine;
 
 public class CharacterViewSpawner : RegisteredPrefabViewSpawner<ICharacterModel, Character>
 {
-    protected override IEnumerable<ICharacterModel> AllModels() => Game.Model.Characters.AllItems;
-
-    protected override ICharacterModel GetModel(Guid id) => Game.Model.Characters.GetItem(id);
+    protected override IIdentifiableLookup<ICharacterModel> collection => Game.Model.Characters;
 
     protected override void SpawnedView(ICharacterModel model, Character view)
     {

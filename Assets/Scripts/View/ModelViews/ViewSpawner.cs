@@ -8,70 +8,88 @@ public abstract class ViewSpawner<TIdentifiable, TView> : MonoBehaviour
     where TView : MonoBehaviour, IModelView<TIdentifiable>
 {
     [SerializeField]
-    protected Transform _viewParent;
+    protected Transform viewParent;
 
-    protected Dictionary<Guid, TView> _spawnedViews = new Dictionary<Guid, TView>();
+    protected abstract IIdentifiableLookup<TIdentifiable> collection { get; }
+    protected Dictionary<Guid, TView> spawnedViews = new Dictionary<Guid, TView>();
 
-    public TView GetView(Guid id) => _spawnedViews[id];
+    public TView GetView(Guid id) => spawnedViews[id];
 
     private void Awake()
     {
-        if(_viewParent==null)
+        if(viewParent==null)
         {
-            _viewParent = transform;
+            viewParent = transform;
         }
     }
 
-    void Update()
+    private void Start()
     {
-        List<Guid> toRemove = new List<Guid>();
-        foreach (var id in _spawnedViews.Keys)
+        collection.AddedItem -= OnAddedItem;
+        collection.AddedItem += OnAddedItem;
+
+        collection.RemovedItem -= OnRemovedItem;
+        collection.RemovedItem += OnRemovedItem;
+
+        foreach(var item in collection.AllItems)
         {
-            if (GetModel(id) == null)
-            {
-                DestroyedView(_spawnedViews[id]);
-                GameObject.Destroy(_spawnedViews[id].gameObject);
-                toRemove.Add(id);
-            }
+            OnAddedItem(item);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        foreach(var view in spawnedViews.Values)
+        {
+            DestroyView(view);
+        }
+        spawnedViews.Clear();
+    }
+
+    void OnAddedItem(TIdentifiable item)
+    {
+        if (spawnedViews.ContainsKey(item.Id))
+        {
+            return;
         }
 
-        foreach (var id in toRemove)
+        var instance = InstantiateView(item);
+        if (viewParent != null)
         {
-            _spawnedViews.Remove(id);
+            instance.transform.SetParent(viewParent);
+            instance.SetLayerRecursively(viewParent.gameObject.layer);
+        }
+        var view = instance.GetComponent<TView>();
+        if (view == null)
+        {
+            throw new InvalidOperationException($"Prefab {instance} doesn't contain a {typeof(TView)}!");
         }
 
-        foreach (var m in AllModels())
+        var identifiable = view.GetComponent<Identifiable>();
+        if (identifiable != null)
         {
-            if (!_spawnedViews.ContainsKey(m.Id))
-            {
-                var instance = InstantiateView(m);
-                if (_viewParent != null)
-                {
-                    instance.transform.SetParent(_viewParent);
-                    instance.SetLayerRecursively(_viewParent.gameObject.layer);
-                }
-                var view = instance.GetComponent<TView>();
-                if (view == null)
-                {
-                    throw new InvalidOperationException($"Prefab {instance} doesn't contain a {typeof(TView)}!");
-                }
-
-                var identifiable = view.GetComponent<Identifiable>();
-                if (identifiable != null)
-                {
-                    identifiable.Id = m.Id;
-                }
-
-                SpawnedView(m, view);
-                view.InitializeFromModel(m);
-                _spawnedViews.Add(m.Id, view);
-            }
+            identifiable.Id = item.Id;
         }
+
+        SpawnedView(item, view);
+        view.InitializeFromModel(item);
+        spawnedViews.Add(item.Id, view);
+    }
+
+    void OnRemovedItem(TIdentifiable item)
+    {
+        var view = spawnedViews[item.Id];
+        DestroyView(view);
+        spawnedViews.Remove(item.Id);
+    }
+
+    void DestroyView(TView view)
+    {
+        DestroyedView(view);
+        GameObject.Destroy(view.gameObject);
     }
 
     protected abstract GameObject InstantiateView(TIdentifiable model);
-    protected abstract TIdentifiable GetModel(Guid id);
-    protected abstract IEnumerable<TIdentifiable> AllModels();
     protected virtual void SpawnedView(TIdentifiable model, TView view) { }
     protected virtual void DestroyedView(TView view) { }
 }
