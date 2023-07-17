@@ -27,4 +27,9 @@ public class Binding<T> : IBinding<T>
     {
         Value = value;
     }
+
+    public void SetValueWithoutNotify(T value)
+    {
+        this.value = value;
+    }
 }

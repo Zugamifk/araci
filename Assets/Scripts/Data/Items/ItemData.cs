@@ -5,7 +5,7 @@ using UnityEngine;
 public class ItemData : ScriptableObject, IKeyHolder
 {
     [SerializeField]
-    string key;
+    KeyAsset key;
     [SerializeField]
     Sprite icon;
     [SerializeField]

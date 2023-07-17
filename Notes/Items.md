@@ -16,3 +16,6 @@ Araci will find small precious objects through the game with special properties.
 ### Glutton's Charm
 Adds more slots to the satiety meter.
 
+### Blessed Ball
+A toy ball that can be kicked. If it hits an obstacle it will always bounce back into the user's hands, otherwise it will reappear in the inventory once it has stayed off screen long enough.
+

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Blueberry
   m_EditorClassIdentifier: 
   key: {fileID: 11400000, guid: 940746f217f082740a5fa2c6fc38db23, type: 2}
-  icon: {fileID: 0}
-  displayName: 
-  description: 
+  icon: {fileID: 1830061442, guid: 89c2a622e8d0b984ca4d6af8ee1b8fab, type: 3}
+  displayName: Blueberry
+  description: A small tasty berry with medicinal values

@@ -86,3 +86,6 @@ Old Araci has sold most of his old belongings in order to pay his bills. Celeste
 
 ## Ninkasi
 Ancient sumerian goddess of beer brewing. could be an interesting story to tie with cooking
+
+## Illusory walls
+There are massive walls that look like what is behind them is different from what it is. They hide secret places and make them look like another place in the wilderness. When they are encountered, they maybe present a physical barrier, or maybe they can be walked through without resistance revealing the real area behind them.

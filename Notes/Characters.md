@@ -37,11 +37,11 @@ Unknown. Her revelation should be an important plot point.
 ## Village  Bandits
 
 The group of 5 bandits who attacked Araci's village. They came to Araci's vilage looking for valuable to steal and found nothing. Disappointed, they forced Araci into a duel with their leader. The leader quickly killed Araci (so they thought) and disappointed, they left the village. The leader chose to fight Araci precisely as a demonstration of how quickly he could deal with any of the other bandits if they chose to go against him. He and his second in command do not like each other.
-* The Bandit Leader is an experienced swordsman. The other bandits fear him. He is worried that his second in command is polotting to kill him to usurp his position. He also suspects the hunter will attempt to desert them, leaving them without a reliable source of food.
-* The second in command is the one who leant Araci his sword for the duel. He was disappointed at Araci for not even wounding the leader.
-* The newest recruit is from a nearby village. It was he who guided the other 4 to nearby villages, including Araci's.
-* One bandit is an expert hunter. He is unsure he wants to be a bandit, but is afraid to leave the group. The leader suspects this.
-* One bandit is very happy to serve under the leader, who lets him carry out the most monstrous deeds he wants without punishment. He was the one who burned the village and killed the village's livestock, as well as many of the villagers, although all the bandits took part in the killing.
+* *Nicolas* The Bandit Leader is an experienced swordsman. The other bandits fear him. He is worried that his second in command is polotting to kill him to usurp his position. He also suspects the hunter will attempt to desert them, leaving them without a reliable source of food.
+* *Lachainn* The second in command is the one who leant Araci his sword for the duel. He was disappointed at Araci for not even wounding the leader.
+* *Adam* The newest recruit is from a nearby village. It was he who guided the other 4 to nearby villages, including Araci's.
+* *Donovan* One bandit is an expert hunter. He is unsure he wants to be a bandit, but is afraid to leave the group. The leader suspects this.
+* *Marcie/Marnie* One bandit is very happy to serve under the leader, who lets him carry out the most monstrous deeds he wants without punishment. He was the one who burned the village and killed the village's livestock, as well as many of the villagers, although all the bandits took part in the killing. Mostly nonverbal, is extremely 
 
 ## Temple High Priest
 Carries the keys to the Inner Cloister. Is found dead in the forest, killed by wildlife, after the collapse  of the viaduct.

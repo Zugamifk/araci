@@ -8,28 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "8baf520d353dad81",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notes/Stories/The Fallen Viaduct.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "621729a88b9dc83c",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.1.15"
-              }
-            }
-          },
-          {
             "id": "f2660d14b895d5b7",
             "type": "leaf",
             "state": {
@@ -90,41 +68,19 @@
             }
           },
           {
-            "id": "d1c31dfc1f6f360d",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.1.16"
-              }
-            }
-          },
-          {
-            "id": "1a4900aef667f74d",
+            "id": "ff2495bc65843c97",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes/Stories/Old Araci's Tale.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "9570e0b747b63187",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notes/Stories/The Cultist.md",
+                "file": "Notes/Ideas.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 9
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -169,6 +125,14 @@
               "type": "starred",
               "state": {}
             }
+          },
+          {
+            "id": "5f252dd5ff9208ef",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
           }
         ]
       }
@@ -190,7 +154,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Notes/Stories/The Cultist.md",
+                "file": "Notes/Ideas.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -207,7 +171,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Notes/Stories/The Cultist.md",
+                "file": "Notes/Ideas.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -230,7 +194,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Notes/Stories/The Cultist.md"
+                "file": "Notes/Ideas.md"
               }
             }
           }
@@ -250,44 +214,44 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9570e0b747b63187",
+  "active": "ff2495bc65843c97",
   "lastOpenFiles": [
-    "Temp/UnityTempFile-11b0527b5a411334d86008821a8c9acd",
-    "Temp/UnityTempFile-a97f6b6dd68f5544b9c9c1a085b9453b",
-    "Library/Bee/backend_profiler0.traceevents",
-    "Library/Bee/TundraBuildState.state",
-    "Library/Artifacts/8f/8f905f042bfcf825abb4759bd1a85e5c",
-    "Library/Search/propertyAliases.db_5e97e70c22cb49898244716958098c09_temp",
-    "Temp/ADB-Refreshc6f97fa375ea67b40b816201d155f0c5",
-    "Temp/UnityTempFile-132c6272c9588514abe0535f4d784da3",
-    "Library/Artifacts/60/6089faa807d078087e6c669e96e54122",
-    "Library/TempArtifacts/Extra/dad4d6d59b9da924a8f20499e2395cd7.info",
-    "Library/Artifacts/ee/ee25108a11eb44bb4e058115c3321dc7",
-    "Assets/Sprites/InventoryIcons.png",
-    "Notes/Stories/Old Araci's Tale.md",
-    "Notes/Stories/The Cultist.md",
-    "Notes/Stories/How Araci Died.md",
-    "Notes/Stories/An Injustice In War.md",
+    "Notes/Items.md",
+    "Notes/Design Manifesto.md",
     "Notes/Ideas.md",
-    "Notes/Stories/The Farm.md",
-    "Notes/Characters.md",
-    "Notes/Stories/The Worm Mind.md",
     "Notes/Locations.md",
     "Notes/Magic.md",
-    "Notes/Symbols.md",
+    "Notes/Narrative Concepts.md",
     "Notes/Numbers.md",
-    "README.md",
+    "Notes/Shrines.md",
     "Notes/Sword combat.md",
     "Notes/TO DO.md",
+    "Notes/Symbols.md",
+    "Notes/Characters.md",
+    "Notes/Stories/The Possessed.md",
+    "Notes/Stories/How Araci Died.md",
+    "Notes/Stories/The Cultist.md",
+    "Library/TempArtifacts/Primary/ce6149c562097e241a49393d496c6bda",
+    "Temp/ADB-Refresh5d54d5f395cebdf4ca24415c486afb2b",
+    "Library/Artifacts/de/de204f8debd940f185ad01c102747b9b",
+    "Temp/UnityTempFile-594eedbbd1eacfa45a2719f8845baf0b",
+    "Library/TempArtifacts/Primary/2da181cc22eaad745aa7cf5ca8564ec4",
+    "Temp/ADB-Refresh1663e1b1281d9d3489ad01ac1441c0d1",
+    "Library/Artifacts/c5/c500d0fbcc850d421f6816e0d3ebb6d8",
+    "Temp/UnityTempFile-ff3d07f86b248114fb4b7bc13cb03e10",
+    "Temp/ADB-Refresh1bcbda27aaa817f4b880a512759f4495",
+    "Library/Artifacts/23/2337b4224c384a40784828275c4256cb",
+    "Assets/Sprites/InventoryIcons.png",
+    "Notes/Stories/Old Araci's Tale.md",
+    "Notes/Stories/An Injustice In War.md",
+    "Notes/Stories/The Farm.md",
+    "Notes/Stories/The Worm Mind.md",
+    "README.md",
     "Notes/Core Design.md",
     "Notes/Design/Food.md",
     "Notes/Food.md",
     "Notes/Stories/The Demon Warrior.md",
     "Notes/Stories/The Monk Thieves.md",
-    "Notes/Narrative Concepts.md",
-    "Notes/Stories/The Downfall of the Bandits.md",
-    "Notes/Stories/How Araci Learned To Cook.md",
-    "Notes/Stories/The Fallen Viaduct.md",
-    "Notes/Stories/The Mother of the Dead.md"
+    "Notes/Stories/The Downfall of the Bandits.md"
   ]
 }
