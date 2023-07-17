@@ -6,6 +6,7 @@ using System;
 using Behaviour;
 public class GameModel : IGameModel
 {
+    public IdentifiableCollection<PositionModel> Positions = new IdentifiableCollection<PositionModel>();
     public IdentifiableCollection<CharacterModel> Characters { get; } = new();
     public Dictionary<string, Guid> UniqueKeyToId { get; } = new();
     public IdentifiableCollection<NarrativeModel> Narratives { get; } = new();
@@ -18,6 +19,7 @@ public class GameModel : IGameModel
     public IdentifiableCollection<ItemModel> Items { get; } = new();
     public PlayerModel Player { get; } = new();
     public CharacterModel PlayerCharacter => Characters.GetItem(Player.Id);
+    public CameraModel Camera { get; } = new();
     public InputModel Input { get; } = new();
     public TimeModel TimeModel = new TimeModel();
 
@@ -34,6 +36,8 @@ public class GameModel : IGameModel
     ICharacterModel IGameModel.PlayerCharacter => PlayerCharacter;
     IInventoryModel IGameModel.Inventory => Inventory;
     IIdentifiableLookup<IItemModel> IGameModel.Items => Items;
+
+    IIdentifiableLookup<IPositionModel> IGameModel.Positions => Positions;
     #endregion
 
 }

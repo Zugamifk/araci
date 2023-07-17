@@ -19,8 +19,9 @@ public class InventoryPanel : MonoBehaviour
 
     private void Start()
     {
-        var invSlots = Game.Model.Inventory.Slots;
+        ClearItemInfo();
 
+        var invSlots = Game.Model.Inventory.Slots;
         invSlots.ItemChanged -= UpdateSlot;
         invSlots.ItemChanged += UpdateSlot;
         for(int i=0;i<24;i++)
@@ -35,6 +36,9 @@ public class InventoryPanel : MonoBehaviour
             if (i < invSlots.Count)
             {
                 UpdateSlot(i, invSlots[i]);
+            } else
+            {
+                UpdateSlot(i, Guid.Empty);
             }
         }
     }
@@ -58,11 +62,20 @@ public class InventoryPanel : MonoBehaviour
         }
     }
 
+    void ClearItemInfo()
+    {
+        selectedItemCount.text = "0";
+        selectedItemName.text = "-";
+        selectedItemDescription.text = "-";
+        selectedItemIcon.enabled = false;
+    }
+
     void ShowItemInfo(Guid id)
     {
         var item = Game.Model.Items[id];
         var data = DataService.GetData<ItemDataCollection>().Get(item.Key);
 
+        selectedItemIcon.enabled = true;
         selectedItemIcon.sprite = data.Icon;
         selectedItemName.text = data.DisplayName;
         selectedItemCount.text = item.Count.ToString();

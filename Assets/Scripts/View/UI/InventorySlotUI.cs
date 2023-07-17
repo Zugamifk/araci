@@ -11,7 +11,7 @@ public class InventorySlotUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI countText;
     [SerializeField] Button slotButton;
 
-    Guid currentItemGuid;
+    Guid currentItemGuid = Guid.Empty;
 
     public event Action<Guid> ClickedSlot;
 
@@ -31,7 +31,7 @@ public class InventorySlotUI : MonoBehaviour
 
     void Clear()
     {
-        itemIcon.sprite = null;
+        itemIcon.enabled = false;
         countText.text = string.Empty;
     }
 
@@ -39,6 +39,7 @@ public class InventorySlotUI : MonoBehaviour
     {
         var item = Game.Model.Items[currentItemGuid];
         var data = DataService.GetData<ItemDataCollection>().Get(item.Key);
+        itemIcon.enabled = true;
         itemIcon.sprite = data.Icon;
         countText.text = item.Count.ToString();
     }

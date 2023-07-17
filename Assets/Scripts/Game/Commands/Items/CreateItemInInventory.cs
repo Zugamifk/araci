@@ -16,6 +16,7 @@ public class CreateItemInInventory : CreateItemBase
     public override void Execute(GameModel model)
     {
         var item = CreateItemModel(key, count);
+        model.Items.AddItem(item);
         new AddItemToInventory(item.Id).Execute(model);
     }
 }
