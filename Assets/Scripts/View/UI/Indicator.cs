@@ -18,7 +18,7 @@ public class Indicator : MonoBehaviour
 
     private void Update()
     {
-        var target = Game.Model.Input.CurrentInteractableId;
+        var target = Game.Model.Input.CurrentInteractable.Value;
         if(target!=Guid.Empty)
         {
             _sprite.enabled = true;

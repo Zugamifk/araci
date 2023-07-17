@@ -6,7 +6,6 @@ using UnityEngine;
 
 public interface IInputModel
 {
-    Guid CurrentMouseOverObject { get; }
-    Vector3 ClickPosition { get; }
-    Guid CurrentInteractableId { get; }
+    IObservable<Guid> CurrentInteractable { get; }
+    IObservable<Vector2> ClickPosition { get; }
 }

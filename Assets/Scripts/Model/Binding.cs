@@ -3,9 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Binding<T> : IBinding<T>
+public class Observable<T> : IObservable<T>
 {
-    public event Action<T, T> ValueChanged;
+    event Action<T, T> valueChanged;
+
+    public event Action<T, T> ValueChanged
+    {
+        add
+        {
+            valueChanged += value;
+            value?.Invoke(default, Value);
+        }
+        remove
+        {
+            valueChanged -= value;
+        }
+    }
 
     private T value;
     public T Value
@@ -17,13 +30,13 @@ public class Binding<T> : IBinding<T>
             {
                 T oldValue = this.value;
                 this.value = value;
-                ValueChanged?.Invoke(oldValue, value);
+                valueChanged?.Invoke(oldValue, value);
             }
         }
     }
 
-    public Binding() { }
-    public Binding(T value)
+    public Observable() { }
+    public Observable(T value)
     {
         Value = value;
     }

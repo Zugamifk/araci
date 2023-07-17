@@ -20,7 +20,6 @@ public class InputModelPane : InfoPane
         {
             using (new EditorGUILayout.VerticalScope())
             {
-                GUILayout.Label($"Current Mouse Over Object: {input.CurrentMouseOverObject}");
                 GUILayout.Label($"Click Position: {input.ClickPosition}");
 
                 if (input.CurrentInteractable != null)
@@ -28,7 +27,7 @@ public class InputModelPane : InfoPane
                     using (new EditorGUILayout.VerticalScope("box"))
                     {
                         EditorGUILayout.LabelField("Current Interactable", EditorStyles.boldLabel);
-                        ModelDrawers.DrawInteractable(input.CurrentInteractable);
+                        EditorGUILayout.LabelField($"Id: {input.CurrentInteractable.Value}");
                     }
                 }
 

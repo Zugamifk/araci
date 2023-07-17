@@ -64,7 +64,7 @@ namespace Input
                     closest = interactable;
                 }
             }
-            model.Input.CurrentInteractable = closest;
+            model.Input.CurrentInteractable.Value = closest.Id;
         }
     }
 }

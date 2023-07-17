@@ -15,7 +15,6 @@ public struct UpdateWorldMousePosition : ICommand
 
     public void Execute(GameModel model)
     {
-        model.Input.CurrentMouseOverObject = _id;
-        model.Input.ClickPosition = _position;
+        model.Input.ClickPosition.Value = _position;
     }
 }

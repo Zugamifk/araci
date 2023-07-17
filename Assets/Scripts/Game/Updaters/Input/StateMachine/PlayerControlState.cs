@@ -66,10 +66,10 @@ namespace Input
         {
             if (GetKeyDown(KeyCode.E))
             {
-                var interactable = Game.Model.Input.CurrentInteractableId;
-                if (interactable != Guid.Empty)
+                var interactable = Game.Model.Input.CurrentInteractable;
+                if (interactable.Value != Guid.Empty)
                 {
-                    Game.Do(new UseInteractable(interactable));
+                    Game.Do(new UseInteractable(interactable.Value));
                 }
             }
 
