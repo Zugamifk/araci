@@ -37,7 +37,7 @@ public class InventorySlotUI : MonoBehaviour
 
     void ShowItemInfo()
     {
-        var item = Game.Model.Items[id];
+        var item = Game.Model.Items[currentItemGuid];
         var data = DataService.GetData<ItemDataCollection>().Get(item.Key);
         itemIcon.sprite = data.Icon;
         countText.text = item.Count.ToString();
