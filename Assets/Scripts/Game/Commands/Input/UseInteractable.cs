@@ -25,7 +25,7 @@ public struct UseInteractable : ICommand
             return false;
         }
 
-        shrine.HasBlessingAvailable = false;
+        shrine.HasBlessingAvailable.Value = false;
 
         return true;
     }

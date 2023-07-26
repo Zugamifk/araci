@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IShrineModel : IIdentifiable
 {
-    bool HasBlessingAvailable { get; }
+    IObservable<bool> HasBlessingAvailable { get; }
 }

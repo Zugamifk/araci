@@ -31,7 +31,8 @@ public class Indicator : MonoBehaviour
 
     void UpdatePosition(Guid id)
     {
-        var targetObject = ViewLookup.Get(id);
+        var tfService = Services.Get<ITransformService>();
+        var targetObject = tfService.GetTransform(id);
         var target = targetObject.GetComponent<InteractableTarget>();
         var pos = Camera.main.WorldToViewportPoint(target.IndicatorPosition);
         _rectTransform.anchorMin = pos;

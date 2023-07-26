@@ -26,13 +26,22 @@ public class Observable<T> : IObservable<T>
         get => value;
         set
         {
+            if (value == null && this.value != null)
+            {
+                SetValue(value);
+            }
             if (!this.value.Equals(value))
             {
-                T oldValue = this.value;
-                this.value = value;
-                valueChanged?.Invoke(oldValue, value);
+                SetValue(value);
             }
         }
+    }
+
+    void SetValue(T value)
+    {
+        T oldValue = this.value;
+        this.value = value;
+        valueChanged?.Invoke(oldValue, value);
     }
 
     public Observable() { }

@@ -5,11 +5,13 @@ using System.ComponentModel;
 using UnityEditor;
 using UnityEngine;
 
-public class SerializedIdentifiable : Identifiable
+public class SerializedIdentifiable : MonoBehaviour, IIdentifiable
 {
     [CallMethodButton("GenerateId", "Regenerate Id")]
     [SerializeField, ReadOnly]
     string _serializedId;
+
+    public Guid Id { get; private set; }
 
     void OnValidate()
     {

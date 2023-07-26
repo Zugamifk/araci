@@ -22,8 +22,8 @@ public class Attack : MonoBehaviour
         var target = collision.gameObject.GetComponent<ActionTarget>();
         if(target != null && target.IsType(targetType))
         {
-            var ident = target.GetComponent<Identifiable>();
-            _attackTargets.Add(ident.Id);
+            var ident = target.GetComponent<IObservable<Guid>>();
+            _attackTargets.Add(ident.Value);
         }
     }
 

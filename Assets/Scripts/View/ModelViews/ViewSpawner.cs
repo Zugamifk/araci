@@ -65,10 +65,10 @@ public abstract class ViewSpawner<TIdentifiable, TView> : MonoBehaviour
             throw new InvalidOperationException($"Prefab {instance} doesn't contain a {typeof(TView)}!");
         }
 
-        var identifiable = view.GetComponent<Identifiable>();
+        var identifiable = view.GetComponent<ModelIdentifiable>();
         if (identifiable != null)
         {
-            identifiable.Id = item.Id;
+            identifiable.SetModelId(item.Id);
         }
 
         SpawnedView(item, view);

@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface IMovementModel : IIdentifiable
 {
-    float Speed { get; }
-    Vector2 Direction { get; }
+    IObservable<float> Speed { get; }
+    IObservable<Vector2> Direction { get; }
 }

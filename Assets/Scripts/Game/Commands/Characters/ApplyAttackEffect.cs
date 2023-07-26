@@ -25,7 +25,7 @@ public class ApplyAttackEffect : ICommand
             target.Health.CurrentHealth -= attack.Damage;
             if(target.Health.CurrentHealth <=0)
             {
-                new KillEnemy(id).Execute(model);
+                new KillCharacter(id).Execute(model);
             }
         }
     }

@@ -96,9 +96,9 @@ GameObject:
   - component: {fileID: 7310302912732687098}
   - component: {fileID: 2009587906928982613}
   - component: {fileID: 6076001207132099846}
-  - component: {fileID: 1077541808311191900}
   - component: {fileID: 5188914364701135836}
   - component: {fileID: 1646951764532753480}
+  - component: {fileID: 2567688233494460752}
   m_Layer: 7
   m_Name: Sword_Anim
   m_TagString: Untagged
@@ -173,18 +173,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Root: {fileID: 6852805424172862842}
---- !u!114 &1077541808311191900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6852805424172862842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0a026304af239046a2c06c7bd7fed06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5188914364701135836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,6 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de57673371829743a63e62641336931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetType: 0
 --- !u!58 &1646951764532753480
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -213,3 +202,15 @@ CircleCollider2D:
   m_Offset: {x: 0.36, y: 0.01}
   serializedVersion: 2
   m_Radius: 0.29
+--- !u!114 &2567688233494460752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6852805424172862842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa6ed1d735155d74b9f7ce1d1ac99ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -26,6 +26,6 @@ public struct DoJump : ICommand
         };
         action.AnimationState.Key = Animation.JUMP;
         var character = model.Characters.GetItem(_id);
-        character.CurrentAction = action;
+        character.CurrentAction.Value = action;
     }
 }

@@ -25,7 +25,7 @@ public struct DoDash : ICommand
             Key = Actions.DASH
         };
         var character = model.Characters.GetItem(_id);
-        character.CurrentAction = action;
+        character.CurrentAction.Value = action;
 
         var cooldownService = Services.Get<ICooldownService>();
         cooldownService.StartCooldown(model.Player.Dash.Cooldown);

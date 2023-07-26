@@ -5,19 +5,23 @@ using UnityEngine;
 
 public class RegisterShrine : ICommand
 {
-    Guid _id;
-    public RegisterShrine(Guid id)
+    Guid id;
+    Action<IShrineModel> onRegistered;
+    public RegisterShrine(Guid id, Action<IShrineModel> onRegistered)
     {
-        _id = id;
+        this.id = id;
+        this.onRegistered = onRegistered;   
     }
 
     public void Execute(GameModel model)
     {
         var shrine = new ShrineModel()
         {
-            Id = _id,
-            HasBlessingAvailable = true
+            Id = id,
         };
+        shrine.HasBlessingAvailable.Value = true;
         model.Shrines.AddItem(shrine);
+
+        onRegistered?.Invoke(shrine);
     }
 }

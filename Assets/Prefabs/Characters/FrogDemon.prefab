@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2684019793343543067}
-  - component: {fileID: 2684019793343543066}
   - component: {fileID: 3296589117991032002}
   - component: {fileID: 2684019793343543045}
   - component: {fileID: 889806065591465617}
   - component: {fileID: 1285956790532063650}
   - component: {fileID: 1982334940731504296}
+  - component: {fileID: 6323166796676268615}
   m_Layer: 7
   m_Name: FrogDemon
   m_TagString: Untagged
@@ -40,18 +40,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2684019793343543066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2684019793343543044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0a026304af239046a2c06c7bd7fed06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3296589117991032002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,6 +122,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1288640904744936527}
   hasWalkAnimation: 0
+--- !u!114 &6323166796676268615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2684019793343543044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa6ed1d735155d74b9f7ce1d1ac99ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2806302822924745039
 GameObject:
   m_ObjectHideFlags: 0

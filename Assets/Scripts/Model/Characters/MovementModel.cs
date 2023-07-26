@@ -6,6 +6,8 @@ using UnityEngine;
 public class MovementModel : IMovementModel
 {
     public Guid Id { get; set; }
-    public Vector2 Direction { get; set; } = new Vector2(1, 0);
-    public float Speed { get; set; }
+    public Observable<Vector2> Direction { get; } = new();
+    public Observable<float> Speed { get; } = new();
+    IObservable<float> IMovementModel.Speed => Speed;
+    IObservable<Vector2> IMovementModel.Direction => Direction;
 }

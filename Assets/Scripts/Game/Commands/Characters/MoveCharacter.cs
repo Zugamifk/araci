@@ -27,11 +27,11 @@ public struct MoveCharacter : ICommand
         if(_direction.sqrMagnitude > 0)
         {
             var character = model.Characters.GetItem(_id);
-            movement.Speed = _speed ?? character.MoveSpeed;
-            movement.Direction = _direction;
+            movement.Speed.Value = _speed ?? character.MoveSpeed;
+            movement.Direction.Value = _direction;
         } else
         {
-            movement.Speed = 0;
+            movement.Speed.Value = 0;
         }
     }
 }

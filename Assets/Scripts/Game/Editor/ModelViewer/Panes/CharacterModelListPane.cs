@@ -19,7 +19,7 @@ public class CharacterModelListPane : ModelListPane<CharacterModel>
             EditorGUILayout.LabelField("Current Action", EditorStyles.boldLabel);
             if (item.CurrentAction != null)
             {
-                ModelDrawers.DrawAction(item.CurrentAction);
+                ModelDrawers.DrawAction(item.CurrentAction.Value);
             }
             else
             {

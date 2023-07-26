@@ -10,31 +10,23 @@ public class Shrine : MonoBehaviour
     [SerializeField]
     InteractableTarget _interactable;
 
-    Identifiable _id;
-
-    private void Awake()
-    {
-        _id = GetComponent<Identifiable>();
-        ViewLookup.Register(_id.Id, gameObject);
-    }
-
     private void Start()
     {
-        Game.Do(new RegisterShrine(_id.Id));
+        var id = GetComponent<IIdentifiable>().Id;
+        Game.Do(new RegisterShrine(id, OnShrineRegistered));
     }
 
-    private void Update()
+    void OnShrineRegistered(IShrineModel shrine)
     {
-        var model = Game.Model.Shrines.GetItem(_id.Id);
-        if(model == null)
-        {
-            return;
-        }
+        shrine.HasBlessingAvailable.ValueChanged += OnHasBlessingAvailableChanged;
+    }
 
-        _interactable.IsInteractable = model.HasBlessingAvailable;
-        for (int i=0;i<_candles.Length;i++)
+    void OnHasBlessingAvailableChanged(bool _, bool value)
+    {
+        _interactable.IsInteractable = value;
+        for (int i = 0; i < _candles.Length; i++)
         {
-            _candles[i].enabled = model.HasBlessingAvailable;
+            _candles[i].enabled = value;
         }
     }
 }

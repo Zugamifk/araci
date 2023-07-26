@@ -6,6 +6,6 @@ public interface ICharacterModel : IIdentifiable, IKeyHolder
 {
     string DisplayName { get; }
     IAttackModel Attack { get; }
-    IActionModel CurrentAction { get; }
+    IObservable<IActionModel> CurrentAction { get; }
     IHealthModel Health { get; }
 }

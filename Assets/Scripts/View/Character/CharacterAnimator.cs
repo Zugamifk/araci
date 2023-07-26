@@ -13,51 +13,43 @@ public class CharacterAnimator : MonoBehaviour
     [SerializeField]
     bool hasWalkAnimation;
 
-    Identifiable identifiable;
-    Guid lastActionId;
-
     private void Awake()
     {
-        identifiable = GetComponent<Identifiable>();
+        var id = GetComponent<Identifiable>();
+        id.IdChanged += OnIdSet;
     }
 
-    private void Update()
+    void OnIdSet(Guid id)
     {
-        var character = Game.Model.Characters.GetItem(identifiable.Id);
-        if (character == null)
+        if(id == Guid.Empty)
         {
             return;
         }
 
-        DoWalkAnimation(character);
-        DoActionAnimation(character);
+        var movement = Game.Model.Movements[id];
+        movement.Speed.ValueChanged += OnSpeedChanged;
+
+        var character = Game.Model.Characters[id];
+        character.CurrentAction.ValueChanged += OnActionChanged;
     }
 
-    void DoWalkAnimation(ICharacterModel character)
+    void OnSpeedChanged(float _, float value)
     {
-        if (!hasWalkAnimation)
-        {
-            return;
-        }
-
-        var movement = Game.Model.Movements.GetItem(lastActionId);
-        var isWalking = movement.Speed > 0;
+        var isWalking = value > 0;
         animator.SetBool(Animation.WALK, isWalking);
     }
 
-    void DoActionAnimation(ICharacterModel character)
+    void OnActionChanged(IActionModel oldAction, IActionModel newAction)
     {
-        if (lastActionId == character.CurrentAction.Id)
+        if(newAction == null)
         {
             return;
         }
 
-        var specialAnim = character.CurrentAction.AnimationState;
+        var specialAnim = newAction.AnimationState;
         if (!string.IsNullOrEmpty(specialAnim.Key))
         {
             animator.SetTrigger(specialAnim.Key);
         }
-
-        lastActionId = character.CurrentAction.Id;
     }
 }

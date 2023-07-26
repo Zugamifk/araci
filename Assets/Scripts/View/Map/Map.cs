@@ -30,7 +30,7 @@ public class Map : MonoBehaviour, ITileMapService
 
     public void MoveObject(IMovementModel model, Rigidbody2D rigidBody)
     {
-        var velocity = model.Direction * model.Speed;
+        var velocity = model.Direction.Value * model.Speed.Value;
         velocity = _tilemap.CellToLocalInterpolated(velocity);
         rigidBody.velocity = velocity;
     }

@@ -10,10 +10,10 @@ public class CharacterModel : ICharacterModel
     public string DisplayName { get; }
     public float MoveSpeed { get; set; } = 10;
     public HealthModel Health { get; set; } = new();
-    public ActionModel CurrentAction { get; set; } = new();
+    public Observable<ActionModel> CurrentAction { get; } = new();
     public AttackModel Attack { get; set; } = new();
     
     IHealthModel ICharacterModel.Health => Health;
-    IActionModel ICharacterModel.CurrentAction => CurrentAction;
+    IObservable<IActionModel> ICharacterModel.CurrentAction => CurrentAction;
     IAttackModel ICharacterModel.Attack => Attack;
 }

@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.TextCore.Text;
 
-[RequireComponent(typeof(Identifiable))]
+[RequireComponent(typeof(IIdentifiable))]
 public class Character : ModelViewBase<ICharacterModel>
 {
     [SerializeField]
@@ -25,7 +25,6 @@ public class Character : ModelViewBase<ICharacterModel>
     DashEffect _dash;
 
     Rigidbody2D _rigidBody;
-    Guid _lastActionId;
 
     public override ICharacterModel GetModel() => Game.Model.Characters.GetItem(Id);
 
@@ -40,27 +39,57 @@ public class Character : ModelViewBase<ICharacterModel>
 
         var pos = Game.Model.Positions[model.Id];
         pos.Position.ValueChanged += UpdatePosition;
+
+        model.Health.IsAlive.ValueChanged += OnDeath;
+        model.CurrentAction.ValueChanged += OnActionChanged;
     }
 
-    void Update()
+    void OnDeath(bool wasAlive, bool isAlive)
     {
-        if (_collider != null)
+        if (wasAlive && !isAlive)
         {
-            _collider.enabled = true;
+            Die();
         }
+    }
 
-        var character = GetModel();
-        if (character == null)
+    void OnActionChanged(IActionModel _, IActionModel action)
+    {
+        if(action == null)
         {
             return;
         }
-        else if (character.Health.IsAlive)
+
+        switch (action.Key)
         {
-            UpdateAction(character);
+            case Actions.ATTACK:
+                Attack(action);
+                break;
+            case Actions.DASH:
+                _collider.enabled = false;
+                _dash?.DoDash();
+                break;
+            default:
+                break;
         }
-        else
+    }
+    void Die()
+    {
+        _deathEffect.Play();
+        Game.Do(new RemoveCharacter(Id));
+    }
+
+    void Attack(IActionModel model)
+    {
+        _attack.gameObject.SetActive(true);
+
+        var dir = model.TargetPosition - (Vector2)_attack.transform.position;
+        _attack.transform.rotation = Math.PointAt(dir.normalized);
+
+        var side = dir.x;
+        if (!Mathf.Approximately(side, 0))
         {
-            Die();
+            var angle = side < 0 ? 180 : 0;
+            _viewRoot.transform.localRotation = Quaternion.Euler(0, angle, 0);
         }
     }
 
@@ -71,7 +100,7 @@ public class Character : ModelViewBase<ICharacterModel>
         {
             return;
         }
-        else if (character.Health.IsAlive)
+        else if (character.Health.IsAlive.Value)
         {
             DoDesiredMove(character);
         }
@@ -101,51 +130,7 @@ public class Character : ModelViewBase<ICharacterModel>
         }
     }
 
-    void UpdateAction(ICharacterModel model)
-    {
-        var action = model.CurrentAction;
-        if (action.Id == _lastActionId)
-        {
-            return;
-        }
-
-        switch (action.Key)
-        {
-            case Actions.ATTACK:
-                Attack(model);
-                break;
-            case Actions.DASH:
-                _collider.enabled = false;
-                _dash?.DoDash();
-                break;
-            default:
-                break;
-        }
-
-        _lastActionId = action.Id;
-    }
-
-    void Attack(ICharacterModel model)
-    {
-        _attack.gameObject.SetActive(true);
-
-        var dir = model.CurrentAction.TargetPosition - (Vector2)_attack.transform.position;
-        _attack.transform.rotation = Math.PointAt(dir.normalized);
-
-        var side = dir.x;
-        if (!Mathf.Approximately(side, 0))
-        {
-            var angle = side < 0 ? 180 : 0;
-            _viewRoot.transform.localRotation = Quaternion.Euler(0, angle, 0);
-        }
-    }
-
-    void Die()
-    {
-        _deathEffect.Play();
-        Game.Do(new RemoveCharacter(Id));
-    }
-
+    
     void OnUpdatedAttackTargets(IEnumerable<Guid> targets)
     {
         Game.Do(new ApplyAttackEffect(Id, new List<Guid>(targets)));

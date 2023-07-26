@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Identifiable))]
+[RequireComponent(typeof(IIdentifiable))]
 public abstract class ModelViewBase<TModel> : MonoBehaviour, IModelView<TModel>
     where TModel : IIdentifiable
 {

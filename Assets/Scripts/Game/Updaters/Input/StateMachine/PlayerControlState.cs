@@ -86,7 +86,7 @@ namespace Input
         {
             var player = Game.Model.PlayerCharacter;
             var movement = Game.Model.Movements[player.Id];
-            Game.Do(new DoDash(Game.Model.Player.Id, movement.Direction, Game.Model.Player.Dash.Speed));
+            Game.Do(new DoDash(Game.Model.Player.Id, movement.Direction.Value, Game.Model.Player.Dash.Speed));
         }
     }
 }
