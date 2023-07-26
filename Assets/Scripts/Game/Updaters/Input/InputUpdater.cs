@@ -49,13 +49,13 @@ namespace Input
         {
             InteractableModel closest = null;
             float closestDistance = float.MaxValue;
-            var player = model.Characters.GetItem(model.Player.Id);
+            var player = model.Positions.GetItem(model.Player.Id);
             if (player == null)
             {
                 return;
             }
 
-            Vector2 playerPosition = player.Movement.Position;
+            Vector2 playerPosition =  player.Position.Value;
             foreach (var interactable in model.Input.InteractableTargets.Values)
             {
                 var distance = (playerPosition - interactable.Position).sqrMagnitude;

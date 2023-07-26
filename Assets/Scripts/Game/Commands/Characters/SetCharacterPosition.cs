@@ -18,7 +18,7 @@ public struct SetCharacterPosition : ICommand
 
     public void Execute(GameModel model)
     {
-        var character = model.Characters.GetItem(_id);
-        character.Movement.Position = _position;
+        var character = model.Positions.GetItem(_id);
+        character.Position.Value = _position;
     }
 }

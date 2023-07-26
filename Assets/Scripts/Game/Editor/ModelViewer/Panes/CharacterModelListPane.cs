@@ -35,12 +35,6 @@ public class CharacterModelListPane : ModelListPane<CharacterModel>
 
         using (new EditorGUILayout.VerticalScope("box"))
         {
-            EditorGUILayout.LabelField("Movement", EditorStyles.boldLabel);
-            ModelDrawers.DrawMovement(item.Movement);
-        }
-
-        using (new EditorGUILayout.VerticalScope("box"))
-        {
             EditorGUILayout.LabelField("Health", EditorStyles.boldLabel);
             ModelDrawers.DrawHealth(item.Health);
         }

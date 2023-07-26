@@ -33,7 +33,6 @@ public static class ModelDrawers
     public static void DrawMovement(MovementModel model)
     {
         EditorGUILayout.LabelField($"Speed: {model.Speed}");
-        EditorGUILayout.LabelField($"Position: {model.Position}");
         EditorGUILayout.LabelField($"Direction: {model.Direction}");
     }
 

@@ -6,6 +6,7 @@ using UnityEngine;
 public interface IGameModel
 {
     IIdentifiableLookup<IPositionModel> Positions { get; }
+    IIdentifiableLookup<IMovementModel> Movements { get; }
     IIdentifiableLookup<ICharacterModel> Characters { get; }
     IIdentifiableLookup<IShrineModel> Shrines { get; }
     IIdentifiableLookup<IAIModel> Behaviours { get; }

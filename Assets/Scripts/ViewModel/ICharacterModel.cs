@@ -7,6 +7,5 @@ public interface ICharacterModel : IIdentifiable, IKeyHolder
     string DisplayName { get; }
     IAttackModel Attack { get; }
     IActionModel CurrentAction { get; }
-    IMovementModel Movement { get; }
     IHealthModel Health { get; }
 }

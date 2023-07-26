@@ -22,6 +22,8 @@ public class RegisterCamera : ICommand
         };
         model.Positions.AddItem(pos);
 
+        Game.AddUpdater(new CameraUpdater());
+
         onRegistered?.Invoke(model.Camera);
     }
 }

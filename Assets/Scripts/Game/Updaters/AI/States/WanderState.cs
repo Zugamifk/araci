@@ -2,22 +2,21 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace Behaviour
 {
     public class WanderState : BehaviourState<WanderStateModel>
     {
-        const float REACH_THRESHOLD = .25f;
-
         public WanderState(Guid id) : base(id)
         {
         }
 
         protected override WanderStateModel InitializeState(AIModel behaviourModel)
         {
-            var character = Game.Model.Characters.GetItem(base.id);
+            var position = Game.Model.Positions.GetItem(id);
             var wanderModel = new WanderStateModel();
-            GetNewDestination(character, wanderModel);
+            GetNewDestination(position, wanderModel);
             return wanderModel;
         }
 
@@ -25,23 +24,23 @@ namespace Behaviour
         {
             var ms = Services.Get<ITileMapService>();
 
-            var character = Game.Model.Characters.GetItem(id);
+            var position = Game.Model.Positions.GetItem(id);
             //Debug.DrawLine(ms.GridToWorldSpace(character.Movement.Position), ms.GridToWorldSpace(stateModel.Destination), Color.green);
-            if (character.Movement.IsApproximateAtPosition(stateModel.Destination))
+            if (position.IsApproximateAtPosition(stateModel.Destination))
             {
-                GetNewDestination(character, stateModel);
+                GetNewDestination(position, stateModel);
             }
             else
             {
-                var to = stateModel.Destination - character.Movement.Position;
+                var to = stateModel.Destination - position.Position.Value;
                 Game.Do(new MoveCharacter(id, to.normalized));
             }
         }
 
-        void GetNewDestination(ICharacterModel characterModel, WanderStateModel stateModel)
+        void GetNewDestination(IPositionModel positionModel, WanderStateModel stateModel)
         {
             var raycaster = Services.Get<IPhysicsRaycaster>();
-            var pos = characterModel.Movement.Position;
+            var pos = positionModel.Position.Value;
             var dir = UnityEngine.Random.insideUnitCircle.normalized;
             var end = raycaster.Raycast(pos, dir, 1 << LayerMask.NameToLayer(Layers.OBSTACLES));
             stateModel.Destination = Vector2.Lerp(pos, end, UnityEngine.Random.value);

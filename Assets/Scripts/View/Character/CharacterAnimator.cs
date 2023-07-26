@@ -40,7 +40,8 @@ public class CharacterAnimator : MonoBehaviour
             return;
         }
 
-        var isWalking = character.Movement.Speed > 0;
+        var movement = Game.Model.Movements.GetItem(lastActionId);
+        var isWalking = movement.Speed > 0;
         animator.SetBool(Animation.WALK, isWalking);
     }
 

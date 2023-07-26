@@ -27,15 +27,6 @@ public class CameraController : MonoBehaviour
 
     void OnMoved(Vector2 oldPosition, Vector2 newPosition)
     {
-        transform.position = Map.Instance.WorldToGridSpace(newPosition);
-    }
-
-    private void Update()
-    {
-        var player = ViewLookup.Get(Game.Model.Player.Id);
-        if(player!=null)
-        {
-            transform.position = player.transform.position;
-        }
+        transform.position = Map.Instance.GridToWorldSpace(newPosition);
     }
 }

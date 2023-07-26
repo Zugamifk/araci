@@ -9,7 +9,7 @@ public class DashEffect : MonoBehaviour
 
     public void DoDash()
     {
-        var direction = Game.Model.Characters.GetItem(Game.Model.Player.Id).Movement.Direction;
+        var direction = Game.Model.Movements.GetItem(Game.Model.Player.Id).Direction;
         direction = Map.Instance.GridToWorldSpace(direction);
         transform.rotation = Math.PointAt(direction);
         _animation.SetTrigger("Dash");

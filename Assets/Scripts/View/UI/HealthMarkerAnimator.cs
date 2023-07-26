@@ -30,7 +30,8 @@ public class HealthMarkerAnimator : MonoBehaviour
         var pc = Game.Model.PlayerCharacter;
         if (pc == null) return;
 
-        if (pc.Movement.Speed > 0)
+        var movement = Game.Model.Movements[pc.Id];
+        if (movement.Speed > 0)
         {
             angle += _movementAnimation.Evaluate(Time.time);
         }

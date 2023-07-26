@@ -7,6 +7,7 @@ using Behaviour;
 public class GameModel : IGameModel
 {
     public IdentifiableCollection<PositionModel> Positions = new IdentifiableCollection<PositionModel>();
+    public IdentifiableCollection<MovementModel> Movements = new IdentifiableCollection<MovementModel>();
     public IdentifiableCollection<CharacterModel> Characters { get; } = new();
     public Dictionary<string, Guid> UniqueKeyToId { get; } = new();
     public IdentifiableCollection<NarrativeModel> Narratives { get; } = new();
@@ -38,6 +39,8 @@ public class GameModel : IGameModel
     IIdentifiableLookup<IItemModel> IGameModel.Items => Items;
 
     IIdentifiableLookup<IPositionModel> IGameModel.Positions => Positions;
+
+    IIdentifiableLookup<IMovementModel> IGameModel.Movements => Movements;
     #endregion
 
 }

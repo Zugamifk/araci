@@ -23,9 +23,9 @@ public class Map : MonoBehaviour, ITileMapService
         return _tilemap.CellToLocalInterpolated(gridPosition);
     }
 
-    public void PositionObject(IMovementModel model, Transform root)
+    public void PositionObject(Vector2 gridPosition, Transform root)
     {
-        root.localPosition = _tilemap.CellToLocalInterpolated(model.Position);
+        root.localPosition = _tilemap.CellToLocalInterpolated(gridPosition);
     }
 
     public void MoveObject(IMovementModel model, Rigidbody2D rigidBody)

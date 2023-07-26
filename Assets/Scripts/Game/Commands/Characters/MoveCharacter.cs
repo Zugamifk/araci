@@ -18,19 +18,20 @@ public struct MoveCharacter : ICommand
 
     public void Execute(GameModel model)
     {
-        var character = model.Characters.GetItem(_id);
-        if(character == null)
+        var movement = model.Movements.GetItem(_id);
+        if(movement == null)
         {
-            throw new InvalidOperationException($"No character with id {_id}");
+            throw new InvalidOperationException($"No movement model with id {_id}");
         }
 
         if(_direction.sqrMagnitude > 0)
         {
-            character.Movement.Speed = _speed ?? character.MoveSpeed;
-            character.Movement.Direction = _direction;
+            var character = model.Characters.GetItem(_id);
+            movement.Speed = _speed ?? character.MoveSpeed;
+            movement.Direction = _direction;
         } else
         {
-            character.Movement.Speed = 0;
+            movement.Speed = 0;
         }
     }
 }

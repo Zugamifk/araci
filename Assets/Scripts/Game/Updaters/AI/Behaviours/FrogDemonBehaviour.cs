@@ -23,7 +23,9 @@ namespace Behaviour
             }
 
             var agent = Game.Model.Characters.GetItem(id);
-            var toAgent = player.Movement.Position - agent.Movement.Position;
+            var agentPos = Game.Model.Positions.GetItem(id);
+            var playerPos = Game.Model.Positions.GetItem(player.Id);
+            var toAgent = playerPos.Position.Value - agentPos.Position.Value;
             if (toAgent.magnitude < agent.Attack.Range)
             {
                 if (cooldownService.IsReady(behaviour.AttackCooldown))

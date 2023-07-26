@@ -38,7 +38,8 @@ public class Character : ModelViewBase<ICharacterModel>
             _attack.OnUpdatedAttackTargets += OnUpdatedAttackTargets;
         }
 
-        UpdatePosition();
+        var pos = Game.Model.Positions[model.Id];
+        pos.Position.ValueChanged += UpdatePosition;
     }
 
     void Update()
@@ -55,7 +56,6 @@ public class Character : ModelViewBase<ICharacterModel>
         }
         else if (character.Health.IsAlive)
         {
-            DoDesiredMove(character);
             UpdateAction(character);
         }
         else
@@ -73,28 +73,25 @@ public class Character : ModelViewBase<ICharacterModel>
         }
         else if (character.Health.IsAlive)
         {
-            UpdatePosition();
+            DoDesiredMove(character);
         }
     }
 
-    void UpdatePosition()
+    void UpdatePosition(Vector2 oldPosition, Vector2 newPosition)
     {
-        var character = GetModel();
-        Map.Instance.PositionObject(character.Movement, transform);
+        Map.Instance.PositionObject(newPosition, transform);
     }
 
     void DoDesiredMove(ICharacterModel character)
     {
-        Map.Instance.MoveObject(character.Movement, _rigidBody);
+        var movement = Game.Model.Movements.GetItem(Id);
+        Map.Instance.MoveObject(movement, _rigidBody);
 
         var move = _rigidBody.velocity;
         if (Mathf.Approximately(move.sqrMagnitude, 0))
         {
             return;
         }
-
-        var tilePosition = Map.Instance.WorldToGridSpace(_viewRoot.transform.position);
-        Game.Do(new SetCharacterPosition(character.Id, tilePosition));
 
         var side = move.x;
         if (!Mathf.Approximately(side, 0))

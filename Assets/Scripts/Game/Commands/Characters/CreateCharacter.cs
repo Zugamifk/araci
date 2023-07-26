@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class CreateCharacter : ICommand
 {
@@ -21,14 +22,26 @@ public class CreateCharacter : ICommand
 
     public void Execute(GameModel model)
     {
+        var positionModel = new PositionModel()
+        {
+            Id = id
+        };
+        positionModel.Position.Value = position;
+        model.Positions.AddItem(positionModel);
+
         var data = DataService.GetData<CharacterDataCollection>().Get(key);
+        var movement = new MovementModel()
+        {
+            Id = id,
+        };
+        model.Movements.AddItem(movement);
+
         var character = new CharacterModel()
         {
             Id = id,
             Key = key,
             MoveSpeed = data.MoveSpeed
         };
-        character.Movement.Position = position;
         character.Health.CurrentHealth = data.HitPoints;
         character.Health.MaxHealth = data.HitPoints;
         model.Characters.AddItem(character);

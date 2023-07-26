@@ -14,7 +14,7 @@ public class StopCharacter : ICommand
 
     public void Execute(GameModel model)
     {
-        var character = model.Characters.GetItem(_id);
-        character.Movement.Speed = 0;
+        var character = model.Movements.GetItem(_id);
+        character.Speed = 0;
     }
 }
