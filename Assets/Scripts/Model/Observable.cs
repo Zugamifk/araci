@@ -26,7 +26,7 @@ public class Observable<T> : IObservable<T>
         get => value;
         set
         {
-            if (value == null && this.value != null)
+            if ((value == null) != (this.value == null))
             {
                 SetValue(value);
             }
