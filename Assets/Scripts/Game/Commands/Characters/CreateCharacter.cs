@@ -29,6 +29,8 @@ public class CreateCharacter : ICommand
         positionModel.Position.Value = position;
         model.Positions.AddItem(positionModel);
 
+        Game.AddUpdater(new PositionUpdater(id));
+
         var data = DataService.GetData<CharacterDataCollection>().Get(key);
         var movement = new MovementModel()
         {
@@ -44,6 +46,7 @@ public class CreateCharacter : ICommand
         };
         character.Health.CurrentHealth = data.HitPoints;
         character.Health.MaxHealth = data.HitPoints;
+        character.Health.IsAlive.Value = true;
         model.Characters.AddItem(character);
 
         if (isUnique)

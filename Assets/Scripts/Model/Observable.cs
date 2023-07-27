@@ -29,8 +29,7 @@ public class Observable<T> : IObservable<T>
             if ((value == null) != (this.value == null))
             {
                 SetValue(value);
-            }
-            if (!this.value.Equals(value))
+            } else if (!this.value.Equals(value))
             {
                 SetValue(value);
             }

@@ -38,7 +38,7 @@ public class Character : ModelViewBase<ICharacterModel>
         }
 
         var pos = Game.Model.Positions[model.Id];
-        pos.Position.ValueChanged += UpdatePosition;
+        pos.Position.ValueChanged += OnPositionChanged;
 
         model.Health.IsAlive.ValueChanged += OnDeath;
         model.CurrentAction.ValueChanged += OnActionChanged;
@@ -106,7 +106,7 @@ public class Character : ModelViewBase<ICharacterModel>
         }
     }
 
-    void UpdatePosition(Vector2 oldPosition, Vector2 newPosition)
+    void OnPositionChanged(Vector2 oldPosition, Vector2 newPosition)
     {
         Map.Instance.PositionObject(newPosition, transform);
     }

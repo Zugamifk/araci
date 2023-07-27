@@ -7,11 +7,11 @@ public class TrackedTransform : MonoBehaviour
 {
     void Start()
     {
-        var id = GetComponent<IObservable<Guid>>();
-        id.ValueChanged += OnIdChanged;
+        var id = GetComponent<Identifiable>();
+        id.IdChanged += OnIdChanged;
     }
 
-    void OnIdChanged(Guid _, Guid id)
+    void OnIdChanged(Guid id)
     {
         if(id == Guid.NewGuid())
         {

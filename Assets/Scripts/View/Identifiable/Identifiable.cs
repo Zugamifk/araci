@@ -6,11 +6,26 @@ using UnityEngine;
 public abstract class Identifiable : MonoBehaviour, IIdentifiable
 {
     public Guid Id { get; protected set; }
-    public event Action<Guid> IdChanged;
+
+    Action<Guid> idChanged;
+    public event Action<Guid> IdChanged
+    {
+        add
+        {
+            idChanged += value;
+            if (Id != Guid.Empty)
+            {
+                value.Invoke(Id);
+            }
+        }
+        remove {
+            idChanged -= value;
+        }
+    }
 
     protected void SetId(Guid id)
     {
         Id = id;
-        IdChanged?.Invoke(id);
+        idChanged?.Invoke(id);
     }
 }

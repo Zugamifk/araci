@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1285956790532063650}
   - component: {fileID: 3201461919479053016}
   - component: {fileID: 6845282758393964958}
+  - component: {fileID: 6815006205563962016}
   m_Layer: 7
   m_Name: Piper
   m_TagString: Untagged
@@ -131,6 +132,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa6ed1d735155d74b9f7ce1d1ac99ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6815006205563962016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2684019793343543044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0891cb7ece0e0b43b60990cc4fa5cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &5630672412631076340

@@ -10,7 +10,7 @@ Cooking can transform a food or enhance its effects. Coking can also be a proces
 * Roasting is the most basic form of cooking, done over a fire with no other type of ingredients. Only plants and meats can be roasted.
 * Boiling requires a container and water. Faster than roasting.
 * Frying requires a container and oil. Even faster than boiling.
-* Infusing requires more precise tools and processing to create. They require an oil to infuse and a spice or hearb to infuse with.
+* Infusing requires more precise tools and processing to create. They require an oil to infuse and a spice or herb to infuse with.
 * Fermenting requires an ingredient with sugar and takes a very long time to create. Only way to create alcohol.
 * 
 

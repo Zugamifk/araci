@@ -17,7 +17,7 @@ public class CharacterModelListPane : ModelListPane<CharacterModel>
         using (new EditorGUILayout.VerticalScope("box"))
         {
             EditorGUILayout.LabelField("Current Action", EditorStyles.boldLabel);
-            if (item.CurrentAction != null)
+            if (item.CurrentAction.Value != null)
             {
                 ModelDrawers.DrawAction(item.CurrentAction.Value);
             }

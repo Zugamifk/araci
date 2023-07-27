@@ -30,10 +30,15 @@ public static class ModelDrawers
         EditorGUILayout.LabelField($"Key: {model.Key}");
     }
 
+    public static void DrawPosition(PositionModel model)
+    {
+        EditorGUILayout.LabelField($"Position: {model.Position.Value}");
+    }
+
     public static void DrawMovement(MovementModel model)
     {
-        EditorGUILayout.LabelField($"Speed: {model.Speed}");
-        EditorGUILayout.LabelField($"Direction: {model.Direction}");
+        EditorGUILayout.LabelField($"Speed: {model.Speed.Value}");
+        EditorGUILayout.LabelField($"Direction: {model.Direction.Value}");
     }
 
     public static void DrawHealth(HealthModel model)
