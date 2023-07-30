@@ -38,8 +38,7 @@ public class InputModelPane : InfoPane
                     {
                         using (new EditorGUILayout.VerticalScope("box"))
                         {
-                            EditorGUILayout.LabelField(interactable.Key.ToString(), EditorStyles.boldLabel);
-                            ModelDrawers.DrawInteractable(interactable.Value);
+                            EditorGUILayout.LabelField($"Id: {interactable}");
                         }
                     }
                 }

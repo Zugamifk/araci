@@ -47,7 +47,7 @@ namespace Input
 
         void UpdateInteractables(GameModel model)
         {
-            InteractableModel closest = null;
+            Guid closest = Guid.Empty;
             float closestDistance = float.MaxValue;
             var player = model.Positions.GetItem(model.Player.Id);
             if (player == null)
@@ -56,18 +56,19 @@ namespace Input
             }
 
             Vector2 playerPosition =  player.Position.Value;
-            foreach (var interactable in model.Input.InteractableTargets.Values)
+            foreach (var id in model.Input.InteractableTargets)
             {
-                var distance = (playerPosition - interactable.Position).sqrMagnitude;
-                if (closest == null || distance < closestDistance)
+                var pos = Game.Model.Positions[id];
+                var distance = (playerPosition - pos.Position.Value).sqrMagnitude;
+                if (closest == Guid.Empty || distance < closestDistance)
                 {
-                    closest = interactable;
+                    closest = id;
                 }
             }
 
             if(closest!= null)
             {
-                model.Input.CurrentInteractable.Value = closest.Id;
+                model.Input.CurrentInteractable.Value = closest;
             }
         }
     }

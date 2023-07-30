@@ -5,15 +5,15 @@ using UnityEngine;
 
 public struct RemoveInteractable : ICommand
 {
-    Guid _id;
+    Guid id;
 
     public RemoveInteractable(Guid id)
     {
-        _id = id;
+        this.id = id;
     }
 
     public void Execute(GameModel model)
     {
-        model.Input.InteractableTargets.Remove(_id);
+        model.Input.InteractableTargets.Remove(id);
     }
 }

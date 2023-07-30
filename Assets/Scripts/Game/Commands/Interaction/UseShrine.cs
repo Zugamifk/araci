@@ -1,19 +1,21 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
-public struct AddInteractable : ICommand
+public class UseShrine : ICommand
 {
     Guid id;
 
-    public AddInteractable(Guid id)
+    public UseShrine(Guid id)
     {
         this.id = id;
     }
 
     public void Execute(GameModel model)
     {
-        model.Input.InteractableTargets.Add(id);
+        var shrine = model.Shrines.GetItem(id);
+        shrine.HasBlessingAvailable.Value = false;
     }
 }

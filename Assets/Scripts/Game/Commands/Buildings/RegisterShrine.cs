@@ -6,10 +6,12 @@ using UnityEngine;
 public class RegisterShrine : ICommand
 {
     Guid id;
+    Vector2 worldPosition;
     Action<IShrineModel> onRegistered;
-    public RegisterShrine(Guid id, Action<IShrineModel> onRegistered)
+    public RegisterShrine(Guid id, Vector2 position, Action<IShrineModel> onRegistered)
     {
         this.id = id;
+        this.worldPosition = position;
         this.onRegistered = onRegistered;   
     }
 
@@ -21,6 +23,14 @@ public class RegisterShrine : ICommand
         };
         shrine.HasBlessingAvailable.Value = true;
         model.Shrines.AddItem(shrine);
+
+        var serv = Services.Get<ITileMapService>();
+        var position = new PositionModel()
+        {
+            Id = id,
+        };
+        position.Position.Value = serv.WorldToGridSpace(worldPosition);
+        model.Positions.AddItem(position);
 
         onRegistered?.Invoke(shrine);
     }

@@ -13,12 +13,14 @@ public class Shrine : MonoBehaviour
     private void Start()
     {
         var id = GetComponent<IIdentifiable>().Id;
-        Game.Do(new RegisterShrine(id, OnShrineRegistered));
+        Game.Do(new RegisterShrine(id, transform.position, OnShrineRegistered));
     }
 
     void OnShrineRegistered(IShrineModel shrine)
     {
         shrine.HasBlessingAvailable.ValueChanged += OnHasBlessingAvailableChanged;
+        var interactionService = Services.Get<IInteractionService>();
+        interactionService.RegisterInteractable<IShrineModel>(shrine.Id);
     }
 
     void OnHasBlessingAvailableChanged(bool _, bool value)

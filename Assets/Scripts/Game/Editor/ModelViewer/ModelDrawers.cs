@@ -110,12 +110,6 @@ public static class ModelDrawers
         }
     }
 
-    public static void DrawInteractable(InteractableModel model)
-    {
-        EditorGUILayout.LabelField($"Id: {model.Id}");
-        EditorGUILayout.LabelField($"Position: {model.Position}");
-
-    }
     public static void DrawAgent(AgentModel model)
     {
         if (model is FrogDemonAgentModel frogDemon)

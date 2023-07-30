@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5116748834983352839}
   - component: {fileID: 3032121022970914364}
   - component: {fileID: 5657213814595255423}
+  - component: {fileID: 6332889981932822167}
   m_Layer: 6
   m_Name: Shrine
   m_TagString: Untagged
@@ -106,6 +107,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _indicatorPosition: {fileID: 5670791530126916980}
   IsInteractable: 0
+--- !u!114 &6332889981932822167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5998371772621767682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0891cb7ece0e0b43b60990cc4fa5cf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5998371773353875945
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,7 +145,7 @@ Transform:
   m_GameObject: {fileID: 5998371773353875945}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.339, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4410850091878679885}
@@ -244,11 +257,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7928591065626372595, guid: efe437f0a6f6b964daf6dcbe9d56b6d1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.094
+      value: 0.0232
       objectReference: {fileID: 0}
     - target: {fileID: 7928591065626372595, guid: efe437f0a6f6b964daf6dcbe9d56b6d1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.016
+      value: 0.0041
       objectReference: {fileID: 0}
     - target: {fileID: 7928591065626372595, guid: efe437f0a6f6b964daf6dcbe9d56b6d1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -325,11 +338,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7928591065626372595, guid: efe437f0a6f6b964daf6dcbe9d56b6d1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.125
+      value: -0.0311
       objectReference: {fileID: 0}
     - target: {fileID: 7928591065626372595, guid: efe437f0a6f6b964daf6dcbe9d56b6d1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.016
+      value: 0.0041
       objectReference: {fileID: 0}
     - target: {fileID: 7928591065626372595, guid: efe437f0a6f6b964daf6dcbe9d56b6d1, type: 3}
       propertyPath: m_LocalPosition.z
