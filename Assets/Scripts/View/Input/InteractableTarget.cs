@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(TrackedTransform))]
 public class InteractableTarget : MonoBehaviour
 {
     [SerializeField]

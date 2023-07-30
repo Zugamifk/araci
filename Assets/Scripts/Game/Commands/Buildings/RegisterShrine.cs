@@ -32,6 +32,9 @@ public class RegisterShrine : ICommand
         position.Position.Value = serv.WorldToGridSpace(worldPosition);
         model.Positions.AddItem(position);
 
+        var interactionService = Services.Get<IInteractionService>();
+        interactionService.RegisterInteractable<IShrineModel>(id);
+
         onRegistered?.Invoke(shrine);
     }
 }

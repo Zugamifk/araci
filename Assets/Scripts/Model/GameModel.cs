@@ -13,6 +13,7 @@ public class GameModel : IGameModel
     public IdentifiableCollection<NarrativeModel> Narratives { get; } = new();
     public DialogModel Dialog { get; set; }
     public IdentifiableCollection<ShrineModel> Shrines { get; } = new();
+    public IdentifiableCollection<HarvestableModel> Harvestables { get; } = new();
     public IdentifiableCollection<AIModel> Behaviours { get; } = new();
     public Dictionary<string, SpawnModel> Spawns { get; } = new();
     public Dictionary<string, Vector2> MapLocations { get; } = new();
@@ -41,6 +42,8 @@ public class GameModel : IGameModel
     IIdentifiableLookup<IPositionModel> IGameModel.Positions => Positions;
 
     IIdentifiableLookup<IMovementModel> IGameModel.Movements => Movements;
+
+    IIdentifiableLookup<IHarvestableModel> IGameModel.Harvestables => Harvestables;
     #endregion
 
 }

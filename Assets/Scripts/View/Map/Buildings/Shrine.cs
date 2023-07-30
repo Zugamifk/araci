@@ -19,8 +19,6 @@ public class Shrine : MonoBehaviour
     void OnShrineRegistered(IShrineModel shrine)
     {
         shrine.HasBlessingAvailable.ValueChanged += OnHasBlessingAvailableChanged;
-        var interactionService = Services.Get<IInteractionService>();
-        interactionService.RegisterInteractable<IShrineModel>(shrine.Id);
     }
 
     void OnHasBlessingAvailableChanged(bool _, bool value)
@@ -30,6 +28,5 @@ public class Shrine : MonoBehaviour
         {
             candles[i].enabled = value;
         }
-        interactable.IsInteractable = value;
     }
 }

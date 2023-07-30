@@ -9,6 +9,7 @@ public interface IGameModel
     IIdentifiableLookup<IMovementModel> Movements { get; }
     IIdentifiableLookup<ICharacterModel> Characters { get; }
     IIdentifiableLookup<IShrineModel> Shrines { get; }
+    IIdentifiableLookup<IHarvestableModel> Harvestables { get; }
     IIdentifiableLookup<IAIModel> Behaviours { get; }
     IIdentifiableLookup<IItemModel> Items { get; }
     IInventoryModel Inventory { get; }

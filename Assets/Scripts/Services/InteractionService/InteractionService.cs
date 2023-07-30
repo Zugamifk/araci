@@ -15,6 +15,7 @@ public class InteractionService : IInteractionService
     void PopulateInteractionProcessors()
     {
         modelTypeToInteractionProcessor[typeof(IShrineModel)] = new ShrineInteractionProcessor();
+        modelTypeToInteractionProcessor[typeof(IHarvestableModel)] = new HarvestableActionProcessor();
     }
 
     public void RegisterInteractable<TInteractable>(Guid id)
