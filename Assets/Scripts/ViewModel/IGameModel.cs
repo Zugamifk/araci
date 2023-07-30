@@ -17,5 +17,6 @@ public interface IGameModel
     IPlayerModel Player { get; }
     ICharacterModel PlayerCharacter { get; }
     IInputModel Input { get; }
+    IUIModel UI { get; }
     ITimeModel Time { get; }
 }

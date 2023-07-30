@@ -23,6 +23,7 @@ public class GameModel : IGameModel
     public CharacterModel PlayerCharacter => Characters.GetItem(Player.Id);
     public CameraModel Camera { get; } = new();
     public InputModel Input { get; } = new();
+    public UIModel UI { get; } = new();
     public TimeModel TimeModel = new TimeModel();
 
 
@@ -44,6 +45,8 @@ public class GameModel : IGameModel
     IIdentifiableLookup<IMovementModel> IGameModel.Movements => Movements;
 
     IIdentifiableLookup<IHarvestableModel> IGameModel.Harvestables => Harvestables;
+
+    IUIModel IGameModel.UI => UI;
     #endregion
 
 }

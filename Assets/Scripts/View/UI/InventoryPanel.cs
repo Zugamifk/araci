@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventoryPanel : MonoBehaviour
+public class InventoryPanel : UIPanel
 {
     [SerializeField] Image selectedItemIcon;
     [SerializeField] TextMeshProUGUI selectedItemName;
@@ -16,14 +16,36 @@ public class InventoryPanel : MonoBehaviour
 
     Guid currentSelectedItem;
     List<InventorySlotUI> slots = new();
+    protected override void OnShowingChanged(bool showing)
+    {
+        if (showing)
+        {
+            OnShowing();
+        } else
+        {
+            OnHiding();
+        }
+    }
 
-    private void Start()
+    void OnShowing()
+    {
+        var invSlots = Game.Model.Inventory.Slots;
+        invSlots.ItemChanged -= UpdateSlot;
+        invSlots.ItemChanged += UpdateSlot;
+
+        UpdateInventorySlots();
+    }
+
+    void OnHiding()
+    {
+        Game.Model.Inventory.Slots.ItemChanged -= UpdateSlot;
+    }
+
+    private void Awake()
     {
         ClearItemInfo();
 
         var invSlots = Game.Model.Inventory.Slots;
-        invSlots.ItemChanged -= UpdateSlot;
-        invSlots.ItemChanged += UpdateSlot;
         for(int i=0;i<24;i++)
         {
             var slot = Instantiate(slotPrefab);
@@ -32,20 +54,29 @@ public class InventoryPanel : MonoBehaviour
             slot.ClickedSlot += OnClickedSlot;
 
             slots.Add(slot);
-
-            if (i < invSlots.Count)
-            {
-                UpdateSlot(i, invSlots[i]);
-            } else
-            {
-                UpdateSlot(i, Guid.Empty);
-            }
         }
+        UpdateInventorySlots();
     }
 
     private void OnDestroy()
     {
         Game.Model.Inventory.Slots.ItemChanged -= UpdateSlot;
+    }
+
+    void UpdateInventorySlots()
+    {
+        var invSlots = Game.Model.Inventory.Slots;
+        for (int i = 0; i < 24; i++)
+        {
+            if (i < invSlots.Count)
+            {
+                UpdateSlot(i, invSlots[i]);
+            }
+            else
+            {
+                UpdateSlot(i, Guid.Empty);
+            }
+        }
     }
 
     void UpdateSlot(int index, Guid id)
