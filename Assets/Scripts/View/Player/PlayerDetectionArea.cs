@@ -15,7 +15,6 @@ public class PlayerDetectionArea : MonoBehaviour
             Game.Do(new RemoveInteractable(id.Id));
         } else
         {
-            var pos = Map.Instance.GridToWorldSpace(target.transform.position);
             Game.Do(new AddInteractable(id.Id));
         }
     }

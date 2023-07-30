@@ -37,7 +37,7 @@ namespace Input
 
         public void PopState()
         {
-            if(stateStack.Count == 0)
+            if (stateStack.Count == 0)
             {
                 throw new InvalidOperationException($"State stack is empty, can not pop state.");
             }
@@ -55,7 +55,7 @@ namespace Input
                 return;
             }
 
-            Vector2 playerPosition =  player.Position.Value;
+            Vector2 playerPosition = player.Position.Value;
             foreach (var id in model.Input.InteractableTargets)
             {
                 var pos = Game.Model.Positions[id];
@@ -66,10 +66,7 @@ namespace Input
                 }
             }
 
-            if(closest!= null)
-            {
-                model.Input.CurrentInteractable.Value = closest;
-            }
+            model.Input.CurrentInteractable.Value = closest;
         }
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class InputModel : IInputModel
 {
-    public BindingCollection<Guid> InteractableTargets { get; set; } = new();
+    public HashSet<Guid> InteractableTargets { get; set; } = new();
     public Observable<Guid> CurrentInteractable { get; set; } = new();
     public Observable<Vector2> ClickPosition { get; set; } = new();
     IObservable<Guid> IInputModel.CurrentInteractable => CurrentInteractable;

@@ -6,9 +6,9 @@ using UnityEngine;
 public class Shrine : MonoBehaviour
 {
     [SerializeField]
-    LightSource[] _candles;
+    LightSource[] candles;
     [SerializeField]
-    InteractableTarget _interactable;
+    InteractableTarget interactable;
 
     private void Start()
     {
@@ -25,10 +25,11 @@ public class Shrine : MonoBehaviour
 
     void OnHasBlessingAvailableChanged(bool _, bool value)
     {
-        _interactable.IsInteractable = value;
-        for (int i = 0; i < _candles.Length; i++)
+        interactable.IsInteractable = value;
+        for (int i = 0; i < candles.Length; i++)
         {
-            _candles[i].enabled = value;
+            candles[i].enabled = value;
         }
+        interactable.IsInteractable = value;
     }
 }
